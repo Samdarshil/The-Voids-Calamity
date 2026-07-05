@@ -81,8 +81,6 @@ This project isn't accepting outside contributions yet. That'll change once the 
 
 ## License
 
-## Void's Calamity Proprietary License
-
 Copyright © 2026 Darshil Samson & Aarush Pareek. All Rights Reserved.
 
 This repository contains the source code, assets, artwork, music, story, characters, game mechanics, documentation, and all other content for Void's Calamity: The Unseen Hand.
