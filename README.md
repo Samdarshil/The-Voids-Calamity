@@ -1,7 +1,7 @@
 <div align="center">
 
 # VOID's CALAMITY // THE UNSEEN HAND
-
+...........
 **A story-driven cyberpunk infiltration game about memory, control, and the cost of a perfect world.**
 
 ![Status](https://img.shields.io/badge/status-in%20development-7B2FF7?style=flat-square)
