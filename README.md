@@ -81,15 +81,15 @@ This project isn't accepting outside contributions yet. That'll change once the 
 
 ## License
 
-Void's Calamity Proprietary License
+# Void's Calamity Proprietary License
 
-Copyright © 2026 [Your Name] & [Friend's Name]. All Rights Reserved.
+Copyright © 2026 Darshil Samson & Aarush Pareek. All Rights Reserved.
 
 This repository contains the source code, assets, artwork, music, story, characters, game mechanics, documentation, and all other content for Void's Calamity: The Unseen Hand.
 
 All rights are reserved by the copyright owners.
 
-You are NOT permitted to:
+# You are NOT permitted to:
 
 - Copy any part of this project.
 - Modify or create derivative works from this project.
@@ -99,15 +99,15 @@ You are NOT permitted to:
 - Use this project for commercial or non-commercial purposes without written permission.
 - Claim ownership of any part of this project.
 
-Viewing the Repository
+# Viewing the Repository
 
 If this repository is publicly accessible, permission is granted only to view the source code through GitHub for reference. No additional rights are granted.
 
-Trademark
+# Trademark
 
 The name Void's Calamity, its logo, branding, characters, locations, and other identifying elements are the exclusive property of the copyright owners and may not be used without written permission.
 
-Disclaimer
+# Disclaimer
 
 This project is provided for viewing purposes only. No license is granted to use, copy, modify, distribute, or reproduce any part of this project.
 
