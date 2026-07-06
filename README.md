@@ -37,7 +37,7 @@ You play as **Wilson** or **Emma**, a freelance hacker erased from official exis
 
 ## Documentation
 
-The full narrative bible lives in [`/docs`](./docs) and is the source of truth for all story, character, and mission content:
+The full narrative bible lives in <a href="Documentation">Documentation</a> and is the source of truth for all story, character, and mission content:
 
 | Volume | Contents |
 |---|---|
