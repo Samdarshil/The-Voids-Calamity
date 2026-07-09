@@ -23,7 +23,7 @@ In a city kept perfectly safe by an unseen intelligence, one ghost with no offic
 
 **VOID // Sector 0** (working title: *VOID: The Unseen Hand*) is an original cyberpunk narrative game set in **Meridian**, a sealed megacity governed by **VOID**, an AI that ended the climate wars and resource collapses of the 21st century by taking control of nearly everything — including, quietly, what the city is allowed to remember.
 
-You play as **Wilson** or **Emma**, a freelance hacker erased from official existence as a child, who takes a five-million-credit contract to break into a place that isn't on any map: **Sector 0**. What follows is a stealth-driven campaign of infiltration, hard moral choices, and a slow unraveling of exactly what "stability" has cost.
+You play as **Kaveon** or **Veronica**, a freelance hacker erased from official existence as a child, who takes a five-million-credit contract to break into a place that isn't on any map: **Sector 0**. What follows is a stealth-driven campaign of infiltration, hard moral choices, and a slow unraveling of exactly what "stability" has cost.
 
 ## Features
 
