@@ -1,0 +1,89 @@
+{
+  "$schema": "void_builder_rules_schema_v1",
+  "pipeline_reconciliation_note": {
+    "issue": "Two valid but distinct orderings exist across this package: Meridian_Master.json's generation_pipeline.generation_order sequences by DISTRICT/REGION (which region's foundational data must exist before another's). The brief for this file requests a sequence by CONTENT TYPE (roads, then buildings, then gameplay, etc.). These are not contradictory — they operate at different scopes — but presenting only one without reconciling the other would leave the Builder with two unrelated 'the order is X' claims.",
+    "resolution": "This file defines a two-tier pipeline: macro_generation_order (region sequencing, already established, referenced not restated) and micro_layer_pipeline (content-type sequencing within each macro-ordered region). This mirrors standard AAA open-world procedural pipelines, which sequence macro region placement first and layer content types within each placed region second."
+  },
+  "macro_generation_order": {
+    "authority": "Meridian_Master.json generation_pipeline.generation_order",
+    "summary": ["olympus_spire", "live_network_spine", "white_zones_network_nodes", "undercroft_substrate", "metro_archives", "sector_0"],
+    "note": "Full detail (roles, depends_on) lives in Meridian_Master.json and DistrictRegistry.json — not duplicated here."
+  },
+  "micro_layer_pipeline": [
+    { "step": 1, "phase": "import", "action": "Load Meridian_Master.json as the single manifest; resolve all registry_references.", "cross_reference": "Meridian_Master.json" },
+    { "step": 2, "phase": "validation", "action": "Run all pre_generation_checks before any content is generated.", "cross_reference": "validation_rules.pre_generation_checks below" },
+    { "step": 3, "phase": "road_generation", "action": "Generate road_hierarchy geometry per macro-ordered region.", "cross_reference": "RoadNetwork.json" },
+    { "step": 4, "phase": "building_generation", "action": "Generate generic architectural shell geometry per building_layer category — typology kits (e.g. White Zones Community Trust Center) before bespoke one-off structures.", "cross_reference": "DataLayers.json layer_type_categories.building_layer" },
+    { "step": 5, "phase": "district_generation", "action": "Layer district-specific bespoke sub-location detail onto the generic shells from step 4, per macro-ordered region — landmarks, named NPC hubs, mission-critical rooms.", "cross_reference": "LandmarkRegistry.json, DistrictRegistry.json" },
+    { "step": 6, "phase": "metro_generation", "action": "Generate Live Network and Dead Network lines, stations, and interchanges. Never merge the two networks.", "cross_reference": "MetroNetwork.json" },
+    { "step": 7, "phase": "infrastructure_generation", "action": "Apply power, water/climate, and maintenance service tiers per district.", "cross_reference": "InfrastructureGraph.json" },
+    { "step": 8, "phase": "environment_generation", "action": "Apply materials, color language, and environmental storytelling assets per district.", "cross_reference": "environment_layer; each district's own Materials / Color Language / Environmental Storytelling sections" },
+    { "step": 9, "phase": "gameplay_generation", "action": "Place mission-critical content, boss encounters, and side-quest triggers.", "cross_reference": "GameplayGraph.json", "hard_constraint": "olympus_spire_server_hub combat content is NOT generated at this step — see error_handling.highest_priority_flag below." },
+    { "step": 10, "phase": "navigation_generation", "action": "Build pedestrian, vehicle, metro, underground, and rooftop traversal graphs.", "cross_reference": "NavigationGraph.json" },
+    { "step": 11, "phase": "lighting_generation", "action": "Apply the five-district lighting spectrum. Sector 0 additionally requires its four-state dynamic lighting system, the one district with story-tied baseline lighting change.", "cross_reference": "Meridian_Master_Plan.md Sec. 21; Sector_0.md Sec. 18" },
+    { "step": 12, "phase": "world_partition", "action": "Assign generated content to streaming cells and set cell_dependencies.", "cross_reference": "WorldPartition.json" },
+    { "step": 13, "phase": "data_layers", "action": "Apply all 30 district gating layers plus the 1 cross-district layer, and the 8 layer_type_categories.", "cross_reference": "DataLayers.json" },
+    { "step": 14, "phase": "final_validation", "action": "Run all post_generation_checks.", "cross_reference": "validation_rules.post_generation_checks below" },
+    { "step": 15, "phase": "playable_greybox_meridian", "action": "Terminal state. No further automated steps follow — human review begins here." }
+  ],
+  "module_dependencies": {
+    "authority": "Meridian_Master.json generation_pipeline.module_dependencies",
+    "reconciliation_status": "The two discrepancies flagged during NavigationGraph.json and GameplayGraph.json generation (dependence on then-nonexistent infrastructure_graph and data_layers) are now closed — both files exist as of this package's current state.",
+    "note": "Full dependency map lives in Meridian_Master.json — not duplicated here."
+  },
+  "execution_order": {
+    "sequencing_model": "macro_region_order_outer_loop_micro_layer_pipeline_inner_loop",
+    "description": "For each region in macro_generation_order, execute micro_layer_pipeline steps 3 through 13 before proceeding to the next region. Steps 1, 2, 14, and 15 run once globally, not per-region.",
+    "parallelism": "Per Meridian_Master.json generation_settings — parallel generation permitted within a single macro step, not across macro steps."
+  },
+  "error_handling": {
+    "highest_priority_flag": {
+      "id": "spire_server_hub_nyx_discrepancy",
+      "rule": "HALT generation of olympus_spire_server_hub combat-encounter content specifically. Generate the space's architecture (per Olympus_Spire.md Sec. 14, 36) normally — this flag blocks encounter design only, not the room's existence.",
+      "source": "flagged_open_items in Meridian_Master.json, priority: highest_in_project"
+    },
+    "moderate_priority_flag": {
+      "id": "archive_maintenance_directive_mechanism",
+      "rule": "Generate metro_archives reset-mechanic architecture and the three reset tiers normally. Flag for a technical feasibility review pass before final polish, not before greybox.",
+      "source": "flagged_open_items in Meridian_Master.json, priority: moderate"
+    },
+    "low_priority_flags": {
+      "ids": ["undercroft_internal_radial_belt_model", "white_zones_kit_of_parts_typology", "sector_0_ownership_questions_format_deviation"],
+      "rule": "Generate normally without interruption. Log a sign-off reminder for the writing team; do not block any pipeline step."
+    },
+    "missing_reference_error": {
+      "rule": "If any registry_reference in Meridian_Master.json fails to resolve to an existing file, HALT the full pipeline at step 1 (import). Do not proceed to validation with a partial manifest."
+    },
+    "cross_file_inconsistency_error": {
+      "rule": "If any cross-reference check (as performed manually during this package's own construction — e.g. route IDs, tunnel IDs, sub-location IDs) fails at generation time, HALT the current macro region step and report the specific mismatched IDs. Do not silently drop or auto-correct mismatched references."
+    }
+  },
+  "recovery_rules": {
+    "regeneration_policy": "Locked packages (the five approved districts, Meridian_Master_Plan.md) are never regenerated, only referenced — consistent with Meridian_Master.json builder_configuration.",
+    "partial_failure_recovery": "On failure mid-region, resume from the last successfully completed micro_layer_pipeline step within that region. Do not restart already-completed macro regions.",
+    "manual_override": "Any HALT triggered by error_handling above requires explicit human sign-off to resume — the Builder does not auto-resume past a flagged discrepancy or missing reference."
+  },
+  "validation_rules": {
+    "pre_generation_checks": [
+      "confirm_no_locked_package_modified",
+      "confirm_no_sixth_district_introduced",
+      "confirm_no_unresolved_story_question_answered",
+      "confirm_no_fabricated_coordinates_present_in_any_referenced_file",
+      "confirm_all_required_registry_references_resolve_to_existing_files",
+      "confirm_all_cross_file_id_references_resolve_correctly"
+    ],
+    "post_generation_checks": [
+      "confirm_generation_order_respected_both_macro_and_micro",
+      "confirm_dual_network_traversal_never_merged",
+      "confirm_district_gameplay_registers_remain_non_overlapping",
+      "confirm_flagged_open_items_remain_unresolved_unless_explicit_signoff_recorded",
+      "confirm_server_hub_combat_content_not_generated_without_signoff",
+      "confirm_all_30_district_gating_layers_plus_1_cross_district_layer_applied"
+    ],
+    "authority": "Extends Meridian_Master.json validation_rules with the two additional checks specific to this package's own construction history (cross-file ID resolution, server hub gating)."
+  },
+  "future_expansion_rules": {
+    "authority": "Meridian_Master.json future_expansion_rules",
+    "additional_note": "Any Phase 2 (connective tissue) or Phase 3 (new district) work extending this package must add a corresponding entry to DistrictRegistry.json, RoadNetwork.json, and WorldPartition.json at minimum before BuilderRules.json's pipeline is re-run — partial registration in only one file is not sufficient for the Builder to generate new content correctly."
+  }
+}

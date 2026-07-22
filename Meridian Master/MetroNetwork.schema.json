@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_metro_network_schema_v1",
+  "title": "VOID: The Unseen Hand — MetroNetwork.json Schema",
+  "type": "object",
+  "required": ["$schema", "network_model", "network_model_note", "networks", "district_connectivity", "traversal_rules"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_metro_network_schema_v1" },
+    "network_model": { "type": "string", "const": "dual_network_never_merged" },
+    "network_model_note": { "type": "string" },
+    "networks": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "canon_source", "coverage", "vehicle_synchronization", "void_visibility", "lines", "stations", "platforms", "interchanges", "maintenance_access", "emergency_access"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "enum": ["live_network", "dead_network"] },
+          "display_name": { "type": "string" },
+          "canon_source": { "type": "string" },
+          "coverage": { "type": "string" },
+          "vehicle_synchronization": { "type": "boolean" },
+          "void_visibility": { "type": "string" },
+          "collision_record": { "type": "string" },
+          "lines": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "object" }
+          },
+          "stations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "district"],
+              "additionalProperties": true,
+              "properties": {
+                "id": { "type": "string" },
+                "district": { "type": "string" },
+                "type": { "type": "string" }
+              }
+            }
+          },
+          "platforms": { "type": "object" },
+          "interchanges": { "type": "array" },
+          "interchange_note": { "type": "string" },
+          "maintenance_access": { "type": "object" },
+          "emergency_access": { "type": "object" }
+        }
+      }
+    },
+    "district_connectivity": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "network", "station_ref"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "network": { "type": "string", "enum": ["live_network", "dead_network"] },
+          "station_ref": { "type": "string" }
+        }
+      }
+    },
+    "traversal_rules": {
+      "type": "object",
+      "required": ["live_network", "dead_network", "network_crossing_rule"],
+      "additionalProperties": false,
+      "properties": {
+        "live_network": {
+          "type": "object",
+          "required": ["player_access", "detection_risk", "cross_reference"],
+          "additionalProperties": false,
+          "properties": {
+            "player_access": { "type": "string" },
+            "detection_risk": { "type": "string" },
+            "cross_reference": { "type": "string" }
+          }
+        },
+        "dead_network": {
+          "type": "object",
+          "required": ["player_access", "detection_risk", "cross_reference"],
+          "additionalProperties": false,
+          "properties": {
+            "player_access": { "type": "string" },
+            "detection_risk": { "type": "string" },
+            "cross_reference": { "type": "string" }
+          }
+        },
+        "network_crossing_rule": { "type": "string" }
+      }
+    }
+  }
+}

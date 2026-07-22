@@ -1,0 +1,66 @@
+{
+  "$schema": "void_builder_manifest_schema_v1",
+  "manifest_type": "builder_facing_execution_manifest",
+  "distinction_from_other_manifests": "Meridian_Master.json is the DATA manifest — what exists and how it relates. BuilderRules.json is the pipeline LOGIC — phases, error handling, recovery. This file is the RUNTIME EXECUTION contract — how the Builder plugin should actually be invoked against that data and logic. The three are complementary; this file does not restate content already defined in the other two.",
+  "entry_point": {
+    "file": "Meridian_Master.json",
+    "rule": "single_import_no_manual_secondary_imports",
+    "source": "Meridian_Master.json builder_configuration"
+  },
+  "execution_modes": [
+    { "id": "full_generation", "description": "Runs the complete 15-step micro_layer_pipeline across all 6 macro-ordered regions.", "default": true },
+    { "id": "validation_only", "description": "Runs only BuilderRules.json validation_rules checks without generating content. Intended for CI or pre-merge checks.", "default": false },
+    { "id": "dry_run", "description": "Logs the full planned execution order and dependency resolution without writing any output. Intended for reviewing generation order before committing engine resources.", "default": false },
+    { "id": "single_region", "description": "Runs the full micro_layer_pipeline for exactly one macro-ordered region, skipping others. Requires that region's dependencies (per DistrictRegistry.json dependencies) to already be marked generated.", "default": false, "use_case": "Iteration on a single district without full-world regeneration." }
+  ],
+  "required_plugin_capabilities": [
+    { "capability": "world_partition_support", "justification": "Directly required — every district's own technical notes specify a WP_ region.", "citation": "WorldPartition.json" },
+    { "capability": "data_layer_support", "justification": "Directly required — 30 district gating layers plus 8 type categories are defined against this system.", "citation": "DataLayers.json" },
+    { "capability": "nanite_support", "justification": "Directly cited for dense, irregular hand-placed geometry.", "citation": "Undercroft Sec. 14" },
+    { "capability": "lumen_support", "justification": "Directly cited for indirect lighting behavior across the five-district lighting spectrum.", "citation": "Undercroft Sec. 9; White_Zones_ValidationReport.md Sec. 5" },
+    { "capability": "mass_ai_or_equivalent_crowd_system", "justification": "Directly cited for standing Enforcer patrol density budgeting.", "citation": "White_Zones_ValidationReport.md Sec. 5" },
+    { "capability": "gameplay_state_tracking_system", "justification": "Reasonably inferred, not directly cited by name — the project's tracked state variables (nyx_status, memory_fragment_count, etc.) require some persistent state-management system. This entry is honestly flagged as inferred rather than sourced to a specific district document.", "citation": "GameplayGraph.json gameplay_dependencies.tracked_state_variables (inferred requirement, not a named-system citation)" }
+  ],
+  "output_conventions": {
+    "terminal_state_id": "playable_greybox_meridian",
+    "cross_reference": "BuilderRules.json micro_layer_pipeline step 15",
+    "artifact_naming_policy": "Builder-generated content should be tagged with its source district_id and streaming cell id for traceability back to this package's registries.",
+    "human_review_gate": "The terminal greybox state requires human review before any further automated pipeline (lighting polish, art pass, etc.) proceeds. This package's authority ends at greybox, not at final art."
+  },
+  "logging_requirements": {
+    "flagged_open_items_logging": "Every HALT or skip triggered by error_handling.highest_priority_flag or moderate_priority_flag (BuilderRules.json) must log the specific flag id — never a generic 'skipped' message.",
+    "cross_reference_failures_logging": "Any cross_file_inconsistency_error must log the specific mismatched IDs and source files, matching the standard of manual cross-checking performed throughout this package's own construction.",
+    "flag_precedent": "This package's own construction surfaced two real cross-file mismatches during schema validation (a station missing an expected field in MetroNetwork.json vs. its schema; a terminal pipeline step missing an expected field in BuilderRules.json vs. its schema) and one arithmetic error (DataLayers.json's declared layer total). The Builder's own logging should be held to the same standard of catching these rather than assuming correctness."
+  },
+  "runtime_flags": [
+    { "flag": "--strict-canon-lock", "description": "Refuses to run if any locked package file's content differs from PackageManifest.json's recorded state.", "default": "enabled" },
+    { "flag": "--allow-flagged-content", "description": "If disabled (default), skips generation of any content tied to an unresolved flagged_open_item. If enabled, generates it anyway with a loud warning logged.", "default": "disabled" },
+    { "flag": "--region", "description": "Used with the single_region execution mode to specify which of the six macro-ordered targets to generate." }
+  ],
+  "version_targeting": {
+    "engine": "Unreal Engine 5",
+    "engine_version_policy": "No specific point version pinned. Targets UE5's World Partition and Data Layer systems generically, consistent with the project's own stated platform without inventing a fabricated specific version number.",
+    "schema_targets_with_files_in_this_package": [
+      "void_meridian_master_schema_v1",
+      "void_district_registry_schema_v1",
+      "void_road_network_schema_v1",
+      "void_metro_network_schema_v1",
+      "void_navigation_graph_schema_v1",
+      "void_gameplay_graph_schema_v1",
+      "void_landmark_registry_schema_v1",
+      "void_infrastructure_graph_schema_v1",
+      "void_world_partition_schema_v1",
+      "void_data_layers_schema_v1",
+      "void_streaming_strategy_schema_v1",
+      "void_builder_rules_schema_v1"
+    ],
+    "schema_targets_referenced_but_not_yet_materialized": [
+      {
+        "schema_id": "void_world_location_schema_v1",
+        "used_by": ["VOID_Location_01_Undercroft_data.json", "White_Zones_data.json", "Metro_Archives_data.json", "Sector_0_data.json", "Olympus_Spire_data.json"],
+        "gap": "All five district data files declare this schema in their own $schema field, and this project used it consistently, but no standalone void_world_location.schema.json file was ever authored to formally validate against — unlike every schema in this Meridian_Master package, which was built and cross-validated against its target file.",
+        "recommendation": "Consider authoring this schema in a future pass for full consistency, mirroring the rigor already applied to the twelve schemas in this package."
+      }
+    ]
+  }
+}

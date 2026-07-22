@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_road_network_schema_v1",
+  "title": "VOID: The Unseen Hand — RoadNetwork.json Schema",
+  "type": "object",
+  "required": ["$schema", "road_hierarchy", "road_categories", "primary_routes", "secondary_routes", "service_routes", "district_connectivity", "bridge_relationships", "tunnel_relationships", "traversal_graph"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_road_network_schema_v1" },
+    "road_hierarchy": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "road_categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "hierarchy_tier", "description", "network", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "hierarchy_tier": { "type": "integer", "minimum": 1 },
+          "description": { "type": "string" },
+          "network": { "type": "string", "enum": ["live_network", "dead_network"] },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "primary_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "origin_district", "origin_sub_location", "traverses_bands", "serves_districts", "generation_dependency"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "origin_district": { "type": "string" },
+          "origin_sub_location": { "type": "string" },
+          "traverses_bands": { "type": "array", "items": { "type": "string" } },
+          "serves_districts": { "type": "array", "items": { "type": "string" } },
+          "generation_dependency": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "secondary_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "radial_band", "connects", "serves_districts", "generation_dependency"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "radial_band": { "type": "string" },
+          "connects": { "type": "string" },
+          "serves_districts": { "type": "array", "items": { "type": "string" } },
+          "generation_dependency": { "type": "string" },
+          "hard_constraint": { "type": "string" }
+        }
+      }
+    },
+    "service_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "vehicle_synchronization", "notes"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "owning_district": { "type": ["string", "null"] },
+          "sub_belts_served": { "type": "array", "items": { "type": "string" } },
+          "shared_by_districts": { "type": "array", "items": { "type": "string" } },
+          "vehicle_synchronization": { "type": "boolean" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "district_connectivity": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "connected_via", "network"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "connected_via": { "type": "array", "items": { "type": "string" } },
+          "network": { "type": "string", "enum": ["live_network", "dead_network"] },
+          "access_points": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "bridge_relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "connects", "canon_status", "access_tier", "flagged_for_signoff"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "connects": { "type": "array", "items": { "type": "string" } },
+          "canon_status": { "type": "string" },
+          "justification": { "type": "string" },
+          "access_tier": { "type": "string" },
+          "flagged_for_signoff": { "type": "boolean" }
+        }
+      }
+    },
+    "tunnel_relationships": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "connects", "canon_status", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "connects": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } },
+          "canon_status": { "type": "string" },
+          "source": { "type": "string" },
+          "gate": { "type": "string" },
+          "directionality": { "type": "string" }
+        }
+      }
+    },
+    "traversal_graph": {
+      "type": "object",
+      "required": ["description", "nodes", "edges", "unreachable_pairs_by_design", "unreachable_pairs_note"],
+      "additionalProperties": false,
+      "properties": {
+        "description": { "type": "string" },
+        "nodes": { "type": "array", "items": { "type": "string" } },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to", "via", "network"],
+            "additionalProperties": false,
+            "properties": {
+              "from": { "type": "string" },
+              "to": { "type": "string" },
+              "via": { "type": "string" },
+              "network": { "type": "string" },
+              "notes": { "type": "string" },
+              "directional": { "type": "boolean" }
+            }
+          }
+        },
+        "unreachable_pairs_by_design": {
+          "type": "array",
+          "items": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } }
+        },
+        "unreachable_pairs_note": { "type": "string" }
+      }
+    }
+  }
+}

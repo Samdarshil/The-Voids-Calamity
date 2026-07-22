@@ -1,0 +1,75 @@
+{
+  "$schema": "void_streaming_strategy_schema_v1",
+  "documentation_gap_note": {
+    "issue": "The Undercroft package (the first of the five, built before standalone ValidationReport.md files became a standard deliverable) has no dedicated validation report and therefore no formal 'Performance Considerations' section to compile here.",
+    "resolution_used": "Undercroft's own design document Sec. 14 (Technical World Specification) contains one directly relevant technical note, cited below in performance_strategy. This is a narrower source than the other four districts' full validation-report sections.",
+    "recommendation": "Consider retrofitting a lightweight Undercroft_ValidationReport.md in a future pass for full consistency across the five packages. Not done here, to avoid modifying the approved Undercroft package's existing file set without explicit instruction."
+  },
+  "loading_rules": [
+    { "region": "WP_OlympusSpire", "rule": "sequential_by_internal_trust_gradient", "cross_reference": "WorldPartition.json cell_dependencies" },
+    { "region": "WP_Undercroft", "rule": "independent_parallel_loadable_three_belts", "cross_reference": "WorldPartition.json cell_dependencies (empty — no nesting)" },
+    { "region": "WP_WhiteZones_Flagship", "rule": "independent_parallel_loadable_all_cells" },
+    { "region": "WP_WhiteZones_NetworkNode_Template", "rule": "stamped_per_instance_at_generation_time_not_runtime_streamed_individually" },
+    { "region": "WP_MetroArchives", "rule": "sequential_by_vertical_progression", "cross_reference": "WorldPartition.json cell_dependencies" },
+    { "region": "WP_Sector0", "rule": "narrative_gated_entrance_then_independent_relay_and_hub_cells" }
+  ],
+  "priority_rules": {
+    "tier_scale": ["highest", "high", "moderate", "low", "lowest"],
+    "cross_district_ranking": [
+      { "rank": 1, "district": "sector_0", "reasoning": "Minimal NPC density and zero combat systems make this the cheapest district in the game to run from a systems-budget perspective.", "source": "Sector_0_ValidationReport.md Sec. 7" },
+      { "rank": 1, "district": "metro_archives", "reasoning": "Low civilian density throughout makes this one of the cheapest locations in the game from an NPC/Mass AI budget perspective.", "source": "Metro_Archives_ValidationReport.md Sec. 7", "notes": "Tied for cheapest with Sector 0 — both explicitly confirmed cheapest in their own validation reports; this file does not attempt to rank one above the other without a shared source." },
+      { "rank": 3, "district": "white_zones", "reasoning": "Low-rise, low-geometric-complexity typology is inherently cheaper to render than the Undercroft's dense hand-placed clutter; no Nanite/Lumen stress concerns.", "source": "White_Zones_ValidationReport.md Sec. 5" },
+      { "rank": 4, "district": "undercroft", "reasoning": "Best candidate in the game for stress-testing dense hand-placed clutter geometry — irregularity fights modular kit-bashing by default.", "source": "Undercroft Sec. 14 (see documentation_gap_note)" },
+      { "rank": 5, "district": "olympus_spire", "reasoning": "The Atrium's gravity-altering, construct-spawning mechanics are the most systemically complex single encounter across all five Phase 1 locations.", "source": "Olympus_Spire_ValidationReport.md Sec. 7" }
+    ],
+    "note": "This ranking is about relative systems/render cost, not narrative importance or build quality. It should not be read as a value judgment on any district."
+  },
+  "transition_rules": [
+    {
+      "id": "live_network_transitions",
+      "applies_to": ["olympus_spire", "white_zones"],
+      "rule": "standard_distance_based_streaming_no_narrative_gate",
+      "cross_reference": "NavigationGraph.json vehicle_navigation"
+    },
+    {
+      "id": "dead_network_substrate_transitions",
+      "applies_to": ["undercroft", "metro_archives", "sector_0"],
+      "rule": "continuous_underground_volume_streamed_as_related_region_cluster_not_three_isolated_basements",
+      "cross_reference": "Meridian_Master_Plan.md Sec. 13; NavigationGraph.json underground_navigation"
+    },
+    {
+      "id": "sector_0_entrance_transition",
+      "applies_to": ["undercroft", "sector_0"],
+      "rule": "hard_one_directional_narrative_gate_not_distance_based",
+      "cross_reference": "WorldPartition.json cell_dependencies (cell_relay_stations streams_after cell_entrance_tunnel)"
+    },
+    {
+      "id": "spire_internal_ascension_transition",
+      "applies_to": ["olympus_spire"],
+      "rule": "sequential_streaming_matching_internal_trust_gradient",
+      "cross_reference": "WorldPartition.json cell_dependencies"
+    }
+  ],
+  "memory_strategy": {
+    "policy": "relative_prioritization_only_no_fabricated_memory_budgets",
+    "high_priority_persistent_content": ["cell_reception_atrium (white_zones)", "cell_entry_plaza (white_zones)", "cell_mid_ring_foundation_market_belt (undercroft)", "cell_public_floor (metro_archives)", "cell_relay_stations (sector_0)", "cell_base_plaza (olympus_spire)"],
+    "low_priority_gated_content": ["cell_records_closet (white_zones)", "cell_sub_basement (metro_archives)", "cell_atrium_server_hub (olympus_spire)"],
+    "note": "No numeric memory budget (MB/GB) is specified anywhere in this file. The Builder calculates actual memory allocation at generation time; this file provides only relative prioritization the Builder should weight its allocation by."
+  },
+  "performance_strategy": {
+    "confirmed_no_concerns": [
+      { "district": "white_zones", "area": "nanite_lumen_rendering", "source": "White_Zones_ValidationReport.md Sec. 5" },
+      { "district": "white_zones", "area": "lighting_cost", "source": "White_Zones_ValidationReport.md Sec. 5" },
+      { "district": "sector_0", "area": "npc_combat_systems_budget", "source": "Sector_0_ValidationReport.md Sec. 7" },
+      { "district": "metro_archives", "area": "npc_mass_ai_budget", "source": "Metro_Archives_ValidationReport.md Sec. 7" }
+    ],
+    "forward_looking_engineering_flags": [
+      { "district": "metro_archives", "area": "reset_mechanic_state_replication_cost", "detail": "Environmental state changes (shelving, lighting, minor hazards), particularly Tier 3's environmental instability effects, should be reviewed for replication/Blueprint-state-management cost once greyboxed.", "source": "Metro_Archives_ValidationReport.md Sec. 7" },
+      { "district": "sector_0", "area": "dynamic_lighting_state_qa", "detail": "The four dynamic lighting states are the one genuine technical novelty relative to the other four districts (none of which have story-tied baseline lighting changes) — primary QA focus should be correctness of these transitions, not performance.", "source": "Sector_0_ValidationReport.md Sec. 7" },
+      { "district": "olympus_spire", "area": "atrium_encounter_complexity", "detail": "The Atrium's gravity-altering, construct-spawning mechanics should get an early prototype pass independent of art content given their systemic complexity.", "source": "Olympus_Spire_ValidationReport.md Sec. 7" },
+      { "district": "olympus_spire", "area": "server_hub_feasibility", "detail": "The Server Hub's data-scape reality-blur effect needs a technical feasibility check once Sec. 0.1's discrepancy is resolved, particularly if it must support full combat rather than atmosphere alone.", "source": "Olympus_Spire_ValidationReport.md Sec. 7" },
+      { "district": "undercroft", "area": "dense_clutter_geometry", "detail": "Best candidate in the game for stress-testing dense hand-placed clutter geometry early, since irregularity fights modular kit-bashing by default.", "source": "Undercroft Sec. 14" },
+      { "district": "white_zones", "area": "enforcer_crowd_density", "detail": "Standing Enforcer NPC density (heavy patrol baseline) should be reviewed for Mass AI crowd-cost budgeting once the flagship instance reaches greybox.", "source": "White_Zones_ValidationReport.md Sec. 5" }
+    ]
+  }
+}

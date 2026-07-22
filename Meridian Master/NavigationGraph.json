@@ -1,0 +1,113 @@
+{
+  "$schema": "void_navigation_graph_schema_v1",
+  "navigation_layers": ["pedestrian", "vehicle", "metro", "underground", "rooftop"],
+  "actual_build_dependencies": {
+    "used": ["DistrictRegistry.json", "RoadNetwork.json", "MetroNetwork.json"],
+    "declared_in_meridian_master_json": ["district_registry", "road_network", "metro_network", "infrastructure_graph"],
+    "discrepancy_note": "infrastructure_graph does not yet exist at time of this file's generation. This file does not require any data from it — see individual sections below, all of which cite only district_registry, road_network, or metro_network. Flagged for reconciliation in ValidationReport.md and Meridian_Master_Index.md."
+  },
+  "pedestrian_navigation": {
+    "district_profiles": [
+      { "district": "undercroft", "character": "irregular_retrofit_vertical_shaft_heavy", "source": "Undercroft Sec. 13" },
+      { "district": "white_zones", "character": "wide_unobstructed_no_blind_corners_hard_design_rule", "source": "White_Zones.md Sec. 10" },
+      { "district": "metro_archives", "character": "quiet_low_density_minimal_circulation", "source": "Metro_Archives.md Sec. 14" },
+      { "district": "sector_0", "character": "minimal_horizontal_walking_through_a_memory", "source": "Sector_0.md Sec. 22" },
+      { "district": "olympus_spire", "character": "curated_behavior_screened_vertically_gated", "source": "Olympus_Spire.md Sec. 31, 35" }
+    ],
+    "general_rule": "Pedestrian character should never be interchanged between districts by the Builder — each profile is load-bearing to that district's gameplay identity, not decorative variation."
+  },
+  "vehicle_navigation": {
+    "applies_to_network": "live_network",
+    "synchronization": true,
+    "void_tracking": "real_time_full_visibility_of_every_registered_vehicle",
+    "collision_policy": "zero_fatal_collisions_in_sealed_districts_over_forty_years",
+    "excluded_districts": ["undercroft", "metro_archives", "sector_0"],
+    "exclusion_reason": "None of these districts are on the registered grid; this exclusion is the mechanism that makes off-grid vehicle-free movement possible there.",
+    "route_references": ["spire_radial_spine", "mid_tier_ring_road"]
+  },
+  "metro_navigation": {
+    "live_network": {
+      "route_references": ["radial_line", "ring_line"],
+      "station_references": ["spire_base_plaza_station", "white_zones_node_station"],
+      "player_access": "requires_registered_identity_or_forged_credentials"
+    },
+    "dead_network": {
+      "route_references": ["legacy_subway_line"],
+      "station_references": ["undercroft_access_layer", "metro_archives_sub_basement_seam", "sector_0_entrance_threshold"],
+      "player_access": "unrestricted_but_undocumented_requires_physical_discovery"
+    },
+    "cross_reference": "MetroNetwork.json"
+  },
+  "underground_navigation": {
+    "substrate_model": "continuous_volume_three_access_points",
+    "access_points": [
+      { "district": "undercroft", "role": "living_inhabited_foundation" },
+      { "district": "metro_archives", "role": "seam_tap_point_sub_basement" },
+      { "district": "sector_0", "role": "dead_terminus_single_entrance" }
+    ],
+    "tunnel_references": ["undercroft_metro_archives_transit_seam", "undercroft_sector_0_entrance_threshold"],
+    "hard_constraint": "Modeled as one continuous underground volume with three points of interest, never as three unrelated basements per Meridian_Master_Plan.md Sec. 13."
+  },
+  "rooftop_navigation": {
+    "primary_district": "undercroft",
+    "primary_source": "Undercroft Sec. 13 — rooftop routes predating the current transit grid",
+    "confirmed_exception": {
+      "district": "white_zones",
+      "sub_location": "rooftop_mechanical_level_flagship",
+      "gate_condition": "echo_shift_unlocked"
+    },
+    "excluded_districts": ["metro_archives", "sector_0", "olympus_spire"],
+    "exclusion_note": "No package confirms or implies rooftop traversal in these three districts. Not extended here — doing so would be new design content presented as integration, which this file avoids per Meridian_Master_Plan.md Sec. 14."
+  },
+  "traversal_rules": {
+    "gating_conditions": [
+      { "id": "echo_shift", "unlocks": ["white_zones_rooftop_mechanical_level", "undercroft_drowned_concourse", "metro_archives_sub_basement", "sector_0_full_hub_access"], "granted_at": "sector_0_hub_upgrade_act_2" },
+      { "id": "social_stealth_disguise", "unlocks": ["olympus_spire_party_level", "olympus_spire_portrait_gallery_optional"], "source": "Olympus_Spire.md Sec. 31, 34" },
+      { "id": "lockpick_minigame", "unlocks": ["metro_archives_east_wing_exhibit_case"], "source": "Metro_Archives.md Sec. 8.2" }
+    ],
+    "network_crossing_rule": "No traversal path transitions directly between the Live and Dead networks without passing through a district or connective-tissue segment, per MetroNetwork.json.",
+    "off_gradient_rule": "Sector 0 traversal never intersects the radial hierarchy — its single access point is reached exclusively via the Dead Network, never via any Live Network route regardless of proximity."
+  },
+  "district_navigation_profiles": [
+    {
+      "district": "olympus_spire",
+      "pedestrian": "curated_behavior_screened",
+      "vehicle": "live_network_full_access",
+      "metro": "live_network_base_plaza_station",
+      "underground": "not_applicable",
+      "rooftop": "not_applicable"
+    },
+    {
+      "district": "white_zones",
+      "pedestrian": "wide_unobstructed",
+      "vehicle": "live_network_full_access",
+      "metro": "live_network_per_node_station",
+      "underground": "not_applicable",
+      "rooftop": "gated_exception_echo_shift_only"
+    },
+    {
+      "district": "metro_archives",
+      "pedestrian": "quiet_low_density",
+      "vehicle": "not_applicable_dead_network_only",
+      "metro": "dead_network_sub_basement_seam",
+      "underground": "confirmed_second_level_sub_basement",
+      "rooftop": "none"
+    },
+    {
+      "district": "undercroft",
+      "pedestrian": "irregular_retrofit",
+      "vehicle": "not_applicable_dead_network_only",
+      "metro": "dead_network_access_layer",
+      "underground": "primary_identity_living_foundation",
+      "rooftop": "primary_identity_off_grid_shafts"
+    },
+    {
+      "district": "sector_0",
+      "pedestrian": "minimal_horizontal",
+      "vehicle": "not_applicable_dead_network_only",
+      "metro": "dead_network_single_terminus",
+      "underground": "primary_identity_dead_foundation",
+      "rooftop": "none"
+    }
+  ]
+}

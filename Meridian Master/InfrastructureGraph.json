@@ -1,0 +1,64 @@
+{
+  "$schema": "void_infrastructure_graph_schema_v1",
+  "utility_categories": ["power", "water_and_climate_control", "communications_weave", "maintenance_and_support", "waste_and_resource_management"],
+  "communications_backbone": {
+    "system_id": "the_weave",
+    "description": "Meridian's single ambient communications, information, and perception layer — internet, television, signage, and personal messaging at once. Not a separate system VOID hacks into; VOID is native to its substrate.",
+    "canon_source": "Vol I, 3.6; Vol I, 7.5",
+    "single_backbone_rule": "There is exactly one communications system in Meridian. This file does not define a second, parallel comms network for any district — all five approved packages describe density and depth variation on the same Weave, never a separate system.",
+    "coverage_by_district": [
+      { "district": "undercroft", "is_off_weave": false, "coverage_density": "full_but_tolerated_low_priority", "source": "VOID_Location_01_Undercroft_data.json" },
+      { "district": "white_zones", "is_off_weave": false, "coverage_density": "maximal_curated", "source": "White_Zones_data.json" },
+      { "district": "metro_archives", "is_off_weave": false, "coverage_density": "standard_public_floor_locally_deepened_sub_basement", "source": "Metro_Archives_data.json" },
+      { "district": "sector_0", "is_off_weave": true, "coverage_density": "none_absolute_not_partial", "source": "Sector_0_data.json" },
+      { "district": "olympus_spire", "is_off_weave": false, "coverage_density": "source_origin_point", "source": "Olympus_Spire_data.json" }
+    ]
+  },
+  "power_infrastructure": [
+    { "district": "olympus_spire", "service_tier": "highest_best_funded", "source": "Olympus_Spire.md Sec. 5" },
+    { "district": "white_zones", "service_tier": "high_centrally_maintained_standardized", "source": "White_Zones.md Sec. 4" },
+    { "district": "metro_archives", "service_tier": "low_chronically_underfunded", "source": "Metro_Archives.md Sec. 4" },
+    { "district": "undercroft", "service_tier": "informal_jury_rigged_stall_by_stall", "source": "Undercroft Sec. 4" },
+    { "district": "sector_0", "service_tier": "none_dormant_legacy_hardware_only", "source": "Sector_0.md Sec. 10, 11" }
+  ],
+  "water_and_climate_control": [
+    { "district": "olympus_spire", "service_tier": "highest_engineered_filtered", "notes": "Consistent with filtered golden light and engineered gardens (Olympus_Spire.md Sec. 7, 26)." },
+    { "district": "white_zones", "service_tier": "high_standard_civic", "notes": "Clean, reassuring, calm palette maintained centrally (White_Zones.md Sec. 19-20)." },
+    { "district": "metro_archives", "service_tier": "moderate_but_repurposed", "notes": "Climate control here is one of the systems subverted by the Archive Maintenance Directive — see repurposed_infrastructure_cases below." },
+    { "district": "undercroft", "service_tier": "informal_patchwork", "notes": "Sealed districts elsewhere; the Undercroft's own climate/seal integrity is implied but never detailed as a system in its own package." },
+    { "district": "sector_0", "service_tier": "none", "notes": "No climate control of any kind (Sector_0.md Sec. 10)." }
+  ],
+  "maintenance_and_support_systems": [
+    { "district": "olympus_spire", "model": "council_dedicated_apparatus", "characterization": "best_funded_most_prestigious_in_meridian", "source": "Olympus_Spire.md Sec. 5" },
+    { "district": "white_zones", "model": "council_civic_services_centralized_scheduled", "characterization": "visible_maintenance_reinforces_trustworthiness_messaging", "source": "White_Zones.md Sec. 4" },
+    { "district": "metro_archives", "model": "small_chronically_underfunded_civic_staff", "characterization": "quiet_tired_underinvestment", "source": "Metro_Archives.md Sec. 4, 11" },
+    { "district": "undercroft", "model": "no_official_maintenance_department", "characterization": "accumulated_stubbornness_stall_by_stall_barter_repair", "source": "Undercroft Sec. 4" },
+    { "district": "sector_0", "model": "none_nothing_considered_worth_maintaining", "characterization": "this_absence_of_maintenance_is_precisely_why_it_is_safe", "source": "Sector_0.md Sec. 10, 11" }
+  ],
+  "waste_and_resource_management": [
+    { "district": "olympus_spire", "model": "not_detailed_in_source_packages_no_fabrication_added" },
+    { "district": "white_zones", "model": "civic_stipend_linked_ration_distribution", "source": "White_Zones.md Sec. 8, ration_distribution_hall sub-location" },
+    { "district": "metro_archives", "model": "not_detailed_in_source_packages_no_fabrication_added" },
+    { "district": "undercroft", "model": "unlicensed_barter_and_stellar_holdings_surplus_channel", "source": "Undercroft Sec. 4.2" },
+    { "district": "sector_0", "model": "not_applicable_dormant_district" }
+  ],
+  "repurposed_infrastructure_cases": [
+    {
+      "id": "archive_maintenance_directive",
+      "district": "metro_archives",
+      "repurposed_systems": ["climate_control", "shelving_robotics", "digitization_scanning"],
+      "repurposed_for": "continuity_maintenance_environment_reset_mechanic",
+      "canon_status": "new_interpretation_flagged_highest_narrative_weight_pending_writing_team_review",
+      "source": "Metro_Archives.md Sec. 9",
+      "hard_constraint": "This file does not restate or redefine the mechanism, only cross-references it. Metro_Archives.md remains the sole authoritative source."
+    }
+  ],
+  "infrastructure_hierarchy_by_district": [
+    { "rank": 1, "district": "olympus_spire", "overall_tier": "highest_across_all_categories" },
+    { "rank": 2, "district": "white_zones", "overall_tier": "high_standardized" },
+    { "rank": 3, "district": "metro_archives", "overall_tier": "low_underfunded_but_functional" },
+    { "rank": 4, "district": "undercroft", "overall_tier": "informal_self_sustained" },
+    { "rank": 5, "district": "sector_0", "overall_tier": "none_dormant" }
+  ],
+  "cross_reference_note": "This hierarchy is the infrastructure-specific expression of the same trust-gradient polish spectrum already formalized in Meridian_Master_Plan.md Sec. 19 (Environmental Transition Rules) — not a new gradient, the same one applied to a new category."
+}

@@ -1,0 +1,235 @@
+{
+  "$schema": "void_meridian_master_schema_v1",
+  "project_metadata": {
+    "project_name": "VOID: The Unseen Hand — Meridian Master Plan",
+    "canon_version": "Volumes I-IV, Final",
+    "package_version": "1.0.0",
+    "build_version": "Phase1-Complete",
+    "generation_version": "1.0.0",
+    "author": "VOID Design Studio",
+    "creation_date": "2026-07-20",
+    "last_revision": "2026-07-20",
+    "status": "approved_pending_supporting_registries"
+  },
+  "canon_lock": {
+    "locked_sources": [
+      "Volume I - Foundation",
+      "Volume II - Main Campaign",
+      "Volume III - Side Content",
+      "Volume IV - Developer Bible"
+    ],
+    "locked_packages": [
+      { "id": "undercroft", "files": ["VOID_Location_01_The_Undercroft.md", "VOID_Location_01_Undercroft_data.json"], "status": "approved" },
+      { "id": "white_zones", "files": ["White_Zones.md", "White_Zones_data.json", "White_Zones_schematic.svg", "White_Zones_ValidationReport.md"], "status": "approved" },
+      { "id": "metro_archives", "files": ["Metro_Archives.md", "Metro_Archives_data.json", "Metro_Archives_schematic.svg", "Metro_Archives_ValidationReport.md"], "status": "approved" },
+      { "id": "sector_0", "files": ["Sector_0.md", "Sector_0_data.json", "Sector_0_schematic.svg", "Sector_0_ValidationReport.md"], "status": "approved" },
+      { "id": "olympus_spire", "files": ["Olympus_Spire.md", "Olympus_Spire_data.json", "Olympus_Spire_schematic.svg", "Olympus_Spire_ValidationReport.md"], "status": "approved" },
+      { "id": "meridian_master_plan", "files": ["Meridian_Master_Plan.md"], "status": "approved" }
+    ],
+    "modification_policy": "immutable_do_not_modify_do_not_rename_do_not_duplicate_data",
+    "authority_rule": "Per-district data in each approved package's own _data.json export is authoritative. This manifest and its referenced registries relate that data; they never restate or override it."
+  },
+  "registry_references": {
+    "district_registry": { "file": "DistrictRegistry.json", "required": true },
+    "road_network": { "file": "RoadNetwork.json", "required": true },
+    "metro_network": { "file": "MetroNetwork.json", "required": true },
+    "navigation_graph": { "file": "NavigationGraph.json", "required": true },
+    "gameplay_graph": { "file": "GameplayGraph.json", "required": true },
+    "landmark_registry": { "file": "LandmarkRegistry.json", "required": true },
+    "infrastructure_graph": { "file": "InfrastructureGraph.json", "required": true },
+    "world_partition": { "file": "WorldPartition.json", "required": true },
+    "data_layers": { "file": "DataLayers.json", "required": true },
+    "streaming_strategy": { "file": "StreamingStrategy.json", "required": true },
+    "builder_rules": { "file": "BuilderRules.json", "required": true },
+    "validation_report": { "file": "ValidationReport.md", "required": true }
+  },
+  "generation_pipeline": {
+    "import_order": [
+      "district_registry",
+      "world_partition",
+      "data_layers",
+      "road_network",
+      "metro_network",
+      "infrastructure_graph",
+      "navigation_graph",
+      "landmark_registry",
+      "gameplay_graph",
+      "streaming_strategy",
+      "builder_rules"
+    ],
+    "generation_order": [
+      { "step": 1, "target": "olympus_spire", "role": "radial_and_vertical_origin_anchor", "depends_on": [] },
+      { "step": 2, "target": "live_network_spine", "role": "primary_arterials_and_grav_rail_radiating_from_spire", "depends_on": ["olympus_spire"] },
+      { "step": 3, "target": "white_zones_network_nodes", "role": "distributed_mid_tier_catchment_stamping", "depends_on": ["live_network_spine"] },
+      { "step": 4, "target": "undercroft_substrate", "role": "foundation_layer_beneath_inner_mid_outer_bands", "depends_on": ["olympus_spire"] },
+      { "step": 5, "target": "metro_archives", "role": "seam_placement_between_mid_tier_and_outer_belt", "depends_on": ["white_zones_network_nodes", "undercroft_substrate"] },
+      { "step": 6, "target": "sector_0", "role": "deepest_terminus_of_dead_transit_network", "depends_on": ["undercroft_substrate"] }
+    ],
+    "module_dependencies": {
+      "world_partition": ["district_registry"],
+      "data_layers": ["world_partition", "district_registry"],
+      "road_network": ["district_registry"],
+      "metro_network": ["district_registry", "road_network"],
+      "infrastructure_graph": ["district_registry", "world_partition"],
+      "navigation_graph": ["district_registry", "road_network", "metro_network", "infrastructure_graph"],
+      "landmark_registry": ["district_registry", "navigation_graph"],
+      "gameplay_graph": ["district_registry", "navigation_graph", "data_layers"],
+      "streaming_strategy": ["world_partition", "data_layers"],
+      "builder_rules": ["district_registry", "world_partition", "data_layers", "navigation_graph", "gameplay_graph", "streaming_strategy"]
+    }
+  },
+  "package_dependencies": {
+    "meridian_master_plan_md": { "requires": [], "produces_context_for": ["all_registries"] },
+    "district_registry_json": { "requires": ["meridian_master_plan_md"], "produces_context_for": ["world_partition", "road_network", "navigation_graph", "gameplay_graph", "landmark_registry"] },
+    "world_partition_json": { "requires": ["district_registry_json"], "produces_context_for": ["data_layers", "streaming_strategy"] },
+    "data_layers_json": { "requires": ["world_partition_json"], "produces_context_for": ["gameplay_graph", "streaming_strategy"] },
+    "road_network_json": { "requires": ["district_registry_json"], "produces_context_for": ["metro_network", "navigation_graph"] },
+    "metro_network_json": { "requires": ["road_network_json"], "produces_context_for": ["navigation_graph"] },
+    "infrastructure_graph_json": { "requires": ["district_registry_json", "world_partition_json"], "produces_context_for": ["navigation_graph"] },
+    "navigation_graph_json": { "requires": ["road_network_json", "metro_network_json", "infrastructure_graph_json"], "produces_context_for": ["landmark_registry", "gameplay_graph"] },
+    "landmark_registry_json": { "requires": ["navigation_graph_json"], "produces_context_for": [] },
+    "gameplay_graph_json": { "requires": ["navigation_graph_json", "data_layers_json"], "produces_context_for": ["builder_rules"] },
+    "streaming_strategy_json": { "requires": ["world_partition_json", "data_layers_json"], "produces_context_for": ["builder_rules"] },
+    "builder_rules_json": { "requires": ["district_registry_json", "world_partition_json", "data_layers_json", "navigation_graph_json", "gameplay_graph_json", "streaming_strategy_json"], "produces_context_for": [] },
+    "validation_report_md": { "requires": ["all_registries"], "produces_context_for": [] }
+  },
+  "builder_configuration": {
+    "single_import_file": "Meridian_Master.json",
+    "builder_must_not_manually_import_other_files": true,
+    "geometry_calculation_authority": "unreal_engine_builder_runtime",
+    "manifest_authority": "relationships_and_rules_only",
+    "coordinate_policy": "no_fabricated_coordinates_no_fabricated_transforms_no_fabricated_mesh_ids",
+    "extensibility_policy": "modular_additive_only_never_destructive_to_locked_packages"
+  },
+  "generation_settings": {
+    "generation_mode": "dependency_ordered_sequential",
+    "allow_parallel_generation_within_step": true,
+    "allow_parallel_generation_across_steps": false,
+    "regeneration_policy": "locked_packages_are_never_regenerated_only_referenced"
+  },
+  "performance_settings": {
+    "streaming_priority_policy": "high_density_public_spaces_prioritized_over_restricted_low_traffic_spaces",
+    "cheapest_districts_reference": ["sector_0", "metro_archives"],
+    "highest_density_districts_reference": ["white_zones", "undercroft"],
+    "dynamic_state_districts_reference": ["sector_0"],
+    "notes": "Relative performance characterization only, per each district's own approved package. No numeric budgets fabricated here."
+  },
+  "streaming_settings": {
+    "world_partition_regions": [
+      "WP_Undercroft",
+      "WP_WhiteZones_Flagship",
+      "WP_WhiteZones_NetworkNode_Template",
+      "WP_MetroArchives",
+      "WP_Sector0",
+      "WP_OlympusSpire"
+    ],
+    "connective_tissue_streaming": "standard_distance_based_grid_cells_no_bespoke_design",
+    "reusable_templates": ["WP_WhiteZones_NetworkNode_Template"],
+    "single_instance_regions": ["WP_MetroArchives", "WP_Sector0", "WP_OlympusSpire", "WP_Undercroft"]
+  },
+  "world_scale_metadata": {
+    "canon_confirmed_population": "approximately_30_million_registered_residents",
+    "source": "Volume I, Chapter 4 preamble",
+    "fabricated_values_policy": "none_used_relative_qualitative_bands_only",
+    "radial_bands": ["core", "inner_rings_unbuilt", "mid_tier_rings", "seam_zone", "outer_rings", "off_gradient"],
+    "vertical_tiers": ["absolute_top", "grade_street_level", "below_grade_living", "below_grade_aging", "absolute_bottom_dead"]
+  },
+  "traversal_metadata": {
+    "network_model": "dual_network_never_merged",
+    "networks": [
+      { "id": "live_network", "type": "grav_rail_and_drone_taxi", "coverage": "registered_districts_only", "serves": ["white_zones", "olympus_spire"] },
+      { "id": "dead_network", "type": "pre_council_subway", "coverage": "off_grid_unmapped", "serves": ["undercroft", "metro_archives", "sector_0"] }
+    ],
+    "rooftop_traversal_scope": ["undercroft_primary", "white_zones_rooftop_mechanical_level_gated_exception"],
+    "vehicle_synchronization_scope": "live_network_only"
+  },
+  "gameplay_metadata": {
+    "district_gameplay_registers": [
+      { "district": "undercroft", "register": "analog_evasion" },
+      { "district": "white_zones", "register": "social_stealth_introductory" },
+      { "district": "metro_archives", "register": "environmental_puzzle_tension" },
+      { "district": "sector_0", "register": "pure_exploration_narrative_delivery" },
+      { "district": "olympus_spire", "register": "social_stealth_advanced" }
+    ],
+    "register_overlap_policy": "no_two_districts_share_a_primary_register",
+    "combat_policy_by_district": {
+      "undercroft": "rare_consequential",
+      "white_zones": "two_confirmed_boss_encounters",
+      "metro_archives": "zero_mandatory_hard_constraint",
+      "sector_0": "zero_absolute_hardest_constraint_in_project",
+      "olympus_spire": "one_confirmed_plus_one_flagged_pending_resolution"
+    }
+  },
+  "district_metadata": [
+    { "id": "olympus_spire", "data_reference": "Olympus_Spire_data.json", "radial_position": "core", "vertical_position": "absolute_top", "build_order_index": 5 },
+    { "id": "white_zones", "data_reference": "White_Zones_data.json", "radial_position": "mid_tier_rings_distributed", "vertical_position": "grade_street_level", "build_order_index": 2 },
+    { "id": "metro_archives", "data_reference": "Metro_Archives_data.json", "radial_position": "seam_zone", "vertical_position": "grade_plus_below_grade_aging", "build_order_index": 3 },
+    { "id": "undercroft", "data_reference": "VOID_Location_01_Undercroft_data.json", "radial_position": "continuous_substrate_inner_mid_outer", "vertical_position": "below_grade_living", "build_order_index": 1 },
+    { "id": "sector_0", "data_reference": "Sector_0_data.json", "radial_position": "off_gradient", "vertical_position": "absolute_bottom_dead", "build_order_index": 4 }
+  ],
+  "version_compatibility": {
+    "meridian_master_schema": "void_meridian_master_schema_v1",
+    "district_data_schema": "void_world_location_schema_v1",
+    "requires_all_five_district_packages_at_schema": "void_world_location_schema_v1",
+    "backward_compatibility_policy": "future_generation_versions_must_remain_readable_against_this_manifest_shape"
+  },
+  "future_expansion_rules": {
+    "phase_2_scope": "connective_tissue_between_the_five_approved_districts",
+    "phase_3_scope": "new_district_invention_checked_against_the_five_completed_anchors",
+    "new_district_registration_policy": "must_extend_district_registry_only_must_not_modify_locked_packages_must_satisfy_all_nine_world_design_constraints",
+    "new_district_review_gate": "writing_team_signoff_required_before_registry_extension"
+  },
+  "flagged_open_items": [
+    {
+      "id": "spire_server_hub_nyx_discrepancy",
+      "priority": "highest_in_project",
+      "source_package": "olympus_spire",
+      "status": "unresolved_by_design",
+      "blocks": ["server_hub_combat_encounter_generation"]
+    },
+    {
+      "id": "archive_maintenance_directive_mechanism",
+      "priority": "moderate",
+      "source_package": "metro_archives",
+      "status": "unresolved_pending_writing_team_review",
+      "blocks": ["reset_mechanic_technical_implementation"]
+    },
+    {
+      "id": "undercroft_internal_radial_belt_model",
+      "priority": "low",
+      "source_package": "undercroft",
+      "status": "unresolved_pending_lightweight_signoff",
+      "blocks": []
+    },
+    {
+      "id": "white_zones_kit_of_parts_typology",
+      "priority": "low",
+      "source_package": "white_zones",
+      "status": "unresolved_pending_lightweight_signoff",
+      "blocks": ["additional_network_node_generation"]
+    },
+    {
+      "id": "sector_0_ownership_questions_format_deviation",
+      "priority": "low",
+      "source_package": "sector_0",
+      "status": "unresolved_pending_lightweight_signoff",
+      "blocks": []
+    }
+  ],
+  "validation_rules": {
+    "pre_generation_checks": [
+      "confirm_no_locked_package_modified",
+      "confirm_no_sixth_district_introduced",
+      "confirm_no_unresolved_story_question_answered",
+      "confirm_no_fabricated_coordinates_present_in_any_referenced_file",
+      "confirm_all_required_registry_references_resolve_to_existing_files"
+    ],
+    "post_generation_checks": [
+      "confirm_generation_order_respected",
+      "confirm_dual_network_traversal_never_merged",
+      "confirm_district_gameplay_registers_remain_non_overlapping",
+      "confirm_flagged_open_items_remain_unresolved_unless_explicit_signoff_recorded"
+    ],
+    "validation_report_target": "ValidationReport.md"
+  }
+}

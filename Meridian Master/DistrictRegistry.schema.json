@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_district_registry_schema_v1",
+  "title": "VOID: The Unseen Hand — DistrictRegistry.json Schema",
+  "type": "object",
+  "required": ["$schema", "districts", "hierarchy", "relationships", "adjacency_graph", "connectivity_graph", "streaming_relationships", "generation_priority_order", "generation_priority_note", "dependencies"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_district_registry_schema_v1" },
+    "districts": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "status", "design_doc_reference", "data_reference", "radial_band", "radial_position_type", "vertical_tier", "structural_model", "generation_priority", "build_order_index", "depends_on"],
+        "properties": {
+          "id": { "type": "string", "enum": ["olympus_spire", "white_zones", "metro_archives", "undercroft", "sector_0"] },
+          "display_name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["approved", "pending"] },
+          "design_doc_reference": { "type": "string", "pattern": "\\.md$" },
+          "data_reference": { "type": "string", "pattern": "\\.json$" },
+          "radial_band": { "type": "string", "minLength": 1 },
+          "radial_position_type": { "type": "string", "minLength": 1 },
+          "vertical_tier": { "type": "string", "minLength": 1 },
+          "structural_model": { "type": "string", "minLength": 1 },
+          "generation_priority": { "type": "integer", "minimum": 1 },
+          "build_order_index": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "depends_on": { "type": "array", "items": { "type": "string" } },
+          "dependency_note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "hierarchy": {
+      "type": "object",
+      "required": ["radial_bands_ordered", "vertical_tiers_ordered", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "radial_bands_ordered": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "vertical_tiers_ordered": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["pair", "connection_type", "detail", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "pair": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } },
+          "connection_type": { "type": "string", "minLength": 1 },
+          "detail": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "minLength": 1 },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "adjacency_graph": {
+      "type": "object",
+      "required": ["description", "edges", "isolated_nodes"],
+      "additionalProperties": false,
+      "properties": {
+        "description": { "type": "string" },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to", "adjacency_type"],
+            "additionalProperties": false,
+            "properties": {
+              "from": { "type": "string" },
+              "to": { "type": "string" },
+              "adjacency_type": { "type": "string" }
+            }
+          }
+        },
+        "isolated_nodes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "connectivity_graph": {
+      "type": "object",
+      "required": ["description", "live_network_connectivity", "dead_network_connectivity", "connective_tissue_required_between", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "description": { "type": "string" },
+        "live_network_connectivity": { "type": "array", "items": { "type": "string" } },
+        "dead_network_connectivity": { "type": "array", "items": { "type": "string" } },
+        "connective_tissue_required_between": {
+          "type": "array",
+          "items": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "streaming_relationships": {
+      "type": "object",
+      "minProperties": 5,
+      "maxProperties": 5,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["region", "instancing", "template"],
+        "additionalProperties": false,
+        "properties": {
+          "region": { "type": "string", "pattern": "^WP_" },
+          "instancing": { "type": "string" },
+          "template": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "generation_priority_order": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["priority", "district"],
+        "additionalProperties": false,
+        "properties": {
+          "priority": { "type": "integer", "minimum": 1 },
+          "district": { "type": "string" }
+        }
+      }
+    },
+    "generation_priority_note": { "type": "string" },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 5,
+      "maxProperties": 5,
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  }
+}

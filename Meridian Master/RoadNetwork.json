@@ -1,0 +1,124 @@
+{
+  "$schema": "void_road_network_schema_v1",
+  "road_hierarchy": ["radial_arterial", "ring_road", "service_maintenance_route"],
+  "road_categories": [
+    {
+      "id": "radial_arterial",
+      "hierarchy_tier": 1,
+      "description": "Primary roads generated outward from the Olympus Spire's Base Plaza, forming the Live Network's surface spine.",
+      "network": "live_network",
+      "source": "Meridian_Master_Plan.md Sec. 11"
+    },
+    {
+      "id": "ring_road",
+      "hierarchy_tier": 2,
+      "description": "Circumferential connectors at a given radial band, linking White Zone nodes to each other and to unbuilt Inner/Outer connective tissue.",
+      "network": "live_network",
+      "source": "Meridian_Master_Plan.md Sec. 11"
+    },
+    {
+      "id": "service_maintenance_route",
+      "hierarchy_tier": 3,
+      "description": "The Undercroft's own off-grid layer — old maintenance tunnels, decommissioned subway lines, rooftop routes — sitting entirely outside the surface hierarchy.",
+      "network": "dead_network",
+      "source": "Undercroft, Sec. 13; Meridian_Master_Plan.md Sec. 11"
+    }
+  ],
+  "primary_routes": [
+    {
+      "id": "spire_radial_spine",
+      "category": "radial_arterial",
+      "origin_district": "olympus_spire",
+      "origin_sub_location": "base_plaza_monument",
+      "traverses_bands": ["core", "inner_rings_unbuilt", "mid_tier_rings"],
+      "serves_districts": ["olympus_spire", "white_zones"],
+      "generation_dependency": "olympus_spire",
+      "notes": "The Live Network spine referenced as generation step 2 in Meridian_Master.json's generation_pipeline."
+    }
+  ],
+  "secondary_routes": [
+    {
+      "id": "mid_tier_ring_road",
+      "category": "ring_road",
+      "radial_band": "mid_tier_rings",
+      "connects": "white_zones_network_nodes_to_each_other_and_to_connective_tissue",
+      "serves_districts": ["white_zones"],
+      "generation_dependency": "spire_radial_spine",
+      "hard_constraint": "must_never_route_through_metro_archives_or_undercroft"
+    }
+  ],
+  "service_routes": [
+    {
+      "id": "undercroft_maintenance_layer",
+      "category": "service_maintenance_route",
+      "owning_district": "undercroft",
+      "sub_belts_served": ["spire_adjacent_foundation", "mid_ring_foundation", "outer_ring_foundation"],
+      "vehicle_synchronization": false,
+      "notes": "Old maintenance tunnels, decommissioned subway lines, rooftop routes predating the current transit grid. Source of the Undercroft's analog-evasion gameplay identity."
+    },
+    {
+      "id": "pre_council_subway_service_layer",
+      "category": "service_maintenance_route",
+      "owning_district": null,
+      "shared_by_districts": ["undercroft", "metro_archives", "sector_0"],
+      "vehicle_synchronization": false,
+      "notes": "The Dead Network's physical housing. See tunnel_relationships below for the specific connection points."
+    }
+  ],
+  "district_connectivity": [
+    { "district": "olympus_spire", "connected_via": ["radial_arterial"], "network": "live_network" },
+    { "district": "white_zones", "connected_via": ["radial_arterial", "ring_road"], "network": "live_network" },
+    { "district": "undercroft", "connected_via": ["service_maintenance_route"], "network": "dead_network" },
+    { "district": "metro_archives", "connected_via": ["service_maintenance_route"], "network": "dead_network" },
+    { "district": "sector_0", "connected_via": ["service_maintenance_route"], "network": "dead_network", "access_points": 1 }
+  ],
+  "bridge_relationships": [
+    {
+      "id": "spire_tower_skybridges",
+      "type": "elevated_pedestrian_bridge",
+      "connects": ["olympus_spire_primary_tower", "olympus_spire_elite_residential_towers"],
+      "canon_status": "new_canon_silence_addition",
+      "justification": "Olympus_Spire.md Sec. 11.8 confirms Elite Residential Towers as a distinct cluster from the primary Council/VOID tower; a skybridge connection is the minimal infrastructure needed to relate the two without inventing new mission content.",
+      "access_tier": "elite_residents_only",
+      "flagged_for_signoff": true
+    }
+  ],
+  "tunnel_relationships": [
+    {
+      "id": "undercroft_metro_archives_transit_seam",
+      "type": "shared_dead_network_tunnel",
+      "connects": ["undercroft", "metro_archives"],
+      "canon_status": "confirmed",
+      "source": "Undercroft, Sec. 7.7; Metro Archives, Sec. 10"
+    },
+    {
+      "id": "undercroft_sector_0_entrance_threshold",
+      "type": "dead_network_terminus_with_narrative_gate",
+      "connects": ["undercroft", "sector_0"],
+      "canon_status": "confirmed",
+      "gate": "crackling_energy_field_contract_3_ending",
+      "directionality": "hard_one_directional_narrative_gate",
+      "source": "Sector 0, Sec. 8.1"
+    }
+  ],
+  "traversal_graph": {
+    "description": "Abstract macro-level node/edge graph for Builder pathfinding scaffolding. Nodes are districts and bands, not literal coordinates. The Builder resolves actual geometry at generation time.",
+    "nodes": ["olympus_spire", "white_zones", "metro_archives", "undercroft", "sector_0", "inner_rings_unbuilt"],
+    "edges": [
+      { "from": "olympus_spire", "to": "inner_rings_unbuilt", "via": "spire_radial_spine", "network": "live_network" },
+      { "from": "inner_rings_unbuilt", "to": "white_zones", "via": "spire_radial_spine", "network": "live_network" },
+      { "from": "white_zones", "to": "white_zones", "via": "mid_tier_ring_road", "network": "live_network", "notes": "Self-loop represents node-to-node connectivity within the distributed White Zones network." },
+      { "from": "undercroft", "to": "metro_archives", "via": "undercroft_metro_archives_transit_seam", "network": "dead_network" },
+      { "from": "undercroft", "to": "sector_0", "via": "undercroft_sector_0_entrance_threshold", "network": "dead_network", "directional": true }
+    ],
+    "unreachable_pairs_by_design": [
+      ["white_zones", "undercroft"],
+      ["white_zones", "metro_archives"],
+      ["white_zones", "sector_0"],
+      ["olympus_spire", "undercroft"],
+      ["olympus_spire", "metro_archives"],
+      ["olympus_spire", "sector_0"]
+    ],
+    "unreachable_pairs_note": "These pairs have no direct road/tunnel edge by design, per DistrictRegistry.json's connectivity_graph. A route between them must pass through unbuilt Inner/Mid-Tier connective tissue (Phase 2 scope), never a bespoke shortcut."
+  }
+}
