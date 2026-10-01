@@ -1,0 +1,29 @@
+{
+  "_comment": "FORMAT EXAMPLE ONLY. Every id and number below is illustrative and NOT Meridian data. Real coordinates must come from an approved design source. This block goes under the top-level 'metro' key of a Design Package, or is passed to FVoidMetroNetworkMapper::MapPackageMetroBlock. Positions are Unreal units (cm), world space. It overrides Meridian topology by id.",
+  "stations": [
+    {
+      "id": "example_station_id_matching_a_meridian_station",
+      "networkId": "live_network",
+      "districtId": "example_district",
+      "position": [0, 0],
+      "grade": "Elevated",
+      "maxEntrances": 2,
+      "entrances": [
+        { "id": "example_entrance_a", "position": [1500, 0], "yawDegrees": 90 }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "id": "example_line_id_matching_a_meridian_line",
+      "networkId": "live_network",
+      "grade": "AtGrade",
+      "closedLoop": false,
+      "stationIds": [],
+      "centerlinePoints": [[0, 0], [100000, 0], [200000, 20000]]
+    }
+  ],
+  "tunnelLinks": [
+    { "id": "example_tunnel_id", "districtA": "example_district_a", "districtB": "example_district_b", "directional": false }
+  ]
+}
