@@ -1,0 +1,97 @@
+{
+  "$schema": "void_player_framework_schema_v1",
+  "framework_id": "player_framework",
+  "framework_name": "Player Framework",
+  "framework_prefix": "PLYR",
+  "depends_on": ["character_framework"],
+  "dependency_gap_note": "character_framework does not yet exist as a file at the time this file was written, per the requested build order (Player listed before Character). This framework references character_framework's planned CHAR-prefixed IDs by convention; full cross-file ID validation will run once CharacterFramework.json exists, built immediately next per GameplayRules.json's verified dependency graph.",
+  "scope_compliance_statement": "This file defines interfaces and contracts only. It contains no specific input bindings, no camera implementation, no player biography, and no combat/vehicle-specific action content — those belong to future packages implementing against the contracts below.",
+  "extension_points_implemented": ["EP-PLAYER-01", "EP-PLAYER-02", "EP-PLAYER-03", "EP-PLAYER-04"],
+  "identity_selection": {
+    "implements": "EP-PLAYER-01",
+    "interface_name": "IdentitySelectionInterface",
+    "contract": {
+      "slot_count": 2,
+      "slot_ids": ["PLYR_identity_kaevon", "PLYR_identity_veronica"],
+      "selection_timing": "session_start_only",
+      "persistence_requirement": "Selected identity must be written to PersistentStateRegistry (SaveFramework, EP-SAVE-01) immediately on selection.",
+      "canon_source": "Vol IV Ch. 7 Canon Lock — Kaevon and Veronica as the two selectable player identities.",
+      "extensibility": "This slot count is fixed at 2 per canon lock. A future package must not add a third identity slot without a canon revision — this is a hard constraint, not a soft default."
+    }
+  },
+  "input_action_mapping": {
+    "implements": "EP-PLAYER-02",
+    "interface_name": "InputActionMappingContract",
+    "contract": {
+      "abstract_action_categories": ["movement", "interaction_trigger", "camera_mode_toggle", "ability_activation_slot_1_through_n", "menu_navigation"],
+      "engine_target": "Enhanced Input",
+      "binding_specificity": "This contract defines category names only — no specific key/button bindings, no combat-specific action names (e.g. no 'fire_weapon' or 'reload'), consistent with GameplayRules.json Scope Enforcement Rule SR-03.",
+      "ability_activation_note": "ability_activation_slot_1_through_n is a generic N-slot category; the actual slot count is defined in AbilityFramework's AbilitySlotSystem (EP-ABILITY-03), not here."
+    }
+  },
+  "camera_control_mode": {
+    "implements": "EP-PLAYER-03",
+    "interface_name": "CameraControlModeContract",
+    "contract": {
+      "default_mode": "third_person",
+      "alternate_mode": "first_person",
+      "mode_switch_trigger": "external_hook_only",
+      "confirmed_usage": "Exactly one confirmed use in the approved campaign — the Descent connective scene immediately before the Final Boss.",
+      "canon_source": "Vol IV, 5.1 — first-person reserved exclusively for the Descent connective scene; using it elsewhere would dilute its disorienting effect.",
+      "hard_constraint": "This contract does not define when the mode switch fires — that trigger belongs to a future Missions package. This framework only guarantees the capability exists and is not used more than the confirmed instance without explicit narrative authorization, mirroring the same restraint discipline applied to Sector 0's hard constraints in the Meridian_Master package."
+    }
+  },
+  "player_lifecycle_hooks": {
+    "implements": "EP-PLAYER-04",
+    "interface_name": "PlayerLifecycleHooks",
+    "contract": {
+      "lifecycle_states": ["spawn_init", "active", "paused", "session_end"],
+      "hook_payload": "State transition event only — no gameplay-specific data attached at this layer.",
+      "consumers": ["ai_package (for companion awareness of player state)", "save_framework_internal (session_end triggers a save-eligibility check, not a save itself)"]
+    }
+  },
+  "additional_interface_references": {
+    "added_during": "Phase 2 audit against Gameplay_Design_Master.md and the expanded Player Framework brief — additive only, no existing content changed.",
+    "movement_capability_interface": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED.",
+      "rationale": "No canon source specifies a movement model (speed, traversal verbs beyond what's already covered by InteractionFramework's environmental-exploit and Undercroft's off-grid analog traversal identity). This is a genuine gap, not an oversight — recorded here rather than invented."
+    },
+    "traversal_interface": {
+      "status": "PARTIALLY DEFINED",
+      "confirmed_instance": "Echo Shift (AbilityFramework.json echo_shift_reference_instance) is the one confirmed traversal-class capability.",
+      "undefined_remainder": "General traversal (climbing, rooftop movement, vertical shafts per Undercroft's own design docs) has no confirmed player-facing mechanical model — UNDEFINED — IMPLEMENTATION DECISION REQUIRED."
+    },
+    "perception_interface": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED.",
+      "rationale": "No canon source describes what the player can perceive (detection ranges, line-of-sight rules, a UI representation of VOID's predictive-flagging state). Gameplay_Design_Master.md UDD-10 records this as an open decision specifically for detection feedback."
+    },
+    "world_interaction_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "InteractionFramework.json owns this contract in full (InteractableObjectContract, EP-INTERACT-01). Not duplicated here."
+    },
+    "interaction_capability_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "InteractionFramework.json, same as above."
+    },
+    "ability_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "AbilityFramework.json owns AbilityContract (EP-ABILITY-01) and the activation lifecycle. PlayerFramework's input_action_mapping references it only through the generic 'ability_activation_slot_1_through_n' input category, per that section above."
+    },
+    "progression_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "ProgressionFramework.json owns ProgressionResourceRegistry (EP-PROG-01) and the grant/threshold contracts."
+    },
+    "persistence_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "SaveFramework.json owns PersistentStateRegistry (EP-SAVE-01), which already registers PlayerFramework's own identity-selection slot by name (SAVE_player_identity_state)."
+    },
+    "gameplay_state_interface": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "Gameplay_Master.json's gameplay_state_model (added in this same audit pass) is the authoritative reference — INFERRED status, not CANON, per that field's own status note."
+    }
+  },
+  "canon_references": [
+    { "fact": "dual_player_identity", "source": "Gameplay_Master.json canon_references.dual_player_identity" },
+    { "fact": "single_first_person_moment", "source": "Gameplay_Master.json canon_references.single_first_person_moment" }
+  ]
+}

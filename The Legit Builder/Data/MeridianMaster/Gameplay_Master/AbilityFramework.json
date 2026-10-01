@@ -1,0 +1,80 @@
+{
+  "$schema": "void_ability_framework_schema_v1",
+  "framework_id": "ability_framework",
+  "framework_name": "Ability Framework",
+  "framework_prefix": "ABIL",
+  "depends_on": ["character_framework", "player_framework"],
+  "scope_compliance_statement": "This file defines the contract for abilities existing, activating, and slotting. It contains no combat damage values, no cooldown numbers, no AI targeting logic, and no ability effect implementation of any kind — those belong to a future Combat package implementing against the contracts below.",
+  "extension_points_implemented": ["EP-ABILITY-01", "EP-ABILITY-02", "EP-ABILITY-03", "EP-ABILITY-04"],
+  "ability_contract": {
+    "implements": "EP-ABILITY-01",
+    "interface_name": "AbilityContract",
+    "contract": {
+      "required_fields": ["ability_id", "activation_contract_ref", "resource_cost_ref"],
+      "namespace_rule": "ability_id uses the ABIL_ prefix.",
+      "resource_cost_reference": "resource_cost_ref, if present, must reference a valid PROG_ resource_id. Abilities are not required to have a cost.",
+      "content_policy": "Defines that an ability exists and its activation/cost slots. Never defines what the ability does mechanically — damage, movement distance, or duration values are implementation, and for combat-class abilities specifically, out of scope per GameplayRules.json Scope Enforcement Rule SR-03."
+    }
+  },
+  "ability_activation_lifecycle": {
+    "implements": "EP-ABILITY-02",
+    "interface_name": "AbilityActivationLifecycle",
+    "contract": {
+      "states": ["input_received", "activation_check", "activating", "active", "ending", "ended"],
+      "engine_mapping": "Maps directly to Gameplay Ability System's own activation lifecycle terminology, per Gameplay_Master.json intended_ue5_systems.",
+      "content_policy": "Generic state machine only — no ability-specific transition logic."
+    }
+  },
+  "ability_slot_system": {
+    "implements": "EP-ABILITY-03",
+    "interface_name": "AbilitySlotSystem",
+    "contract": {
+      "slot_count_policy": "Not fixed by this framework — a future Combat package defines how many combat-ability slots exist. This framework only defines that a slot system exists and how an ability_id attaches to a slot index.",
+      "confirmed_non_combat_slot": "Echo Shift (ABIL_echo_shift) occupies a traversal-class slot outside any combat slot count, since it is confirmed non-combat — see echo_shift_reference_instance below."
+    }
+  },
+  "echo_shift_reference_instance": {
+    "implements": "EP-ABILITY-04",
+    "interface_name": "EchoShiftReferenceInstance",
+    "contract": {
+      "ability_id": "ABIL_echo_shift",
+      "ability_class": "traversal",
+      "activation_contract_ref": "ability_activation_lifecycle (this file)",
+      "resource_cost_ref": null,
+      "canon_source": "Vol II, Hub Upgrade — Echo Shift: temporarily removes the player from VOID's active perception, allowing passage through certain VOID-monitored barriers.",
+      "granted_by": "Sector 0 Hub Upgrade (Meridian_Master, locked) — granted narratively as part of the campaign, not via a SkillFramework node.",
+      "content_policy": "This entry documents that Echo Shift is the one confirmed real instance implementing AbilityContract. It does not implement the perception-removal effect itself — that behavior is locked canon content and belongs to a future systems package, not this architecture-only foundation.",
+      "relationship_to_character_framework": "CHAR_echo (CharacterFramework.json) and ABIL_echo_shift (this entry) are architecturally distinct entities that share a canon origin, not a functional dependency: Echo is a character/companion entity; Echo Shift is the ability the player gains once Echo integrates into their gear. This framework does not conflate the two, consistent with the citation-not-restatement discipline applied throughout this project."
+    }
+  },
+  "canon_references": [
+    { "fact": "echo_shift_ability", "source": "Gameplay_Master.json canon_references.echo_shift_ability" }
+  ],
+  "additional_structure": {
+    "added_during": "Phase 2 audit — additive, no existing content changed.",
+    "cooldown_model": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED.",
+      "rationale": "No canon source specifies a cooldown duration or recharge mechanic for any ability, including Echo Shift. Per the CRITICAL RULE against inventing numeric values, no cooldown number is proposed here."
+    },
+    "requirements": {
+      "status": "DEFINED",
+      "detail": "AbilityContract's activation_contract_ref and resource_cost_ref together constitute the full requirements model. Echo Shift's requirement is narrative (granted at the Act 2 hub upgrade), not mechanical (no resource cost)."
+    },
+    "progression_relationship": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "ProgressionFramework.json's additional_structure.future_ability_integration documents this from the other direction — abilities may reference PROG_ resources as costs; none currently do."
+    },
+    "persistence": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "SaveFramework.json's state_category_mapping.ability_state names this framework as owner; the specific slot remains pending_registration there."
+    },
+    "future_combat_integration": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED, additionally BLOCKED for Server Hub content specifically by UDD-01 (CONFLICTING status, Spire/Nyx discrepancy).",
+      "contract_surface": "A future Combat package attaches damage/targeting/effect logic to an ability_id registered here. This framework defines only that the ability exists and how it activates."
+    },
+    "future_interaction_integration": {
+      "status": "DEFINED",
+      "detail": "Echo Shift's perception-removal effect interacts with InteractionFramework's implicit assumption that VOID-monitored barriers exist to be passed — that specific narrative mechanic is locked Meridian_Master canon, not redefined here."
+    }
+  }
+}

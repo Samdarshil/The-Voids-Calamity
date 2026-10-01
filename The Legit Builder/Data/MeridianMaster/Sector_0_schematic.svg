@@ -1,0 +1,154 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect x="0" y="0" width="1200" height="900" fill="#0e1116"/>
+
+  <!-- ===================== TITLE BLOCK ===================== -->
+  <rect x="0" y="0" width="1200" height="64" fill="#161b24"/>
+  <text x="30" y="28" font-size="20" font-weight="bold" fill="#c9d4de">VOID: THE UNSEEN HAND — SECTOR 0</text>
+  <text x="30" y="50" font-size="13" fill="#6b7684">Entrance Tunnel / Relay Stations / Safehouse Hub — NOT surveyed engineering geometry</text>
+  <text x="1000" y="28" font-size="12" fill="#6b7684">Location 04 of 5</text>
+  <text x="1000" y="46" font-size="12" fill="#6b7684">Phase 1 — Rev. 1.0</text>
+
+  <!-- ===================== MAIN SCHEMATIC FRAME ===================== -->
+  <rect x="30" y="84" width="890" height="770" fill="#12161d" stroke="#2c3644" stroke-width="2" rx="6"/>
+  <text x="55" y="112" font-size="12" font-style="italic" fill="#5a6472">Deliberately sparse. Empty space in this diagram is intentional, not incomplete.</text>
+
+  <!-- ===================== ONE CONFIRMED ACCESS POINT NOTE ===================== -->
+  <text x="55" y="770" font-size="10" font-weight="bold" fill="#8a97a6">One confirmed access point. No others are mapped, in-fiction or here.</text>
+
+  <!-- ===================== ENTRANCE TUNNEL / THRESHOLD ===================== -->
+  <rect x="70" y="400" width="170" height="90" fill="#1a2028" stroke="#3d4a5a" stroke-width="2" rx="3"/>
+  <text x="82" y="425" font-size="12" font-weight="bold" fill="#aab6c2">Entrance Tunnel</text>
+  <text x="82" y="440" font-size="10" fill="#7a8695">Contract 3 threshold</text>
+  <text x="82" y="455" font-size="9" fill="#5a6472">(subway chase before this</text>
+  <text x="82" y="467" font-size="9" fill="#5a6472">point = Undercroft scope)</text>
+
+  <!-- crackling energy field boundary -->
+  <line x1="260" y1="390" x2="260" y2="500" stroke="#4a7a8f" stroke-width="3" stroke-dasharray="3,4"/>
+  <text x="245" y="380" font-size="9" font-weight="bold" fill="#4a7a8f" text-anchor="middle">energy field</text>
+  <text x="245" y="513" font-size="9" fill="#4a7a8f" text-anchor="middle">(threshold)</text>
+
+  <!-- unmapped tunnel stub -->
+  <path d="M 155 490 C 130 540, 110 570, 90 610" fill="none" stroke="#3d4a5a" stroke-width="2" stroke-dasharray="2,6"/>
+  <circle cx="85" cy="618" r="9" fill="none" stroke="#3d4a5a" stroke-width="1.5"/>
+  <text x="85" y="622" font-size="10" fill="#5a6472" text-anchor="middle">?</text>
+  <text x="60" y="645" font-size="8" font-style="italic" fill="#4a5462">unresolved —</text>
+  <text x="60" y="656" font-size="8" font-style="italic" fill="#4a5462">a door the</text>
+  <text x="60" y="667" font-size="8" font-style="italic" fill="#4a5462">game never opens</text>
+
+  <!-- ===================== DEAD RELAY STATIONS ===================== -->
+  <rect x="300" y="150" width="440" height="480" fill="#161b24" stroke="#2c3644" stroke-width="2" rx="4"/>
+  <text x="318" y="180" font-size="14" font-weight="bold" fill="#aab6c2">Dead Relay Stations</text>
+  <text x="318" y="198" font-size="10" fill="#7a8695">Echo's first words. Home base for the rest of the campaign.</text>
+
+  <!-- rack grid: mostly dark, a few lit -->
+  <g id="racks">
+    <rect x="330" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="365" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="400" y="220" width="26" height="60" fill="#233240" stroke="#3d6b7f" stroke-width="1.5"/>
+    <rect x="435" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="470" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="505" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="540" y="220" width="26" height="60" fill="#233240" stroke="#3d6b7f" stroke-width="1.5"/>
+    <rect x="575" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="610" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="645" y="220" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+
+    <rect x="330" y="300" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="365" y="300" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="400" y="300" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="435" y="300" width="26" height="60" fill="#233240" stroke="#3d6b7f" stroke-width="1.5"/>
+    <rect x="470" y="300" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="610" y="300" width="26" height="60" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+    <rect x="645" y="300" width="26" height="60" fill="#1a1e24" stroke="#282e36" stroke-width="1"/>
+  </g>
+  <circle cx="413" cy="230" r="3" fill="#7ec8de"/>
+  <circle cx="553" cy="230" r="3" fill="#7ec8de"/>
+  <circle cx="448" cy="310" r="3" fill="#7ec8de"/>
+  <text x="330" y="298" font-size="8" fill="#4a5462" font-style="italic">(rack cluster — schematic, not literal count)</text>
+
+  <!-- Echo marker -->
+  <circle cx="500" cy="410" r="20" fill="none" stroke="#7ec8de" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="500" y="415" font-size="10" fill="#7ec8de" text-anchor="middle">Echo</text>
+  <text x="500" y="445" font-size="9" fill="#6b8fa0" text-anchor="middle">no fixed body — light</text>
+  <text x="500" y="457" font-size="9" fill="#6b8fa0" text-anchor="middle">across dead screens</text>
+
+  <!-- permanently dark relay callout -->
+  <text x="645" y="300" font-size="0" fill="none"></text>
+  <line x1="658" y1="330" x2="700" y2="380" stroke="#4a5462" stroke-width="1" stroke-dasharray="2,3"/>
+  <text x="680" y="393" font-size="8" font-style="italic" fill="#4a5462">"some rooms don't</text>
+  <text x="680" y="404" font-size="8" font-style="italic" fill="#4a5462">come back" (Sec. 13.2)</text>
+
+  <!-- ===================== ARCHIVIST'S READING ROOM (POST-GAME OVERLAY) ===================== -->
+  <rect x="480" y="480" width="220" height="130" fill="none" stroke="#c9a15c" stroke-width="2" stroke-dasharray="8,5" rx="4"/>
+  <text x="495" y="503" font-size="11" font-weight="bold" fill="#c9a15c">The Archivist's Reading Room</text>
+  <text x="495" y="522" font-size="9" fill="#a9895a">POST-GAME ONLY — not present</text>
+  <text x="495" y="534" font-size="9" fill="#a9895a">during main campaign</text>
+  <text x="495" y="550" font-size="9" fill="#a9895a">Same physical space as the relay</text>
+  <text x="495" y="562" font-size="9" fill="#a9895a">stations — final evolutionary state</text>
+  <text x="495" y="578" font-size="9" fill="#a9895a">Sable + Kade meta scene beyond</text>
+
+  <!-- ===================== SAFEHOUSE HUB ===================== -->
+  <rect x="330" y="660" width="220" height="90" fill="#1a2028" stroke="#3d4a5a" stroke-width="2" rx="4"/>
+  <text x="345" y="686" font-size="12" font-weight="bold" fill="#aab6c2">Safehouse Hub</text>
+  <text x="345" y="702" font-size="9" fill="#7a8695">Loadout / hacking-deck upgrade</text>
+  <text x="345" y="714" font-size="9" fill="#7a8695">Intentionally under-furnished</text>
+  <text x="345" y="726" font-size="9" fill="#7a8695">SQ2 vignettes play via relay screens</text>
+
+  <!-- ===================== LIGHTING STATE STRIP ===================== -->
+  <text x="330" y="55" font-size="0"></text>
+
+  <!-- ===================== LEGEND PANEL ===================== -->
+  <rect x="940" y="84" width="230" height="700" fill="#12161d" stroke="#2c3644" stroke-width="2" rx="6"/>
+  <text x="958" y="112" font-size="14" font-weight="bold" fill="#c9d4de">LEGEND</text>
+
+  <rect x="958" y="128" width="18" height="14" fill="#1a2028" stroke="#3d4a5a" stroke-width="1.5"/>
+  <text x="984" y="140" font-size="10" fill="#aab6c2">Confirmed space</text>
+
+  <rect x="958" y="152" width="18" height="14" fill="#20262f" stroke="#333d4a" stroke-width="1"/>
+  <text x="984" y="164" font-size="10" fill="#aab6c2">Dead rack (dark)</text>
+
+  <rect x="958" y="176" width="18" height="14" fill="#233240" stroke="#3d6b7f" stroke-width="1.5"/>
+  <circle cx="967" cy="183" r="2.5" fill="#7ec8de"/>
+  <text x="984" y="188" font-size="10" fill="#aab6c2">Lit rack (few, guttering)</text>
+
+  <rect x="958" y="200" width="18" height="14" fill="none" stroke="#c9a15c" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="984" y="212" font-size="10" fill="#aab6c2">Post-game only structure</text>
+
+  <line x1="958" y1="232" x2="976" y2="232" stroke="#4a7a8f" stroke-width="2.5" stroke-dasharray="3,4"/>
+  <text x="984" y="236" font-size="10" fill="#aab6c2">Threshold / energy field</text>
+
+  <line x1="958" y1="254" x2="976" y2="254" stroke="#3d4a5a" stroke-width="2" stroke-dasharray="2,6"/>
+  <circle cx="967" cy="270" r="6" fill="none" stroke="#3d4a5a" stroke-width="1.5"/>
+  <text x="984" y="274" font-size="10" fill="#aab6c2">Deliberately unresolved stub</text>
+
+  <circle cx="967" cy="294" r="6" fill="none" stroke="#7ec8de" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="984" y="298" font-size="10" fill="#aab6c2">Echo (no fixed form)</text>
+
+  <text x="958" y="332" font-size="11" font-weight="bold" fill="#c9d4de">LIGHTING PROGRESSION</text>
+  <text x="958" y="352" font-size="9" fill="#7a8695">1. First contact — near-dark</text>
+  <text x="958" y="366" font-size="9" fill="#7a8695">2. Act 2 hub — dim, Echo-lit</text>
+  <text x="958" y="380" font-size="9" fill="#7a8695">3. Act 3 hub — warmer glow</text>
+  <text x="958" y="394" font-size="9" fill="#7a8695">4. Post-game — soft, full</text>
+  <text x="958" y="410" font-size="8" font-style="italic" fill="#5a6472">See Sector_0.md Sec. 18</text>
+
+  <text x="958" y="446" font-size="11" font-weight="bold" fill="#c9d4de">HARD CONSTRAINTS</text>
+  <text x="958" y="466" font-size="9" fill="#7a8695">Zero combat, ever, anywhere</text>
+  <text x="958" y="480" font-size="9" fill="#7a8695">in this district (Sec. 25).</text>
+  <text x="958" y="496" font-size="9" fill="#7a8695">No background NPCs (Sec. 14).</text>
+  <text x="958" y="512" font-size="9" fill="#7a8695">No additional entrances (Sec. 11).</text>
+
+  <text x="958" y="548" font-size="11" font-weight="bold" fill="#c9d4de">NOTES</text>
+  <text x="958" y="568" font-size="9" fill="#7a8695">This is a design schematic for</text>
+  <text x="958" y="582" font-size="9" fill="#7a8695">greybox reference only. No literal</text>
+  <text x="958" y="596" font-size="9" fill="#7a8695">coordinates or engineering</text>
+  <text x="958" y="610" font-size="9" fill="#7a8695">geometry are implied. Empty</text>
+  <text x="958" y="624" font-size="9" fill="#7a8695">space in the main diagram is</text>
+  <text x="958" y="638" font-size="9" fill="#7a8695">intentional — see frame note.</text>
+
+  <!-- ===================== FOOTER ===================== -->
+  <text x="30" y="875" font-size="10" fill="#5a6472">VOID: The Unseen Hand — Design Studio — Sector 0 Schematic — Companion to Sector_0.md</text>
+  <text x="900" y="875" font-size="10" fill="#5a6472" text-anchor="end">Rev 1.0</text>
+
+</svg>

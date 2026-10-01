@@ -1,0 +1,85 @@
+{
+  "$schema": "void_gameplay_manifest_schema_v1",
+  "manifest_type": "extension_point_registry_for_future_packages",
+  "distinction_from_gameplay_master": "Gameplay_Master.json is the data manifest — what files exist, how they relate, what canon they support. This file is the CONSUMPTION contract — the specific, stable extension points a future Combat, AI, Missions, Dialogue, Economy, or Vehicles package engineer reads to know exactly what they're allowed to hook into, and how, without needing to read every framework file in full first.",
+  "id_namespacing_rules": {
+    "extension_point_id_format": "EP-{FRAMEWORK}-{NN}",
+    "stability_values": ["stable", "provisional"],
+    "stable_meaning": "This foundation package guarantees this interface's shape will not change without a major version bump.",
+    "provisional_meaning": "This interface is architecturally complete but has no confirmed consumer yet — future packages should treat its shape as likely-but-not-guaranteed-final."
+  },
+  "extension_points": [
+    { "id": "EP-PLAYER-01", "exposed_by_framework": "player_framework", "interface_name": "IdentitySelectionInterface", "description": "Contract for selecting and persisting the player's chosen identity at session start.", "consumer_packages": ["dialogue_package"], "contract_summary": "Must support exactly two named, stable identity slots per PlayerFramework.json.", "stability": "stable" },
+    { "id": "EP-PLAYER-02", "exposed_by_framework": "player_framework", "interface_name": "InputActionMappingContract", "description": "Contract mapping abstract player actions to Enhanced Input triggers.", "consumer_packages": ["combat_package", "vehicles_package"], "contract_summary": "Abstract action names only — no specific combat or vehicle actions are defined here.", "stability": "stable" },
+    { "id": "EP-PLAYER-03", "exposed_by_framework": "player_framework", "interface_name": "CameraControlModeContract", "description": "Contract for switching between third-person default and single-use first-person camera modes.", "consumer_packages": ["missions_package"], "contract_summary": "Exposes a mode-switch hook; does not define when it fires — that trigger belongs to the Missions package.", "stability": "stable" },
+    { "id": "EP-PLAYER-04", "exposed_by_framework": "player_framework", "interface_name": "PlayerLifecycleHooks", "description": "Spawn, active, paused, and session-end lifecycle events.", "consumer_packages": ["ai_package", "save_framework_internal"], "contract_summary": "Standard entity lifecycle, no gameplay-specific payload.", "stability": "stable" },
+
+    { "id": "EP-CHAR-01", "exposed_by_framework": "character_framework", "interface_name": "BaseCharacterEntityInterface", "description": "The interface every character entity (player, companion, future NPCs) must implement.", "consumer_packages": ["ai_package", "combat_package", "dialogue_package"], "contract_summary": "Identity, registry ID, and non-corporeal-support flag only — no behavior.", "stability": "stable" },
+    { "id": "EP-CHAR-02", "exposed_by_framework": "character_framework", "interface_name": "NonCorporealCharacterSupport", "description": "Support for a character entity with no fixed physical mesh or transform.", "consumer_packages": ["dialogue_package"], "contract_summary": "Required to support Echo per Gameplay_Master.json canon_references.", "stability": "stable" },
+    { "id": "EP-CHAR-03", "exposed_by_framework": "character_framework", "interface_name": "CharacterRegistry", "description": "Stable ID namespace for all character entities across all future packages.", "consumer_packages": ["ai_package", "combat_package", "dialogue_package", "missions_package"], "contract_summary": "Prevents ID collision between packages authored independently.", "stability": "stable" },
+    { "id": "EP-CHAR-04", "exposed_by_framework": "character_framework", "interface_name": "CompanionAttachmentInterface", "description": "Contract for a character entity becoming a persistent player companion.", "consumer_packages": ["ai_package", "dialogue_package"], "contract_summary": "Generic attachment/detachment lifecycle only — no companion AI behavior.", "stability": "provisional" },
+
+    { "id": "EP-INTERACT-01", "exposed_by_framework": "interaction_framework", "interface_name": "InteractableObjectContract", "description": "The interface any world object must implement to be interactable.", "consumer_packages": ["missions_package", "economy_package"], "contract_summary": "Range, prompt trigger, and result-callback slots only.", "stability": "stable" },
+    { "id": "EP-INTERACT-02", "exposed_by_framework": "interaction_framework", "interface_name": "InteractionPromptSystem", "description": "Contract for surfacing an interaction prompt to the player.", "consumer_packages": ["missions_package"], "contract_summary": "UI-agnostic trigger contract.", "stability": "stable" },
+    { "id": "EP-INTERACT-03", "exposed_by_framework": "interaction_framework", "interface_name": "DialogueTriggerStub", "description": "Stub interface a future Dialogue package implements to receive interaction events.", "consumer_packages": ["dialogue_package"], "contract_summary": "Fires an event; carries no dialogue content of any kind.", "stability": "provisional" },
+    { "id": "EP-INTERACT-04", "exposed_by_framework": "interaction_framework", "interface_name": "MinigameInteractionStub", "description": "Stub interface for lockpick/hacking-style interactions confirmed to exist in the approved world packages.", "consumer_packages": ["missions_package"], "contract_summary": "Success/failure callback contract only — no minigame implementation.", "stability": "provisional" },
+
+    { "id": "EP-SAVE-01", "exposed_by_framework": "save_framework", "interface_name": "PersistentStateRegistry", "description": "Registry of every value that must be serialized across a save/load cycle.", "consumer_packages": ["missions_package", "economy_package", "dialogue_package"], "contract_summary": "Includes the six tracked state variables from GameplayGraph.json by reference, not by redefinition.", "stability": "stable" },
+    { "id": "EP-SAVE-02", "exposed_by_framework": "save_framework", "interface_name": "SaveSlotContract", "description": "Contract for a save slot's structure and versioning.", "consumer_packages": ["economy_package"], "contract_summary": "Slot metadata and versioning only — no specific save data format mandated.", "stability": "stable" },
+    { "id": "EP-SAVE-03", "exposed_by_framework": "save_framework", "interface_name": "CheckpointTriggerInterface", "description": "Contract for a future package to request an autosave.", "consumer_packages": ["missions_package"], "contract_summary": "Fire-and-forget trigger; no checkpoint placement logic defined here.", "stability": "provisional" },
+
+    { "id": "EP-PROG-01", "exposed_by_framework": "progression_framework", "interface_name": "ProgressionResourceRegistry", "description": "Registry of trackable progression resources, with Memory Fragments as the confirmed example instance.", "consumer_packages": ["missions_package", "economy_package"], "contract_summary": "Resource ID, accumulation rule, and threshold-check contract.", "stability": "stable" },
+    { "id": "EP-PROG-02", "exposed_by_framework": "progression_framework", "interface_name": "ProgressionGrantInterface", "description": "Interface a future Missions package calls to grant progression.", "consumer_packages": ["missions_package"], "contract_summary": "Generic grant(resource_id, amount) contract — no mission logic.", "stability": "provisional" },
+    { "id": "EP-PROG-03", "exposed_by_framework": "progression_framework", "interface_name": "ThresholdUnlockContract", "description": "Contract for threshold-gated content, referencing the TRANSCEND-style pattern without reimplementing it.", "consumer_packages": ["missions_package", "dialogue_package"], "contract_summary": "Threshold definitions live upstream in the locked Meridian_Master package; this contract only checks them.", "stability": "stable" },
+
+    { "id": "EP-SKILL-01", "exposed_by_framework": "skill_framework", "interface_name": "SkillNodeContract", "description": "The interface every skill node must implement.", "consumer_packages": ["combat_package", "ability_framework_internal"], "contract_summary": "ID, prerequisite list, and unlock-cost slot only — no specific skill effect.", "stability": "stable" },
+    { "id": "EP-SKILL-02", "exposed_by_framework": "skill_framework", "interface_name": "SkillTreeRegistry", "description": "Registry structure for organizing skill nodes into trees.", "consumer_packages": ["combat_package"], "contract_summary": "Tree/node hierarchy only.", "stability": "stable" },
+    { "id": "EP-SKILL-03", "exposed_by_framework": "skill_framework", "interface_name": "PrerequisiteGraphRules", "description": "Rules governing valid skill-prerequisite graphs (must remain acyclic).", "consumer_packages": ["combat_package"], "contract_summary": "DAG validity rule only.", "stability": "stable" },
+
+    { "id": "EP-ABILITY-01", "exposed_by_framework": "ability_framework", "interface_name": "AbilityContract", "description": "The interface every ability must implement.", "consumer_packages": ["combat_package"], "contract_summary": "ID, activation contract, and resource-cost slot only — no ability effect implementation.", "stability": "stable" },
+    { "id": "EP-ABILITY-02", "exposed_by_framework": "ability_framework", "interface_name": "AbilityActivationLifecycle", "description": "Standard activation/execution/end lifecycle for any ability.", "consumer_packages": ["combat_package"], "contract_summary": "Maps to Gameplay Ability System's own lifecycle terminology.", "stability": "stable" },
+    { "id": "EP-ABILITY-03", "exposed_by_framework": "ability_framework", "interface_name": "AbilitySlotSystem", "description": "Contract for how abilities are equipped/slotted by the player.", "consumer_packages": ["combat_package"], "contract_summary": "Slot count and assignment rules only.", "stability": "stable" },
+    { "id": "EP-ABILITY-04", "exposed_by_framework": "ability_framework", "interface_name": "EchoShiftReferenceInstance", "description": "The one confirmed canon ability (Echo Shift) implementing AbilityContract, provided as the reference example for future ability authors.", "consumer_packages": ["missions_package"], "contract_summary": "Traversal-class ability; perception-removal effect defined upstream in canon, not reimplemented here.", "stability": "stable" }
+  ],
+  "package_registration_protocol": {
+    "description": "How a future gameplay package should register itself against this foundation.",
+    "steps": [
+      "1. Declare which extension_points (by ID) the new package consumes.",
+      "2. Confirm the new package does not redefine any stable-tagged interface's shape.",
+      "3. Add the new package's own stable ID namespace prefix to a future PackageRegistry.json (not yet created — out of scope for Phase 1).",
+      "4. Run this package's GameplayValidation.json rules against the new package's own manifest before considering integration complete."
+    ]
+  },
+  "compatibility_contract": {
+    "stable_interfaces_policy": "Stable-tagged extension points will not change shape within this package's major version. Provisional-tagged ones may still be refined based on the first real consumer's needs.",
+    "breaking_change_policy": "Any breaking change to a stable interface requires a major version bump to Gameplay_Master.json and this file simultaneously, plus a re-validation pass against every already-registered future package."
+  },
+  "file_accounting": {
+    "added_during": "Phase 2 audit — a naming collision was found between this file's original purpose (extension-point registry, preserved unchanged above) and the new brief's description of 'GameplayManifest.json' as a file-inventory/integrity manifest. Both concerns are legitimate; this section adds the second without displacing the first.",
+    "checksum_note": "Every checksum below was computed from real file content at the time this section was written, not fabricated. Snapshot, not live — re-run at any future audit to detect drift.",
+    "package_status": "in_progress_phase_2_audit",
+    "file_registry": [
+      { "file_id": "readme", "file": "README.md", "type": "doc", "role": "orientation", "required": false, "sha256": "4b401852ca04efd1578cd18213e27a2586cc69dd79e487a51655024264fe3526", "size_bytes": 3062 },
+      { "file_id": "changelog", "file": "CHANGELOG.md", "type": "doc", "role": "version_history", "required": false, "sha256": "bf062e9e5dde4696250f5045d9741239c9faf70a6e151aa2dad78d6e513a0e50", "size_bytes": 2807 },
+      { "file_id": "gameplay_master", "file": "Gameplay_Master.json", "type": "data", "role": "entry_point_manifest", "required": true, "sha256": "00ff28c96d00eece28e4d01f40a81406cd32112c129207d06d4387a898a352ae", "size_bytes": 12360 },
+      { "file_id": "gameplay_manifest", "file": "GameplayManifest.json", "type": "data", "role": "self_extension_registry_plus_file_accounting", "required": true, "sha256": "not_applicable_self_reference_a_file_cannot_contain_its_own_hash", "size_bytes": null },
+      { "file_id": "gameplay_rules", "file": "GameplayRules.json", "type": "data", "role": "governance_rules", "required": true, "sha256": "a4b62dadeccf0d03d2925639c725aaecea7815a8d16a5815be67b98c29a47595", "size_bytes": 6259 },
+      { "file_id": "gameplay_schema", "file": "GameplaySchema.json", "type": "data", "role": "consolidated_schema", "required": true, "sha256": "d57c6245e39a11201b6929aa9297031a0585c6d90bb42b2ddd2b9d141c840d6f", "size_bytes": 11087 },
+      { "file_id": "character_framework", "file": "CharacterFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "3533c54fca019ea90a0e2aa35651873e7196baff9594e26aef5e0028acfc3ef8", "size_bytes": 5617 },
+      { "file_id": "player_framework", "file": "PlayerFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "51e96ce31ff33f53de3a56cd8c741f8cbfae0568d9d5ac4e0e95435947470324", "size_bytes": 7153 },
+      { "file_id": "interaction_framework", "file": "InteractionFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "bf4a7ef78171c38aca6f00a56d5c8c3be26d629c4cfa9f9817f183f0a3d3a703", "size_bytes": 5351 },
+      { "file_id": "save_framework", "file": "SaveFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "904617e34da6ccc69dbb9e54c83f2c3995461286edb626de503d2a75d3cba591", "size_bytes": 6744 },
+      { "file_id": "progression_framework", "file": "ProgressionFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "61f2870375653424d3473a2a6123b2ce53c1923cd03d3b95be4b18f20bc7325d", "size_bytes": 5451 },
+      { "file_id": "skill_framework", "file": "SkillFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "3a1366ec4482ca05f305b3fcc6cfe9c47d598afa0dcfceee4a30407f06be345a", "size_bytes": 4067 },
+      { "file_id": "ability_framework", "file": "AbilityFramework.json", "type": "data", "role": "framework", "required": true, "sha256": "754d501e8810efea897eba0dcbe620f1bd8bb0d967a47b18a6deef4247ff8458", "size_bytes": 6044 },
+      { "file_id": "gameplay_validation", "file": "GameplayValidation.json", "type": "data", "role": "validation_rules", "required": true, "sha256": "b579c249c675166364af10845863c66c7e59c67a7dbb0c3f03a75d1ad3bb98bf", "size_bytes": 6416 },
+      { "file_id": "gameplay_compatibility", "file": "GameplayCompatibility.md", "type": "doc", "role": "compatibility_reference", "required": false, "sha256": "1ffe5ab1ba9d893b77da1808ddb35444b77da47908d5b99655ada79483d38c19", "size_bytes": 5862 },
+      { "file_id": "engineering_handoff", "file": "EngineeringHandoff.md", "type": "doc", "role": "onboarding", "required": false, "sha256": "d92f6529b141718e6c2964fb2228da78e316118320afb567ba9654ca3b894188", "size_bytes": 7717 },
+      { "file_id": "gameplay_index", "file": "Gameplay_Index.md", "type": "doc", "role": "master_index", "required": false, "sha256": "f8ecd1b293ed2621a1c4944678c6b51454d6c6a7ff521c2cfe5a6b77aec9de48", "size_bytes": 4778 }
+    ],
+    "total_files": 17,
+    "required_files_count": 11,
+    "optional_files_count": 6,
+    "note": "sha256 values for framework/data files listed above will drift as this audit continues through the remaining files (GameplayRules.json, GameplayValidation.json, and the four documentation files) — this snapshot should be re-run once the full audit pass completes, not treated as final until then."
+  }
+}

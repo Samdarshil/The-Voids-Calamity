@@ -1,0 +1,108 @@
+{
+  "$schema": "void_world_partition_schema_v1",
+  "scope_note": "This file governs spatial/distance-based streaming organization only. Gameplay-state content gating (story flags, ability unlocks) within an already-streamed cell is DataLayers.json's concern, not this file's — the two are kept structurally separate per standard World Partition / Data Layer division of responsibility.",
+  "loading_priority_scale": ["highest", "high", "moderate", "low", "lowest"],
+  "regions": [
+    {
+      "id": "WP_OlympusSpire",
+      "district": "olympus_spire",
+      "instancing": "single_instance",
+      "template_based": false,
+      "streaming_cells": [
+        { "id": "cell_base_plaza", "contains": ["base_plaza_monument"], "loading_priority": "highest" },
+        { "id": "cell_party_level", "contains": ["party_level"], "loading_priority": "high" },
+        { "id": "cell_council_gallery", "contains": ["council_chambers_directors_office", "portrait_gallery"], "loading_priority": "moderate" },
+        { "id": "cell_atrium_server_hub", "contains": ["atrium_of_perfect_memory", "olympus_spire_server_hub", "engineered_gardens_typology"], "loading_priority": "lowest", "notes": "olympus_spire_server_hub activation state pending Olympus_Spire.md Sec. 0.1 resolution. engineered_gardens_typology's flagship instance lives here; see reusable_typology_reference below for its broader cross-cutting scope." },
+        { "id": "cell_elite_residential_towers", "contains": ["elite_residential_towers"], "loading_priority": "low", "notes": "Background/atmosphere only, per Olympus_Spire.md Sec. 11.8; not mission-critical." },
+        { "id": "cell_research_continuity_division", "contains": ["research_and_continuity_division"], "loading_priority": "low" }
+      ],
+      "cell_dependencies": [
+        { "cell": "cell_party_level", "streams_after": "cell_base_plaza", "reason": "internal_trust_gradient_vertical_ascension" },
+        { "cell": "cell_council_gallery", "streams_after": "cell_party_level", "reason": "internal_trust_gradient_vertical_ascension" },
+        { "cell": "cell_atrium_server_hub", "streams_after": "cell_council_gallery", "reason": "internal_trust_gradient_vertical_ascension" }
+      ],
+      "reusable_typology_reference": { "id": "engineered_gardens_typology", "flagship_cell": "cell_atrium_server_hub", "notes": "Spans multiple cells conceptually as a repeated architectural language, not a separate streaming cell of its own." }
+    },
+    {
+      "id": "WP_Undercroft",
+      "district": "undercroft",
+      "instancing": "single_instance_three_internal_cells",
+      "template_based": false,
+      "streaming_cells": [
+        { "id": "cell_spire_adjacent_foundation", "contains": [], "loading_priority": "low", "notes": "Tightest, quietest belt; least player time per Undercroft Sec. 1.2." },
+        { "id": "cell_mid_ring_foundation_market_belt", "contains": ["the_market", "yaras_stall", "yaras_cellar", "coens_transit_atrium", "pennys_alcove"], "loading_priority": "highest", "notes": "Highest player-time-weight belt per Undercroft's own sub_belts data." },
+        { "id": "cell_outer_ring_foundation_far_stacks", "contains": ["riggs_safehouse", "cartographer_tunnels", "drowned_concourse_entrance"], "loading_priority": "moderate" }
+      ],
+      "cell_dependencies": [],
+      "cell_dependency_note": "The three belts are geographically parallel, not nested — no streaming order dependency exists between them, consistent with their independent tunnel access per Undercroft Sec. 1.2."
+    },
+    {
+      "id": "WP_WhiteZones_Flagship",
+      "district": "white_zones",
+      "instancing": "single_flagship_instance",
+      "template_based": false,
+      "streaming_cells": [
+        { "id": "cell_entry_plaza", "contains": ["entry_plaza_flagship"], "loading_priority": "highest" },
+        { "id": "cell_reception_atrium", "contains": ["reception_atrium_flagship"], "loading_priority": "highest" },
+        { "id": "cell_admin_back_offices", "contains": ["administrative_back_offices_flagship"], "loading_priority": "moderate" },
+        { "id": "cell_records_closet", "contains": ["records_audit_closet_flagship"], "loading_priority": "low" },
+        { "id": "cell_rooftop_mechanical", "contains": ["rooftop_mechanical_level_flagship"], "loading_priority": "lowest" },
+        { "id": "cell_mira_approach_route", "contains": ["mira_apartment_approach_route"], "loading_priority": "high", "notes": "Active during Mission 5 only; adjacent residential block, not the Trust Center building itself." }
+      ],
+      "cell_dependencies": []
+    },
+    {
+      "id": "WP_WhiteZones_NetworkNode_Template",
+      "district": "white_zones",
+      "instancing": "reusable_template",
+      "template_based": true,
+      "streaming_cells": [
+        { "id": "cell_template_generic_node", "contains": ["kit_of_parts_generic_instance"], "loading_priority": "not_applicable_template_only" }
+      ],
+      "notes": "Not individually enumerated — this template is stamped per future non-flagship Trust Center placement, per White_Zones.md Sec. 6, 25."
+    },
+    {
+      "id": "WP_MetroArchives",
+      "district": "metro_archives",
+      "instancing": "single_instance",
+      "template_based": false,
+      "streaming_cells": [
+        { "id": "cell_public_floor", "contains": ["reception_reading_room", "historical_society_office", "east_wing_exhibit_case", "exhibit_hall"], "loading_priority": "highest" },
+        { "id": "cell_records_lower_level", "contains": ["records_stacks", "restricted_archive"], "loading_priority": "moderate" },
+        { "id": "cell_sub_basement", "contains": ["sub_basement_server_node"], "loading_priority": "lowest" }
+      ],
+      "cell_dependencies": [
+        { "cell": "cell_records_lower_level", "streams_after": "cell_public_floor", "reason": "vertical_progression_public_floor_to_stacks" },
+        { "cell": "cell_sub_basement", "streams_after": "cell_records_lower_level", "reason": "vertical_progression_stacks_to_sub_basement" }
+      ]
+    },
+    {
+      "id": "WP_Sector0",
+      "district": "sector_0",
+      "instancing": "single_instance",
+      "template_based": false,
+      "streaming_cells": [
+        { "id": "cell_entrance_tunnel", "contains": ["entrance_tunnel_threshold"], "loading_priority": "high" },
+        { "id": "cell_relay_stations", "contains": ["dead_relay_stations"], "loading_priority": "highest", "notes": "Same physical cell hosts the post-game 'archivist_reading_room' content state — see important_note below. Not a separate cell." },
+        { "id": "cell_safehouse_hub", "contains": ["safehouse_hub"], "loading_priority": "high" }
+      ],
+      "cell_dependencies": [
+        { "cell": "cell_relay_stations", "streams_after": "cell_entrance_tunnel", "reason": "narrative_gate_contract_3_ending" }
+      ],
+      "important_note": "archivist_reading_room is NOT a fourth streaming cell. Per Sector_0.md Sec. 8.4, it is the same physical space as dead_relay_stations in its final evolutionary content state. Its post-game appearance is a DataLayers.json concern (content-state gating), not a WorldPartition.json concern (spatial cell definition). Modeling it as a separate cell here would double-count one physical location as two."
+    }
+  ],
+  "runtime_grid_organization": {
+    "five_districts": "each_district_uses_its_own_bespoke_region_per_regions_above",
+    "connective_tissue": "standard_distance_based_world_partition_grid_cells_no_bespoke_design",
+    "cross_reference": "Meridian_Master_Plan.md Sec. 26, 27"
+  },
+  "streaming_relationships": {
+    "adjacent_regions": [
+      { "region_a": "WP_Undercroft", "region_b": "WP_MetroArchives", "relationship": "shared_transit_seam_boundary" },
+      { "region_a": "WP_Undercroft", "region_b": "WP_Sector0", "relationship": "shared_entrance_tunnel_threshold" }
+    ],
+    "isolated_regions": ["WP_OlympusSpire", "WP_WhiteZones_Flagship"],
+    "cross_reference": "DistrictRegistry.json adjacency_graph"
+  }
+}

@@ -1,0 +1,6 @@
+Name,Polish,DensityMultiplier,CategoryMultipliers
+olympus_spire,0.95,1.0,
+white_zones,0.85,1.0,
+metro_archives,0.35,0.9,
+undercroft,0.15,1.2,"((""Tree"", 0.0),(""Grass"", 0.0))"
+sector_0,0.5,1.0,

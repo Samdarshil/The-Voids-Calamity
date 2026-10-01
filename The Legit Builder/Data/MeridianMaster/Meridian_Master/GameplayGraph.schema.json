@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_gameplay_graph_schema_v1",
+  "title": "VOID: The Unseen Hand — GameplayGraph.json Schema",
+  "type": "object",
+  "required": ["$schema", "actual_build_dependencies", "district_gameplay_registers", "register_overlap_policy", "mission_relationships", "gameplay_dependencies", "district_progression", "exploration_loops", "traversal_requirements"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_gameplay_graph_schema_v1" },
+    "actual_build_dependencies": {
+      "type": "object",
+      "required": ["used", "declared_in_meridian_master_json", "discrepancy_note"],
+      "additionalProperties": false,
+      "properties": {
+        "used": { "type": "array", "items": { "type": "string" } },
+        "declared_in_meridian_master_json": { "type": "array", "items": { "type": "string" } },
+        "discrepancy_note": { "type": "string" }
+      }
+    },
+    "district_gameplay_registers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "register"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "register": { "type": "string" }
+        }
+      }
+    },
+    "register_overlap_policy": { "type": "string" },
+    "mission_relationships": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "act", "district", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "act": { "type": ["integer", "string"] },
+          "district": { "type": "string" },
+          "status": { "type": "string" },
+          "boss": { "type": "string" },
+          "unlock_source": { "type": "string" }
+        }
+      }
+    },
+    "gameplay_dependencies": {
+      "type": "object",
+      "required": ["tracked_state_variables", "cross_reference", "in_scope_gameplay_effect"],
+      "additionalProperties": false,
+      "properties": {
+        "tracked_state_variables": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "set_during", "affects"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "set_during": { "type": "string" },
+              "affects": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "cross_reference": { "type": "string" },
+        "in_scope_gameplay_effect": { "type": "object" }
+      }
+    },
+    "district_progression": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["act", "districts_active"],
+        "additionalProperties": false,
+        "properties": {
+          "act": { "type": ["integer", "string"] },
+          "districts_active": { "type": "array", "items": { "type": "string" } },
+          "districts_introduced": { "type": "array", "items": { "type": "string" } },
+          "ends_at": { "type": "string" },
+          "sector_0_becomes": { "type": "string" },
+          "leads_to_out_of_scope": { "type": "array", "items": { "type": "string" } },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "exploration_loops": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "side_content", "gate_conditions_used"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "side_content": { "type": "array", "items": { "type": "string" } },
+          "gate_conditions_used": { "type": "array", "items": { "type": "string" } },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "traversal_requirements": {
+      "type": "object",
+      "required": ["cross_reference", "mission_specific_requirements"],
+      "additionalProperties": false,
+      "properties": {
+        "cross_reference": { "type": "string" },
+        "mission_specific_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["mission", "requires"],
+            "additionalProperties": false,
+            "properties": {
+              "mission": { "type": "string" },
+              "requires": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

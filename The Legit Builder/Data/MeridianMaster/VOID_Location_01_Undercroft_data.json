@@ -1,0 +1,168 @@
+{
+  "$schema": "void_world_location_schema_v1",
+  "location_id": "undercroft",
+  "display_name": "The Undercroft",
+  "phase": 1,
+  "build_order_index": 1,
+  "canon_source": ["Vol I Ch. 4.3", "Vol II Tutorial Contract", "Vol II Connective: The Fixer", "Vol III SQ1", "Vol III SQ3", "Vol III Easter Egg 1", "Vol III Easter Egg 2", "Vol IV 8.2 8.3"],
+  "structural_position": {
+    "vertical_stratum": "foundation_level_living",
+    "vertical_notes": "Pre-VOID construction, lowest habitable stratum above dead Sector 0.",
+    "radial_model": "substrate_multi_ring",
+    "radial_notes": "Not a single ring; continuous foundation stratum beneath multiple radial rings. See sub_belts."
+  },
+  "sub_belts": [
+    {
+      "belt_id": "spire_adjacent_foundation",
+      "trust_relative": "tightest",
+      "maintenance_level": "highest_of_district",
+      "player_time_weight": "low",
+      "contains": []
+    },
+    {
+      "belt_id": "mid_ring_foundation_market_belt",
+      "trust_relative": "moderate",
+      "maintenance_level": "medium",
+      "player_time_weight": "high",
+      "contains": ["the_market", "coens_transit_atrium", "yaras_stall", "yaras_cellar", "pennys_alcove"]
+    },
+    {
+      "belt_id": "outer_ring_foundation_far_stacks",
+      "trust_relative": "loosest",
+      "maintenance_level": "lowest",
+      "player_time_weight": "medium",
+      "contains": ["riggs_safehouse", "cartographer_tunnels", "drowned_concourse_entrance"]
+    }
+  ],
+  "sub_locations": [
+    {
+      "id": "the_market",
+      "belt": "mid_ring_foundation_market_belt",
+      "type": "commercial_hub",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "confirmed",
+      "npc_refs": ["fence_unnamed", "rumor_broker_unnamed"]
+    },
+    {
+      "id": "yaras_stall",
+      "belt": "mid_ring_foundation_market_belt",
+      "type": "npc_hub",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "confirmed",
+      "npc_refs": ["yara"],
+      "quest_refs": ["SQ1"]
+    },
+    {
+      "id": "yaras_cellar",
+      "belt": "mid_ring_foundation_market_belt",
+      "type": "secret_collectible_area",
+      "gated": true,
+      "gate_condition": "SQ1_complete",
+      "canon_status": "confirmed",
+      "collectible_category": "physical_photographs_non_digitized"
+    },
+    {
+      "id": "coens_transit_atrium",
+      "belt": "mid_ring_foundation_market_belt",
+      "type": "npc_hub",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "confirmed",
+      "npc_refs": ["coen"],
+      "quest_refs": ["SQ3"]
+    },
+    {
+      "id": "pennys_alcove",
+      "belt": "mid_ring_foundation_market_belt",
+      "type": "easter_egg",
+      "gated": true,
+      "gate_condition": "interact_3_separate_visits",
+      "canon_status": "confirmed",
+      "npc_refs": ["penny"]
+    },
+    {
+      "id": "riggs_safehouse",
+      "belt": "outer_ring_foundation_far_stacks",
+      "type": "npc_hub_mission_critical",
+      "gated": false,
+      "gate_condition": "story_flag_connective_the_fixer",
+      "canon_status": "confirmed",
+      "npc_refs": ["riggs"]
+    },
+    {
+      "id": "cartographer_tunnels",
+      "belt": "spans_market_belt_and_far_stacks",
+      "type": "easter_egg",
+      "gated": true,
+      "gate_condition": "scan_all_7_symbols_single_playthrough",
+      "canon_status": "confirmed",
+      "npc_refs": ["the_cartographer"],
+      "junction_count": 7
+    },
+    {
+      "id": "drowned_concourse_entrance",
+      "belt": "outer_ring_foundation_far_stacks",
+      "type": "secret_collectible_area",
+      "gated": true,
+      "gate_condition": "echo_shift_unlocked",
+      "canon_status": "confirmed",
+      "collectible_category": "memory_fragments",
+      "collectible_count": 3
+    }
+  ],
+  "weave_coverage": {
+    "is_off_weave": false,
+    "note": "VOID's perception is native to the Weave everywhere in this district. Undercroft safety is a predictive-flagging policy choice (low individual-crime priority, high coordinated-pattern priority), not a technical blind spot. Only Sector 0 is genuinely off-Weave."
+  },
+  "enforcement_doctrine": {
+    "patrol_type": "rare_scheduled_sweep",
+    "trigger_logic": "coordinated_destabilization_pattern_flag",
+    "does_not_trigger_on": "disorganized_individual_survival_crime",
+    "contrast_district": "white_zones_standing_patrol"
+  },
+  "economic_band": {
+    "licensing_status": "unlicensed_unregistered",
+    "corporate_presence": "indirect_only",
+    "corporate_refs": ["stellar_holdings_surplus_channel"],
+    "new_corporation_introduced": false
+  },
+  "npcs": {
+    "canon_confirmed": ["yara", "coen", "riggs"],
+    "new_background_archetypes": ["the_fence", "courier_kids", "the_rumor_broker"],
+    "new_npcs_carry_state_variables": false
+  },
+  "mission_cross_reference": [
+    {"content_id": "tutorial_contract", "type": "main", "relation": "briefed_from_here_remote"},
+    {"content_id": "connective_the_fixer", "type": "main_connective", "relation": "first_physical_visit"},
+    {"content_id": "SQ1_peoples_ledger", "type": "side", "relation": "full_quest_location"},
+    {"content_id": "SQ2_absolution", "type": "side", "relation": "unlock_only_data_shard_source"},
+    {"content_id": "SQ3_songs_for_the_unnamed", "type": "side", "relation": "full_quest_location"},
+    {"content_id": "easter_egg_1_penny", "type": "secret", "relation": "full_location"},
+    {"content_id": "easter_egg_2_cartographer", "type": "secret", "relation": "full_location"}
+  ],
+  "out_of_scope_flagged": [
+    {
+      "id": "riggs_old_laboratory",
+      "reason": "Distinct from Riggs' safehouse; Mission 6 location; requires separate design pass."
+    }
+  ],
+  "canon_lock_compliance": {
+    "touches_canon_lock": false,
+    "references_luci": false,
+    "forecloses_voss_fate": false
+  },
+  "technical_notes": {
+    "world_partition_region": "WP_Undercroft",
+    "recommended_streaming_cells": 3,
+    "data_layers": [
+      "DL_Undercroft_Market_Base",
+      "DL_RiggsSafehouse_Hidden",
+      "DL_YarasCellar_SQ1Gated",
+      "DL_DrownedConcourse_EchoShiftGated",
+      "DL_CartographerTunnels_Collectible",
+      "DL_PennyAlcove_Collectible"
+    ]
+  }
+}

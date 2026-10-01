@@ -1,0 +1,189 @@
+{
+  "$schema": "void_world_location_schema_v1",
+  "location_id": "olympus_spire",
+  "display_name": "Olympus Spire",
+  "phase": 1,
+  "build_order_index": 5,
+  "final_phase_1_location": true,
+  "canon_source": ["Vol I Ch. 4.0-4.1", "Vol I Ch. 5.5", "Vol I Ch. 5.6", "Vol I Ch. 2.4", "Vol I Ch. 3.1", "Vol II Mission 7", "Vol IV 5.1", "Vol IV 8.2"],
+  "flagged_canon_discrepancy": {
+    "priority": "highest_in_phase_1",
+    "description": "Vol I 4.1 states the Olympus Spire server hub is where 'Nyx's boss duel takes place.' Volume II's mission-by-mission breakdown and Vol IV's Mission Flow / Character Arc tables contain no Spire-located Nyx encounter. Nyx's confirmed encounters are the Contract 3 subway ambush and the Mission 5 White Zones spare/kill branch.",
+    "resolution_status": "unresolved_by_design",
+    "recommended_action": "Full writing-team review before any Server Hub combat design proceeds. This document builds the space to be architecturally consistent with Vol I's description without committing to a specific resolution.",
+    "risk_level": "highest_flagged_item_across_all_five_phase_1_packages"
+  },
+  "structural_position": {
+    "vertical_stratum": "absolute_top_of_stratification",
+    "vertical_notes": "Canon-explicit, not a new interpretation. Every prior package's vertical position was implicitly measured against this anchor.",
+    "radial_model": "absolute_center_origin_point",
+    "radial_notes": "Canon-explicit (Vol I Ch. 4 preamble). The literal center every other district's radial position was measured as distance from."
+  },
+  "internal_trust_gradient": {
+    "concept": "new_interpretation_recreates_city_gradient_in_miniature",
+    "levels": [
+      {"level": "base_plaza", "access_tier": "fully_public"},
+      {"level": "party_level", "access_tier": "semi_restricted_disguise_gated"},
+      {"level": "council_chambers_directors_office_portrait_gallery", "access_tier": "restricted"},
+      {"level": "atrium_and_server_hub", "access_tier": "highly_restricted_technical_symbolic_heart"}
+    ]
+  },
+  "sub_locations": [
+    {
+      "id": "base_plaza_monument",
+      "type": "public_civic_space",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "new_canon_silence_addition",
+      "contains": "the_continuity_monument"
+    },
+    {
+      "id": "party_level",
+      "type": "mission_critical_social_stealth",
+      "gated": true,
+      "gate_condition": "mission_7_active",
+      "canon_status": "confirmed"
+    },
+    {
+      "id": "council_chambers_directors_office",
+      "type": "government_facility",
+      "gated": true,
+      "gate_condition": "mission_7_progression",
+      "canon_status": "confirmed_room_new_layout",
+      "npc_refs": ["director_voss", "council_aide"]
+    },
+    {
+      "id": "portrait_gallery",
+      "type": "environmental_storytelling_space",
+      "gated": true,
+      "gate_condition": "social_stealth_access_optional",
+      "canon_status": "confirmed"
+    },
+    {
+      "id": "atrium_of_perfect_memory",
+      "type": "boss_arena",
+      "gated": true,
+      "gate_condition": "mission_7_climax",
+      "canon_status": "confirmed",
+      "npc_refs": ["director_voss"],
+      "mechanics": "surreal_gravity_altering_construct_based_illusion_rejection"
+    },
+    {
+      "id": "olympus_spire_server_hub",
+      "type": "flagged_potential_boss_arena",
+      "gated": true,
+      "gate_condition": "unresolved_pending_writing_team",
+      "canon_status": "confirmed_location_disputed_encounter",
+      "notes": "See flagged_canon_discrepancy field above."
+    },
+    {
+      "id": "engineered_gardens_typology",
+      "type": "reusable_architectural_kit",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "new_interpretation_mirrors_white_zones_typology_model",
+      "flagship_instance": "atrium_of_perfect_memory"
+    },
+    {
+      "id": "elite_residential_towers",
+      "type": "background_atmosphere_only",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "confirmed_population_new_structure_detail",
+      "mission_critical": false
+    },
+    {
+      "id": "research_and_continuity_division",
+      "type": "administrative_space",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "new_canon_silence_addition",
+      "npc_refs": ["continuity_analyst"],
+      "notes": "Explicitly NOT Dr. Elara Voss's dissident lab, which is a separate buried location per Mission 4."
+    }
+  ],
+  "weave_coverage": {
+    "is_off_weave": false,
+    "coverage_density": "source_origin_point",
+    "note": "Not merely maximal like the White Zones or locally-deepened like Metro Archives — this is the point all other Weave coverage in the city originates from."
+  },
+  "security_doctrine": {
+    "model": "predictive_behavioral_screening",
+    "canon_line_reused": "screens behavior not faces (Undercroft 'The Guest List' connective scene)",
+    "contrast_undercroft": "rare_scheduled_sweep",
+    "contrast_white_zones": "heavy_standing_patrol",
+    "contrast_metro_archives": "automated_environmental_only",
+    "notes": "Most sophisticated expression of the same predictive-flagging doctrine (Constraint 6) used citywide."
+  },
+  "reality_bending_principle": {
+    "concept": "proximity_to_void_hardware_grants_localized_physical_manipulation",
+    "shared_with": "metro_archives_archive_maintenance_directive",
+    "scale_here": "broadest_least_mediated_expression_live_primary_core",
+    "justifies": ["server_hub_data_scape_glitch", "atrium_surreal_gravity_mechanics"]
+  },
+  "economic_band": {
+    "licensing_status": "not_applicable_governmental_elite",
+    "commercial_presence": false,
+    "corporate_presence": "elite_residents_only_no_new_corporation",
+    "new_corporation_introduced": false
+  },
+  "npcs": {
+    "canon_confirmed": ["director_voss"],
+    "new_background_archetypes": ["council_aide", "continuity_analyst"],
+    "new_npcs_carry_state_variables": false,
+    "notes": "Voss's characterization, dialogue, and fate are not extended beyond Vol II Mission 7 and Vol IV Character Arc Summary, per explicit brief instruction."
+  },
+  "mission_cross_reference": [
+    {"content_id": "mission_7_the_human_heart", "type": "main", "relation": "full_mission_location"}
+  ],
+  "meridian_integration": {
+    "undercroft": {
+      "connection_type": "structural_opposite_and_shared_dialogue_line",
+      "detail": "Opposite ends of both radial and vertical axes. Security doctrine line reused verbatim in concept from Undercroft's Guest List scene."
+    },
+    "white_zones": {
+      "connection_type": "gameplay_progression_payoff",
+      "detail": "Party Level fulfills the social-stealth rehearsal White Zones explicitly set up."
+    },
+    "metro_archives": {
+      "connection_type": "shared_technical_principle_scaled_up",
+      "detail": "Same proximity-based reality-manipulation rule, narrow/old there vs. broadest/live here."
+    },
+    "sector_0": {
+      "connection_type": "deliberate_total_opposite",
+      "detail": "Silence vs. voice, cold vs. warm, dead core vs. live core. Sector 0 document already states it is what this district's core used to be before being superseded."
+    }
+  },
+  "out_of_scope_flagged": [
+    {
+      "id": "server_hub_combat_encounter_design",
+      "reason": "Pending resolution of the flagged Nyx discrepancy (see flagged_canon_discrepancy). Architecture is complete; encounter design is not committed."
+    },
+    {
+      "id": "skyline_visibility_callouts_in_prior_packages",
+      "reason": "Suggested low-risk polish addition to the four approved packages; not implemented here to respect 'do not alter previously approved districts.'"
+    }
+  ],
+  "canon_lock_compliance": {
+    "touches_canon_lock": false,
+    "modifies_approved_packages": false,
+    "references_luci": false,
+    "forecloses_voss_fate": false,
+    "resolves_any_unresolved_story_question": false,
+    "notes": "Discrepancy in flagged_canon_discrepancy is surfaced, not resolved, per explicit brief instruction to preserve every existing mystery."
+  },
+  "technical_notes": {
+    "world_partition_region": "WP_OlympusSpire",
+    "template_based_partial": true,
+    "template_reuse_note": "May conceptually reuse Engineered Gardens sub-elements; does not reuse WP_WhiteZones_NetworkNode_Template directly.",
+    "data_layers": [
+      "DL_Spire_BasePlaza_Public",
+      "DL_Spire_PartyLevel_Mission7",
+      "DL_Spire_CouncilChambers_DirectorOffice",
+      "DL_Spire_PortraitGallery_Optional",
+      "DL_Spire_AtriumOfPerfectMemory_BossState",
+      "DL_Spire_ServerHub_Flagged"
+    ],
+    "streaming_priority_notes": "Base Plaza and Party Level highest priority; Server Hub lowest until discrepancy resolved."
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "void_metro_network_schema_v1",
+  "network_model": "dual_network_never_merged",
+  "network_model_note": "The Live and Dead networks are never generated as variants of one system, per Meridian_Master_Plan.md Sec. 12. This file preserves that separation at every level below.",
+  "networks": [
+    {
+      "id": "live_network",
+      "display_name": "Grav-Rail + Drone-Taxi Network",
+      "canon_source": "Vol I, 3.5",
+      "coverage": "registered_districts_only",
+      "vehicle_synchronization": true,
+      "void_visibility": "void_tracks_every_registered_vehicle_in_real_time",
+      "collision_record": "zero_fatal_collisions_in_sealed_districts_over_forty_years",
+      "lines": [
+        {
+          "id": "radial_line",
+          "maps_to_road_category": "radial_arterial",
+          "shares_route_id": "spire_radial_spine",
+          "connects_bands": ["core", "inner_rings_unbuilt", "mid_tier_rings"]
+        },
+        {
+          "id": "ring_line",
+          "maps_to_road_category": "ring_road",
+          "shares_route_id": "mid_tier_ring_road",
+          "connects_bands": ["mid_tier_rings"]
+        }
+      ],
+      "stations": [
+        {
+          "id": "spire_base_plaza_station",
+          "district": "olympus_spire",
+          "sub_location": "base_plaza_monument",
+          "tier": "terminus_anchor",
+          "canon_status": "new_canon_silence_addition_minimal"
+        },
+        {
+          "id": "white_zones_node_station",
+          "district": "white_zones",
+          "placement_rule": "within_short_walking_distance_of_every_trust_center_instance",
+          "instancing_policy": "generated_per_network_node_not_individually_enumerated",
+          "source": "White_Zones.md Sec. 11"
+        }
+      ],
+      "platforms": {
+        "condition": "clean_maintained_standard_civic_infrastructure",
+        "access_model": "stipend_linked_frictionless_per_White_Zones_civic_errand_design_intent"
+      },
+      "interchanges": [
+        {
+          "id": "radial_ring_interchange",
+          "connects_lines": ["radial_line", "ring_line"],
+          "location_rule": "wherever_a_ring_road_crosses_the_radial_arterial_spine",
+          "instancing_policy": "generated_per_crossing_not_individually_enumerated"
+        }
+      ],
+      "maintenance_access": {
+        "model": "centrally_scheduled_council_civic_services",
+        "visibility": "unremarkable_by_design_consistent_with_white_zones_maintenance_standard"
+      },
+      "emergency_access": {
+        "model": "standard_civic_emergency_protocol",
+        "enforcement_coordination": "heavy_standing_patrol_baseline_per_white_zones_security_doctrine"
+      }
+    },
+    {
+      "id": "dead_network",
+      "display_name": "Pre-Council Subway (Legacy)",
+      "canon_source": "Vol I, 3.5; Undercroft Sec. 7.7; Metro Archives Sec. 10; Sector 0 Sec. 4.2, 8.2",
+      "coverage": "off_grid_unmapped",
+      "vehicle_synchronization": false,
+      "void_visibility": "none_this_absence_is_the_mechanism_of_off_grid_movement",
+      "lines": [
+        {
+          "id": "legacy_subway_line",
+          "status": "deprecated_unmapped_no_current_coordinates",
+          "segment_model": "multiple_disconnected_segments",
+          "source": "Contract 3 traces signal relays through the city's dead transit infrastructure rather than following one intact route (Vol II)"
+        }
+      ],
+      "stations": [
+        {
+          "id": "undercroft_access_layer",
+          "district": "undercroft",
+          "type": "informal_maintenance_access",
+          "enumeration_policy": "not_enumerated_multiple_implied_by_undercroft_sec_13"
+        },
+        {
+          "id": "metro_archives_sub_basement_seam",
+          "district": "metro_archives",
+          "type": "seam_tap_point",
+          "shares_tunnel_id": "undercroft_metro_archives_transit_seam"
+        },
+        {
+          "id": "sector_0_entrance_threshold",
+          "district": "sector_0",
+          "type": "terminus_single_access_point",
+          "shares_tunnel_id": "undercroft_sector_0_entrance_threshold",
+          "access_point_count": 1,
+          "hard_constraint": "no_additional_entrances_may_be_generated_per_sector_0_sec_11"
+        }
+      ],
+      "platforms": {
+        "condition": "abandoned_deteriorated",
+        "reference": "per-district environmental storytelling sections govern specific visual detail, not this file"
+      },
+      "interchanges": [],
+      "interchange_note": "The Dead Network has no formal interchanges — it is a deprecated system of disconnected segments and terminus points, not an operating line structure.",
+      "maintenance_access": {
+        "model": "none_abandoned_infrastructure",
+        "notes": "Any 'maintenance' visible in the Dead Network is informal Undercroft stall-by-stall repair (Undercroft Sec. 4.1), not a system, and out of scope for this file."
+      },
+      "emergency_access": {
+        "model": "none_by_design",
+        "notes": "The absence of emergency infrastructure here is load-bearing to the district identities it serves, not an oversight — see Sector 0 Sec. 15 on physical secrecy as the only security this network offers."
+      }
+    }
+  ],
+  "district_connectivity": [
+    { "district": "olympus_spire", "network": "live_network", "station_ref": "spire_base_plaza_station" },
+    { "district": "white_zones", "network": "live_network", "station_ref": "white_zones_node_station" },
+    { "district": "undercroft", "network": "dead_network", "station_ref": "undercroft_access_layer" },
+    { "district": "metro_archives", "network": "dead_network", "station_ref": "metro_archives_sub_basement_seam" },
+    { "district": "sector_0", "network": "dead_network", "station_ref": "sector_0_entrance_threshold" }
+  ],
+  "traversal_rules": {
+    "live_network": {
+      "player_access": "requires_registered_identity_or_forged_credentials",
+      "detection_risk": "full_weave_visibility_per_district_security_doctrines",
+      "cross_reference": "Meridian_Master_Plan.md Sec. 20 security transition rules"
+    },
+    "dead_network": {
+      "player_access": "unrestricted_but_undocumented_requires_physical_discovery",
+      "detection_risk": "none_this_is_the_basis_of_off_grid_movement",
+      "cross_reference": "Undercroft Sec. 13; Sector 0 Sec. 15"
+    },
+    "network_crossing_rule": "No traversal path may transition directly between the Live and Dead networks without passing through a district or connective-tissue segment. The two networks do not share infrastructure at any point."
+  }
+}

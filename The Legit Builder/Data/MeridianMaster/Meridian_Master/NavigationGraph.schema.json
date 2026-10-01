@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_navigation_graph_schema_v1",
+  "title": "VOID: The Unseen Hand — NavigationGraph.json Schema",
+  "type": "object",
+  "required": ["$schema", "navigation_layers", "actual_build_dependencies", "pedestrian_navigation", "vehicle_navigation", "metro_navigation", "underground_navigation", "rooftop_navigation", "traversal_rules", "district_navigation_profiles"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_navigation_graph_schema_v1" },
+    "navigation_layers": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "string" } },
+    "actual_build_dependencies": {
+      "type": "object",
+      "required": ["used", "declared_in_meridian_master_json", "discrepancy_note"],
+      "additionalProperties": false,
+      "properties": {
+        "used": { "type": "array", "items": { "type": "string" } },
+        "declared_in_meridian_master_json": { "type": "array", "items": { "type": "string" } },
+        "discrepancy_note": { "type": "string" }
+      }
+    },
+    "pedestrian_navigation": {
+      "type": "object",
+      "required": ["district_profiles", "general_rule"],
+      "additionalProperties": false,
+      "properties": {
+        "district_profiles": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["district", "character", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "district": { "type": "string" },
+              "character": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        },
+        "general_rule": { "type": "string" }
+      }
+    },
+    "vehicle_navigation": {
+      "type": "object",
+      "required": ["applies_to_network", "synchronization", "void_tracking", "collision_policy", "excluded_districts", "exclusion_reason", "route_references"],
+      "additionalProperties": false,
+      "properties": {
+        "applies_to_network": { "type": "string" },
+        "synchronization": { "type": "boolean" },
+        "void_tracking": { "type": "string" },
+        "collision_policy": { "type": "string" },
+        "excluded_districts": { "type": "array", "items": { "type": "string" } },
+        "exclusion_reason": { "type": "string" },
+        "route_references": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metro_navigation": {
+      "type": "object",
+      "required": ["live_network", "dead_network", "cross_reference"],
+      "additionalProperties": false,
+      "properties": {
+        "live_network": {
+          "type": "object",
+          "required": ["route_references", "station_references", "player_access"],
+          "additionalProperties": false,
+          "properties": {
+            "route_references": { "type": "array", "items": { "type": "string" } },
+            "station_references": { "type": "array", "items": { "type": "string" } },
+            "player_access": { "type": "string" }
+          }
+        },
+        "dead_network": {
+          "type": "object",
+          "required": ["route_references", "station_references", "player_access"],
+          "additionalProperties": false,
+          "properties": {
+            "route_references": { "type": "array", "items": { "type": "string" } },
+            "station_references": { "type": "array", "items": { "type": "string" } },
+            "player_access": { "type": "string" }
+          }
+        },
+        "cross_reference": { "type": "string" }
+      }
+    },
+    "underground_navigation": {
+      "type": "object",
+      "required": ["substrate_model", "access_points", "tunnel_references", "hard_constraint"],
+      "additionalProperties": false,
+      "properties": {
+        "substrate_model": { "type": "string" },
+        "access_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["district", "role"],
+            "additionalProperties": false,
+            "properties": {
+              "district": { "type": "string" },
+              "role": { "type": "string" }
+            }
+          }
+        },
+        "tunnel_references": { "type": "array", "items": { "type": "string" } },
+        "hard_constraint": { "type": "string" }
+      }
+    },
+    "rooftop_navigation": {
+      "type": "object",
+      "required": ["primary_district", "primary_source", "confirmed_exception", "excluded_districts", "exclusion_note"],
+      "additionalProperties": false,
+      "properties": {
+        "primary_district": { "type": "string" },
+        "primary_source": { "type": "string" },
+        "confirmed_exception": {
+          "type": "object",
+          "required": ["district", "sub_location", "gate_condition"],
+          "additionalProperties": false,
+          "properties": {
+            "district": { "type": "string" },
+            "sub_location": { "type": "string" },
+            "gate_condition": { "type": "string" }
+          }
+        },
+        "excluded_districts": { "type": "array", "items": { "type": "string" } },
+        "exclusion_note": { "type": "string" }
+      }
+    },
+    "traversal_rules": {
+      "type": "object",
+      "required": ["gating_conditions", "network_crossing_rule", "off_gradient_rule"],
+      "additionalProperties": false,
+      "properties": {
+        "gating_conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "unlocks"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "unlocks": { "type": "array", "items": { "type": "string" } },
+              "granted_at": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        },
+        "network_crossing_rule": { "type": "string" },
+        "off_gradient_rule": { "type": "string" }
+      }
+    },
+    "district_navigation_profiles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "pedestrian", "vehicle", "metro", "underground", "rooftop"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "pedestrian": { "type": "string" },
+          "vehicle": { "type": "string" },
+          "metro": { "type": "string" },
+          "underground": { "type": "string" },
+          "rooftop": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "void_gameplay_graph_schema_v1",
+  "actual_build_dependencies": {
+    "used": ["DistrictRegistry.json", "RoadNetwork.json", "MetroNetwork.json", "NavigationGraph.json"],
+    "declared_in_meridian_master_json": ["district_registry", "navigation_graph", "data_layers"],
+    "discrepancy_note": "data_layers does not yet exist at time of this file's generation. Gating conditions below reference tracked state variables directly from the Canon Knowledge Base (Sec. 5.1) and Volume IV's Developer Bible rather than a not-yet-built DataLayers.json. Flagged alongside the prior NavigationGraph.json discrepancy for reconciliation in ValidationReport.md and Meridian_Master_Index.md."
+  },
+  "district_gameplay_registers": [
+    { "district": "undercroft", "register": "analog_evasion" },
+    { "district": "white_zones", "register": "social_stealth_introductory" },
+    { "district": "metro_archives", "register": "environmental_puzzle_tension" },
+    { "district": "sector_0", "register": "pure_exploration_narrative_delivery" },
+    { "district": "olympus_spire", "register": "social_stealth_advanced" }
+  ],
+  "register_overlap_policy": "no_two_districts_share_a_primary_register",
+  "mission_relationships": [
+    { "id": "prologue", "act": 0, "district": "not_applicable_apartment_interior", "status": "background_reference_only" },
+    { "id": "tutorial_contract_data_heist", "act": 1, "district": "undercroft", "status": "in_scope_background_reference", "boss": "ice_sentinel" },
+    { "id": "connective_the_fixer", "act": 1, "district": "undercroft", "status": "fully_built" },
+    { "id": "contract_2_memory_hole", "act": 1, "district": "metro_archives", "status": "fully_built", "boss": "none_environmental" },
+    { "id": "connective_static", "act": 1, "district": "undercroft", "status": "fully_built" },
+    { "id": "contract_3_ghost_data", "act": 1, "district": "undercroft_to_sector_0", "status": "fully_built", "boss": "nyx_first_encounter_non_lethal_escape" },
+    { "id": "hub_upgrade_sector_0_safehouse", "act": 2, "district": "sector_0", "status": "fully_built" },
+    { "id": "connective_voice_in_the_dark", "act": 2, "district": "sector_0", "status": "fully_built" },
+    { "id": "mission_4_vanished_professor", "act": 2, "district": "dr_elara_voss_buried_lab", "status": "out_of_scope_secondary_location", "boss": "corrupted_memory_construct" },
+    { "id": "connective_what_the_machine_regrets", "act": 2, "district": "undercroft", "status": "fully_built" },
+    { "id": "mission_5_the_witness", "act": 2, "district": "white_zones", "status": "fully_built", "boss": "nyx_spare_or_kill_branch" },
+    { "id": "sq4_administrators_gambit", "act": "2_to_3_optional", "district": "white_zones", "status": "fully_built", "boss": "vessel_9_hidden" },
+    { "id": "connective_cost_of_mercy", "act": 2, "district": "sector_0", "status": "fully_built" },
+    { "id": "mission_6_architects_blueprint", "act": 2, "district": "riggs_old_laboratory", "status": "out_of_scope_flagged_in_undercroft_package", "boss": "override_enforcer_kestrel" },
+    { "id": "sq2_absolution", "act": "2_to_3_optional", "district": "sector_0", "status": "fully_built", "unlock_source": "undercroft_riggs_office_data_shard" },
+    { "id": "hub_hum_of_power", "act": 3, "district": "sector_0", "status": "fully_built" },
+    { "id": "connective_guest_list", "act": 3, "district": "sector_0", "status": "fully_built" },
+    { "id": "mission_7_human_heart", "act": 3, "district": "olympus_spire", "status": "fully_built", "boss": "director_voss_atrium_of_perfect_memory" },
+    { "id": "connective_weight_of_the_truth", "act": 3, "district": "sector_0", "status": "fully_built" },
+    { "id": "mission_8_core_gate", "act": 3, "district": "the_core_gate", "status": "out_of_scope_flagged_in_sector_0_package", "boss": "erased_legion_mid_boss" },
+    { "id": "connective_descent", "act": 3, "district": "sector_0_threshold_to_core_gate", "status": "fully_built_leads_to_out_of_scope" },
+    { "id": "final_boss_void_core_architect", "act": "final", "district": "the_white_void", "status": "out_of_scope_flagged_in_sector_0_package", "boss": "void_three_phases" },
+    { "id": "sq1_peoples_ledger", "act": "2_to_3_optional", "district": "metro_archives_unlock_undercroft_playback", "status": "fully_built" },
+    { "id": "sq3_songs_for_the_unnamed", "act": "2_to_final_optional", "district": "undercroft", "status": "fully_built" }
+  ],
+  "gameplay_dependencies": {
+    "tracked_state_variables": [
+      { "id": "nyx_status", "set_during": "mission_5_the_witness", "affects": ["hub_guest_list_scene", "mission_8_core_gate_out_of_scope", "final_boss_phase_2_out_of_scope"] },
+      { "id": "mira_saved", "set_during": "mission_5_the_witness", "affects": [] },
+      { "id": "memory_fragment_count", "set_during": "ongoing_all_districts", "affects": ["transcend_ending_threshold_out_of_scope", "sector_0_relay_fragment_lighting_system"] },
+      { "id": "compassion_flags", "set_during": "missions_4_5_7_and_side_quests", "affects": ["transcend_ending_threshold_out_of_scope"] },
+      { "id": "riggs_redemption_complete", "set_during": "sq2_absolution", "affects": ["final_boss_ending_montage_out_of_scope"] },
+      { "id": "talis_extracted", "set_during": "sq4_administrators_gambit", "affects": ["mission_8_patrol_visibility_out_of_scope"] }
+    ],
+    "cross_reference": "Canon Knowledge Base Sec. 5.1, Volume IV Developer Bible Ch. 2",
+    "in_scope_gameplay_effect": {
+      "memory_fragment_count": "The only tracked variable with a fully in-scope, built gameplay effect: Sector 0's relay-fragment-lighting system (Sector_0.md Sec. 27), a purely additive visual system with no new collectible category."
+    }
+  },
+  "district_progression": [
+    { "act": 0, "districts_active": [], "notes": "Prologue occurs in the player apartment, out of scope for all five district packages." },
+    { "act": 1, "districts_active": ["undercroft", "metro_archives"], "districts_introduced": ["undercroft", "metro_archives"], "ends_at": "sector_0_threshold" },
+    { "act": 2, "districts_active": ["sector_0", "undercroft", "white_zones"], "districts_introduced": ["sector_0", "white_zones"], "sector_0_becomes": "permanent_hub_for_remainder_of_game" },
+    { "act": 3, "districts_active": ["sector_0", "olympus_spire"], "districts_introduced": ["olympus_spire"], "leads_to_out_of_scope": ["the_core_gate", "the_white_void"] }
+  ],
+  "exploration_loops": [
+    {
+      "district": "undercroft",
+      "side_content": ["sq1_peoples_ledger", "sq3_songs_for_the_unnamed", "easter_egg_1_penny", "easter_egg_2_cartographer"],
+      "gate_conditions_used": ["mission_2_complete", "none_ambient_discovery"]
+    },
+    {
+      "district": "white_zones",
+      "side_content": ["sq4_administrators_gambit"],
+      "gate_conditions_used": ["mission_5_complete"]
+    },
+    {
+      "district": "metro_archives",
+      "side_content": ["sq1_unlock_and_delivery", "easter_egg_3_old_ned"],
+      "gate_conditions_used": ["mission_2_complete", "echo_shift"]
+    },
+    {
+      "district": "sector_0",
+      "side_content": ["sq2_absolution_playback", "easter_egg_5_the_archivist", "post_game_scene"],
+      "gate_conditions_used": ["safehouse_fully_upgraded", "any_ending_credits_complete"]
+    },
+    {
+      "district": "olympus_spire",
+      "side_content": [],
+      "gate_conditions_used": [],
+      "notes": "No side content currently placed here per Meridian_Master_Plan.md Sec. 25 — not filled in with invented content to appear complete."
+    }
+  ],
+  "traversal_requirements": {
+    "cross_reference": "NavigationGraph.json traversal_rules.gating_conditions",
+    "mission_specific_requirements": [
+      { "mission": "mission_5_the_witness", "requires": "echo_shift_available_since_hub_upgrade_precedes_mission_5_in_flow" },
+      { "mission": "mission_7_human_heart", "requires": "social_stealth_disguise_gate" },
+      { "mission": "contract_2_memory_hole", "requires": "lockpick_minigame_for_optional_exhibit_case" }
+    ]
+  }
+}

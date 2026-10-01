@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_landmark_registry_schema_v1",
+  "title": "VOID: The Unseen Hand — LandmarkRegistry.json Schema",
+  "type": "object",
+  "required": ["$schema", "registry_note", "recognition_priority_scale", "visibility_hierarchy", "landmarks", "district_ownership_summary"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_landmark_registry_schema_v1" },
+    "registry_note": { "type": "string" },
+    "recognition_priority_scale": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "visibility_hierarchy": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["tier", "landmark_id", "character"],
+        "additionalProperties": false,
+        "properties": {
+          "tier": { "type": ["integer", "string"] },
+          "landmark_id": { "type": ["string", "null"] },
+          "character": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "landmarks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "district", "type", "canon_status", "visibility_tier", "recognition_priority", "gameplay_importance", "navigation_importance"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "district": { "type": "string" },
+          "sub_location_ref": { "type": "string" },
+          "type": { "type": "string" },
+          "canon_status": { "type": "string" },
+          "visibility_tier": { "type": ["integer", "string"] },
+          "sightline_rule": {
+            "type": "object",
+            "properties": {
+              "status": { "type": "string" },
+              "visible_from": { "type": "array", "items": { "type": "string" } },
+              "excluded": { "type": "array", "items": { "type": "string" } },
+              "source": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "instancing_policy": { "type": "string" },
+          "recognition_priority": { "type": "string" },
+          "gameplay_importance": { "type": "string" },
+          "navigation_importance": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "district_ownership_summary": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "landmark_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "landmark_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

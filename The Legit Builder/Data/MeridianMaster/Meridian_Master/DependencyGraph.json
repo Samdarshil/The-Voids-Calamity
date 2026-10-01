@@ -1,0 +1,172 @@
+{
+  "$schema": "void_dependency_graph_schema_v1",
+  "graph_type": "consolidated_two_tier",
+  "verification_note": "Both tiers below were computationally verified with networkx (is_directed_acyclic_graph check + topological_sort), not asserted by hand. See verification_result.",
+  "tier_1_file_level_dependencies": {
+    "description": "Every file in the Meridian_Master package and its direct build-order dependencies.",
+    "edges": {
+      "README.md": [],
+      "CHANGELOG.md": [],
+      "Meridian_Master.json": [
+        "README.md"
+      ],
+      "Meridian_Master.schema.json": [
+        "Meridian_Master.json"
+      ],
+      "DistrictRegistry.json": [
+        "Meridian_Master.json"
+      ],
+      "DistrictRegistry.schema.json": [
+        "DistrictRegistry.json"
+      ],
+      "RoadNetwork.json": [
+        "DistrictRegistry.json"
+      ],
+      "RoadNetwork.schema.json": [
+        "RoadNetwork.json"
+      ],
+      "MetroNetwork.json": [
+        "RoadNetwork.json"
+      ],
+      "MetroNetwork.schema.json": [
+        "MetroNetwork.json"
+      ],
+      "NavigationGraph.json": [
+        "DistrictRegistry.json",
+        "RoadNetwork.json",
+        "MetroNetwork.json"
+      ],
+      "NavigationGraph.schema.json": [
+        "NavigationGraph.json"
+      ],
+      "GameplayGraph.json": [
+        "DistrictRegistry.json",
+        "NavigationGraph.json"
+      ],
+      "GameplayGraph.schema.json": [
+        "GameplayGraph.json"
+      ],
+      "LandmarkRegistry.json": [
+        "DistrictRegistry.json",
+        "NavigationGraph.json"
+      ],
+      "LandmarkRegistry.schema.json": [
+        "LandmarkRegistry.json"
+      ],
+      "InfrastructureGraph.json": [
+        "DistrictRegistry.json"
+      ],
+      "InfrastructureGraph.schema.json": [
+        "InfrastructureGraph.json"
+      ],
+      "WorldPartition.json": [
+        "DistrictRegistry.json"
+      ],
+      "WorldPartition.schema.json": [
+        "WorldPartition.json"
+      ],
+      "DataLayers.json": [
+        "WorldPartition.json"
+      ],
+      "DataLayers.schema.json": [
+        "DataLayers.json"
+      ],
+      "StreamingStrategy.json": [
+        "WorldPartition.json",
+        "DataLayers.json"
+      ],
+      "StreamingStrategy.schema.json": [
+        "StreamingStrategy.json"
+      ],
+      "BuilderRules.json": [
+        "DistrictRegistry.json",
+        "RoadNetwork.json",
+        "MetroNetwork.json",
+        "NavigationGraph.json",
+        "GameplayGraph.json",
+        "LandmarkRegistry.json",
+        "InfrastructureGraph.json",
+        "WorldPartition.json",
+        "DataLayers.json",
+        "StreamingStrategy.json"
+      ],
+      "BuilderRules.schema.json": [
+        "BuilderRules.json"
+      ],
+      "BuilderManifest.json": [
+        "Meridian_Master.json",
+        "BuilderRules.json"
+      ],
+      "PackageManifest.json": [
+        "BuilderManifest.json"
+      ],
+      "DependencyGraph.json": [
+        "PackageManifest.json"
+      ]
+    }
+  },
+  "tier_1_verified_build_order": [
+    "README.md",
+    "CHANGELOG.md",
+    "Meridian_Master.json",
+    "Meridian_Master.schema.json",
+    "DistrictRegistry.json",
+    "DistrictRegistry.schema.json",
+    "RoadNetwork.json",
+    "InfrastructureGraph.json",
+    "WorldPartition.json",
+    "RoadNetwork.schema.json",
+    "MetroNetwork.json",
+    "InfrastructureGraph.schema.json",
+    "WorldPartition.schema.json",
+    "DataLayers.json",
+    "MetroNetwork.schema.json",
+    "NavigationGraph.json",
+    "DataLayers.schema.json",
+    "StreamingStrategy.json",
+    "NavigationGraph.schema.json",
+    "GameplayGraph.json",
+    "LandmarkRegistry.json",
+    "StreamingStrategy.schema.json",
+    "GameplayGraph.schema.json",
+    "LandmarkRegistry.schema.json",
+    "BuilderRules.json",
+    "BuilderRules.schema.json",
+    "BuilderManifest.json",
+    "PackageManifest.json",
+    "DependencyGraph.json"
+  ],
+  "tier_2_district_level_dependencies": {
+    "description": "Restated from DistrictRegistry.json for consolidated reference \u2014 not a new source of truth.",
+    "authority": "DistrictRegistry.json dependencies",
+    "edges": {
+      "olympus_spire": [],
+      "white_zones": [
+        "olympus_spire"
+      ],
+      "undercroft": [
+        "olympus_spire"
+      ],
+      "metro_archives": [
+        "white_zones",
+        "undercroft"
+      ],
+      "sector_0": [
+        "undercroft"
+      ]
+    },
+    "verified_order": [
+      "olympus_spire",
+      "white_zones",
+      "undercroft",
+      "metro_archives",
+      "sector_0"
+    ]
+  },
+  "verification_result": {
+    "tier_1_is_dag": true,
+    "tier_1_cycle_free": true,
+    "method": "networkx.is_directed_acyclic_graph() and networkx.topological_sort(), executed against the actual edge list above, not claimed without running it."
+  },
+  "relationship_between_tiers": "Tier 1 (file-level) and Tier 2 (district-level) are independent graphs at different granularities \u2014 Tier 1 governs this package's own document construction order; Tier 2 governs the Builder's in-engine generation order (see BuilderRules.json macro_generation_order). A file can be tier-1-complete without any tier-2 generation having occurred yet, and vice versa is not possible (tier 2 generation requires the tier-1 registries to exist first)."
+}

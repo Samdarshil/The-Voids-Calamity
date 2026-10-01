@@ -1,0 +1,341 @@
+{
+  "$schema": "void_package_manifest_schema_v1",
+  "package_name": "Meridian_Master",
+  "manifest_generated": "2026-07-20",
+  "checksum_algorithm": "sha256",
+  "checksum_note": "Every checksum below was computed from actual file contents on disk at manifest generation time. None are fabricated or placeholder values.",
+  "locked_inputs": [
+    {
+      "file": "Meridian_Master_Plan.md",
+      "sha256": "0928ae31ba277b82117291387f216738201a908255f60bb3581dcb6dc0c71fe7",
+      "size_bytes": 27053,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Metro_Archives.md",
+      "sha256": "3e0a66703e4a4e54f279dd2f7278489313f339f0eef43497a239cbc1e7963d6e",
+      "size_bytes": 29438,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Metro_Archives_ValidationReport.md",
+      "sha256": "05a12b150a278872600d60643bfc2ffeda43e64702e83491d79f59e17a343b57",
+      "size_bytes": 8538,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Metro_Archives_data.json",
+      "sha256": "7c8d9a0dafb23a22404f566418879708cfa1eb46d35e86109f8252804a355112",
+      "size_bytes": 7573,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Metro_Archives_schematic.svg",
+      "sha256": "32685ef5be9d78970bc3512f1b9e1e4553c7d7f6955c7813afc6686350ef1132",
+      "size_bytes": 13238,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Olympus_Spire.md",
+      "sha256": "1a0b87c31cbe5a23527134c4361cfc3798ffb41aeb559077239f41a95b58ea17",
+      "size_bytes": 31707,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Olympus_Spire_ValidationReport.md",
+      "sha256": "f4d6ef146ebc317eef8479c18e04b69be5e4d58a9ab1d83a0c23ce263daacf9d",
+      "size_bytes": 9985,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Olympus_Spire_data.json",
+      "sha256": "2db844b718ca475fb537027a936bf3b604b3f8c059dd7579853d39e68fec9ca5",
+      "size_bytes": 8720,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Olympus_Spire_schematic.svg",
+      "sha256": "800bad43c67944f5eb6b816a2ad7d09895785ab36eb1b13c5969776426c7ad40",
+      "size_bytes": 12001,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Sector_0.md",
+      "sha256": "19dd761f93fce76d36c40489180bc8be2806238f4db6481dc6a01accecdb3c47",
+      "size_bytes": 26666,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Sector_0_ValidationReport.md",
+      "sha256": "2d6bd11d7af22a2c71d4483815d40c6127bc433ccb16ac6d2f70875c1fd25465",
+      "size_bytes": 9578,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Sector_0_data.json",
+      "sha256": "2e8df4466cee444c6ae9019e14d183efee449f3e220cf0017d991e8d14af5792",
+      "size_bytes": 8167,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "Sector_0_schematic.svg",
+      "sha256": "4bdde202906cbca17a41f5069f2f6efbf8ec2d9807c054dda87181ddce172cc8",
+      "size_bytes": 11294,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "VOID_Location_01_The_Undercroft.md",
+      "sha256": "9f8979f43545d30ff83018fc524170712f545d060e852e8e6fbe9a2ba9052360",
+      "size_bytes": 27588,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "VOID_Location_01_Undercroft_data.json",
+      "sha256": "473cd57b2ef63c73b8aabe54aaa92abf345df6197cfc4fcffaa9e01e4655f5e5",
+      "size_bytes": 6147,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "White_Zones.md",
+      "sha256": "20569b9facd1d14d67fb751dd87214774aa58c27cbebb7e6eda10aecfa886847",
+      "size_bytes": 28228,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "White_Zones_ValidationReport.md",
+      "sha256": "1d1af810f2fe5658f995824729831fe8f079920026298d695ebe65d9e726fe0b",
+      "size_bytes": 7430,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "White_Zones_data.json",
+      "sha256": "9c46e3d1658db3b57e131f4150577c662fc7971a561edc854a78190f85ac0271",
+      "size_bytes": 6489,
+      "status": "locked_immutable"
+    },
+    {
+      "file": "White_Zones_schematic.svg",
+      "sha256": "b4b471ace6afc2dbab7d3a771d2b252b3a157bb51f2193273a429c41d228e788",
+      "size_bytes": 12996,
+      "status": "locked_immutable"
+    }
+  ],
+  "package_files": [
+    {
+      "file": "BuilderManifest.json",
+      "sha256": "740aa5cc0304d99c746a1ee5a4aa867aad5ac775058ff2f4341ea2df0a9c4664",
+      "size_bytes": 6895,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "BuilderRules.json",
+      "sha256": "3401061c209a866e4907e2cb58c04e4317733650a6aedc1866542ace6c626d56",
+      "size_bytes": 9595,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "BuilderRules.schema.json",
+      "sha256": "dec43c731dd60c925565208bd663a6dbe89075b1a2b32fc6bdfd510751d2f978",
+      "size_bytes": 5099,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "CHANGELOG.md",
+      "sha256": "796cdf5bb8a43f9fb8ee0b8193e0e81f8dc6b1fb22f7708c2d872fb23fe7f894",
+      "size_bytes": 3895,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "DataLayers.json",
+      "sha256": "a10b7bd454b29a0e7c59c9875c1e07eb3bf043427701825350c11ff7bed41c6c",
+      "size_bytes": 5748,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "DataLayers.schema.json",
+      "sha256": "0c390fbdeb61d9e318f234cfe897c2f09cd471a7daadb023d1bca323cd610360",
+      "size_bytes": 2645,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "DistrictRegistry.json",
+      "sha256": "f0993518e590e9eea43b558cfc8e46f834f464df5237f0f566b6613d2284ef30",
+      "size_bytes": 9999,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "DistrictRegistry.schema.json",
+      "sha256": "d4fe67bfc38c66c9014a89264d0458622abb58ab308a54eff9f44cd03df5e4ef",
+      "size_bytes": 5572,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "GameplayGraph.json",
+      "sha256": "265a549e8bddbf2a6fdc231b9a0e24ad27872076d93da6d9389f2170191258e6",
+      "size_bytes": 8016,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "GameplayGraph.schema.json",
+      "sha256": "21191124dfe8986dcc4739b969653275efc128a2321801e15162c5855f19d4e6",
+      "size_bytes": 4602,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "InfrastructureGraph.json",
+      "sha256": "646803754c14ede7d5b3bb47660cbeec51c3539a34593306cedeff7712faa504",
+      "size_bytes": 6231,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "InfrastructureGraph.schema.json",
+      "sha256": "0e106170ddd70d48df2182a8035220cc88174c37c5860883f6b1c4189cccda7a",
+      "size_bytes": 4638,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "LandmarkRegistry.json",
+      "sha256": "8f7eb30039365686404ecbaa1b82864cf54d864bd00c634c4416914919b249b8",
+      "size_bytes": 8798,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "LandmarkRegistry.schema.json",
+      "sha256": "290e5ca06725e19b8f6a70f00a33ecffe9f5f8ef6f8a8d1c70b20dcfd1f54aba",
+      "size_bytes": 2788,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "Meridian_Master.json",
+      "sha256": "52e3ff7eefe08141dbca6f3a38b1f387288d0a1d51e0b4e3df48b2d05c277287",
+      "size_bytes": 14026,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "Meridian_Master.schema.json",
+      "sha256": "0e1958c62483e4bcd534d7554b575440b09c0106c734931d3b8cfe486b3eff6e",
+      "size_bytes": 13057,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "MetroNetwork.json",
+      "sha256": "1e26a4956ff5dccbc33bb9d5d57da334fb9d11997e49ef746768f711bf84ac78",
+      "size_bytes": 6543,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "MetroNetwork.schema.json",
+      "sha256": "0541cf04a27eaeb12aad7a073830c3d9eb6ec1876c4639c8517ca4378b2ebda6",
+      "size_bytes": 3668,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "NavigationGraph.json",
+      "sha256": "2b17ac484b7bf12d091b2b92d50cdcc0b73807e5ea23b4aeb934fc389d585f4b",
+      "size_bytes": 6525,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "NavigationGraph.schema.json",
+      "sha256": "5f47b365016e32d5de437bb8920d1cec41c583b9b70dfd5564b03115915b1b43",
+      "size_bytes": 6622,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "README.md",
+      "sha256": "c755810904669117ed76c485ea0bb5ee00cbe0887988206cbf79ffb8639b4348",
+      "size_bytes": 6303,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "RoadNetwork.json",
+      "sha256": "ad170fcc3da0341031ccc9e718d1bb87352fac0f451f0fd2838110aca206baf2",
+      "size_bytes": 6416,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "RoadNetwork.schema.json",
+      "sha256": "0cd63b0696ea134a1e2986471b13b805cc94e9d5a161c893c2c684796bb5be2e",
+      "size_bytes": 6222,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "StreamingStrategy.json",
+      "sha256": "7831de9c66089a5afac9748363fc2a1a65bd3a9962a43067a86cd3cf959dcc71",
+      "size_bytes": 7958,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "StreamingStrategy.schema.json",
+      "sha256": "b1e7575168cec936213c675964b9a399550aac243ee495fb86e80da61e781c6e",
+      "size_bytes": 4122,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "WorldPartition.json",
+      "sha256": "ef75015a4b8f307233941d7bf9df8c83c9561149c3d7e3095bee73bf5d5fa420",
+      "size_bytes": 7972,
+      "status": "generated_this_session"
+    },
+    {
+      "file": "WorldPartition.schema.json",
+      "sha256": "cb01abc1c049912b3c36aeebf87f15dbf8a0e6c98b4fd2b09c47b5b014305457",
+      "size_bytes": 3423,
+      "status": "generated_this_session"
+    }
+  ],
+  "totals": {
+    "locked_input_count": 19,
+    "package_file_count": 27,
+    "total_files": 46
+  },
+  "package_completeness": {
+    "originally_requested_files": [
+      "README.md",
+      "CHANGELOG.md",
+      "Meridian_Master.json",
+      "Meridian_Master.schema.json",
+      "DistrictRegistry.json",
+      "DistrictRegistry.schema.json",
+      "RoadNetwork.json",
+      "RoadNetwork.schema.json",
+      "MetroNetwork.json",
+      "MetroNetwork.schema.json",
+      "NavigationGraph.json",
+      "NavigationGraph.schema.json",
+      "GameplayGraph.json",
+      "GameplayGraph.schema.json",
+      "LandmarkRegistry.json",
+      "LandmarkRegistry.schema.json",
+      "InfrastructureGraph.json",
+      "InfrastructureGraph.schema.json",
+      "WorldPartition.json",
+      "WorldPartition.schema.json",
+      "DataLayers.json",
+      "DataLayers.schema.json",
+      "StreamingStrategy.json",
+      "StreamingStrategy.schema.json",
+      "BuilderRules.json",
+      "BuilderRules.schema.json",
+      "BuilderManifest.json",
+      "PackageManifest.json",
+      "DependencyGraph.json",
+      "ValidationSchema.json",
+      "CompatibilityMatrix.md",
+      "EngineeringHandoff.md",
+      "ValidationReport.md",
+      "Meridian_Master_Index.md"
+    ],
+    "complete_count": 28,
+    "pending": [
+      "DependencyGraph.json",
+      "ValidationSchema.json",
+      "CompatibilityMatrix.md",
+      "EngineeringHandoff.md",
+      "ValidationReport.md",
+      "Meridian_Master_Index.md"
+    ],
+    "pending_count": 6
+  },
+  "integrity_rule": "A --strict-canon-lock Builder run (per BuilderManifest.json runtime_flags) should recompute sha256 for every file in locked_inputs and refuse to proceed if any value differs from this manifest."
+}

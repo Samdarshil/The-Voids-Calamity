@@ -1,0 +1,147 @@
+{
+  "$schema": "void_gameplay_master_schema_v1",
+  "project_metadata": {
+    "package_name": "VOID: The Unseen Hand — Gameplay Package",
+    "phase": "Phase 1 — Foundation",
+    "canon_version": "Volumes I-IV, Final",
+    "package_version": "1.0.0",
+    "build_version": "Foundation-InProgress",
+    "generation_version": "1.0.0",
+    "author": "VOID Gameplay Systems Architecture",
+    "creation_date": "2026-07-20",
+    "last_revision": "2026-07-20",
+    "status": "in_progress"
+  },
+  "upstream_dependency": {
+    "package": "Meridian_Master",
+    "status": "locked_approved_immutable",
+    "role": "World geometry, districts, registries, and streaming architecture only.",
+    "modification_policy": "This package never modifies, recreates, or duplicates Meridian_Master content. It may reference Meridian_Master registries by ID (e.g. district IDs, tracked state variable names) but treats every such reference as read-only.",
+    "consumption_boundary": "This package begins where Meridian_Master ends — after the Builder has generated a playable greybox city. Gameplay_Master assumes that city exists; it does not generate, describe, or validate world geometry itself."
+  },
+  "architectural_scope": {
+    "in_scope": [
+      "player_entity_architecture",
+      "character_entity_architecture_interfaces_only",
+      "interaction_system_contracts",
+      "save_and_persistence_architecture",
+      "progression_system_architecture",
+      "skill_system_architecture",
+      "ability_system_architecture"
+    ],
+    "explicitly_out_of_scope": [
+      "combat_implementation",
+      "ai_behavior",
+      "missions_and_quest_scripting",
+      "dialogue_content",
+      "npc_behavior",
+      "economy_and_currency_systems",
+      "vehicles",
+      "character_biographies",
+      "item_databases",
+      "weapon_databases"
+    ],
+    "scope_enforcement_rule": "Every framework file in this package defines interfaces, schemas, contracts, registries, lifecycle events, and extension points only. Where a concept touches an out-of-scope area (e.g. an ability's activation contract could theoretically include combat), this package defines the generic contract and explicitly stops short of any combat-specific implementation, damage model, or AI response — those belong to later, separate packages that will implement against this foundation's contracts.",
+    "violation_handling": "Any future addition to this package that introduces out-of-scope content (a named weapon, a specific mission trigger, dialogue text, an NPC's behavior tree) should be treated as a scope violation requiring removal, not as an acceptable expansion."
+  },
+  "registry_references": {
+    "gameplay_manifest": { "file": "GameplayManifest.json", "required": true, "role": "Extension-point contract for future gameplay packages." },
+    "gameplay_rules": { "file": "GameplayRules.json", "required": true, "role": "Architectural governance rules for this package and its consumers." },
+    "gameplay_schema": { "file": "GameplaySchema.json", "required": true, "role": "Consolidated JSON Schema definitions for every framework file below." },
+    "player_framework": { "file": "PlayerFramework.json", "required": true },
+    "character_framework": { "file": "CharacterFramework.json", "required": true },
+    "interaction_framework": { "file": "InteractionFramework.json", "required": true },
+    "save_framework": { "file": "SaveFramework.json", "required": true },
+    "progression_framework": { "file": "ProgressionFramework.json", "required": true },
+    "skill_framework": { "file": "SkillFramework.json", "required": true },
+    "ability_framework": { "file": "AbilityFramework.json", "required": true },
+    "gameplay_validation": { "file": "GameplayValidation.json", "required": true }
+  },
+  "consumption_model": {
+    "consumed_by": "Future gameplay packages (Combat, AI, Missions, Dialogue, Economy, Vehicles) — not the VOID World Builder.",
+    "contrast_with_meridian_master": "Meridian_Master.json is read by the World Builder to generate geometry. Gameplay_Master.json is read by future gameplay-system engineers to know what interfaces already exist and must be implemented against, not extended arbitrarily.",
+    "extension_pattern": "A future package (e.g. a Combat Package) references this package's stable IDs and contracts (e.g. AbilityFramework's activation lifecycle) the same way this package references Meridian_Master's district IDs — read-only, additive, never modifying the foundation it builds on."
+  },
+  "canon_references": {
+    "note": "This package supports these canon-confirmed facts architecturally. It does not restate their narrative content — each is cited to its source of truth.",
+    "dual_player_identity": { "requirement": "Player identity system must support exactly two selectable named identities.", "source": "Vol IV Ch. 7 Canon Lock — Kaevon and Veronica as the two selectable player identities." },
+    "echo_shift_ability": { "requirement": "Ability system must support a traversal-class ability that temporarily removes the player from an external perception system.", "source": "Vol II, Hub Upgrade — Echo Shift." },
+    "non_corporeal_companion": { "requirement": "Character framework must support a character entity with no fixed physical form.", "source": "Vol II — Echo, 'a shifting geometry of light that never quite resolves into a shape.'" },
+    "tracked_state_variables": { "requirement": "Save framework must persist the six tracked state variables exactly as defined upstream, not reinvent them.", "source": "GameplayGraph.json (Meridian_Master, locked) — nyx_status, mira_saved, memory_fragment_count, compassion_flags, riggs_redemption_complete, talis_extracted." },
+    "memory_fragment_progression": { "requirement": "Progression system must support a citywide collectible-driven progression resource.", "source": "GameplayGraph.json (Meridian_Master, locked) — memory_fragment_count." },
+    "single_first_person_moment": { "requirement": "Player framework's camera/control contract must support a mode switch capability, used exactly once in the confirmed campaign.", "source": "Vol IV, 5.1 — first-person reserved exclusively for the Descent connective scene." }
+  },
+  "intended_ue5_systems": {
+    "note": "These are the UE5 systems this package's contracts are designed to be implemented against. Naming them is architectural scoping, not implementation — no Blueprint or C++ code appears anywhere in this package.",
+    "systems": ["Gameplay Ability System", "Enhanced Input", "State Trees", "Modular Gameplay Features", "Game Feature Plugins", "Animation Blueprints"]
+  },
+  "generation_pipeline": {
+    "import_order": [
+      "gameplay_master",
+      "gameplay_schema",
+      "gameplay_rules",
+      "character_framework",
+      "player_framework",
+      "progression_framework",
+      "interaction_framework",
+      "ability_framework",
+      "skill_framework",
+      "save_framework",
+      "gameplay_validation",
+      "gameplay_manifest"
+    ],
+    "note": "gameplay_manifest is imported last because it consolidates extension points exposed by every framework file above it — it cannot be meaningfully assembled first. Framework order below character_framework follows the dependency chain formalized in GameplayRules.json (character is the root; save is cross-cutting and depends on everything before it)."
+  },
+  "future_expansion_hooks": {
+    "combat_package": { "attaches_to": ["ability_framework", "character_framework"], "status": "not_started_out_of_scope_for_this_package" },
+    "ai_package": { "attaches_to": ["character_framework", "interaction_framework"], "status": "not_started_out_of_scope_for_this_package" },
+    "missions_package": { "attaches_to": ["progression_framework", "interaction_framework"], "status": "not_started_out_of_scope_for_this_package" },
+    "dialogue_package": { "attaches_to": ["interaction_framework", "character_framework"], "status": "not_started_out_of_scope_for_this_package" },
+    "economy_package": { "attaches_to": ["progression_framework", "save_framework"], "status": "not_started_out_of_scope_for_this_package" },
+    "vehicles_package": { "attaches_to": ["player_framework", "interaction_framework"], "status": "not_started_out_of_scope_for_this_package" }
+  },
+  "design_authority": {
+    "file": "Gameplay_Design_Master.md",
+    "role": "Source-grounded design authority for this package, added retroactively — this manifest predates that document's creation. Every model below cross-references its section.",
+    "precedence_rule": "Where this package's existing content and Gameplay_Design_Master.md's status tags disagree, the Design Master's status tag governs. This applies most directly to progression_model.skill_ability_mechanism below."
+  },
+  "gameplay_state_model": {
+    "source": "Gameplay_Design_Master.md Section 6",
+    "states": ["exploration", "interaction", "stealth", "combat", "pursuit_escape", "dialogue", "mission_active", "failure_recovery"],
+    "status": "INFERRED — no canon source diagrams a state-transition model explicitly; this list synthesizes states each individually evidenced across confirmed missions.",
+    "authoritative_detail": "Gameplay_Design_Master.md Section 6 table (entry/exit conditions per state)."
+  },
+  "player_capability_model": {
+    "source": "Gameplay_Design_Master.md Section 4",
+    "foundational": ["basic_movement_interaction_observation", "hacking_deck_modular_loadout", "dual_identity_selection"],
+    "unlockable": ["echo_shift_ability", "non_lethal_remember_takedown", "absolution_weapon_mod", "riggs_redemption_temporary_capability_profile"],
+    "status": "CANON for the unlockable list items individually; INFERRED for the foundational list (required by every mission, never itemized as such in any single source)."
+  },
+  "interaction_model": {
+    "source": "Gameplay_Design_Master.md Sections 5, 7",
+    "flow": "PLAYER -> INTERACTION -> TARGET -> SYSTEM RESPONSE -> WORLD STATE CHANGE",
+    "status": "CANON for existence of every interaction type listed in InteractionFramework.json; INFERRED for the generic flow diagram itself."
+  },
+  "persistence_model": {
+    "source": "Gameplay_Design_Master.md Section 14",
+    "must_persist": ["six_tracked_state_variables", "player_identity_selection", "side_quest_completion_state", "interaction_completion_state"],
+    "temporary_not_required": ["in_progress_mission_objective_substate", "active_dialogue_tree_position", "active_minigame_state"],
+    "status": "CANON for the six tracked state variables and identity selection; INFERRED for the other two persist categories and both temporary-state items."
+  },
+  "progression_model": {
+    "source": "Gameplay_Design_Master.md Section 9, Section 20 UDD-03 and UDD-06",
+    "confirmed_elements": ["memory_fragment_collection", "compassion_flagged_choices", "undercroft_reputation", "riggs_redemption_completion"],
+    "skill_ability_mechanism": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED. Canon confirms two specific unlock outcomes (non-lethal takedown, Absolution mod) but never confirms a general mechanism. SkillFramework.json's prerequisite-graph/skill-tree architecture is PROPOSED, not CANON — see that file's own design_status field.",
+    "currency_as_resource": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED. No source describes credits as spendable on player capability. ProgressionFramework.json's ProgressionResourceRegistry correctly avoids currency framing; this note exists to prevent a future package from assuming otherwise."
+  },
+  "source_traceability": {
+    "authoritative_table": "Gameplay_Design_Master.md Section 19",
+    "highest_priority_open_item": {
+      "id": "UDD-01",
+      "topic": "Spire Server Hub / Nyx boss encounter discrepancy",
+      "status": "CONFLICTING",
+      "effect_on_this_package": "AbilityFramework.json's echo_shift_reference_instance and ability_slot_system make no claim about Server Hub combat and should not be extended to imply one exists until this is resolved."
+    },
+    "status_preservation_rule": "No file in this package may present a PROPOSED or INFERRED design as if it were CANON. Where this audit found a violation of that rule (SkillFramework.json), it was corrected in place with an explicit status field, not silently left as-is or rewritten from scratch."
+  }
+}

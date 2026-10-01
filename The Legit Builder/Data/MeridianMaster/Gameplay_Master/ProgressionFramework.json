@@ -1,0 +1,75 @@
+{
+  "$schema": "void_progression_framework_schema_v1",
+  "framework_id": "progression_framework",
+  "framework_name": "Progression Framework",
+  "framework_prefix": "PROG",
+  "depends_on": ["character_framework"],
+  "scope_compliance_statement": "This file defines the contract for tracking and granting progression resources. It contains no currency, prices, or trade mechanics (per GameplayRules.json Scope Enforcement Rule SR-04), and no specific mission triggers that grant progression — only the generic interface a future Missions package calls.",
+  "extension_points_implemented": ["EP-PROG-01", "EP-PROG-02", "EP-PROG-03"],
+  "progression_resource_registry": {
+    "implements": "EP-PROG-01",
+    "interface_name": "ProgressionResourceRegistry",
+    "contract": {
+      "required_fields": ["resource_id", "accumulation_rule", "threshold_check_ref"],
+      "namespace_rule": "resource_id uses the PROG_ prefix.",
+      "confirmed_example_instance": {
+        "resource_id": "PROG_memory_fragments",
+        "accumulation_rule": "increments_on_collection_across_all_districts",
+        "upstream_source": "memory_fragment_count, tracked in GameplayGraph.json (Meridian_Master, locked), set_during: ongoing_all_districts",
+        "confirmed_in_scope_effect": "Sector 0's relay-fragment-lighting system (Sector_0.md Sec. 27, locked) — a purely additive visual system with no new collectible category. This framework references that effect; it does not redefine it.",
+        "content_policy": "This framework does not define new collectible types, new districts to place fragments in, or new visual effects. It only exposes the generic registry contract that the already-confirmed system above implements."
+      }
+    }
+  },
+  "progression_grant_interface": {
+    "implements": "EP-PROG-02",
+    "interface_name": "ProgressionGrantInterface",
+    "contract": {
+      "method_signature": "grant(resource_id: string, amount: integer, source_context: string) -> boolean",
+      "content_policy": "This is a generic grant contract. It does not define which missions, interactions, or events call it — that belongs entirely to a future Missions package. This framework guarantees the call succeeds and the resource registry updates; it has no opinion on why the call was made."
+    }
+  },
+  "threshold_unlock_contract": {
+    "implements": "EP-PROG-03",
+    "interface_name": "ThresholdUnlockContract",
+    "contract": {
+      "method_signature": "check_threshold(resource_id: string) -> boolean",
+      "confirmed_example_reference": {
+        "description": "The locked campaign's TRANSCEND ending option requires memory_fragment_count to reach a specific upstream-defined threshold, alongside other tracked variables (compassion_flags, nyx_status).",
+        "source": "GameplayGraph.json tracked_state_variables (Meridian_Master, locked); the specific threshold values and full AND-condition logic are Volume IV / Knowledge Base content and are out of scope for this package entirely — flagged as 'out_of_scope' in the locked file itself.",
+        "hard_constraint": "This framework's check_threshold() method reads an upstream-defined threshold value; it never defines, stores, or modifies that value itself. The threshold is canon content, not gameplay-framework architecture."
+      }
+    }
+  },
+  "canon_references": [
+    { "fact": "memory_fragment_progression", "source": "Gameplay_Master.json canon_references.memory_fragment_progression" }
+  ],
+  "additional_structure": {
+    "added_during": "Phase 2 audit — additive, no existing content changed.",
+    "progression_dependencies": {
+      "status": "DEFINED",
+      "detail": "progression_framework depends only on character_framework per GameplayRules.json's dependency graph — progression is tracked per-character, not per-ability or per-skill, which are downstream consumers, not dependencies."
+    },
+    "rewards": {
+      "status": "PARTIALLY DEFINED",
+      "confirmed_instances": ["riggs_redemption_completion_grants_absolution_weapon_mod", "sq1_completion_grants_undercroft_reputation_buff (mechanism UNDEFINED)"],
+      "general_reward_mechanism": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED. No generic 'reward' data structure exists in canon beyond these named, specific instances."
+    },
+    "state_transitions": {
+      "status": "DEFINED",
+      "detail": "A progression resource transitions only through progression_grant_interface's grant() call, checked against threshold_unlock_contract's check_threshold(). No other transition path exists in this framework."
+    },
+    "progression_persistence": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "SaveFramework.json's state_category_mapping.progression_state names this framework as owner; the specific slot remains pending_registration there."
+    },
+    "future_skill_integration": {
+      "status": "DEFINED, BUT DOWNSTREAM SKILL MODEL IS PROPOSED",
+      "detail": "SkillFramework.json's unlock_cost_resource_ref already points back to this framework's PROG_ resource IDs. See SkillFramework.json's own design_status field for why the skill model itself is not treated as confirmed."
+    },
+    "future_ability_integration": {
+      "status": "DEFINED",
+      "detail": "AbilityFramework's resource_cost_ref, where present, points to this framework's PROG_ resource IDs. No ability in this package currently has a defined cost (ABIL_echo_shift's resource_cost_ref is null)."
+    }
+  }
+}

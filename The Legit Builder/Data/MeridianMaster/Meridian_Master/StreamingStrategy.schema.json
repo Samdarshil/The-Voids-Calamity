@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_streaming_strategy_schema_v1",
+  "title": "VOID: The Unseen Hand — StreamingStrategy.json Schema",
+  "type": "object",
+  "required": ["$schema", "documentation_gap_note", "loading_rules", "priority_rules", "transition_rules", "memory_strategy", "performance_strategy"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_streaming_strategy_schema_v1" },
+    "documentation_gap_note": {
+      "type": "object",
+      "required": ["issue", "resolution_used", "recommendation"],
+      "additionalProperties": false,
+      "properties": {
+        "issue": { "type": "string" },
+        "resolution_used": { "type": "string" },
+        "recommendation": { "type": "string" }
+      }
+    },
+    "loading_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["region", "rule"],
+        "additionalProperties": false,
+        "properties": {
+          "region": { "type": "string" },
+          "rule": { "type": "string" },
+          "cross_reference": { "type": "string" }
+        }
+      }
+    },
+    "priority_rules": {
+      "type": "object",
+      "required": ["tier_scale", "cross_district_ranking", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "tier_scale": { "type": "array", "items": { "type": "string" } },
+        "cross_district_ranking": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["rank", "district", "reasoning", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "rank": { "type": "integer", "minimum": 1 },
+              "district": { "type": "string" },
+              "reasoning": { "type": "string" },
+              "source": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "transition_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "applies_to", "rule", "cross_reference"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "applies_to": { "type": "array", "items": { "type": "string" } },
+          "rule": { "type": "string" },
+          "cross_reference": { "type": "string" }
+        }
+      }
+    },
+    "memory_strategy": {
+      "type": "object",
+      "required": ["policy", "high_priority_persistent_content", "low_priority_gated_content", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "policy": { "type": "string" },
+        "high_priority_persistent_content": { "type": "array", "items": { "type": "string" } },
+        "low_priority_gated_content": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "performance_strategy": {
+      "type": "object",
+      "required": ["confirmed_no_concerns", "forward_looking_engineering_flags"],
+      "additionalProperties": false,
+      "properties": {
+        "confirmed_no_concerns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["district", "area", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "district": { "type": "string" },
+              "area": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        },
+        "forward_looking_engineering_flags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["district", "area", "detail", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "district": { "type": "string" },
+              "area": { "type": "string" },
+              "detail": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

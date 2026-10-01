@@ -1,0 +1,57 @@
+{
+  "FileVersion": 3,
+  "Version": 8,
+  "VersionName": "0.8.0-merged-agents1-7-candidate",
+  "FriendlyName": "VOID World Builder",
+  "Description": "VOID World Builder merged source candidate: Core, Import, Road, Metro, World Partition helpers, Validation, Building, District, Environment, Props and Lighting. Not yet UE-compiled.",
+  "Category": "World Building",
+  "CreatedBy": "VOID Engineering Studio",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EngineVersion": "5.8.2",
+  "CanContainContent": true,
+  "IsBetaVersion": true,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "EnabledByDefault": false,
+  "Modules": [
+    {
+      "Name": "VOIDWorldBuilderCore",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "VOIDWorldBuilderLighting",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "VOIDWorldBuilderImport",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "VOIDWorldBuilderGenerators",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "VOIDWorldBuilderValidation",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "VOIDWorldBuilderEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "ProceduralMeshComponent",
+      "Enabled": true
+    }
+  ]
+}

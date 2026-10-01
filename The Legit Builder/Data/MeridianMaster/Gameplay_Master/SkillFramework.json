@@ -1,0 +1,45 @@
+{
+  "$schema": "void_skill_framework_schema_v1",
+  "framework_id": "skill_framework",
+  "framework_name": "Skill Framework",
+  "framework_prefix": "SKIL",
+  "design_status": {
+    "status": "PROPOSED — NOT CANON. IMPLEMENTATION DECISION REQUIRED.",
+    "source": "Gameplay_Design_Master.md Section 19 (Design Traceability table) and Section 20, UDD-03.",
+    "clarification": "The interface content below (skill nodes, prerequisite graphs, unlock costs) does not invent specific skills — that scoping is correct and remains unchanged. But the underlying MECHANISM this framework assumes — that progression works through a skill-tree-with-prerequisites structure at all — is itself unconfirmed by any canon source. Canon confirms exactly two unlock outcomes (the non-lethal 'remember' takedown, the Absolution weapon mod) without ever confirming they're delivered through anything resembling a skill tree. A future package should treat this file's architecture as one reasonable implementation option, not as evidence the underlying design question is already settled.",
+    "added_during": "Phase 2 audit against Gameplay_Design_Master.md, in place of a full rewrite — see CHANGELOG.md."
+  },
+  "depends_on": ["ability_framework", "progression_framework"],
+  "dependency_gap_note": "ability_framework does not exist yet at time of writing, per the requested build order (Skill listed before Ability). This framework references ability_framework's planned ABIL-prefixed IDs by convention; full cross-file validation will run once AbilityFramework.json exists, built immediately next.",
+  "scope_compliance_statement": "This file defines the contract for skill nodes and their prerequisite structure. It contains no specific named skills, no numeric effect values, and no combat balance data — only the interface and graph-validity rules future packages (Combat, primarily) implement against.",
+  "extension_points_implemented": ["EP-SKILL-01", "EP-SKILL-02", "EP-SKILL-03"],
+  "skill_node_contract": {
+    "implements": "EP-SKILL-01",
+    "interface_name": "SkillNodeContract",
+    "contract": {
+      "required_fields": ["skill_id", "prerequisite_skill_ids", "unlock_cost_resource_ref", "grants_ability_id"],
+      "namespace_rule": "skill_id uses the SKIL_ prefix.",
+      "unlock_cost_reference": "unlock_cost_resource_ref must reference a valid PROG_ prefixed resource_id from ProgressionFramework's ProgressionResourceRegistry (e.g. PROG_memory_fragments), not a new currency type.",
+      "grants_ability_reference": "grants_ability_id must reference a valid ABIL_ prefixed ability_id from AbilityFramework's AbilityContract — the specific ability being unlocked is defined there, not here.",
+      "content_policy": "This contract defines that a skill node exists and what it costs/grants by reference. It does not define what the granted ability does in gameplay terms."
+    }
+  },
+  "skill_tree_registry": {
+    "implements": "EP-SKILL-02",
+    "interface_name": "SkillTreeRegistry",
+    "contract": {
+      "required_fields": ["tree_id", "member_skill_ids"],
+      "namespace_rule": "tree_id uses the SKIL_ prefix with a _tree suffix convention (e.g. SKIL_example_tree).",
+      "content_policy": "Defines hierarchy/grouping structure only — no specific tree names or thematic content are populated in this foundation package."
+    }
+  },
+  "prerequisite_graph_rules": {
+    "implements": "EP-SKILL-03",
+    "interface_name": "PrerequisiteGraphRules",
+    "contract": {
+      "rule": "The full set of skill_node_contract entries across all skill trees must form a directed acyclic graph — no skill may (directly or transitively) list itself as its own prerequisite.",
+      "verification_method": "Any future package adding skill nodes must re-run a DAG check (e.g. networkx.is_directed_acyclic_graph or equivalent) against the combined prerequisite graph before considering its addition complete, consistent with the same verification standard used throughout this project's world-building packages."
+    }
+  },
+  "canon_references": []
+}

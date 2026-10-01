@@ -1,0 +1,4293 @@
+{
+  "artifact": "VOID World Builder merged candidate",
+  "target_engine": "5.8.2",
+  "verified_ue_compile": false,
+  "file_count": 857,
+  "files": [
+    {
+      "path": "Config/VOIDLighting/LightingPresets.json",
+      "size_bytes": 9701,
+      "sha256": "ed3155876b1ba0d895e91bca0166e5d08c4a79c03ea40782c1635781974a3343"
+    },
+    {
+      "path": "Config/VOIDLighting/LightingProfiles.json",
+      "size_bytes": 10465,
+      "sha256": "6e3d9aec1fdc5b9704d0a9be3cc0c6a844b8f32d310dc5775256de0a082d9fc2"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Design_Master.md",
+      "size_bytes": 40462,
+      "sha256": "605a574620df59b2811b3d9c3613672894b72e4905457145294234ad25323473"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/AbilityFramework.json",
+      "size_bytes": 6044,
+      "sha256": "754d501e8810efea897eba0dcbe620f1bd8bb0d967a47b18a6deef4247ff8458"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/CHANGELOG.md",
+      "size_bytes": 2807,
+      "sha256": "bf062e9e5dde4696250f5045d9741239c9faf70a6e151aa2dad78d6e513a0e50"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/CharacterFramework.json",
+      "size_bytes": 5617,
+      "sha256": "3533c54fca019ea90a0e2aa35651873e7196baff9594e26aef5e0028acfc3ef8"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/EngineeringHandoff.md",
+      "size_bytes": 7717,
+      "sha256": "d92f6529b141718e6c2964fb2228da78e316118320afb567ba9654ca3b894188"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/GameplayCompatibility.md",
+      "size_bytes": 5862,
+      "sha256": "1ffe5ab1ba9d893b77da1808ddb35444b77da47908d5b99655ada79483d38c19"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/GameplayManifest.json",
+      "size_bytes": 16669,
+      "sha256": "879119b1dfd05a29ae8b792a1308eee4bae9cae9cceaafa3ee16720ec30c866f"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/GameplayRules.json",
+      "size_bytes": 6259,
+      "sha256": "a4b62dadeccf0d03d2925639c725aaecea7815a8d16a5815be67b98c29a47595"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/GameplaySchema.json",
+      "size_bytes": 11087,
+      "sha256": "d57c6245e39a11201b6929aa9297031a0585c6d90bb42b2ddd2b9d141c840d6f"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/GameplayValidation.json",
+      "size_bytes": 6416,
+      "sha256": "b579c249c675166364af10845863c66c7e59c67a7dbb0c3f03a75d1ad3bb98bf"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/Gameplay_Index.md",
+      "size_bytes": 4778,
+      "sha256": "f8ecd1b293ed2621a1c4944678c6b51454d6c6a7ff521c2cfe5a6b77aec9de48"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/Gameplay_Master.json",
+      "size_bytes": 12360,
+      "sha256": "00ff28c96d00eece28e4d01f40a81406cd32112c129207d06d4387a898a352ae"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/InteractionFramework.json",
+      "size_bytes": 5351,
+      "sha256": "bf4a7ef78171c38aca6f00a56d5c8c3be26d629c4cfa9f9817f183f0a3d3a703"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/PlayerFramework.json",
+      "size_bytes": 7153,
+      "sha256": "51e96ce31ff33f53de3a56cd8c741f8cbfae0568d9d5ac4e0e95435947470324"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/ProgressionFramework.json",
+      "size_bytes": 5451,
+      "sha256": "61f2870375653424d3473a2a6123b2ce53c1923cd03d3b95be4b18f20bc7325d"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/README.md",
+      "size_bytes": 3062,
+      "sha256": "4b401852ca04efd1578cd18213e27a2586cc69dd79e487a51655024264fe3526"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/SaveFramework.json",
+      "size_bytes": 6744,
+      "sha256": "904617e34da6ccc69dbb9e54c83f2c3995461286edb626de503d2a75d3cba591"
+    },
+    {
+      "path": "Data/MeridianMaster/Gameplay_Master/SkillFramework.json",
+      "size_bytes": 4067,
+      "sha256": "3a1366ec4482ca05f305b3fcc6cfe9c47d598afa0dcfceee4a30407f06be345a"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/BuilderManifest.json",
+      "size_bytes": 6895,
+      "sha256": "740aa5cc0304d99c746a1ee5a4aa867aad5ac775058ff2f4341ea2df0a9c4664"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/BuilderRules.json",
+      "size_bytes": 9595,
+      "sha256": "3401061c209a866e4907e2cb58c04e4317733650a6aedc1866542ace6c626d56"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/BuilderRules.schema.json",
+      "size_bytes": 5099,
+      "sha256": "dec43c731dd60c925565208bd663a6dbe89075b1a2b32fc6bdfd510751d2f978"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/CHANGELOG.md",
+      "size_bytes": 3895,
+      "sha256": "796cdf5bb8a43f9fb8ee0b8193e0e81f8dc6b1fb22f7708c2d872fb23fe7f894"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/CompatibilityMatrix.md",
+      "size_bytes": 5980,
+      "sha256": "6d17a98264cc35d502c5b32b2e95046c947959a33b76a6ab97850afcd8bafaf6"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/DataLayers.json",
+      "size_bytes": 5748,
+      "sha256": "a10b7bd454b29a0e7c59c9875c1e07eb3bf043427701825350c11ff7bed41c6c"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/DataLayers.schema.json",
+      "size_bytes": 2645,
+      "sha256": "0c390fbdeb61d9e318f234cfe897c2f09cd471a7daadb023d1bca323cd610360"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/DependencyGraph.json",
+      "size_bytes": 5220,
+      "sha256": "871825dbad7971a94d8b6cdd95c53c2a29feaee16b5fcb4f46988268b77effec"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/DistrictRegistry.json",
+      "size_bytes": 9999,
+      "sha256": "f0993518e590e9eea43b558cfc8e46f834f464df5237f0f566b6613d2284ef30"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/DistrictRegistry.schema.json",
+      "size_bytes": 5572,
+      "sha256": "d4fe67bfc38c66c9014a89264d0458622abb58ab308a54eff9f44cd03df5e4ef"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/EngineeringHandoff.md",
+      "size_bytes": 9890,
+      "sha256": "caaef7ccdff9660b7d19344383b216e5ff174ebc2b6c5ca3f882dcabceb3f8c0"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/GameplayGraph.json",
+      "size_bytes": 8016,
+      "sha256": "265a549e8bddbf2a6fdc231b9a0e24ad27872076d93da6d9389f2170191258e6"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/GameplayGraph.schema.json",
+      "size_bytes": 4602,
+      "sha256": "21191124dfe8986dcc4739b969653275efc128a2321801e15162c5855f19d4e6"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/InfrastructureGraph.json",
+      "size_bytes": 6231,
+      "sha256": "646803754c14ede7d5b3bb47660cbeec51c3539a34593306cedeff7712faa504"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/InfrastructureGraph.schema.json",
+      "size_bytes": 4638,
+      "sha256": "0e106170ddd70d48df2182a8035220cc88174c37c5860883f6b1c4189cccda7a"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/LandmarkRegistry.json",
+      "size_bytes": 8798,
+      "sha256": "8f7eb30039365686404ecbaa1b82864cf54d864bd00c634c4416914919b249b8"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/LandmarkRegistry.schema.json",
+      "size_bytes": 2788,
+      "sha256": "290e5ca06725e19b8f6a70f00a33ecffe9f5f8ef6f8a8d1c70b20dcfd1f54aba"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/Meridian_Master.json",
+      "size_bytes": 14026,
+      "sha256": "52e3ff7eefe08141dbca6f3a38b1f387288d0a1d51e0b4e3df48b2d05c277287"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/Meridian_Master.schema.json",
+      "size_bytes": 13057,
+      "sha256": "0e1958c62483e4bcd534d7554b575440b09c0106c734931d3b8cfe486b3eff6e"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/Meridian_Master_Index.md",
+      "size_bytes": 6875,
+      "sha256": "9ad5ecea6e64afdb80be5c71698184dc18fe0b7ce4b86aacbde4671277db5ae7"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/MetroNetwork.json",
+      "size_bytes": 6543,
+      "sha256": "1e26a4956ff5dccbc33bb9d5d57da334fb9d11997e49ef746768f711bf84ac78"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/MetroNetwork.schema.json",
+      "size_bytes": 3668,
+      "sha256": "0541cf04a27eaeb12aad7a073830c3d9eb6ec1876c4639c8517ca4378b2ebda6"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/NavigationGraph.json",
+      "size_bytes": 6525,
+      "sha256": "2b17ac484b7bf12d091b2b92d50cdcc0b73807e5ea23b4aeb934fc389d585f4b"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/NavigationGraph.schema.json",
+      "size_bytes": 6622,
+      "sha256": "5f47b365016e32d5de437bb8920d1cec41c583b9b70dfd5564b03115915b1b43"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/PackageManifest.json",
+      "size_bytes": 11416,
+      "sha256": "a3b502a695a2ebbfe65f2a27c3e5fcde9cbe423671d1643dc3887acae31e8923"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/README.md",
+      "size_bytes": 6303,
+      "sha256": "c755810904669117ed76c485ea0bb5ee00cbe0887988206cbf79ffb8639b4348"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/RoadNetwork.json",
+      "size_bytes": 6416,
+      "sha256": "ad170fcc3da0341031ccc9e718d1bb87352fac0f451f0fd2838110aca206baf2"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/RoadNetwork.schema.json",
+      "size_bytes": 6222,
+      "sha256": "0cd63b0696ea134a1e2986471b13b805cc94e9d5a161c893c2c684796bb5be2e"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/StreamingStrategy.json",
+      "size_bytes": 7958,
+      "sha256": "7831de9c66089a5afac9748363fc2a1a65bd3a9962a43067a86cd3cf959dcc71"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/StreamingStrategy.schema.json",
+      "size_bytes": 4122,
+      "sha256": "b1e7575168cec936213c675964b9a399550aac243ee495fb86e80da61e781c6e"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/ValidationReport.md",
+      "size_bytes": 8717,
+      "sha256": "1a610494ad36305497f8cb0cb2fb94ea7e9b0024157129776bbf6b1c5af5dc54"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/ValidationSchema.json",
+      "size_bytes": 8183,
+      "sha256": "1f5a4e3a501785df47308fcd6a29a54600794f6729bec211a8053a31c832c5c1"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/WorldPartition.json",
+      "size_bytes": 7972,
+      "sha256": "ef75015a4b8f307233941d7bf9df8c83c9561149c3d7e3095bee73bf5d5fa420"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master/WorldPartition.schema.json",
+      "size_bytes": 3423,
+      "sha256": "cb01abc1c049912b3c36aeebf87f15dbf8a0e6c98b4fd2b09c47b5b014305457"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master.json",
+      "size_bytes": 14026,
+      "sha256": "52e3ff7eefe08141dbca6f3a38b1f387288d0a1d51e0b4e3df48b2d05c277287"
+    },
+    {
+      "path": "Data/MeridianMaster/Meridian_Master_Plan.md",
+      "size_bytes": 27053,
+      "sha256": "0928ae31ba277b82117291387f216738201a908255f60bb3581dcb6dc0c71fe7"
+    },
+    {
+      "path": "Data/MeridianMaster/Metro_Archives.md",
+      "size_bytes": 29438,
+      "sha256": "3e0a66703e4a4e54f279dd2f7278489313f339f0eef43497a239cbc1e7963d6e"
+    },
+    {
+      "path": "Data/MeridianMaster/Metro_Archives_ValidationReport.md",
+      "size_bytes": 8538,
+      "sha256": "05a12b150a278872600d60643bfc2ffeda43e64702e83491d79f59e17a343b57"
+    },
+    {
+      "path": "Data/MeridianMaster/Metro_Archives_data.json",
+      "size_bytes": 7573,
+      "sha256": "7c8d9a0dafb23a22404f566418879708cfa1eb46d35e86109f8252804a355112"
+    },
+    {
+      "path": "Data/MeridianMaster/Metro_Archives_schematic.svg",
+      "size_bytes": 13238,
+      "sha256": "32685ef5be9d78970bc3512f1b9e1e4553c7d7f6955c7813afc6686350ef1132"
+    },
+    {
+      "path": "Data/MeridianMaster/Olympus_Spire.md",
+      "size_bytes": 31707,
+      "sha256": "1a0b87c31cbe5a23527134c4361cfc3798ffb41aeb559077239f41a95b58ea17"
+    },
+    {
+      "path": "Data/MeridianMaster/Olympus_Spire_ValidationReport.md",
+      "size_bytes": 9985,
+      "sha256": "f4d6ef146ebc317eef8479c18e04b69be5e4d58a9ab1d83a0c23ce263daacf9d"
+    },
+    {
+      "path": "Data/MeridianMaster/Olympus_Spire_data.json",
+      "size_bytes": 8720,
+      "sha256": "2db844b718ca475fb537027a936bf3b604b3f8c059dd7579853d39e68fec9ca5"
+    },
+    {
+      "path": "Data/MeridianMaster/Olympus_Spire_schematic.svg",
+      "size_bytes": 12001,
+      "sha256": "800bad43c67944f5eb6b816a2ad7d09895785ab36eb1b13c5969776426c7ad40"
+    },
+    {
+      "path": "Data/MeridianMaster/Sector_0.md",
+      "size_bytes": 26666,
+      "sha256": "19dd761f93fce76d36c40489180bc8be2806238f4db6481dc6a01accecdb3c47"
+    },
+    {
+      "path": "Data/MeridianMaster/Sector_0_ValidationReport.md",
+      "size_bytes": 9578,
+      "sha256": "2d6bd11d7af22a2c71d4483815d40c6127bc433ccb16ac6d2f70875c1fd25465"
+    },
+    {
+      "path": "Data/MeridianMaster/Sector_0_data.json",
+      "size_bytes": 8167,
+      "sha256": "2e8df4466cee444c6ae9019e14d183efee449f3e220cf0017d991e8d14af5792"
+    },
+    {
+      "path": "Data/MeridianMaster/Sector_0_schematic.svg",
+      "size_bytes": 11294,
+      "sha256": "4bdde202906cbca17a41f5069f2f6efbf8ec2d9807c054dda87181ddce172cc8"
+    },
+    {
+      "path": "Data/MeridianMaster/VOID_Location_01_The_Undercroft.md",
+      "size_bytes": 27588,
+      "sha256": "9f8979f43545d30ff83018fc524170712f545d060e852e8e6fbe9a2ba9052360"
+    },
+    {
+      "path": "Data/MeridianMaster/VOID_Location_01_Undercroft_data.json",
+      "size_bytes": 6147,
+      "sha256": "473cd57b2ef63c73b8aabe54aaa92abf345df6197cfc4fcffaa9e01e4655f5e5"
+    },
+    {
+      "path": "Data/MeridianMaster/White_Zones.md",
+      "size_bytes": 28228,
+      "sha256": "20569b9facd1d14d67fb751dd87214774aa58c27cbebb7e6eda10aecfa886847"
+    },
+    {
+      "path": "Data/MeridianMaster/White_Zones_ValidationReport.md",
+      "size_bytes": 7430,
+      "sha256": "1d1af810f2fe5658f995824729831fe8f079920026298d695ebe65d9e726fe0b"
+    },
+    {
+      "path": "Data/MeridianMaster/White_Zones_data.json",
+      "size_bytes": 6489,
+      "sha256": "9c46e3d1658db3b57e131f4150577c662fc7971a561edc854a78190f85ac0271"
+    },
+    {
+      "path": "Data/MeridianMaster/White_Zones_schematic.svg",
+      "size_bytes": 12996,
+      "sha256": "b4b471ace6afc2dbab7d3a771d2b252b3a157bb51f2193273a429c41d228e788"
+    },
+    {
+      "path": "Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "Docs/BuildInstructions.md",
+      "size_bytes": 5541,
+      "sha256": "d53dc7f3cd5a5d4d25932a0fc0b3d52085c5723ca8cbe040717554311da33fa7"
+    },
+    {
+      "path": "Docs/CodingStandards.md",
+      "size_bytes": 6065,
+      "sha256": "9c0fd8a39d69c7ac5c228c09eaca333d639b074c01ead810931422ea409ae61a"
+    },
+    {
+      "path": "Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "Docs/EnvironmentPropsArchitecture.md",
+      "size_bytes": 8606,
+      "sha256": "750b9bef41d9abfcbb175a8b71eb9d47e9a4d9c8eb698a9e90b450e060da566c"
+    },
+    {
+      "path": "Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "Docs/HANDOFF_AGENT4_BUILDINGS.md",
+      "size_bytes": 9777,
+      "sha256": "2c1c9a533995994af8e4856a1bb6e66766860ae237f1bf158a409def4bcf6572"
+    },
+    {
+      "path": "Docs/HANDOFF_AGENT5_DISTRICTS.md",
+      "size_bytes": 16489,
+      "sha256": "71dfea13ce142fe88c820b64d2225a4bd69c76e5b9e7635191acb69d438c52c3"
+    },
+    {
+      "path": "Docs/HANDOFF_AGENT6_ENVIRONMENT_PROPS.md",
+      "size_bytes": 10759,
+      "sha256": "d7e1a6fda08b28b1615e575e2e7adc57a1801bdbb15194ac4d001c959bcede19"
+    },
+    {
+      "path": "Docs/HANDOFF_AGENT7_LIGHTING.md",
+      "size_bytes": 14086,
+      "sha256": "0449af09485750b9170504059055fc1f9c62d736b6e24e6a2e54d1e34770e05a"
+    },
+    {
+      "path": "Docs/INTEGRATION_AUDIT_AGENT4_7.md",
+      "size_bytes": 6102,
+      "sha256": "180cc60198d95c02758f9878b4c903ab935c5e2a34ab1f39e28450f3926c1c8b"
+    },
+    {
+      "path": "Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "Docs/MetroGeneratorArchitecture.md",
+      "size_bytes": 7438,
+      "sha256": "951b9f0cad00c45e95e952ed9239c8c944ee1f121710dd784f5c5092bf3ce90b"
+    },
+    {
+      "path": "Docs/RoadGenerationFlowDiagram.md",
+      "size_bytes": 5921,
+      "sha256": "7d4ae4a1d3ee316e01a22feada940082eef4945fe7b3ca9565121d841cbec4ea"
+    },
+    {
+      "path": "Docs/RoadGeneratorArchitecture.md",
+      "size_bytes": 7279,
+      "sha256": "c2cf1994f83a5e2e526ef608987adee58d47374c89b2256c76c36e0d7bb43399"
+    },
+    {
+      "path": "Docs/RoadGeneratorClassDiagram.md",
+      "size_bytes": 4476,
+      "sha256": "08a1ee859e98f73223453f0c844122a6bb1056faff431432b50915cf30aec121"
+    },
+    {
+      "path": "Docs/RoadGeneratorDeveloperGuide.md",
+      "size_bytes": 4429,
+      "sha256": "b69fcf1eb900fd03dd91f8bcaff194f2c1e2e6dc9b327cc5956e936bb733fca1"
+    },
+    {
+      "path": "Docs/RoadGeneratorExtensionGuide.md",
+      "size_bytes": 3396,
+      "sha256": "2b68878d58260db75dbe2d4463fe0727d84850f7907381cb54299bddfe4685ee"
+    },
+    {
+      "path": "Docs/Samples/AssetSlots.sample.csv",
+      "size_bytes": 586,
+      "sha256": "ccfd551798a592af2e70d86844f58fdcf01c8333e499196a586a7743527d5a67"
+    },
+    {
+      "path": "Docs/Samples/DistrictProfiles.sample.csv",
+      "size_bytes": 196,
+      "sha256": "977bf949455fa506bb7d64274d8cf93fed57ff7abfd2a9f63dd82aade3b76c05"
+    },
+    {
+      "path": "Docs/Samples/MetroAuthoredBlock.example.json",
+      "size_bytes": 1151,
+      "sha256": "5a91200c9718e42b6864525e19f9bda383f1d32a158c1afdc61d671905c71811"
+    },
+    {
+      "path": "Docs/ValidationArchitecture.md",
+      "size_bytes": 5027,
+      "sha256": "f09c1ef1e8bb17ccbfd45f1e32d2d325fb7305f96ffef6fe2d331250494ca0a4"
+    },
+    {
+      "path": "Docs/ValidationRules.md",
+      "size_bytes": 6273,
+      "sha256": "aaf42405c4e0d8fde31072e2a9086eb602f521d26d725fa3bf97a7d9fe2f11db"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4263,
+      "sha256": "d5baaf8f9b2330e2e2519405493bf5fe6ed7832c21d6b7c9a96b1a2306110a1f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/AGENT1_FILE_OWNERSHIP.md",
+      "size_bytes": 4355,
+      "sha256": "d0eba3db4fc7fc2729abf1704be0239481e02fba7a999df53ac066e88ae054a3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/BuildInstructions.md",
+      "size_bytes": 5541,
+      "sha256": "d53dc7f3cd5a5d4d25932a0fc0b3d52085c5723ca8cbe040717554311da33fa7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/CodingStandards.md",
+      "size_bytes": 6065,
+      "sha256": "9c0fd8a39d69c7ac5c228c09eaca333d639b074c01ead810931422ea409ae61a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/HANDOFF_AGENT1.md",
+      "size_bytes": 22320,
+      "sha256": "95e9917429c3fd5c179a1b40ab01b2eafcc8349d6a89e8b1d91a47f818df8559"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/RoadGenerationFlowDiagram.md",
+      "size_bytes": 5921,
+      "sha256": "7d4ae4a1d3ee316e01a22feada940082eef4945fe7b3ca9565121d841cbec4ea"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/RoadGeneratorArchitecture.md",
+      "size_bytes": 7279,
+      "sha256": "c2cf1994f83a5e2e526ef608987adee58d47374c89b2256c76c36e0d7bb43399"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/RoadGeneratorClassDiagram.md",
+      "size_bytes": 4476,
+      "sha256": "08a1ee859e98f73223453f0c844122a6bb1056faff431432b50915cf30aec121"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/RoadGeneratorDeveloperGuide.md",
+      "size_bytes": 4429,
+      "sha256": "b69fcf1eb900fd03dd91f8bcaff194f2c1e2e6dc9b327cc5956e936bb733fca1"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/RoadGeneratorExtensionGuide.md",
+      "size_bytes": 3396,
+      "sha256": "2b68878d58260db75dbe2d4463fe0727d84850f7907381cb54299bddfe4685ee"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Docs/ValidationRules.md",
+      "size_bytes": 6273,
+      "sha256": "aaf42405c4e0d8fde31072e2a9086eb602f521d26d725fa3bf97a7d9fe2f11db"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/README.md",
+      "size_bytes": 4543,
+      "sha256": "96c5066eb4a783dcef9a373fdcef4af7bcf7565cba90cd918f905a020708aa19"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Coordinates/VoidWorldSpace.cpp",
+      "size_bytes": 3119,
+      "sha256": "f1f4b77ba2e7b61de477d06fa8169345f8e7788f3d9a16f92fed179780c42ae8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Data/VoidRoadOutput.cpp",
+      "size_bytes": 8274,
+      "sha256": "cf595fb7c870e4b2182997420101cd6b55030e1f1f007a33b38d66fb47c534d7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Settings/VoidWorldBuilderSettings.cpp",
+      "size_bytes": 1286,
+      "sha256": "cee50af15b59f416c6bd7385e7d349f77c3983447d49cda0b9689008971fd780"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Tests/VoidFoundationTests.cpp",
+      "size_bytes": 8906,
+      "sha256": "6519e281a68abbbf6f8eb173712b038d527e250e5351cd58bd17fe66cacb4675"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/Utilities/VoidSha256.cpp",
+      "size_bytes": 3256,
+      "sha256": "fc34a179b969021eda689f58fcb96eb93ab85829d912907fb780ff24504bb326"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Coordinates/VoidWorldSpace.h",
+      "size_bytes": 3276,
+      "sha256": "bebcf8397fa804427469f93ab9af5403fbdcc91681b7fa232194408ae8be2ffb"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 7730,
+      "sha256": "21ba245abfe5c20f660c397841b9a7cab111794c1c6c36f8e23b84157f159863"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidMeridianData.h",
+      "size_bytes": 11691,
+      "sha256": "8df2ca3e2060894412c9d2bdbec1f3b3f94ebdcb020b489100b15920bb7937e9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidRoadOutput.h",
+      "size_bytes": 7514,
+      "sha256": "fc6b37a37aa5e972ea1bc9ac500c05b93db9a81d4f814b96088f588f11b71adc"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 5061,
+      "sha256": "ac0f0e2a4b4ee9a72596faa159560b265ef82e578a702c30ac3ffdb36b52d647"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 8717,
+      "sha256": "6a999c76168fbd41ff0124dabd3a3aba9388ebf904d4d975eb491c07ff76d233"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Settings/VoidWorldBuilderSettings.h",
+      "size_bytes": 6065,
+      "sha256": "e28811b59178e12d946bac35d8b321a703f1b16fbe5a36e95415d1f36c7a4c50"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 4232,
+      "sha256": "a9500e9c8222cae21921d4645b6ebb9ae7e3bb39cbbf563a07d46fb0fe6e9ba0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/Utilities/VoidSha256.h",
+      "size_bytes": 932,
+      "sha256": "cf17508ad7d4a7abfac0aaf1f21140c634bbdeeac8825d4f1188463f7b9118d8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 670,
+      "sha256": "85cbae698bae2faac648e5d445b13a158954a34e2881276931dc0eb8bd35bc72"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 13791,
+      "sha256": "cfd3f84e3706b02556ad7f74fdfa3dc8b6f754511e9ffdbdc460b2559073cb65"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 4424,
+      "sha256": "c5ebcff3da62e90e179a2cf24e095c1ccc632e021e5c9d814b745ad4fe8dc47f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 3049,
+      "sha256": "1c9f401b185419c54a78d23d661026af6b6af8788ecbda2cc14a209e281049c5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidMeridianRoadPlanner.cpp",
+      "size_bytes": 9396,
+      "sha256": "137fbe9a687723742ec299d9bb1513263f56c9248b6e50ad4950c5d89c2c074f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadActor.cpp",
+      "size_bytes": 1680,
+      "sha256": "fcb5a46cb591893361300370357674dccd44d199ec2ed25e05f9952bd0365463"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadBridgeTunnelBuilder.cpp",
+      "size_bytes": 3509,
+      "sha256": "388a9a2378b677d27ada35146aba19e98aec77b8f31c2b87d6c5375c15cebeec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerationSettings.cpp",
+      "size_bytes": 223,
+      "sha256": "bc320c62052af1ca14b1cf0433d25791218e4f8a4f876d051980503bf3b84c83"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerator.cpp",
+      "size_bytes": 26777,
+      "sha256": "85f704ea33600b6073ca29f4795f7719adcf48549dfa16d6c79fc6a7b8b95ed9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadIntersectionBuilder.cpp",
+      "size_bytes": 13362,
+      "sha256": "8085ed6cf4a23e87d80f543c5e9301fcbecbe04f1eda787874a889e21356dc34"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadMeshBuilder.cpp",
+      "size_bytes": 5390,
+      "sha256": "371102ea12687061ed8e736e5d2485ee765207742a20fdcca3c614e280580ec8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadSplineBuilder.cpp",
+      "size_bytes": 2010,
+      "sha256": "1d9df120bd2943eb40071118470817c4e089ef9263263a35f82e2a7c2d607e3b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadTypeProfile.cpp",
+      "size_bytes": 3666,
+      "sha256": "c09674aa443badbeef1d8d7c08b1387ab44e68041bca79a47eb4c5fd879d0775"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadValidator.cpp",
+      "size_bytes": 3658,
+      "sha256": "9ec867a8c16b8036a484d3c8a8ab9383cd8a07a727e4848a1d8af82c3c6e4f05"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidMeridianRoadPlannerTests.cpp",
+      "size_bytes": 10606,
+      "sha256": "c5bba613cc8a3838f1a898a3cc959cbb846dd24e68922ebd3a69612dbdd46701"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadBridgeTunnelBuilderTests.cpp",
+      "size_bytes": 5022,
+      "sha256": "9d857f0c15c8680ebf533bf048d41f6834140d76f867dd4aaf230acd6b5a9a64"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadGeneratorTests.cpp",
+      "size_bytes": 13741,
+      "sha256": "c97d64741b1edfc58ceedf33f0b8f64081ea1383c02afe0ca1308aea49efad15"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadIntersectionBuilderTests.cpp",
+      "size_bytes": 7010,
+      "sha256": "1122397cad462952a772a2627eaa12e9d80f5342af58beebf16d724fed9451a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadSplineBuilderTests.cpp",
+      "size_bytes": 3619,
+      "sha256": "69ae6b97e73bbafabeda0731c0b36767150c1e7e7042d4efcc8323e5c5b29845"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadValidatorTests.cpp",
+      "size_bytes": 3949,
+      "sha256": "447ccd8f9dadc9440939600b299ccfdcc5db446733b9727ebbcf6cbd5b608751"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 1017,
+      "sha256": "9d9bfefbeb8bd0ea8bd59547540c34dbe433bceb617f161e58f88ac7f72d2358"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorPipeline.cpp",
+      "size_bytes": 7132,
+      "sha256": "85258738c7a6428a4bbc9fe43b66b31c3a496d0ebfc74f0df197f754af9d5739"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1206,
+      "sha256": "593053adf2351abffdf5f1902914ca07181ae75284a884cc745d7abe959817a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Private/VoidWorldBuilderGeneratorsLog.cpp",
+      "size_bytes": 165,
+      "sha256": "491cdc36c3356d8b24552e6358b10c0c166e77a2adfd77dd2a873d16d7e0f90d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidMeridianRoadPlanner.h",
+      "size_bytes": 4718,
+      "sha256": "b2d34c34fbc657c9052330d388c48fe488992920cfdce08d16db728d91cbb281"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadActor.h",
+      "size_bytes": 3228,
+      "sha256": "a2c540899b99949244eb15764e02b0c5e3d2f62694b244f74c55de7b2ec949a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadBridgeTunnelBuilder.h",
+      "size_bytes": 2460,
+      "sha256": "34d45d6c95571b27db05d2e93ee0b44e9798f26c7f9fc1acb291c054314b970c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerationSettings.h",
+      "size_bytes": 3701,
+      "sha256": "b7920708cb93a8324718a3796ef194708c01ab79dc8f276e4fa425d1941ea355"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerator.h",
+      "size_bytes": 3041,
+      "sha256": "ecb48ffe919dd5715eca71a7a0b62dbdbcd6436eac3cd262f54bae96a509b1c2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadIntersectionBuilder.h",
+      "size_bytes": 3223,
+      "sha256": "afc90d0a72eab2a307abe941b28e53ed35cc0e48bbaea0b2e2e6bc3d16aee41f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadMeshBuilder.h",
+      "size_bytes": 3327,
+      "sha256": "427647ce32a84afbf21e3f4899bfc8653e2ec3fe1a2c8a76926cde2334f2b2f2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadSplineBuilder.h",
+      "size_bytes": 2008,
+      "sha256": "f4fff4a6df6e9b78752c9e03efff2a6f5381aa01a5ff85ff203f1cab5797d392"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadTypeProfile.h",
+      "size_bytes": 3595,
+      "sha256": "d3fd7dcfa47b8797be0028efa104e85c210aa7d0b839986a736647924bbeb06c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadValidator.h",
+      "size_bytes": 1368,
+      "sha256": "924ffb32cf9281862f6b62b21c272094ff6b1c1855d04f8594637e3c5591416e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorPipeline.h",
+      "size_bytes": 2678,
+      "sha256": "4d1e3cfc1b8d5cccc86f925c558b45d24ba0f3880ad21e9bd6c41bad9d1cd2d3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1351,
+      "sha256": "b794cd4de87db3e4c5ee2e4485e4360dca8a9677580b133b50a105da0b37911b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/Public/VoidWorldBuilderGeneratorsLog.h",
+      "size_bytes": 766,
+      "sha256": "6cd08b301c40eca3c02fbdcb99c28738f6985feaf0bd1b287ae48190d426c260"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 1009,
+      "sha256": "92b1ba8b1f1e59d6480abd1a6ee338f6be8b1ef7de414d3802450d1668708f44"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/Tests/VoidMeridianImporterTests.cpp",
+      "size_bytes": 14802,
+      "sha256": "32bd106843e87cb1ae0c4808e4a79c706398f4d5fddb4562999dc1c5e66859de"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 17985,
+      "sha256": "4af01bbca7cc315ba3602a37a6828fdd064e0bfda1678baf75611f11f273dea8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidJsonSchemaLite.cpp",
+      "size_bytes": 5593,
+      "sha256": "cbf43e1a92ef03a68bd33714136021c8e19a939e3d55932dae06f6b590fb1227"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidMeridianImporter.cpp",
+      "size_bytes": 37880,
+      "sha256": "cfcbbc69dfc4515a1676249f39bed122b107311bb8b77daee14b3afe199cad08"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 8470,
+      "sha256": "bec19e4887e2261ebdd8cf7aa6f67f99f83dd924f8e3872aef5b5516555e449a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidJsonSchemaLite.h",
+      "size_bytes": 1449,
+      "sha256": "b6b9e3f56e39386365b8ea9686a8737953253a3318444016d589d25bc77bc620"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidMeridianImporter.h",
+      "size_bytes": 3492,
+      "sha256": "a731edbecd34cf0a553609be9f631e957b512a30f9a1b545b9bce236c2487128"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 908,
+      "sha256": "0de73d2c3797d8afe393f38fc2abf4508b22def399a6aaff82271ee3f177d4e6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/Tools/meridian_reference_check.py",
+      "size_bytes": 10642,
+      "sha256": "9434b58376e5d6caa817dd583ff6db7d66866fd2ee99e3c9c921beee227961fb"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent1/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1169,
+      "sha256": "5e97670b19ecb8a9179bf4708f8b615b2d679c725be43b6043ea277e74fe41c1"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/BuildInstructions.md",
+      "size_bytes": 5541,
+      "sha256": "d53dc7f3cd5a5d4d25932a0fc0b3d52085c5723ca8cbe040717554311da33fa7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/CodingStandards.md",
+      "size_bytes": 6065,
+      "sha256": "9c0fd8a39d69c7ac5c228c09eaca333d639b074c01ead810931422ea409ae61a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/MetroGeneratorArchitecture.md",
+      "size_bytes": 7438,
+      "sha256": "951b9f0cad00c45e95e952ed9239c8c944ee1f121710dd784f5c5092bf3ce90b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/RoadGenerationFlowDiagram.md",
+      "size_bytes": 5921,
+      "sha256": "7d4ae4a1d3ee316e01a22feada940082eef4945fe7b3ca9565121d841cbec4ea"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/RoadGeneratorArchitecture.md",
+      "size_bytes": 7279,
+      "sha256": "c2cf1994f83a5e2e526ef608987adee58d47374c89b2256c76c36e0d7bb43399"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/RoadGeneratorClassDiagram.md",
+      "size_bytes": 4476,
+      "sha256": "08a1ee859e98f73223453f0c844122a6bb1056faff431432b50915cf30aec121"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/RoadGeneratorDeveloperGuide.md",
+      "size_bytes": 4429,
+      "sha256": "b69fcf1eb900fd03dd91f8bcaff194f2c1e2e6dc9b327cc5956e936bb733fca1"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/RoadGeneratorExtensionGuide.md",
+      "size_bytes": 3396,
+      "sha256": "2b68878d58260db75dbe2d4463fe0727d84850f7907381cb54299bddfe4685ee"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/Samples/MetroAuthoredBlock.example.json",
+      "size_bytes": 1151,
+      "sha256": "5a91200c9718e42b6864525e19f9bda383f1d32a158c1afdc61d671905c71811"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Docs/ValidationRules.md",
+      "size_bytes": 10431,
+      "sha256": "4b3872f7e4bd6f0ef53a86094ada64e919319faa7ca682b6df4bdf7fa0efbb96"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/README.md",
+      "size_bytes": 4263,
+      "sha256": "d5baaf8f9b2330e2e2519405493bf5fe6ed7832c21d6b7c9a96b1a2306110a1f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 7859,
+      "sha256": "b86afbaaa80ce6548ab8cbfdbcbd7008b0542991b795adf078faa2230ae63e5d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Data/VoidMetroData.h",
+      "size_bytes": 9838,
+      "sha256": "28646af11d45a810df0aac3385706c024959cf251ff52582c65b66eda892b543"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 5061,
+      "sha256": "ac0f0e2a4b4ee9a72596faa159560b265ef82e578a702c30ac3ffdb36b52d647"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 3361,
+      "sha256": "b0ea7a1e946abab56a59fd043c3088ff9aed02ee7c63840674aefff9cbc1bf63"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Types/VoidMetroTypes.h",
+      "size_bytes": 1840,
+      "sha256": "7e3e84c22ed363affb3e6390557e22e7cc20bdf69bab0136f47d850fd88e27ee"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 3450,
+      "sha256": "e1e6a5d32d15fa63d80706d547952373d07c09195cbcc052a9e06f0bde1666a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 18691,
+      "sha256": "7a3f4ea94989524a7f5997baf8ddb0b8e9f1a8239fdb5ed99e11fcd3f8085d04"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 1608,
+      "sha256": "7bb85b65d8f41f994d4d0c91660e650274cf8518dc84c3fa295add0798da862b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 3599,
+      "sha256": "4742dd2a1400ae1bb19a191fb3dadf65aeb32379b921a36e19474da59a584266"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroActors.cpp",
+      "size_bytes": 2025,
+      "sha256": "4a282d42489e53c0d9288b62210d6de007dfbaeaccd17276d89628e9e4cc1e8f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroExports.cpp",
+      "size_bytes": 670,
+      "sha256": "e1060103e801860aff5b699712cb4d91097ea7421744365d4c58d14e8a7b9fb0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroGenerationSettings.cpp",
+      "size_bytes": 1411,
+      "sha256": "e87fa82318d8db7e9dde425966156c19c3376c8a0fd5cae7897f1fefe493f188"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroGenerator.cpp",
+      "size_bytes": 24680,
+      "sha256": "5e111acc9c1fe56ae9da0eb491c8bb9b751ed4497e13202631020133cff7d42a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroLayoutResolver.cpp",
+      "size_bytes": 29185,
+      "sha256": "2a065befea2a991009591db79dbbed2847181d44abd0e2886f50e90b5a97a322"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroMeshBuilder.cpp",
+      "size_bytes": 6332,
+      "sha256": "c30df46b5b6ddb451a0b9c76ea29705c60e8f7745287854d0dce3249c9d68920"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroValidator.cpp",
+      "size_bytes": 9498,
+      "sha256": "c556a01f6ffceb43e28aede747549dfb67fe76e1a8c6b9a59042397a6088497e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadActor.cpp",
+      "size_bytes": 1680,
+      "sha256": "fcb5a46cb591893361300370357674dccd44d199ec2ed25e05f9952bd0365463"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadBridgeTunnelBuilder.cpp",
+      "size_bytes": 3509,
+      "sha256": "388a9a2378b677d27ada35146aba19e98aec77b8f31c2b87d6c5375c15cebeec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerationSettings.cpp",
+      "size_bytes": 223,
+      "sha256": "bc320c62052af1ca14b1cf0433d25791218e4f8a4f876d051980503bf3b84c83"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerator.cpp",
+      "size_bytes": 14142,
+      "sha256": "85163e270491ad3ef97856c745472f10d7d7a7c8f99c82f4ab07fff97373e717"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadIntersectionBuilder.cpp",
+      "size_bytes": 13337,
+      "sha256": "c22bd4e0fb83456ba6648a51a40bf4e252f5ce0442e752cb1da21848f1463ba0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadMeshBuilder.cpp",
+      "size_bytes": 5390,
+      "sha256": "371102ea12687061ed8e736e5d2485ee765207742a20fdcca3c614e280580ec8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadSplineBuilder.cpp",
+      "size_bytes": 2010,
+      "sha256": "1d9df120bd2943eb40071118470817c4e089ef9263263a35f82e2a7c2d607e3b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadTypeProfile.cpp",
+      "size_bytes": 3666,
+      "sha256": "c09674aa443badbeef1d8d7c08b1387ab44e68041bca79a47eb4c5fd879d0775"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadValidator.cpp",
+      "size_bytes": 3658,
+      "sha256": "9ec867a8c16b8036a484d3c8a8ab9383cd8a07a727e4848a1d8af82c3c6e4f05"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidMetroTests.cpp",
+      "size_bytes": 28541,
+      "sha256": "a23b6bf4914200db50ab2e70500fae8fb496ddde5c27e723b487f1f45f0a0897"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadBridgeTunnelBuilderTests.cpp",
+      "size_bytes": 5022,
+      "sha256": "9d857f0c15c8680ebf533bf048d41f6834140d76f867dd4aaf230acd6b5a9a64"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadGeneratorTests.cpp",
+      "size_bytes": 13741,
+      "sha256": "c97d64741b1edfc58ceedf33f0b8f64081ea1383c02afe0ca1308aea49efad15"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadIntersectionBuilderTests.cpp",
+      "size_bytes": 7010,
+      "sha256": "1122397cad462952a772a2627eaa12e9d80f5342af58beebf16d724fed9451a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadSplineBuilderTests.cpp",
+      "size_bytes": 3619,
+      "sha256": "69ae6b97e73bbafabeda0731c0b36767150c1e7e7042d4efcc8323e5c5b29845"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadValidatorTests.cpp",
+      "size_bytes": 3949,
+      "sha256": "447ccd8f9dadc9440939600b299ccfdcc5db446733b9727ebbcf6cbd5b608751"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 1260,
+      "sha256": "7b771866d949b3e4015f69a344a8e031d6860993d8ff4eb998fa298999e09861"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1206,
+      "sha256": "593053adf2351abffdf5f1902914ca07181ae75284a884cc745d7abe959817a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/VoidWorldBuilderGeneratorsLog.cpp",
+      "size_bytes": 165,
+      "sha256": "491cdc36c3356d8b24552e6358b10c0c166e77a2adfd77dd2a873d16d7e0f90d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/WorldPartition/VoidWorldPartitionHelper.cpp",
+      "size_bytes": 3453,
+      "sha256": "f6e55d316a3846c716bf3243cf1e25919272631021dd6bd22d448adacf1cb1cb"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Private/WorldPartition/VoidWorldPartitionSettings.cpp",
+      "size_bytes": 233,
+      "sha256": "157cecd591bc4897f98ffec49c500deee72d0ee559bedfbb8c0f7fb43b681d85"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroActors.h",
+      "size_bytes": 3935,
+      "sha256": "398e8737f7352163879c58546271e00f467152cb313b94812a17673c70c1b9a4"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroExports.h",
+      "size_bytes": 1776,
+      "sha256": "a5f6e36ea4f8b5618a1e258831e1423eadada8aeb33ae5593d06bdad452e5674"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroGenerationSettings.h",
+      "size_bytes": 7752,
+      "sha256": "a3d9297486643d799d5c6f87e7d2276ff3e74440dbfac396cbb75b96dff943f2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroGenerator.h",
+      "size_bytes": 1127,
+      "sha256": "d7d2d175050a0af83dfb962fc25ef971da96a2e262ae5f360b36733eeb8c7672"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroLayoutResolver.h",
+      "size_bytes": 6829,
+      "sha256": "6c013780527e4360c7789d2af4da6d7375e885f4d1f00cf865595de26f33740c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroMeshBuilder.h",
+      "size_bytes": 2841,
+      "sha256": "ee5b7a99e848f3c5755da2e7b68785e5d01550eb8497b02e8cfd4f2fcec4ef34"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroValidator.h",
+      "size_bytes": 1354,
+      "sha256": "4eb2220c0f331c18bf21365338870704e64c6c46005c627008ae10ff8e7d6b3f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadActor.h",
+      "size_bytes": 3228,
+      "sha256": "a2c540899b99949244eb15764e02b0c5e3d2f62694b244f74c55de7b2ec949a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadBridgeTunnelBuilder.h",
+      "size_bytes": 2460,
+      "sha256": "34d45d6c95571b27db05d2e93ee0b44e9798f26c7f9fc1acb291c054314b970c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerationSettings.h",
+      "size_bytes": 3701,
+      "sha256": "b7920708cb93a8324718a3796ef194708c01ab79dc8f276e4fa425d1941ea355"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerator.h",
+      "size_bytes": 1318,
+      "sha256": "8cc6023d69d405efebc84ceb85b91d8016eb88d85a604fb1a3e1a0dc5d07bd6e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadIntersectionBuilder.h",
+      "size_bytes": 3223,
+      "sha256": "afc90d0a72eab2a307abe941b28e53ed35cc0e48bbaea0b2e2e6bc3d16aee41f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadMeshBuilder.h",
+      "size_bytes": 3327,
+      "sha256": "427647ce32a84afbf21e3f4899bfc8653e2ec3fe1a2c8a76926cde2334f2b2f2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadSplineBuilder.h",
+      "size_bytes": 2008,
+      "sha256": "f4fff4a6df6e9b78752c9e03efff2a6f5381aa01a5ff85ff203f1cab5797d392"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadTypeProfile.h",
+      "size_bytes": 3595,
+      "sha256": "d3fd7dcfa47b8797be0028efa104e85c210aa7d0b839986a736647924bbeb06c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadValidator.h",
+      "size_bytes": 1368,
+      "sha256": "924ffb32cf9281862f6b62b21c272094ff6b1c1855d04f8594637e3c5591416e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1351,
+      "sha256": "b794cd4de87db3e4c5ee2e4485e4360dca8a9677580b133b50a105da0b37911b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/VoidWorldBuilderGeneratorsLog.h",
+      "size_bytes": 766,
+      "sha256": "6cd08b301c40eca3c02fbdcb99c28738f6985feaf0bd1b287ae48190d426c260"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/WorldPartition/VoidWorldPartitionHelper.h",
+      "size_bytes": 2470,
+      "sha256": "a05b4d3f1183772500530af6733739c6d2dadd79fb63f88570234dcd12fca589"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/Public/WorldPartition/VoidWorldPartitionSettings.h",
+      "size_bytes": 3688,
+      "sha256": "07338336b24c40bec042e3b5b977e7ff3148dd45d5fbb50423f01217562eea9a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 1034,
+      "sha256": "8a8e0a4e0f1238d88445baccbb756c824e288d62db5ffdec8b3b9236c99e2f32"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 18406,
+      "sha256": "feeaf35f9aa4d1d11054477552458a2b1991d44b5630f994a258ab0bd0770c7d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidMetroNetworkMapper.cpp",
+      "size_bytes": 27507,
+      "sha256": "e2a3419986710acb5156c8aafc0c9b525af1cef157cd3376709264056739f8e2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 7232,
+      "sha256": "efc18ecb0a0caaedf33f8475aa43c0979b8672407756e7ea83e523065b01f255"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidMetroNetworkMapper.h",
+      "size_bytes": 3181,
+      "sha256": "8a0e2506e2ff162b4725025a1edaa22352deff0f3b6db3ace2d31ba98ffed568"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 907,
+      "sha256": "ab868ee0d5ccb608c274f03e4c5f306a00346043538438e4d1494a667bbe029a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent2/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1169,
+      "sha256": "2feb69e8069fd042a966f3f6715e2ec04c57f8cd4f34208d34f60c79157e4f1d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/BuildInstructions.md",
+      "size_bytes": 5541,
+      "sha256": "d53dc7f3cd5a5d4d25932a0fc0b3d52085c5723ca8cbe040717554311da33fa7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/CodingStandards.md",
+      "size_bytes": 6065,
+      "sha256": "9c0fd8a39d69c7ac5c228c09eaca333d639b074c01ead810931422ea409ae61a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/RoadGenerationFlowDiagram.md",
+      "size_bytes": 5921,
+      "sha256": "7d4ae4a1d3ee316e01a22feada940082eef4945fe7b3ca9565121d841cbec4ea"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/RoadGeneratorArchitecture.md",
+      "size_bytes": 7279,
+      "sha256": "c2cf1994f83a5e2e526ef608987adee58d47374c89b2256c76c36e0d7bb43399"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/RoadGeneratorClassDiagram.md",
+      "size_bytes": 4476,
+      "sha256": "08a1ee859e98f73223453f0c844122a6bb1056faff431432b50915cf30aec121"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/RoadGeneratorDeveloperGuide.md",
+      "size_bytes": 4429,
+      "sha256": "b69fcf1eb900fd03dd91f8bcaff194f2c1e2e6dc9b327cc5956e936bb733fca1"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/RoadGeneratorExtensionGuide.md",
+      "size_bytes": 3396,
+      "sha256": "2b68878d58260db75dbe2d4463fe0727d84850f7907381cb54299bddfe4685ee"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/ValidationArchitecture.md",
+      "size_bytes": 5027,
+      "sha256": "f09c1ef1e8bb17ccbfd45f1e32d2d325fb7305f96ffef6fe2d331250494ca0a4"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Docs/ValidationRules.md",
+      "size_bytes": 17782,
+      "sha256": "cdee9d0e697329bb466b57b6b13223f0828ed29ba5563a0d8e9e00d84498e7ff"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/README.md",
+      "size_bytes": 4263,
+      "sha256": "d5baaf8f9b2330e2e2519405493bf5fe6ed7832c21d6b7c9a96b1a2306110a1f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidatorRegistryTests.cpp",
+      "size_bytes": 7451,
+      "sha256": "ba4fe25ab4ffc3ea3dd8de23bb105cd12ee5a6cab746f22cb828586a0800bb14"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/VoidValidation.cpp",
+      "size_bytes": 6462,
+      "sha256": "62787ca963fe49c09e2453a92a1c228a5c82d8c5d45a80c0803e0976b9ae0fe6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 7308,
+      "sha256": "a14be9f3f52f52d5bc3bce8e3f546de852780827c93a81e4dd6aba6b9f682d53"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Data/VoidGeneratedTags.h",
+      "size_bytes": 1261,
+      "sha256": "3b23796926654bdbdce834a3427c33334d3353f6b18718ca0bfa3da69be33fd1"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 8795,
+      "sha256": "c48a9e33eea392d944c92db1a557d0500bf44f2982150f770e938d0aae416efd"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 3361,
+      "sha256": "b0ea7a1e946abab56a59fd043c3088ff9aed02ee7c63840674aefff9cbc1bf63"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidValidator.h",
+      "size_bytes": 9044,
+      "sha256": "2c758cecd68ed18b3e7129e76a5c2d8c9203108ed4f235bfe9a6c7f543e3fcb0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 3450,
+      "sha256": "e1e6a5d32d15fa63d80706d547952373d07c09195cbcc052a9e06f0bde1666a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 13791,
+      "sha256": "cfd3f84e3706b02556ad7f74fdfa3dc8b6f754511e9ffdbdc460b2559073cb65"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 1608,
+      "sha256": "7bb85b65d8f41f994d4d0c91660e650274cf8518dc84c3fa295add0798da862b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 3049,
+      "sha256": "1c9f401b185419c54a78d23d661026af6b6af8788ecbda2cc14a209e281049c5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadActor.cpp",
+      "size_bytes": 1680,
+      "sha256": "fcb5a46cb591893361300370357674dccd44d199ec2ed25e05f9952bd0365463"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadBridgeTunnelBuilder.cpp",
+      "size_bytes": 3509,
+      "sha256": "388a9a2378b677d27ada35146aba19e98aec77b8f31c2b87d6c5375c15cebeec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerationSettings.cpp",
+      "size_bytes": 223,
+      "sha256": "bc320c62052af1ca14b1cf0433d25791218e4f8a4f876d051980503bf3b84c83"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerator.cpp",
+      "size_bytes": 14142,
+      "sha256": "85163e270491ad3ef97856c745472f10d7d7a7c8f99c82f4ab07fff97373e717"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadIntersectionBuilder.cpp",
+      "size_bytes": 13337,
+      "sha256": "c22bd4e0fb83456ba6648a51a40bf4e252f5ce0442e752cb1da21848f1463ba0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadMeshBuilder.cpp",
+      "size_bytes": 5390,
+      "sha256": "371102ea12687061ed8e736e5d2485ee765207742a20fdcca3c614e280580ec8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadSplineBuilder.cpp",
+      "size_bytes": 2010,
+      "sha256": "1d9df120bd2943eb40071118470817c4e089ef9263263a35f82e2a7c2d607e3b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadTypeProfile.cpp",
+      "size_bytes": 3666,
+      "sha256": "c09674aa443badbeef1d8d7c08b1387ab44e68041bca79a47eb4c5fd879d0775"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadValidator.cpp",
+      "size_bytes": 3658,
+      "sha256": "9ec867a8c16b8036a484d3c8a8ab9383cd8a07a727e4848a1d8af82c3c6e4f05"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadBridgeTunnelBuilderTests.cpp",
+      "size_bytes": 5022,
+      "sha256": "9d857f0c15c8680ebf533bf048d41f6834140d76f867dd4aaf230acd6b5a9a64"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadGeneratorTests.cpp",
+      "size_bytes": 13741,
+      "sha256": "c97d64741b1edfc58ceedf33f0b8f64081ea1383c02afe0ca1308aea49efad15"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadIntersectionBuilderTests.cpp",
+      "size_bytes": 7010,
+      "sha256": "1122397cad462952a772a2627eaa12e9d80f5342af58beebf16d724fed9451a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadSplineBuilderTests.cpp",
+      "size_bytes": 3619,
+      "sha256": "69ae6b97e73bbafabeda0731c0b36767150c1e7e7042d4efcc8323e5c5b29845"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadValidatorTests.cpp",
+      "size_bytes": 3949,
+      "sha256": "447ccd8f9dadc9440939600b299ccfdcc5db446733b9727ebbcf6cbd5b608751"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 1017,
+      "sha256": "9d9bfefbeb8bd0ea8bd59547540c34dbe433bceb617f161e58f88ac7f72d2358"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1455,
+      "sha256": "7af0a01241ccf5caaeb4d443892ef22ea9080b69a406baa8c5126e6beee8e8c8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Private/VoidWorldBuilderGeneratorsLog.cpp",
+      "size_bytes": 165,
+      "sha256": "491cdc36c3356d8b24552e6358b10c0c166e77a2adfd77dd2a873d16d7e0f90d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadActor.h",
+      "size_bytes": 3228,
+      "sha256": "a2c540899b99949244eb15764e02b0c5e3d2f62694b244f74c55de7b2ec949a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadBridgeTunnelBuilder.h",
+      "size_bytes": 2460,
+      "sha256": "34d45d6c95571b27db05d2e93ee0b44e9798f26c7f9fc1acb291c054314b970c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerationSettings.h",
+      "size_bytes": 3701,
+      "sha256": "b7920708cb93a8324718a3796ef194708c01ab79dc8f276e4fa425d1941ea355"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerator.h",
+      "size_bytes": 1318,
+      "sha256": "8cc6023d69d405efebc84ceb85b91d8016eb88d85a604fb1a3e1a0dc5d07bd6e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadIntersectionBuilder.h",
+      "size_bytes": 3223,
+      "sha256": "afc90d0a72eab2a307abe941b28e53ed35cc0e48bbaea0b2e2e6bc3d16aee41f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadMeshBuilder.h",
+      "size_bytes": 3327,
+      "sha256": "427647ce32a84afbf21e3f4899bfc8653e2ec3fe1a2c8a76926cde2334f2b2f2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadSplineBuilder.h",
+      "size_bytes": 2008,
+      "sha256": "f4fff4a6df6e9b78752c9e03efff2a6f5381aa01a5ff85ff203f1cab5797d392"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadTypeProfile.h",
+      "size_bytes": 3595,
+      "sha256": "d3fd7dcfa47b8797be0028efa104e85c210aa7d0b839986a736647924bbeb06c"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadValidator.h",
+      "size_bytes": 1368,
+      "sha256": "924ffb32cf9281862f6b62b21c272094ff6b1c1855d04f8594637e3c5591416e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1990,
+      "sha256": "19737d06452993394f0a427ab53a71f17276be459c309bc84f85ff184d8c6cec"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/Public/VoidWorldBuilderGeneratorsLog.h",
+      "size_bytes": 766,
+      "sha256": "6cd08b301c40eca3c02fbdcb99c28738f6985feaf0bd1b287ae48190d426c260"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 886,
+      "sha256": "809c99c706306877a505b9bd804e239d713ffc2f9f69296cf89041bdd41f4655"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 17892,
+      "sha256": "2c104589ec20c6511a1c018a33048a995cfb8921cfa83ce331662f3fe5835fc3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 7232,
+      "sha256": "efc18ecb0a0caaedf33f8475aa43c0979b8672407756e7ea83e523065b01f255"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 907,
+      "sha256": "ab868ee0d5ccb608c274f03e4c5f306a00346043538438e4d1494a667bbe029a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/Tests/VoidMeridianValidatorTests.cpp",
+      "size_bytes": 15952,
+      "sha256": "b2f4794119175aaaefa481bb28f894d3a9e8a6cde72dd621308cc02eb1ca88d6"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/Tests/VoidPackageValidatorTests.cpp",
+      "size_bytes": 16621,
+      "sha256": "7a9678cb3eed82d5066d47d2c68cee14c41bbdf3808192b7f60102e17782494d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/Tests/VoidPipelineTests.cpp",
+      "size_bytes": 22903,
+      "sha256": "9ab5ac9a75c0c75500b2b3ddbc2c5927e279899a1a5666650149f81cadcd1e6a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/Tests/VoidTestHelpers.h",
+      "size_bytes": 2205,
+      "sha256": "b4357c23e7458b39723006b02915821e1c0424928069a77665e43a5d51c52f8f"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VOIDWorldBuilderValidationModule.cpp",
+      "size_bytes": 1279,
+      "sha256": "fcbe70c4f92c6a902e741cc50b893c09cb386c439d1d40086489f495bd4c40dc"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidGeneratedWorldValidator.cpp",
+      "size_bytes": 11639,
+      "sha256": "15645a18c164efed49fc17c3154e92e9985830fc7f48fa34fc22215137bc2e2b"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidGeneratorContractAuditor.cpp",
+      "size_bytes": 5002,
+      "sha256": "d5d2efe7f7b1c6c9f2b51b42f2d1b08b9e2f92cf7cfa6b1539e9519b86abbd14"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidJsonSchemaSubset.cpp",
+      "size_bytes": 11448,
+      "sha256": "1dd8736c61e02a69ad0dcd29cf873f4857dcad3413afc000471cc43c3377e2c8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidMeridianValidator.cpp",
+      "size_bytes": 38057,
+      "sha256": "a066451eb4e5fbc9ee09758591c7cb214087a516d1e92e24aa76070d8ca25155"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidPackageValidators.cpp",
+      "size_bytes": 35982,
+      "sha256": "761b4633c3f928924ad0243dcfc1e7788cccde1413faf01687371213d4eb3b7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidSha256.h",
+      "size_bytes": 3416,
+      "sha256": "d4f05e513102fa9f5626a8ecde25b80c94ef540bc5e0e1c8fdbf45826a1c931d"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidValidateCommandlet.cpp",
+      "size_bytes": 2666,
+      "sha256": "7fca7282a531b8358b29cf42c59b88395c9b2654991c7550abe64a1f06fb1595"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidValidationMath.h",
+      "size_bytes": 4298,
+      "sha256": "2d3f2f5b4755bdc23ce26d60f81a2ff1de19ad9817cec8c321efcc4d95329ab5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidValidationPipeline.cpp",
+      "size_bytes": 12423,
+      "sha256": "2800b3a3bd1e0f7df3afdc8ac9056e7958d7e57da8e74095c68fe09ba25d96d5"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Private/VoidValidationReportExporter.cpp",
+      "size_bytes": 8629,
+      "sha256": "012c207eeb87e953cb2024571d6ce0cbd38d9cb22533f949abf3940e1699c160"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VOIDWorldBuilderValidationModule.h",
+      "size_bytes": 431,
+      "sha256": "46e23feba15ef1e26ed1c9185709125d17a239172e4cc8de923dddf0a0fde1d7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidGeneratedWorldValidator.h",
+      "size_bytes": 3163,
+      "sha256": "03d19baf1b7314ca67476a314be6b55acdbb550c3268389af8284b0a520c89d7"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidGeneratorContractAuditor.h",
+      "size_bytes": 1846,
+      "sha256": "3bbaf8c75a192116fde763b8fc3e62caba9c408950a42468907076785fe4ac27"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidJsonSchemaSubset.h",
+      "size_bytes": 1499,
+      "sha256": "4221e731f2c6c6493bee52e8980f79f90eae5337624cec6c166749a0537b4b7a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidMeridianValidator.h",
+      "size_bytes": 2942,
+      "sha256": "3d8ecb56ac86e249996fa95387618033076b44e398f32242e7015a078d266019"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidPackageValidators.h",
+      "size_bytes": 3501,
+      "sha256": "efee5adcff7ba2ebb66b5e127568b178f21765430473930e410bdc08a95c37ac"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidValidateCommandlet.h",
+      "size_bytes": 1169,
+      "sha256": "df9e798e54e5ba2505c3315e41a73bd82e69321166ae139a7e9b0ea2d7ce8021"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidValidationLog.h",
+      "size_bytes": 356,
+      "sha256": "61b9d95104d95ab3428e6df314b499dbec4b710b0e70efc343bc868a148f7916"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidValidationPipeline.h",
+      "size_bytes": 4570,
+      "sha256": "d6827da2ddd8cc774c68c02d4bbc170472f6ea9e5e823ccb334dbc52aaac669a"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/Public/VoidValidationReportExporter.h",
+      "size_bytes": 1509,
+      "sha256": "566f4e719042fea429525968445d07b462a902624c2b0664f20c64e5456c9ee8"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/Source/VOIDWorldBuilderValidation/VOIDWorldBuilderValidation.Build.cs",
+      "size_bytes": 996,
+      "sha256": "74f3dfcbdf280ac0c6b8df7a48ad86f67994d52de7243f5332128b1c6dcf8ba2"
+    },
+    {
+      "path": "ReferenceSnapshots/Agent3/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1282,
+      "sha256": "3d0696ae2b7e86358033c33892c6843203502ff880bc64d865aed32edf1fa6df"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Docs/BuildInstructions.md",
+      "size_bytes": 2427,
+      "sha256": "0a7ed92c93b78937ed302a3f023208eafc5265b6562e2fef6ebb5fec91584f42"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Docs/CodingStandards.md",
+      "size_bytes": 3262,
+      "sha256": "17f9915666ed66682d5b835ca734839df46ec8246e5d7bdad6736e4a2acd07ac"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Docs/ValidationRules.md",
+      "size_bytes": 4647,
+      "sha256": "3b844ecd94d582bb5d27063c9a37ad4563032bd1045f2882cdae260b6b657503"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/README.md",
+      "size_bytes": 3315,
+      "sha256": "3418c5ee2ddb01d56e51a88a791d44459cb42dcae2e6805138086292b5acd47d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 3906,
+      "sha256": "26fc9f5573ad2e5b7bcc88efa56fd8daa42216d0b455742705e83b2b6d652727"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 2657,
+      "sha256": "b7be6127deac4da05e6944385cc0e0b643dbd2663919957ffaed6ba1b87c6b9f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 2373,
+      "sha256": "938eda4f870c43a6c643079916b5b855c496dc3664c3fc02fcc96949fa1092f4"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 1930,
+      "sha256": "17f8061b99e1b24ccadc5b6978b59f439b6d2d88fa9b952df8b0419eb3ff2cab"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 3978,
+      "sha256": "d426848f4de9210a9ac519f4304bc6fc475b27dc77fa36a22e75a00bdc8a0cd9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 1456,
+      "sha256": "3d7ddb4ca241368686ca5b779bdea2532f38352a9c8661c5c6518a81c69d459e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 804,
+      "sha256": "39b41385f08535e7cdb4ca0bad816db25e2ae6ef342c24f7916ba679bcc0b768"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 581,
+      "sha256": "7459e4bc722143ab35bd349c3bde3de1db07b6d2e0b48019d41206f5baa6316b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1206,
+      "sha256": "593053adf2351abffdf5f1902914ca07181ae75284a884cc745d7abe959817a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1351,
+      "sha256": "b794cd4de87db3e4c5ee2e4485e4360dca8a9677580b133b50a105da0b37911b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 770,
+      "sha256": "08506e5df6ed58c9b8c3918a3a2fa18323da28230a0391332503fa04ca2ca0a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 4106,
+      "sha256": "942f43336ef88ae4c2e785757bf2e77ba39aa5a40563552473d8b83ac1c6aef6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 512,
+      "sha256": "f53a50f1497247e8874a611dedc8f287f0d96d0d1eb2edf20729ef5d2c896e1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 7009,
+      "sha256": "44260bf9ddc2d4d957a0db96d212858a1a673f4824eedea3cee322851973ffc4"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 3676,
+      "sha256": "f3fb088c8661e8c7e72fc777121f86e1ce252d850ea1a303e57880eb917d3f8c"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1278,
+      "sha256": "8dbc4154422df2ff1a3fe99cb3d3d9dc3fc6b56249167bcad3301bd3c9f9bfb3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1029,
+      "sha256": "0511a1b4c0cf20d0b0a1030d485ba910102e6bf686527459c9fdc13a949a711b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 1759,
+      "sha256": "f24064a8e91a9d3987c4e92a5e30a94875bf120cb4a1a617893da3b0924e0404"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 872,
+      "sha256": "6185a6361118d3015b6d720e2da7e040f09ccb2a9047f3055832b50f7dc52b75"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase1/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1074,
+      "sha256": "970b4b873c47642464a5ee638fafc34a34cb17ee544668f24ff83acaab9a3a49"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/BuildInstructions.md",
+      "size_bytes": 3071,
+      "sha256": "fdc9580f928afd1049d8763a9725fd33d8ff2cb228e8a69885ea925def0aaff4"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/CodingStandards.md",
+      "size_bytes": 4273,
+      "sha256": "3c8f84d00906713c1e0ba457ca3caea9286a94100f4a90d13ed5499e8c1e82b6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Docs/ValidationRules.md",
+      "size_bytes": 4647,
+      "sha256": "3b844ecd94d582bb5d27063c9a37ad4563032bd1045f2882cdae260b6b657503"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/README.md",
+      "size_bytes": 4042,
+      "sha256": "66e4e6c0a23e51bc1b17fc114a1d0295d63c86cb148d405b06620bf79f0fbea5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 4805,
+      "sha256": "04db96643e556919b1fa6069a1019713282901128192ef9ee77f0a7717bcd78d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 5061,
+      "sha256": "ac0f0e2a4b4ee9a72596faa159560b265ef82e578a702c30ac3ffdb36b52d647"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 2373,
+      "sha256": "938eda4f870c43a6c643079916b5b855c496dc3664c3fc02fcc96949fa1092f4"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 2661,
+      "sha256": "221a3ad82ddce462633d0fd2e53551287a00af8435103bbf2db0d6c09a7dbe97"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 8651,
+      "sha256": "660f93a00db2748bd93f2b270034e7e3cf1bab6899651971b775d9392bcb657b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 1608,
+      "sha256": "7bb85b65d8f41f994d4d0c91660e650274cf8518dc84c3fa295add0798da862b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 2002,
+      "sha256": "6d60bf05f2b62d92f0ef3448ceb759ace04c453c595e8656dc319f68238dddd5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 581,
+      "sha256": "7459e4bc722143ab35bd349c3bde3de1db07b6d2e0b48019d41206f5baa6316b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1206,
+      "sha256": "593053adf2351abffdf5f1902914ca07181ae75284a884cc745d7abe959817a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1351,
+      "sha256": "b794cd4de87db3e4c5ee2e4485e4360dca8a9677580b133b50a105da0b37911b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 770,
+      "sha256": "08506e5df6ed58c9b8c3918a3a2fa18323da28230a0391332503fa04ca2ca0a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 13854,
+      "sha256": "1dc896e6108bd975b0a71cb75aa6fe3f54066f1269e3ac057898e25aeb8243d9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 7232,
+      "sha256": "efc18ecb0a0caaedf33f8475aa43c0979b8672407756e7ea83e523065b01f255"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 907,
+      "sha256": "ab868ee0d5ccb608c274f03e4c5f306a00346043538438e4d1494a667bbe029a"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase2/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1074,
+      "sha256": "970b4b873c47642464a5ee638fafc34a34cb17ee544668f24ff83acaab9a3a49"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/ArchitectureNotes.md",
+      "size_bytes": 5762,
+      "sha256": "bcd0417f7ad9cd51940503bbd2c954b6eac5026a2317e4a0811d351929acca17"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/BuildInstructions.md",
+      "size_bytes": 5541,
+      "sha256": "d53dc7f3cd5a5d4d25932a0fc0b3d52085c5723ca8cbe040717554311da33fa7"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/CodingStandards.md",
+      "size_bytes": 6065,
+      "sha256": "9c0fd8a39d69c7ac5c228c09eaca333d639b074c01ead810931422ea409ae61a"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/DeveloperGuide.md",
+      "size_bytes": 3398,
+      "sha256": "9a79c733b00894fd51a79226e524da94a71951fe88447ef916919614cfd2db57"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/ExtensionGuide.md",
+      "size_bytes": 3072,
+      "sha256": "be916e8983f9862d8ad6a2251ae9d0751dd19882649a78cf72d324855f9586ef"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/ImportFlowDiagram.md",
+      "size_bytes": 3271,
+      "sha256": "7b0456c9ec81cddb7a02c2aed03289229b273b3980f01826c46e6462ba4f640f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/RoadGenerationFlowDiagram.md",
+      "size_bytes": 5921,
+      "sha256": "7d4ae4a1d3ee316e01a22feada940082eef4945fe7b3ca9565121d841cbec4ea"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/RoadGeneratorArchitecture.md",
+      "size_bytes": 7279,
+      "sha256": "c2cf1994f83a5e2e526ef608987adee58d47374c89b2256c76c36e0d7bb43399"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/RoadGeneratorClassDiagram.md",
+      "size_bytes": 4476,
+      "sha256": "08a1ee859e98f73223453f0c844122a6bb1056faff431432b50915cf30aec121"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/RoadGeneratorDeveloperGuide.md",
+      "size_bytes": 4429,
+      "sha256": "b69fcf1eb900fd03dd91f8bcaff194f2c1e2e6dc9b327cc5956e936bb733fca1"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/RoadGeneratorExtensionGuide.md",
+      "size_bytes": 3396,
+      "sha256": "2b68878d58260db75dbe2d4463fe0727d84850f7907381cb54299bddfe4685ee"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Docs/ValidationRules.md",
+      "size_bytes": 6273,
+      "sha256": "aaf42405c4e0d8fde31072e2a9086eb602f521d26d725fa3bf97a7d9fe2f11db"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/README.md",
+      "size_bytes": 4263,
+      "sha256": "d5baaf8f9b2330e2e2519405493bf5fe6ed7832c21d6b7c9a96b1a2306110a1f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 7308,
+      "sha256": "a14be9f3f52f52d5bc3bce8e3f546de852780827c93a81e4dd6aba6b9f682d53"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 5061,
+      "sha256": "ac0f0e2a4b4ee9a72596faa159560b265ef82e578a702c30ac3ffdb36b52d647"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 3361,
+      "sha256": "b0ea7a1e946abab56a59fd043c3088ff9aed02ee7c63840674aefff9cbc1bf63"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 3450,
+      "sha256": "e1e6a5d32d15fa63d80706d547952373d07c09195cbcc052a9e06f0bde1666a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 13791,
+      "sha256": "cfd3f84e3706b02556ad7f74fdfa3dc8b6f754511e9ffdbdc460b2559073cb65"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 1608,
+      "sha256": "7bb85b65d8f41f994d4d0c91660e650274cf8518dc84c3fa295add0798da862b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 3049,
+      "sha256": "1c9f401b185419c54a78d23d661026af6b6af8788ecbda2cc14a209e281049c5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 597,
+      "sha256": "b6927f7b663e2f93f8cc4fd4206391e5a9331e9c9c507589c71abb7168844ba5"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadActor.cpp",
+      "size_bytes": 1680,
+      "sha256": "fcb5a46cb591893361300370357674dccd44d199ec2ed25e05f9952bd0365463"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadBridgeTunnelBuilder.cpp",
+      "size_bytes": 3509,
+      "sha256": "388a9a2378b677d27ada35146aba19e98aec77b8f31c2b87d6c5375c15cebeec"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerationSettings.cpp",
+      "size_bytes": 223,
+      "sha256": "bc320c62052af1ca14b1cf0433d25791218e4f8a4f876d051980503bf3b84c83"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerator.cpp",
+      "size_bytes": 14142,
+      "sha256": "85163e270491ad3ef97856c745472f10d7d7a7c8f99c82f4ab07fff97373e717"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadIntersectionBuilder.cpp",
+      "size_bytes": 13337,
+      "sha256": "c22bd4e0fb83456ba6648a51a40bf4e252f5ce0442e752cb1da21848f1463ba0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadMeshBuilder.cpp",
+      "size_bytes": 5390,
+      "sha256": "371102ea12687061ed8e736e5d2485ee765207742a20fdcca3c614e280580ec8"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadSplineBuilder.cpp",
+      "size_bytes": 2010,
+      "sha256": "1d9df120bd2943eb40071118470817c4e089ef9263263a35f82e2a7c2d607e3b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadTypeProfile.cpp",
+      "size_bytes": 3666,
+      "sha256": "c09674aa443badbeef1d8d7c08b1387ab44e68041bca79a47eb4c5fd879d0775"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadValidator.cpp",
+      "size_bytes": 3658,
+      "sha256": "9ec867a8c16b8036a484d3c8a8ab9383cd8a07a727e4848a1d8af82c3c6e4f05"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadBridgeTunnelBuilderTests.cpp",
+      "size_bytes": 5022,
+      "sha256": "9d857f0c15c8680ebf533bf048d41f6834140d76f867dd4aaf230acd6b5a9a64"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadGeneratorTests.cpp",
+      "size_bytes": 13741,
+      "sha256": "c97d64741b1edfc58ceedf33f0b8f64081ea1383c02afe0ca1308aea49efad15"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadIntersectionBuilderTests.cpp",
+      "size_bytes": 7010,
+      "sha256": "1122397cad462952a772a2627eaa12e9d80f5342af58beebf16d724fed9451a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadSplineBuilderTests.cpp",
+      "size_bytes": 3619,
+      "sha256": "69ae6b97e73bbafabeda0731c0b36767150c1e7e7042d4efcc8323e5c5b29845"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadValidatorTests.cpp",
+      "size_bytes": 3949,
+      "sha256": "447ccd8f9dadc9440939600b299ccfdcc5db446733b9727ebbcf6cbd5b608751"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 1017,
+      "sha256": "9d9bfefbeb8bd0ea8bd59547540c34dbe433bceb617f161e58f88ac7f72d2358"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1206,
+      "sha256": "593053adf2351abffdf5f1902914ca07181ae75284a884cc745d7abe959817a6"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Private/VoidWorldBuilderGeneratorsLog.cpp",
+      "size_bytes": 165,
+      "sha256": "491cdc36c3356d8b24552e6358b10c0c166e77a2adfd77dd2a873d16d7e0f90d"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadActor.h",
+      "size_bytes": 3228,
+      "sha256": "a2c540899b99949244eb15764e02b0c5e3d2f62694b244f74c55de7b2ec949a0"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadBridgeTunnelBuilder.h",
+      "size_bytes": 2460,
+      "sha256": "34d45d6c95571b27db05d2e93ee0b44e9798f26c7f9fc1acb291c054314b970c"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerationSettings.h",
+      "size_bytes": 3701,
+      "sha256": "b7920708cb93a8324718a3796ef194708c01ab79dc8f276e4fa425d1941ea355"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerator.h",
+      "size_bytes": 1318,
+      "sha256": "8cc6023d69d405efebc84ceb85b91d8016eb88d85a604fb1a3e1a0dc5d07bd6e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadIntersectionBuilder.h",
+      "size_bytes": 3223,
+      "sha256": "afc90d0a72eab2a307abe941b28e53ed35cc0e48bbaea0b2e2e6bc3d16aee41f"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadMeshBuilder.h",
+      "size_bytes": 3327,
+      "sha256": "427647ce32a84afbf21e3f4899bfc8653e2ec3fe1a2c8a76926cde2334f2b2f2"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadSplineBuilder.h",
+      "size_bytes": 2008,
+      "sha256": "f4fff4a6df6e9b78752c9e03efff2a6f5381aa01a5ff85ff203f1cab5797d392"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadTypeProfile.h",
+      "size_bytes": 3595,
+      "sha256": "d3fd7dcfa47b8797be0028efa104e85c210aa7d0b839986a736647924bbeb06c"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadValidator.h",
+      "size_bytes": 1368,
+      "sha256": "924ffb32cf9281862f6b62b21c272094ff6b1c1855d04f8594637e3c5591416e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1351,
+      "sha256": "b794cd4de87db3e4c5ee2e4485e4360dca8a9677580b133b50a105da0b37911b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/Public/VoidWorldBuilderGeneratorsLog.h",
+      "size_bytes": 766,
+      "sha256": "6cd08b301c40eca3c02fbdcb99c28738f6985feaf0bd1b287ae48190d426c260"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 886,
+      "sha256": "809c99c706306877a505b9bd804e239d713ffc2f9f69296cf89041bdd41f4655"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 17892,
+      "sha256": "2c104589ec20c6511a1c018a33048a995cfb8921cfa83ce331662f3fe5835fc3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 7232,
+      "sha256": "efc18ecb0a0caaedf33f8475aa43c0979b8672407756e7ea83e523065b01f255"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 907,
+      "sha256": "ab868ee0d5ccb608c274f03e4c5f306a00346043538438e4d1494a667bbe029a"
+    },
+    {
+      "path": "ReferenceSnapshots/Phase3/VOIDWorldBuilder.uplugin",
+      "size_bytes": 1074,
+      "sha256": "970b4b873c47642464a5ee638fafc34a34cb17ee544668f24ff83acaab9a3a49"
+    },
+    {
+      "path": "Reports/DATABASE_STATIC_CHECKS.md",
+      "size_bytes": 1866,
+      "sha256": "96659fe20a5708ad280bc0813ae23dff87b3820db2d3aac5e9820d5110910c4e"
+    },
+    {
+      "path": "Reports/MERGE_AND_DATABASE_AUDIT.md",
+      "size_bytes": 2556,
+      "sha256": "a8dfa9b660ae6a19a1b13341148eaa0e1ae41ce8d22c6df09a91854ad081f15f"
+    },
+    {
+      "path": "Resources/Icon128.png",
+      "size_bytes": 832,
+      "sha256": "64e3e11b436301b130ea8c14c5ef468d2e71c283de016d7eba23764628cfc774"
+    },
+    {
+      "path": "Resources/TestFixtures/BuildingGenerator_TestFixture_NOT_MERIDIAN.json",
+      "size_bytes": 7838,
+      "sha256": "7a0de3b7997a42f09235394880c650899a6d150335e11ce1860281dc224e0075"
+    },
+    {
+      "path": "Samples/VoidDistrictLayoutOverrides.example.json",
+      "size_bytes": 757,
+      "sha256": "ff3fbe77383a3d629128ea92659a13d850eec1faec1fdf0d405a5f8b3eb0ba11"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/Tests/VoidSchemaVersionTests.cpp",
+      "size_bytes": 2076,
+      "sha256": "a8f55cc07aeaf944fd2bb239e8a79314583e7bb5cdb9ee8a88460b4b56c00654"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/Tests/VoidValidationReportTests.cpp",
+      "size_bytes": 1138,
+      "sha256": "b17d3dd3f46330bfbdc582bbddc7369772405a2c17cc07b96bd9fb6f56b332ec"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/Tests/VoidValidatorRegistryTests.cpp",
+      "size_bytes": 7451,
+      "sha256": "ba4fe25ab4ffc3ea3dd8de23bb105cd12ee5a6cab746f22cb828586a0800bb14"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/VOIDWorldBuilderCoreModule.cpp",
+      "size_bytes": 498,
+      "sha256": "a9842a271a38f3e815598b565c79c3097abdccca1611365981c2c2d50eca2aac"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/VoidSchemaVersion.cpp",
+      "size_bytes": 724,
+      "sha256": "af1a82cf171cc876fbf0df6af56fa9139d68865050db217bc1f4d263e350d225"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/VoidValidation.cpp",
+      "size_bytes": 6462,
+      "sha256": "62787ca963fe49c09e2453a92a1c228a5c82d8c5d45a80c0803e0976b9ae0fe6"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Private/VoidWorldBuilderLog.cpp",
+      "size_bytes": 157,
+      "sha256": "54f0f0101986f65bb873ebb2a54dd783fb472c586a4687a1959304895070584f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidDesignPackage.h",
+      "size_bytes": 7442,
+      "sha256": "68783c4f98046cb6f2a78f686a1e808eee37a3cd8e99039f2b83ec60b1ac0962"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidGeneratedTags.h",
+      "size_bytes": 1261,
+      "sha256": "3b23796926654bdbdce834a3427c33334d3353f6b18718ca0bfa3da69be33fd1"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidImportContext.h",
+      "size_bytes": 2096,
+      "sha256": "a9d871a891898bbd99e29ba5c0f1cbd200b73be1cbf18218c885c66900f095c6"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidMetroData.h",
+      "size_bytes": 9838,
+      "sha256": "28646af11d45a810df0aac3385706c024959cf251ff52582c65b66eda892b543"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidSchemaVersion.h",
+      "size_bytes": 1844,
+      "sha256": "22a11de876f091262e05c61f8ea5cabf15be16abae744f663f4dc4cb3e7d4306"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Data/VoidValidationReport.h",
+      "size_bytes": 8795,
+      "sha256": "c48a9e33eea392d944c92db1a557d0500bf44f2982150f770e938d0aae416efd"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidGenerator.h",
+      "size_bytes": 3361,
+      "sha256": "b0ea7a1e946abab56a59fd043c3088ff9aed02ee7c63840674aefff9cbc1bf63"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidPackageReader.h",
+      "size_bytes": 2146,
+      "sha256": "98efaf4965eb018c9523451f8abf07485d3a5a037ab15961b664d87033b88ae5"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Interfaces/IVoidValidator.h",
+      "size_bytes": 9044,
+      "sha256": "2c758cecd68ed18b3e7129e76a5c2d8c9203108ed4f235bfe9a6c7f543e3fcb0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Types/VoidMetroTypes.h",
+      "size_bytes": 1840,
+      "sha256": "7e3e84c22ed363affb3e6390557e22e7cc20bdf69bab0136f47d850fd88e27ee"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/Types/VoidWorldBuilderTypes.h",
+      "size_bytes": 3450,
+      "sha256": "e1e6a5d32d15fa63d80706d547952373d07c09195cbcc052a9e06f0bde1666a6"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/VOIDWorldBuilderCoreModule.h",
+      "size_bytes": 941,
+      "sha256": "5245908aaddc23fabbf191f8c490325a12250b4e60a85e4e42c6443c83ad0d0d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/Public/VoidWorldBuilderLog.h",
+      "size_bytes": 676,
+      "sha256": "acc11d74eb96e312bf8ee98e047cdec0814702093dc1d29f7218bf552518b083"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderCore/VOIDWorldBuilderCore.Build.cs",
+      "size_bytes": 646,
+      "sha256": "29f804b3a17e463ab567f99f5f5507a216940d18a3dccab6666cb14d1ab52b5b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Private/SVoidWorldBuilderPanel.cpp",
+      "size_bytes": 25396,
+      "sha256": "4e0826dd9c1fc8280b1c5264aa644978abbb018d34fd1c45a1a74d5706781fd8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Private/VOIDWorldBuilderEditorModule.cpp",
+      "size_bytes": 1762,
+      "sha256": "36e95daa8f959b20910d12ec054d29fce4c30a6e5aeb05c11316c0a077930455"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Private/VoidWorldBuilderCommandlet.cpp",
+      "size_bytes": 4427,
+      "sha256": "7d6a10869eb7237bfb9b0319b07d4e87065e543794abf8f5ab5c5422fd1c86c8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Public/SVoidWorldBuilderPanel.h",
+      "size_bytes": 2517,
+      "sha256": "d478ba1146d2b96a78c7960a71627f0d8285ac33c978585d26509d668b2cfcd7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Public/VOIDWorldBuilderEditorModule.h",
+      "size_bytes": 896,
+      "sha256": "ee3b92a6adef0a5713881f3ba530ba095b8ae9eac9a621097d62ff685d156f57"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/Public/VoidWorldBuilderCommandlet.h",
+      "size_bytes": 993,
+      "sha256": "c63d8b98a01d798b3a17bda87d3d769c235e02507a6f8bffc1b8c5fb64525ff0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderEditor/VOIDWorldBuilderEditor.Build.cs",
+      "size_bytes": 805,
+      "sha256": "2d6e6e88887814d982b2592cd93145664d7145fdf7db09bc6e8c29ab2d026d1f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingActor.cpp",
+      "size_bytes": 1090,
+      "sha256": "c8715fa4e6dde1645a8d04cf164668e422853d91183680dd0778c9420cd5177a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingBatcher.cpp",
+      "size_bytes": 9304,
+      "sha256": "b0706e646ab36087060f27814e48ba50e96f82bd48b2e852d594137516ab13be"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingGenerationSettings.cpp",
+      "size_bytes": 1691,
+      "sha256": "56e4126b3d6c37d0053720759f4ec505af05ce32f127d6e1c694224b258a9be5"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingGenerator.cpp",
+      "size_bytes": 7438,
+      "sha256": "040a1ce3eca5b6e4764bd18be776a3841049162bdf3b64196fbc0cf10920d5c3"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingGeometry.cpp",
+      "size_bytes": 12292,
+      "sha256": "fc6c6fc4458821e7829dcaaa48dcf30e3f820ddf8155f2e418671bef7500408b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingMassing.cpp",
+      "size_bytes": 15822,
+      "sha256": "0fa36c1bdf27699d6c1b7d6a5fbbbbc0edad2726ca1c1a5afce7515602f5942d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingMeshBuilder.cpp",
+      "size_bytes": 18177,
+      "sha256": "8f199152019cac2306b83d78b206b4e3779875abbe7990b1f45fab8b4bdb92aa"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingNormalizer.cpp",
+      "size_bytes": 9390,
+      "sha256": "43193d0debdcb6b101c49e401235b58a053f4f41cbbc67746825923aa2723d92"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingRoadContext.cpp",
+      "size_bytes": 13616,
+      "sha256": "6981118a49baf63c031c99e4c2aa3826f08f1e3e9415ad443f5524e0bab9f9c4"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingRoadProfileBridge.cpp",
+      "size_bytes": 1064,
+      "sha256": "fb49eb33e7b484b87d4f7c76ac93de3f2834b6e37b0d23cba739abbb018c1ba8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Building/VoidBuildingTestFixture.cpp",
+      "size_bytes": 6486,
+      "sha256": "1c95bb5e627e001d9fe9b0399a550e9e65315e301ca3f88b67b8d68c80af0dd1"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictActors.cpp",
+      "size_bytes": 1872,
+      "sha256": "7160a7057567dfdeefea4682bf1762dfe972a8e152a7e82cf77cc1849f4728b0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictGenerationSettings.cpp",
+      "size_bytes": 559,
+      "sha256": "5613e13856e54e055af18d8f012bc6347b05bb1ff88ec3fb9bf5818522027838"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictGenerator.cpp",
+      "size_bytes": 27831,
+      "sha256": "714944a0956097c3002ffccbf9d619ba0f896be883f11d699eee4c33a7e72697"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictGeometry.cpp",
+      "size_bytes": 14850,
+      "sha256": "3e5eb2f088d2d73922f155827695b152b08149647e678eb2e879149656809afd"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictLayoutBuilder.cpp",
+      "size_bytes": 49798,
+      "sha256": "1d7cc374ea9cf4e5a752a56ed4d91a3d8bda59ac3fbfca26c61de6267a2e8d17"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictQueryLibrary.cpp",
+      "size_bytes": 2821,
+      "sha256": "f0630987ec5d506aade7c7b26fb64beb5c3f2b90f477783d230c02bba1c32fc0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/District/VoidDistrictValidator.cpp",
+      "size_bytes": 20429,
+      "sha256": "93816a2d4f869c0b3878dc13a4dc65fabea4feac883db2c58c2d10fd48d1fd3f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Environment/VoidDressingActor.cpp",
+      "size_bytes": 1598,
+      "sha256": "440aec32b70e374a345cda69b4dfd811363358e912635d894161dd419bce64fa"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Environment/VoidDressingDefaults.cpp",
+      "size_bytes": 19643,
+      "sha256": "a3e9f6bcf49a583210e58043519e74958af685f31ab2e14d62013e7f09492224"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Environment/VoidDressingGenerator.cpp",
+      "size_bytes": 32046,
+      "sha256": "b3bcbc1efac2fd515cf62db52e5fdaf13994c4c54bc944418bcd8468fcc8a82d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Environment/VoidEnvironmentSettings.cpp",
+      "size_bytes": 286,
+      "sha256": "9f810b17f9c1277e12ae270e7bf1e1c7eb0d06dc9f188b5fdb31b17ffe366ba5"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Environment/VoidPlacementPlanner.cpp",
+      "size_bytes": 25027,
+      "sha256": "b53a07f543d79fefb5c198381a8e1a78edf259146ef2a0db506971ab05d55c57"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Lighting/VoidLightingGenerator.cpp",
+      "size_bytes": 46517,
+      "sha256": "722f2dd5c6073fa201f2c148e1ad168ca3a54cd2714caae70bd11790f6c3c014"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Lighting/VoidLightingMaterialBuilder.cpp",
+      "size_bytes": 6735,
+      "sha256": "a2a99b497fffd25a3d9785bd1dc55864e5c4ffda122ad5bccfd9cbb9f24d2738"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Lighting/VoidLightingMaterialBuilder.h",
+      "size_bytes": 881,
+      "sha256": "a2205f1953ede895c5a40435c01035dcbeddd1caf469d266024124ce35f7c51c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroActors.cpp",
+      "size_bytes": 2025,
+      "sha256": "4a282d42489e53c0d9288b62210d6de007dfbaeaccd17276d89628e9e4cc1e8f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroExports.cpp",
+      "size_bytes": 670,
+      "sha256": "e1060103e801860aff5b699712cb4d91097ea7421744365d4c58d14e8a7b9fb0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroGenerationSettings.cpp",
+      "size_bytes": 1411,
+      "sha256": "e87fa82318d8db7e9dde425966156c19c3376c8a0fd5cae7897f1fefe493f188"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroGenerator.cpp",
+      "size_bytes": 24680,
+      "sha256": "5e111acc9c1fe56ae9da0eb491c8bb9b751ed4497e13202631020133cff7d42a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroLayoutResolver.cpp",
+      "size_bytes": 29185,
+      "sha256": "2a065befea2a991009591db79dbbed2847181d44abd0e2886f50e90b5a97a322"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroMeshBuilder.cpp",
+      "size_bytes": 6332,
+      "sha256": "c30df46b5b6ddb451a0b9c76ea29705c60e8f7745287854d0dce3249c9d68920"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Metro/VoidMetroValidator.cpp",
+      "size_bytes": 9498,
+      "sha256": "c556a01f6ffceb43e28aede747549dfb67fe76e1a8c6b9a59042397a6088497e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadActor.cpp",
+      "size_bytes": 1680,
+      "sha256": "fcb5a46cb591893361300370357674dccd44d199ec2ed25e05f9952bd0365463"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadBridgeTunnelBuilder.cpp",
+      "size_bytes": 3509,
+      "sha256": "388a9a2378b677d27ada35146aba19e98aec77b8f31c2b87d6c5375c15cebeec"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerationSettings.cpp",
+      "size_bytes": 223,
+      "sha256": "bc320c62052af1ca14b1cf0433d25791218e4f8a4f876d051980503bf3b84c83"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadGenerator.cpp",
+      "size_bytes": 14142,
+      "sha256": "85163e270491ad3ef97856c745472f10d7d7a7c8f99c82f4ab07fff97373e717"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadIntersectionBuilder.cpp",
+      "size_bytes": 13337,
+      "sha256": "c22bd4e0fb83456ba6648a51a40bf4e252f5ce0442e752cb1da21848f1463ba0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadMeshBuilder.cpp",
+      "size_bytes": 5390,
+      "sha256": "371102ea12687061ed8e736e5d2485ee765207742a20fdcca3c614e280580ec8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadSplineBuilder.cpp",
+      "size_bytes": 2010,
+      "sha256": "1d9df120bd2943eb40071118470817c4e089ef9263263a35f82e2a7c2d607e3b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadTypeProfile.cpp",
+      "size_bytes": 3666,
+      "sha256": "c09674aa443badbeef1d8d7c08b1387ab44e68041bca79a47eb4c5fd879d0775"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Road/VoidRoadValidator.cpp",
+      "size_bytes": 3658,
+      "sha256": "9ec867a8c16b8036a484d3c8a8ab9383cd8a07a727e4848a1d8af82c3c6e4f05"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidBuildingGeneratorTests.cpp",
+      "size_bytes": 10408,
+      "sha256": "60a4204a25feaa43ee2dd905aa394bf3ba607b2a09c9d865ca783544a4fec0c8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidDistrictTestData.inc",
+      "size_bytes": 9726,
+      "sha256": "62025cd6019a31fe1ce868d22aff75c903434ceff544d6b0ed1e6efd1526c984"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidDistrictTests.cpp",
+      "size_bytes": 14006,
+      "sha256": "001cb47191e77078c81ec6f5570c0540bedafdde31120fb9ea87c0e3f5bc405a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidEnvironmentPropsTests.cpp",
+      "size_bytes": 18901,
+      "sha256": "a861831c909fd0c236eab8f2a5d3741a6abb82ea71b9dc2ff25e931848ce2feb"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidLightingGeneratorTests.cpp",
+      "size_bytes": 6723,
+      "sha256": "0297c63ccf6bca3bb72201b45854789006dc37ad36b68f0ee9cfd111dcf2f553"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidMetroTests.cpp",
+      "size_bytes": 28541,
+      "sha256": "a23b6bf4914200db50ab2e70500fae8fb496ddde5c27e723b487f1f45f0a0897"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadBridgeTunnelBuilderTests.cpp",
+      "size_bytes": 5022,
+      "sha256": "9d857f0c15c8680ebf533bf048d41f6834140d76f867dd4aaf230acd6b5a9a64"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadGeneratorTests.cpp",
+      "size_bytes": 13741,
+      "sha256": "c97d64741b1edfc58ceedf33f0b8f64081ea1383c02afe0ca1308aea49efad15"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadIntersectionBuilderTests.cpp",
+      "size_bytes": 7010,
+      "sha256": "1122397cad462952a772a2627eaa12e9d80f5342af58beebf16d724fed9451a0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadSplineBuilderTests.cpp",
+      "size_bytes": 3619,
+      "sha256": "69ae6b97e73bbafabeda0731c0b36767150c1e7e7042d4efcc8323e5c5b29845"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/Tests/VoidRoadValidatorTests.cpp",
+      "size_bytes": 3949,
+      "sha256": "447ccd8f9dadc9440939600b299ccfdcc5db446733b9727ebbcf6cbd5b608751"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/VOIDWorldBuilderGeneratorsModule.cpp",
+      "size_bytes": 1958,
+      "sha256": "cd208a2e8375a35af076a40fee222ff94845dfbb33be14e0e6bb21aa7784bc46"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/VoidGeneratorRegistry.cpp",
+      "size_bytes": 1455,
+      "sha256": "7af0a01241ccf5caaeb4d443892ef22ea9080b69a406baa8c5126e6beee8e8c8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/VoidWorldBuilderGeneratorsLog.cpp",
+      "size_bytes": 165,
+      "sha256": "491cdc36c3356d8b24552e6358b10c0c166e77a2adfd77dd2a873d16d7e0f90d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/WorldPartition/VoidWorldPartitionHelper.cpp",
+      "size_bytes": 3453,
+      "sha256": "f6e55d316a3846c716bf3243cf1e25919272631021dd6bd22d448adacf1cb1cb"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Private/WorldPartition/VoidWorldPartitionSettings.cpp",
+      "size_bytes": 233,
+      "sha256": "157cecd591bc4897f98ffec49c500deee72d0ee559bedfbb8c0f7fb43b681d85"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingActor.h",
+      "size_bytes": 2111,
+      "sha256": "517a81e2ebbc9ed458250435e03f869d6b5e9cf9a98bf4f065923bd14cffd23b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingGenerationSettings.h",
+      "size_bytes": 3568,
+      "sha256": "799cf3b7b3b128d7c13f9fa05cfe913230afbc5c88f82b0cee513cccc89475ec"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingGenerator.h",
+      "size_bytes": 2282,
+      "sha256": "60a8ae9f65fec9dc7218c9f3d1d84d62884ff2f09b4f84733b9cd858becb5bc7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingGeometry.h",
+      "size_bytes": 4698,
+      "sha256": "1805f596a307c4b11927a141531bce94edc67bba3ba9d94375e37f78cd51a293"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingMassing.h",
+      "size_bytes": 2656,
+      "sha256": "765f7b10f6af2b05ffcb4eb14a99e5cddb6005230fa8272775dad768160f0ffe"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingMeshBuilder.h",
+      "size_bytes": 2729,
+      "sha256": "69b68580a5445621d3c69210c51ab6dcd64c587d5dd080953d4d5a144b1de0d3"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingNormalizer.h",
+      "size_bytes": 1692,
+      "sha256": "0bc6ac86c118b19a5f809474ca1d894a21f061825aa4e8db88acd56f727a5368"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingParams.h",
+      "size_bytes": 2366,
+      "sha256": "64074e4457f4a7545692d9c32f4958e97c7f7ef2c9a84885b59b2e1c034203f9"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingRoadContext.h",
+      "size_bytes": 3331,
+      "sha256": "60f31d1c9d492e4685d60cca4cb20b357452694b2107ac337b1b7158ab591eea"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingTestFixture.h",
+      "size_bytes": 1603,
+      "sha256": "4792d2df62516574234236dad2d2f8162c1609f3a6ae6174ff20377cc67c3bde"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Building/VoidBuildingTypes.h",
+      "size_bytes": 8233,
+      "sha256": "3691c2116f980a40519a88d394716a5d950e0bcfb0f6369a2bd0bbc15ad8736f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictActors.h",
+      "size_bytes": 9572,
+      "sha256": "780b8dec014ec54ab8f7ea5cc1e3bfd6b67fc451776e434438af8bc12a1a41ca"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictGenerationSettings.h",
+      "size_bytes": 2219,
+      "sha256": "6746d78923a3543b19a8b8b1fd70cbfa056f5bcd5ba3731d177253fe542cf8fe"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictGenerator.h",
+      "size_bytes": 2328,
+      "sha256": "708fefc4fa8cd83625a9b1b3a1db68624c1dee33db6913046b1e574ed02005a6"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictGeometry.h",
+      "size_bytes": 4399,
+      "sha256": "8de999021d146d3c7260afc18ec87e02e9c2e5209db949eaf3dd1c370c556a87"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictLayoutBuilder.h",
+      "size_bytes": 3114,
+      "sha256": "a30e2a84d62068f8d7c8bae8d13a3ce46fe3bc01683b59a595d6cdf740c54bed"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictLayoutParams.h",
+      "size_bytes": 10275,
+      "sha256": "20c5101bb888f2dc8bf1c653a7d535986d9de6cf74431cd664263b4e01178a9b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictQueryLibrary.h",
+      "size_bytes": 2131,
+      "sha256": "d464395c5fa5910eb32f65903d000286546f9e6c4c6370c8ede6c2c097326d33"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictTypes.h",
+      "size_bytes": 10303,
+      "sha256": "9cebd18f4606546d65fdc804362280ea7b1b6a454aa60b22244aba9373ee6dfd"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/District/VoidDistrictValidator.h",
+      "size_bytes": 2022,
+      "sha256": "4bc6411a26dcfe59a846a704f7bc39142c37891380c0c159fe2ac78357aa9589"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidDressingActor.h",
+      "size_bytes": 2452,
+      "sha256": "b0310a5efdd5d9913a604237da63d7c34bb75a3efb4be270a1c05c8522263597"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidDressingDefaults.h",
+      "size_bytes": 1892,
+      "sha256": "7500da84f050fdf5bba58c0dc41e57301da62e4995f72d45e4634d3c4da2ad28"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidDressingGenerator.h",
+      "size_bytes": 4321,
+      "sha256": "2fee3d5dff5a06c85b72acfd255e4cc7cedddda514cfc1350cce2cd232962716"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidEnvironmentSettings.h",
+      "size_bytes": 5221,
+      "sha256": "a1f37f1c7ff3399bbe5824db71012a9255f8d56f0f4ddead9891fd1d5867a210"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidEnvironmentTypes.h",
+      "size_bytes": 11794,
+      "sha256": "cd607ac4a657b12527e2c245fddceb7c72b7b47b5674e6281ae2dfb45d8fb75e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Environment/VoidPlacementPlanner.h",
+      "size_bytes": 8388,
+      "sha256": "6e44bf0c1526837175432bf2837e9e769aa690c30df887f9444641c5c2c50a82"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Lighting/VoidLightingGenerator.h",
+      "size_bytes": 2186,
+      "sha256": "53f3679db7c595a47fd2b45555af3aa30180f116dd157752ecc49e1e0d5af439"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroActors.h",
+      "size_bytes": 3935,
+      "sha256": "398e8737f7352163879c58546271e00f467152cb313b94812a17673c70c1b9a4"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroExports.h",
+      "size_bytes": 1776,
+      "sha256": "a5f6e36ea4f8b5618a1e258831e1423eadada8aeb33ae5593d06bdad452e5674"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroGenerationSettings.h",
+      "size_bytes": 7752,
+      "sha256": "a3d9297486643d799d5c6f87e7d2276ff3e74440dbfac396cbb75b96dff943f2"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroGenerator.h",
+      "size_bytes": 1127,
+      "sha256": "d7d2d175050a0af83dfb962fc25ef971da96a2e262ae5f360b36733eeb8c7672"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroLayoutResolver.h",
+      "size_bytes": 6829,
+      "sha256": "6c013780527e4360c7789d2af4da6d7375e885f4d1f00cf865595de26f33740c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroMeshBuilder.h",
+      "size_bytes": 2841,
+      "sha256": "ee5b7a99e848f3c5755da2e7b68785e5d01550eb8497b02e8cfd4f2fcec4ef34"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Metro/VoidMetroValidator.h",
+      "size_bytes": 1354,
+      "sha256": "4eb2220c0f331c18bf21365338870704e64c6c46005c627008ae10ff8e7d6b3f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadActor.h",
+      "size_bytes": 3228,
+      "sha256": "a2c540899b99949244eb15764e02b0c5e3d2f62694b244f74c55de7b2ec949a0"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadBridgeTunnelBuilder.h",
+      "size_bytes": 2460,
+      "sha256": "34d45d6c95571b27db05d2e93ee0b44e9798f26c7f9fc1acb291c054314b970c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerationSettings.h",
+      "size_bytes": 3701,
+      "sha256": "b7920708cb93a8324718a3796ef194708c01ab79dc8f276e4fa425d1941ea355"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadGenerator.h",
+      "size_bytes": 1318,
+      "sha256": "8cc6023d69d405efebc84ceb85b91d8016eb88d85a604fb1a3e1a0dc5d07bd6e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadIntersectionBuilder.h",
+      "size_bytes": 3223,
+      "sha256": "afc90d0a72eab2a307abe941b28e53ed35cc0e48bbaea0b2e2e6bc3d16aee41f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadMeshBuilder.h",
+      "size_bytes": 3327,
+      "sha256": "427647ce32a84afbf21e3f4899bfc8653e2ec3fe1a2c8a76926cde2334f2b2f2"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadSplineBuilder.h",
+      "size_bytes": 2008,
+      "sha256": "f4fff4a6df6e9b78752c9e03efff2a6f5381aa01a5ff85ff203f1cab5797d392"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadTypeProfile.h",
+      "size_bytes": 3595,
+      "sha256": "d3fd7dcfa47b8797be0028efa104e85c210aa7d0b839986a736647924bbeb06c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/Road/VoidRoadValidator.h",
+      "size_bytes": 1368,
+      "sha256": "924ffb32cf9281862f6b62b21c272094ff6b1c1855d04f8594637e3c5591416e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/VOIDWorldBuilderGeneratorsModule.h",
+      "size_bytes": 728,
+      "sha256": "d053bd53f4eeed914560aec8ee286a245ebf3f6e4216d929e9b123eff81e3921"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/VoidGeneratorRegistry.h",
+      "size_bytes": 1990,
+      "sha256": "19737d06452993394f0a427ab53a71f17276be459c309bc84f85ff184d8c6cec"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/VoidWorldBuilderGeneratorsLog.h",
+      "size_bytes": 766,
+      "sha256": "6cd08b301c40eca3c02fbdcb99c28738f6985feaf0bd1b287ae48190d426c260"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/WorldPartition/VoidWorldPartitionHelper.h",
+      "size_bytes": 2470,
+      "sha256": "a05b4d3f1183772500530af6733739c6d2dadd79fb63f88570234dcd12fca589"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/Public/WorldPartition/VoidWorldPartitionSettings.h",
+      "size_bytes": 3688,
+      "sha256": "07338336b24c40bec042e3b5b977e7ff3148dd45d5fbb50423f01217562eea9a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderGenerators/VOIDWorldBuilderGenerators.Build.cs",
+      "size_bytes": 751,
+      "sha256": "5521a0a247f58cf38b823de2db122323bd5f8463a0f2deeef44e63808109898c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/Meridian/VoidMeridianRegistryReader.cpp",
+      "size_bytes": 26698,
+      "sha256": "a947c3d839c03f0167923981ee781bbcdc9369231710b115befec3627ab2fadb"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/Tests/VoidDesignPackageImporterTests.cpp",
+      "size_bytes": 8109,
+      "sha256": "d1cdd9b456a3139d165f6d4b48e56705417bb38d643c7158a1267022a15f3a1e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/Tests/VoidImportPerformanceTests.cpp",
+      "size_bytes": 3022,
+      "sha256": "08dc78d50709f049f3b460cd57f6f2bffe4a1a7740300bab6e1b6545aca832cd"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/Tests/VoidPackageReaderRegistryTests.cpp",
+      "size_bytes": 2718,
+      "sha256": "6b83fe82962db35e5c757c14b2060d147b72e75add3975e2972e66bf4fbf208b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VOIDWorldBuilderImportModule.cpp",
+      "size_bytes": 988,
+      "sha256": "ab2adc59c21b006de7eab85e5c18c82cee08f6c5f675ef975cf3760d9f9f4345"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidDesignPackageImporter.cpp",
+      "size_bytes": 4169,
+      "sha256": "f895d29f17519f52c8b3ecbad101ef3bc128683ef732436adeb5ba2e7801f784"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidImportSettings.cpp",
+      "size_bytes": 253,
+      "sha256": "bc5278a16efa6663a751f79a0212593a353de7053f99e4d700a271443b7f0ef3"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidJsonPackageReader.cpp",
+      "size_bytes": 18161,
+      "sha256": "51dadf731c286141110605fbc5c67e55b1142c45469dca84d71292dae5c2c168"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidJsonReader.cpp",
+      "size_bytes": 1052,
+      "sha256": "cfecd8744742d009b8c52086e920effb847441a895665208909581f36f9d8d7e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidMetroNetworkMapper.cpp",
+      "size_bytes": 27507,
+      "sha256": "e2a3419986710acb5156c8aafc0c9b525af1cef157cd3376709264056739f8e2"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidPackageReaderRegistry.cpp",
+      "size_bytes": 1197,
+      "sha256": "16f33aff40cc68df4c5df92bd831e5f721492370bc62eb6b2ac61a7b1023cea3"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidPackageValidator.cpp",
+      "size_bytes": 7232,
+      "sha256": "efc18ecb0a0caaedf33f8475aa43c0979b8672407756e7ea83e523065b01f255"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Private/VoidWorldBuilderImportLog.cpp",
+      "size_bytes": 157,
+      "sha256": "75e9044e108eb873d8fae7981577017824922b25c462ec7c0f2106e9c2549984"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/Meridian/VoidMeridianRegistry.h",
+      "size_bytes": 6355,
+      "sha256": "ea015ce5951ae5ea27fbd6d9402e1d2f570d90c4568e324b6ea7be86e66065d8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/Meridian/VoidMeridianRegistryReader.h",
+      "size_bytes": 2462,
+      "sha256": "dd45290491266a1b011bfe23a8706e9d847dcd974a609082a866e81813ce0f3a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VOIDWorldBuilderImportModule.h",
+      "size_bytes": 762,
+      "sha256": "12ea2e40559b2d500172ff2221d233f9fca3c2786e993c43df7b425e399afa03"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidDesignPackageImporter.h",
+      "size_bytes": 1870,
+      "sha256": "19beff538b846aacf2c52fc7f04d09226ed800e694a12f8e47efe42a8ce85ce9"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidImportResult.h",
+      "size_bytes": 1175,
+      "sha256": "76afdf97caf6a361e744188182825fe6e5d0a7a81c2dd901a3fb84b355ce7448"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidImportSettings.h",
+      "size_bytes": 2124,
+      "sha256": "53da48ed0f00030b5b2d1ba88d9de344ddbc45294d368b8787f48577f0ca0686"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidJsonPackageReader.h",
+      "size_bytes": 1728,
+      "sha256": "f8a7094cef1bbd4ca88724c9ff6147fb11829fca00b10379ceb89acf3d17e651"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidJsonReader.h",
+      "size_bytes": 1440,
+      "sha256": "1cb6694bd5aec9424f9cbb7aeb7b897e2681094a7d72e73a827c587ddde357a7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidMetroNetworkMapper.h",
+      "size_bytes": 3181,
+      "sha256": "8a0e2506e2ff162b4725025a1edaa22352deff0f3b6db3ace2d31ba98ffed568"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidPackageReaderRegistry.h",
+      "size_bytes": 1467,
+      "sha256": "00110ebb9c1ef89a5e31b588d0c1363301c24793d9cc073052fc9bef8de7e0fa"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidPackageValidator.h",
+      "size_bytes": 2287,
+      "sha256": "f47905c9816686dea1a798c0a50f4a1e53ca19c81929eba476cbdbb42e296ea9"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/Public/VoidWorldBuilderImportLog.h",
+      "size_bytes": 1135,
+      "sha256": "f816876b9eb7003da3fc4ea438d5a739061979c94cdbc5d60e7cd3948d6124b9"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderImport/VOIDWorldBuilderImport.Build.cs",
+      "size_bytes": 907,
+      "sha256": "ab868ee0d5ccb608c274f03e4c5f306a00346043538438e4d1494a667bbe029a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/Tests/VoidLightingDataTests.cpp",
+      "size_bytes": 7547,
+      "sha256": "7137eceb3c529b6bd7ed8c97a37abd876bd7732fbc2a52c42634e08cddfef48f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VOIDWorldBuilderLightingModule.cpp",
+      "size_bytes": 549,
+      "sha256": "e9dbe0e26998359039fcc52d4e923ab5aa2d736d02b9e6d004984abf42eb12f7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidDistrictLightingActor.cpp",
+      "size_bytes": 4717,
+      "sha256": "70c52e0877b84f0ee06d6e698fb874d4ebd4892c9cb81c470cfef64dc0b15980"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLandmarkLightingActor.cpp",
+      "size_bytes": 4344,
+      "sha256": "3e48ec85ac58b2a2294ce906c36e9ea1f1b8bca330dee617d44db15354aaf200"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingActorBase.cpp",
+      "size_bytes": 12279,
+      "sha256": "87687da83178e887218fb15821e2445b5e6824c6c430dc4dca8e2b55e4caa32b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingConfig.cpp",
+      "size_bytes": 5552,
+      "sha256": "7ccb1dee0d09036e33affc9c6871c5d2bbd86cc8e117072d3a8b9ab9127377cf"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingDirector.cpp",
+      "size_bytes": 17412,
+      "sha256": "8b0c3766c1deca391996aa8033a9c619e5d394f00ebb28db8b96812b267c72ee"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingLog.cpp",
+      "size_bytes": 149,
+      "sha256": "8d5ea9cfbcbc0df25976c825533a66914463cae35be72f12636b41973b351774"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingMetadata.cpp",
+      "size_bytes": 5039,
+      "sha256": "1c751e2970ae31012575ad6b8d919e09ec0f5e56ebd79a686d0e7fad341cecdd"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Private/VoidLightingSettings.cpp",
+      "size_bytes": 200,
+      "sha256": "983ccc37c1c3102570d371e8c6458fa9ba57b24a2754c2ff31016d1e51ddec9e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VOIDWorldBuilderLightingModule.h",
+      "size_bytes": 316,
+      "sha256": "8f1a8b3d9edf7a2b890cde9ab5eed954271c84e2aeee64c0cda458d00724d600"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidDistrictLightingActor.h",
+      "size_bytes": 2240,
+      "sha256": "60ea29a81272c31f7facae2bcc3621f3c88ea07e0ffe0b50aeb330eaa78de97a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLandmarkLightingActor.h",
+      "size_bytes": 2931,
+      "sha256": "b4a804b01a7d379952a9576a49a11b9441252b0b1a21472c00907154c95dce48"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingActorBase.h",
+      "size_bytes": 5142,
+      "sha256": "2bbecb7f5e5360690324544f8c4d53342b5b8c923ea377138e644dac6e006dd4"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingConfig.h",
+      "size_bytes": 2442,
+      "sha256": "ff6e553857d6f81c82762f67c70ffa4efc8c9a631f76d1d94c12f25f213c1aaa"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingDirector.h",
+      "size_bytes": 8335,
+      "sha256": "3dc9d891390fae93a556b0b53af524ef5b1560865146848030b33e676b50d60c"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingLog.h",
+      "size_bytes": 237,
+      "sha256": "70043513863e7d05cd2384bc460b71a273eeb5145e8606506a3d238b53f55cb9"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingMetadata.h",
+      "size_bytes": 2248,
+      "sha256": "b4463b8e0335816a03031ac112ca904fc473f8f0862d47647cf7e86250c23579"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingSettings.h",
+      "size_bytes": 5723,
+      "sha256": "e0be620fd2217ecca6bbe9f57f2532aae6e2b3af7834116d69696d208ff07f60"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/Public/VoidLightingTypes.h",
+      "size_bytes": 22451,
+      "sha256": "870549a61f11429b51a172ea88b92f12633e18fce1ff126ec0ae781c5a4a9b37"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderLighting/VOIDWorldBuilderLighting.Build.cs",
+      "size_bytes": 879,
+      "sha256": "10673d8c4bac6d2c49365d8b1ed094046763f4fb352a48c769e53bcd09c5a048"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/Tests/VoidMeridianValidatorTests.cpp",
+      "size_bytes": 15952,
+      "sha256": "b2f4794119175aaaefa481bb28f894d3a9e8a6cde72dd621308cc02eb1ca88d6"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/Tests/VoidPackageValidatorTests.cpp",
+      "size_bytes": 16621,
+      "sha256": "7a9678cb3eed82d5066d47d2c68cee14c41bbdf3808192b7f60102e17782494d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/Tests/VoidPipelineTests.cpp",
+      "size_bytes": 22903,
+      "sha256": "9ab5ac9a75c0c75500b2b3ddbc2c5927e279899a1a5666650149f81cadcd1e6a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/Tests/VoidTestHelpers.h",
+      "size_bytes": 2205,
+      "sha256": "b4357c23e7458b39723006b02915821e1c0424928069a77665e43a5d51c52f8f"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VOIDWorldBuilderValidationModule.cpp",
+      "size_bytes": 1279,
+      "sha256": "fcbe70c4f92c6a902e741cc50b893c09cb386c439d1d40086489f495bd4c40dc"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidGeneratedWorldValidator.cpp",
+      "size_bytes": 11639,
+      "sha256": "15645a18c164efed49fc17c3154e92e9985830fc7f48fa34fc22215137bc2e2b"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidGeneratorContractAuditor.cpp",
+      "size_bytes": 5002,
+      "sha256": "d5d2efe7f7b1c6c9f2b51b42f2d1b08b9e2f92cf7cfa6b1539e9519b86abbd14"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidJsonSchemaSubset.cpp",
+      "size_bytes": 11448,
+      "sha256": "1dd8736c61e02a69ad0dcd29cf873f4857dcad3413afc000471cc43c3377e2c8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidMeridianValidator.cpp",
+      "size_bytes": 38057,
+      "sha256": "a066451eb4e5fbc9ee09758591c7cb214087a516d1e92e24aa76070d8ca25155"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidPackageValidators.cpp",
+      "size_bytes": 35982,
+      "sha256": "761b4633c3f928924ad0243dcfc1e7788cccde1413faf01687371213d4eb3b7e"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidSha256.h",
+      "size_bytes": 3416,
+      "sha256": "d4f05e513102fa9f5626a8ecde25b80c94ef540bc5e0e1c8fdbf45826a1c931d"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidValidateCommandlet.cpp",
+      "size_bytes": 2666,
+      "sha256": "7fca7282a531b8358b29cf42c59b88395c9b2654991c7550abe64a1f06fb1595"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidValidationMath.h",
+      "size_bytes": 4298,
+      "sha256": "2d3f2f5b4755bdc23ce26d60f81a2ff1de19ad9817cec8c321efcc4d95329ab5"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidValidationPipeline.cpp",
+      "size_bytes": 12423,
+      "sha256": "2800b3a3bd1e0f7df3afdc8ac9056e7958d7e57da8e74095c68fe09ba25d96d5"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Private/VoidValidationReportExporter.cpp",
+      "size_bytes": 8629,
+      "sha256": "012c207eeb87e953cb2024571d6ce0cbd38d9cb22533f949abf3940e1699c160"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VOIDWorldBuilderValidationModule.h",
+      "size_bytes": 431,
+      "sha256": "46e23feba15ef1e26ed1c9185709125d17a239172e4cc8de923dddf0a0fde1d7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidGeneratedWorldValidator.h",
+      "size_bytes": 3163,
+      "sha256": "03d19baf1b7314ca67476a314be6b55acdbb550c3268389af8284b0a520c89d7"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidGeneratorContractAuditor.h",
+      "size_bytes": 1846,
+      "sha256": "3bbaf8c75a192116fde763b8fc3e62caba9c408950a42468907076785fe4ac27"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidJsonSchemaSubset.h",
+      "size_bytes": 1499,
+      "sha256": "4221e731f2c6c6493bee52e8980f79f90eae5337624cec6c166749a0537b4b7a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidMeridianValidator.h",
+      "size_bytes": 2942,
+      "sha256": "3d8ecb56ac86e249996fa95387618033076b44e398f32242e7015a078d266019"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidPackageValidators.h",
+      "size_bytes": 3501,
+      "sha256": "efee5adcff7ba2ebb66b5e127568b178f21765430473930e410bdc08a95c37ac"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidValidateCommandlet.h",
+      "size_bytes": 1169,
+      "sha256": "df9e798e54e5ba2505c3315e41a73bd82e69321166ae139a7e9b0ea2d7ce8021"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidValidationLog.h",
+      "size_bytes": 356,
+      "sha256": "61b9d95104d95ab3428e6df314b499dbec4b710b0e70efc343bc868a148f7916"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidValidationPipeline.h",
+      "size_bytes": 4570,
+      "sha256": "d6827da2ddd8cc774c68c02d4bbc170472f6ea9e5e823ccb334dbc52aaac669a"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/Public/VoidValidationReportExporter.h",
+      "size_bytes": 1509,
+      "sha256": "566f4e719042fea429525968445d07b462a902624c2b0664f20c64e5456c9ee8"
+    },
+    {
+      "path": "Source/VOIDWorldBuilderValidation/VOIDWorldBuilderValidation.Build.cs",
+      "size_bytes": 996,
+      "sha256": "74f3dfcbdf280ac0c6b8df7a48ad86f67994d52de7243f5332128b1c6dcf8ba2"
+    },
+    {
+      "path": "Tools/IntegrationAudit/static_audit.py",
+      "size_bytes": 3912,
+      "sha256": "bb045668c4018f12a6935da2e0f81285bb9abbf10d2762b5fd745615986d2de5"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/build_and_run.sh",
+      "size_bytes": 804,
+      "sha256": "971b489483b7463b9ed03c7f2c7a544b0cf2274fffb206952e59411910424228"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/districttest",
+      "size_bytes": 306976,
+      "sha256": "39aedb4752c0e2725e52eeb88c4e1e9e33dbe0efb71bd49ec5e70d1c7c0a7e57"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/Algo/Sort.h",
+      "size_bytes": 150,
+      "sha256": "f5feb65586eaa99eea849ae85d8e040c8bd67dfd76d3367500d60c8be458dbf1"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/CoreMinimal.h",
+      "size_bytes": 7158,
+      "sha256": "b1fef9c323181690d24e1f7f1ac88d63a651d72ff5264b2773e3b77cfb56ae0f"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidDesignPackage.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidDistrictLayoutParams.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidImportContext.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidSchemaVersion.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidValidationReport.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/inc/VoidWorldBuilderTypes.generated.h",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/real_data.inc",
+      "size_bytes": 8207,
+      "sha256": "d04f8637372dafbeb932f61ae9c733a92773fb9f4e33d0fe892ad4543e2f2eab"
+    },
+    {
+      "path": "Tools/StandaloneDistrictCheck/test_main.cpp",
+      "size_bytes": 6441,
+      "sha256": "7f44307519f9c84b4364640585fa0e8e0375f77dc98df7afe4ee31f1e7e2cfd5"
+    },
+    {
+      "path": "Tools/StandalonePlannerTests/PlannerTests.cpp",
+      "size_bytes": 10656,
+      "sha256": "df88c79b2f8a245165abc38e9faab129b947dc35e3f311546f1181dc67d92400"
+    },
+    {
+      "path": "Tools/StandalonePlannerTests/run.sh",
+      "size_bytes": 593,
+      "sha256": "8e6ec9da7c161224c8b86c8cf712f44322863684b973ba1bb12f8f99a6807a81"
+    },
+    {
+      "path": "Tools/StandalonePlannerTests/shim/CoreMinimal.h",
+      "size_bytes": 4120,
+      "sha256": "8500a2ff8467f1b0a5564bb9264299d88e38bb5b045b07eb977ccb2b0044b739"
+    },
+    {
+      "path": "Tools/StandalonePlannerTests/shim/Misc/Crc.h",
+      "size_bytes": 168,
+      "sha256": "dc3be58ad673000cf39ea8c91a78338238e5d00700113147b75929686cb9f5f8"
+    },
+    {
+      "path": "VOIDWorldBuilder.uplugin",
+      "size_bytes": 1443,
+      "sha256": "b7529cb7e11c009380a35f70d66045d9ea1af077d99e167cbc024c234f0d6dcb"
+    }
+  ]
+}

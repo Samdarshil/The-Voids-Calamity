@@ -1,0 +1,192 @@
+{
+  "$schema": "void_district_registry_schema_v1",
+  "districts": [
+    {
+      "id": "olympus_spire",
+      "display_name": "Olympus Spire",
+      "status": "approved",
+      "design_doc_reference": "Olympus_Spire.md",
+      "data_reference": "Olympus_Spire_data.json",
+      "radial_band": "core",
+      "radial_position_type": "absolute_center_origin_point_canon_explicit",
+      "vertical_tier": "absolute_top",
+      "structural_model": "singular_civic_centerpiece",
+      "generation_priority": 1,
+      "build_order_index": 5,
+      "depends_on": []
+    },
+    {
+      "id": "white_zones",
+      "display_name": "White Zones",
+      "status": "approved",
+      "design_doc_reference": "White_Zones.md",
+      "data_reference": "White_Zones_data.json",
+      "radial_band": "mid_tier_rings",
+      "radial_position_type": "distributed_node_network",
+      "vertical_tier": "grade_street_level",
+      "structural_model": "typology_plus_flagship_instance",
+      "generation_priority": 3,
+      "build_order_index": 2,
+      "depends_on": ["olympus_spire"],
+      "dependency_note": "Depends on the Live Network spine (infrastructure, not a district) which itself anchors to Olympus Spire; see Meridian_Master.json generation_pipeline for the intermediate step."
+    },
+    {
+      "id": "metro_archives",
+      "display_name": "Metro Archives",
+      "status": "approved",
+      "design_doc_reference": "Metro_Archives.md",
+      "data_reference": "Metro_Archives_data.json",
+      "radial_band": "seam_zone",
+      "radial_position_type": "singular_seam_position",
+      "vertical_tier": "grade_plus_below_grade_aging",
+      "structural_model": "singular_bespoke_facility",
+      "generation_priority": 5,
+      "build_order_index": 3,
+      "depends_on": ["white_zones", "undercroft"]
+    },
+    {
+      "id": "undercroft",
+      "display_name": "The Undercroft",
+      "status": "approved",
+      "design_doc_reference": "VOID_Location_01_The_Undercroft.md",
+      "data_reference": "VOID_Location_01_Undercroft_data.json",
+      "radial_band": "inner_mid_outer_continuous",
+      "radial_position_type": "continuous_substrate_multi_ring",
+      "vertical_tier": "below_grade_living",
+      "structural_model": "internal_three_belt_gradient",
+      "generation_priority": 4,
+      "build_order_index": 1,
+      "depends_on": ["olympus_spire"]
+    },
+    {
+      "id": "sector_0",
+      "display_name": "Sector 0",
+      "status": "approved",
+      "design_doc_reference": "Sector_0.md",
+      "data_reference": "Sector_0_data.json",
+      "radial_band": "off_gradient",
+      "radial_position_type": "narrative_nowhere_production_placement_only",
+      "vertical_tier": "absolute_bottom_dead",
+      "structural_model": "singular_narrative_hub",
+      "generation_priority": 6,
+      "build_order_index": 4,
+      "depends_on": ["undercroft"]
+    }
+  ],
+  "hierarchy": {
+    "radial_bands_ordered": ["core", "inner_rings_unbuilt", "mid_tier_rings", "seam_zone", "outer_rings", "off_gradient"],
+    "vertical_tiers_ordered": ["absolute_top", "grade_street_level", "below_grade_living", "below_grade_aging", "absolute_bottom_dead"],
+    "note": "off_gradient (Sector 0) is deliberately excluded from radial ordering logic — it does not participate in the trust gradient. See Sector_0.md Sec. 4.1."
+  },
+  "relationships": [
+    {
+      "pair": ["undercroft", "white_zones"],
+      "connection_type": "no_direct_connection_contrastive_only",
+      "detail": "No physical connection. Concealment strategies contrast directly: noise vs. helpfulness.",
+      "source": "Meridian_Master_Plan.md Sec. 9"
+    },
+    {
+      "pair": ["undercroft", "metro_archives"],
+      "connection_type": "physical_and_thematic",
+      "detail": "Shared pre-Council transit substrate; contrastive concealment strategies (neglect vs. noise).",
+      "source": "Metro_Archives_data.json meridian_integration"
+    },
+    {
+      "pair": ["undercroft", "sector_0"],
+      "connection_type": "physical_and_thematic_primary",
+      "detail": "Shared old transit substrate. Sector 0 is what the Undercroft would be if it had died instead of survived.",
+      "source": "Sector_0_data.json meridian_integration"
+    },
+    {
+      "pair": ["undercroft", "olympus_spire"],
+      "connection_type": "structural_opposite_and_shared_dialogue_line",
+      "detail": "Opposite ends of both radial and vertical axes. Security doctrine line reused verbatim in concept from Undercroft's Guest List scene.",
+      "source": "Olympus_Spire_data.json meridian_integration"
+    },
+    {
+      "pair": ["white_zones", "metro_archives"],
+      "connection_type": "contrastive_only",
+      "detail": "No physical connection. Deliberate architectural/functional opposite: bespoke vs. standardized, ignored vs. trafficked.",
+      "source": "Metro_Archives_data.json meridian_integration"
+    },
+    {
+      "pair": ["white_zones", "sector_0"],
+      "connection_type": "none_total_contrast_only",
+      "detail": "Most monitored space vs. only unmonitored space; no meaningful connection beyond opposition.",
+      "source": "Sector_0_data.json meridian_integration"
+    },
+    {
+      "pair": ["white_zones", "olympus_spire"],
+      "connection_type": "gameplay_progression_payoff",
+      "detail": "Party Level fulfills the social-stealth rehearsal White Zones explicitly set up.",
+      "source": "Olympus_Spire_data.json meridian_integration"
+    },
+    {
+      "pair": ["metro_archives", "sector_0"],
+      "connection_type": "physical_and_narrative_primary",
+      "detail": "Sub-basement node is a smaller dormant cousin of Sector 0's core. Exhibit case subway map is the literal narrative bridge from Contract 2 to Contract 3.",
+      "source": "Metro_Archives_data.json meridian_integration; corroborated by Sector_0_data.json (technical_lineage_primary)"
+    },
+    {
+      "pair": ["metro_archives", "olympus_spire"],
+      "connection_type": "shared_technical_principle_scaled_up",
+      "detail": "Same proximity-based reality-manipulation rule connecting VOID hardware to physical space: narrow/old at Metro Archives, broadest/live at the Spire.",
+      "source": "Olympus_Spire_data.json meridian_integration",
+      "note": "Metro_Archives_data.json itself records this relationship as 'thematic_only_not_yet_built' since it was authored before the Spire package existed. That earlier status is a harmless artifact of build order, not a contradiction — it is not edited here, per the immutability of approved packages, but the Spire package's later, fuller characterization is treated as current for this registry."
+    },
+    {
+      "pair": ["sector_0", "olympus_spire"],
+      "connection_type": "deliberate_total_opposite",
+      "detail": "Silence vs. voice, cold vs. warm, dead core vs. live core. Sector 0 is what the Spire's server hub used to be before being superseded.",
+      "source": "Olympus_Spire_data.json meridian_integration",
+      "note": "Sector_0_data.json records this as 'thematic_lineage_only_not_yet_built' for the same build-order reason noted above."
+    }
+  ],
+  "adjacency_graph": {
+    "description": "Physical World Partition boundary adjacency only — a much stricter and sparser graph than connectivity below.",
+    "edges": [
+      { "from": "undercroft", "to": "metro_archives", "adjacency_type": "shared_transit_seam_boundary" },
+      { "from": "undercroft", "to": "sector_0", "adjacency_type": "shared_entrance_tunnel_threshold" }
+    ],
+    "isolated_nodes": {
+      "olympus_spire": "No physical World Partition boundary shared with any other approved district. Connects only through unbuilt Inner Ring connective tissue.",
+      "white_zones": "No physical World Partition boundary shared with any other approved district, per the no-direct-connection findings above."
+    }
+  },
+  "connectivity_graph": {
+    "description": "Player-traversable reachability, broader than physical adjacency — includes both transit networks and unbuilt connective tissue.",
+    "live_network_connectivity": ["olympus_spire", "white_zones"],
+    "dead_network_connectivity": ["undercroft", "metro_archives", "sector_0"],
+    "connective_tissue_required_between": [
+      ["olympus_spire", "undercroft"],
+      ["olympus_spire", "metro_archives"],
+      ["olympus_spire", "sector_0"],
+      ["white_zones", "undercroft"],
+      ["white_zones", "metro_archives"],
+      ["white_zones", "sector_0"]
+    ],
+    "note": "Every pair requiring unbuilt connective tissue is Phase 2 scope. This graph does not imply that tissue is designed yet — only that it is where a route must eventually exist."
+  },
+  "streaming_relationships": {
+    "olympus_spire": { "region": "WP_OlympusSpire", "instancing": "single_instance", "template": null },
+    "white_zones": { "region": "WP_WhiteZones_Flagship", "instancing": "single_flagship_plus_reusable_template", "template": "WP_WhiteZones_NetworkNode_Template" },
+    "metro_archives": { "region": "WP_MetroArchives", "instancing": "single_instance", "template": null },
+    "undercroft": { "region": "WP_Undercroft", "instancing": "single_instance_three_internal_cells", "template": null },
+    "sector_0": { "region": "WP_Sector0", "instancing": "single_instance", "template": null }
+  },
+  "generation_priority_order": [
+    { "priority": 1, "district": "olympus_spire" },
+    { "priority": 3, "district": "white_zones" },
+    { "priority": 4, "district": "undercroft" },
+    { "priority": 5, "district": "metro_archives" },
+    { "priority": 6, "district": "sector_0" }
+  ],
+  "generation_priority_note": "Priority 2 in the full pipeline is the Live Network spine, an infrastructure step rather than a district — see Meridian_Master.json generation_pipeline.generation_order for the complete six-step sequence including infrastructure.",
+  "dependencies": {
+    "olympus_spire": [],
+    "white_zones": ["olympus_spire"],
+    "undercroft": ["olympus_spire"],
+    "metro_archives": ["white_zones", "undercroft"],
+    "sector_0": ["undercroft"]
+  }
+}

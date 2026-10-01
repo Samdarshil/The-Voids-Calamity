@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "metadata": {
+    "sourceDocumentName": "TEST FIXTURE - NOT MERIDIAN DATA",
+    "sourceDocumentVersion": "agent4-fixture-1",
+    "isApproved": false
+  },
+  "district": {
+    "districtId": "TEST_FIXTURE_NOT_MERIDIAN",
+    "buildings": [
+      { "id": "fx_b000", "buildingType": "Residential_Midrise", "heightUnits": 1998.1, "footprintCorners": [[1300.0, 1400.0], [2683.6, 1400.0], [2683.6, 3291.9], [1300.0, 3291.9]] },
+      { "id": "fx_b001", "buildingType": "Commercial_Retail", "heightUnits": 1859.8, "footprintCorners": [[3050.0, 1400.0], [4526.0, 1400.0], [4526.0, 3558.5], [3050.0, 3558.5]] },
+      { "id": "fx_b002", "buildingType": "Office_Tower", "heightUnits": 7786.4, "footprintCorners": [[4800.0, 1400.0], [6256.2, 1400.0], [6256.2, 3265.0], [4800.0, 3265.0]] },
+      { "id": "fx_b003", "buildingType": "Industrial_Warehouse", "heightUnits": 943.1, "footprintCorners": [[6550.0, 1400.0], [7900.5, 1400.0], [7900.5, 3267.3], [6550.0, 3267.3]] },
+      { "id": "fx_b004", "buildingType": "Civic_Hall", "heightUnits": 1662.2, "footprintCorners": [[8300.0, 1400.0], [9681.7, 1400.0], [9681.7, 3261.4], [8300.0, 3261.4]] },
+      { "id": "fx_b005", "buildingType": "Institutional_School", "heightUnits": 2313.1, "footprintCorners": [[10050.0, 1400.0], [11394.6, 1400.0], [11394.6, 3420.2], [10050.0, 3420.2]] },
+      { "id": "fx_b006", "buildingType": "Medical_Clinic", "heightUnits": 2376.3, "footprintCorners": [[1300.0, 4000.0], [2887.8, 4000.0], [2887.8, 5873.7], [1300.0, 5873.7]] },
+      { "id": "fx_b007", "buildingType": "Government_Ministry", "heightUnits": 2197.4, "footprintCorners": [[3050.0, 4000.0], [4499.7, 4000.0], [4499.7, 5840.2], [3050.0, 5840.2]] },
+      { "id": "fx_b008", "buildingType": "MixedUse_Block", "heightUnits": 4665.2, "footprintCorners": [[4800.0, 4000.0], [6369.8, 4000.0], [6369.8, 6168.0], [4800.0, 6168.0]] },
+      { "id": "fx_b009", "buildingType": "Landmark_Tower", "heightUnits": 8583.0, "footprintCorners": [[6550.0, 4000.0], [7955.2, 4000.0], [7955.2, 6041.6], [6550.0, 6041.6]] },
+      { "id": "fx_b010", "buildingType": "Residential_Midrise", "heightUnits": 1688.3, "footprintCorners": [[8300.0, 4000.0], [9730.0, 4000.0], [9730.0, 5958.9], [8300.0, 5958.9]] },
+      { "id": "fx_b011", "buildingType": "Commercial_Retail", "heightUnits": 2307.6, "footprintCorners": [[10050.0, 4000.0], [11567.9, 4000.0], [11567.9, 6157.1], [10050.0, 6157.1]] },
+      { "id": "fx_b012", "buildingType": "Office_Tower", "heightUnits": 7797.4, "footprintCorners": [[1300.0, -3266.2], [2836.7, -3266.2], [2836.7, -1400.0], [1300.0, -1400.0]] },
+      { "id": "fx_b013", "buildingType": "Industrial_Warehouse", "heightUnits": 1437.1, "footprintCorners": [[3050.0, -3640.5], [4407.5, -3640.5], [4407.5, -1400.0], [3050.0, -1400.0]] },
+      { "id": "fx_b014", "buildingType": "Civic_Hall", "heightUnits": 2565.0, "footprintCorners": [[4800.0, -3485.8], [6156.0, -3485.8], [6156.0, -1400.0], [4800.0, -1400.0]] },
+      { "id": "fx_b015", "buildingType": "Institutional_School", "heightUnits": 1935.8, "footprintCorners": [[6550.0, -3377.2], [8075.7, -3377.2], [8075.7, -1400.0], [6550.0, -1400.0]] },
+      { "id": "fx_b016", "buildingType": "Medical_Clinic", "heightUnits": 1841.0, "footprintCorners": [[8300.0, -3201.8], [9838.4, -3201.8], [9838.4, -1400.0], [8300.0, -1400.0]] },
+      { "id": "fx_b017", "buildingType": "Government_Ministry", "heightUnits": 3467.7, "footprintCorners": [[10050.0, -3321.6], [11502.7, -3321.6], [11502.7, -1400.0], [10050.0, -1400.0]] },
+      { "id": "fx_b018", "buildingType": "MixedUse_Block", "heightUnits": 5870.8, "footprintCorners": [[1300.0, -5989.0], [2731.7, -5989.0], [2731.7, -4000.0], [1300.0, -4000.0]] },
+      { "id": "fx_b019", "buildingType": "Landmark_Tower", "heightUnits": 11836.7, "footprintCorners": [[3050.0, -5929.2], [4505.3, -5929.2], [4505.3, -4000.0], [3050.0, -4000.0]] },
+      { "id": "fx_b020", "buildingType": "Residential_Midrise", "heightUnits": 2334.0, "footprintCorners": [[4800.0, -5986.9], [6321.6, -5986.9], [6321.6, -4000.0], [4800.0, -4000.0]] },
+      { "id": "fx_b021", "buildingType": "Commercial_Retail", "heightUnits": 4241.9, "footprintCorners": [[6550.0, -6032.3], [8083.6, -6032.3], [8083.6, -4000.0], [6550.0, -4000.0]] },
+      { "id": "fx_b022", "buildingType": "Office_Tower", "heightUnits": 9686.7, "footprintCorners": [[8300.0, -6158.2], [9759.6, -6158.2], [9759.6, -4000.0], [8300.0, -4000.0]] },
+      { "id": "fx_b023", "buildingType": "Industrial_Warehouse", "heightUnits": 1523.7, "footprintCorners": [[10050.0, -5844.7], [11365.4, -5844.7], [11365.4, -4000.0], [10050.0, -4000.0]] },
+      { "id": "fx_lshape", "buildingType": "Office_Tower", "heightUnits": 6000.0, "footprintCorners": [[13200.0, 1400.0], [16200.0, 1400.0], [16200.0, 3000.0], [14700.0, 3000.0], [14700.0, 5600.0], [13200.0, 5600.0]] },
+      { "id": "fx_courtyard_block", "buildingType": "Residential_Courtyard", "heightUnits": 2400.0, "footprintCorners": [[13200.0, -7400.0], [17800.0, -7400.0], [17800.0, -3000.0], [13200.0, -3000.0]] },
+      { "id": "fx_civic_plaza", "buildingType": "Civic_Hall", "heightUnits": 2400.0, "footprintCorners": [[13200.0, 6600.0], [16800.0, 6600.0], [16800.0, 9000.0], [13200.0, 9000.0]] },
+      { "id": "fx_landmark_tower", "buildingType": "Landmark_Tower", "heightUnits": 22000.0, "footprintCorners": [[1400.0, -9600.0], [4400.0, -9600.0], [4400.0, -7000.0], [1400.0, -7000.0]] },
+      { "id": "fx_landmark_low", "buildingType": "Landmark_Hall", "heightUnits": 2400.0, "footprintCorners": [[5200.0, -9600.0], [9200.0, -9600.0], [9200.0, -7400.0], [5200.0, -7400.0]] },
+      { "id": "fx_bowtie", "buildingType": "Office_Tower", "heightUnits": 3000.0, "footprintCorners": [[17000.0, 6000.0], [18000.0, 7000.0], [18000.0, 6000.0], [17000.0, 7000.0]] },
+      { "id": "fx_two_corners", "buildingType": "Residential", "heightUnits": 3000.0, "footprintCorners": [[0.0, 12000.0], [500.0, 12000.0]] },
+      { "id": "fx_tiny", "buildingType": "Residential", "heightUnits": 3000.0, "footprintCorners": [[3000.0, 12000.0], [3100.0, 12000.0], [3100.0, 12100.0], [3000.0, 12100.0]] },
+      { "id": "fx_mystery", "buildingType": "Mystery_Box", "heightUnits": 1500.0, "footprintCorners": [[16500.0, 4200.0], [17500.0, 4200.0], [17500.0, 5200.0], [16500.0, 5200.0]] },
+      { "id": "fx_notag", "buildingType": "", "heightUnits": 1500.0, "footprintCorners": [[8000.0, 12000.0], [9000.0, 12000.0], [9000.0, 13000.0], [8000.0, 13000.0]] },
+      { "id": "fx_on_road", "buildingType": "Commercial_Retail", "heightUnits": 1800.0, "footprintCorners": [[7000.0, -500.0], [8500.0, -500.0], [8500.0, 900.0], [7000.0, 900.0]] },
+      { "id": "fx_near_road", "buildingType": "Commercial_Retail", "heightUnits": 1800.0, "footprintCorners": [[13200.0, -1000.0], [14400.0, -1000.0], [14400.0, -100.0], [13200.0, -100.0]] }
+    ],
+    "roads": [
+      { "id": "fx_road_main", "roadType": "Primary", "hasSidewalk": true, "isBridge": false, "centerlinePoints": [[-6000.0, 0.0], [18000.0, 0.0]] },
+      { "id": "fx_road_west", "roadType": "Local", "hasSidewalk": true, "isBridge": false, "centerlinePoints": [[0.0, -9000.0], [0.0, 9000.0]] },
+      { "id": "fx_road_east", "roadType": "Local", "hasSidewalk": true, "isBridge": false, "centerlinePoints": [[12000.0, -9000.0], [12000.0, 9000.0]] },
+      { "id": "fx_road_alley", "roadType": "Alley", "hasSidewalk": false, "isBridge": false, "centerlinePoints": [[3000.0, 1000.0], [3000.0, 7000.0]] },
+      { "id": "fx_road_ring", "roadType": "Roundabout", "hasSidewalk": true, "isBridge": false, "roundaboutRadiusUnits": 1000.0, "centerlinePoints": [[6000.0, 8600.0]] },
+      { "id": "fx_road_bridge", "roadType": "Secondary", "hasSidewalk": true, "isBridge": true, "centerlinePoints": [[-6000.0, -6500.0], [18000.0, -6500.0]] }
+    ]
+  }
+}

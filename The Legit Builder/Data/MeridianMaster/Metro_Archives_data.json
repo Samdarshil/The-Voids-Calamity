@@ -1,0 +1,170 @@
+{
+  "$schema": "void_world_location_schema_v1",
+  "location_id": "metro_archives",
+  "display_name": "Metro Archives",
+  "phase": 1,
+  "build_order_index": 3,
+  "canon_source": ["Vol I Ch. 4.4", "Vol I Ch. 6.4", "Vol II Contract 2 Memory Hole", "Vol III SQ1", "Vol III Easter Egg 3", "Vol IV 8.2", "Vol IV Mission Flow Table"],
+  "location_model": "singular_bespoke_facility",
+  "location_model_notes": "Unlike the White Zones' repeated node network, Metro Archives is explicitly singular by design intent (Sec. 7 of Metro_Archives.md) — never intended to scale, unlike the Trust Center typology.",
+  "structural_position": {
+    "vertical_stratum": "aboveground_public_plus_sub_basement",
+    "vertical_notes": "Confirmed two-level structure per Vol IV 8.2: public floor + sub-basement. Sub-basement functions as a seam into the same old substrate as the Undercroft and Sector 0.",
+    "radial_model": "seam_position",
+    "radial_notes": "Placed at the structural boundary between the mid-tier residential band and the Undercroft's outer-ring foundation belt. Not explicit in canon; declared and justified per Constraint 1."
+  },
+  "sub_locations": [
+    {
+      "id": "reception_reading_room",
+      "level": "public_floor",
+      "type": "npc_hub_public",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "confirmed",
+      "npc_refs": ["retired_archives_clerk", "the_regular_researcher"]
+    },
+    {
+      "id": "historical_society_office",
+      "level": "public_floor",
+      "type": "npc_hub_quest_critical",
+      "gated": true,
+      "gate_condition": "SQ1_unlock_post_mission_2",
+      "canon_status": "confirmed",
+      "npc_refs": ["historical_society_contact"],
+      "quest_refs": ["SQ1"]
+    },
+    {
+      "id": "east_wing_exhibit_case",
+      "level": "public_floor",
+      "type": "secret_collectible_area",
+      "gated": true,
+      "gate_condition": "lockpick_minigame",
+      "canon_status": "confirmed",
+      "contents": "pre_council_subway_map",
+      "narrative_weight": "high_bridges_to_contract_3"
+    },
+    {
+      "id": "exhibit_hall",
+      "level": "public_floor",
+      "type": "environmental_storytelling_space",
+      "gated": false,
+      "gate_condition": null,
+      "canon_status": "new_canon_silence_addition"
+    },
+    {
+      "id": "records_stacks",
+      "level": "public_floor_lower",
+      "type": "mission_critical_puzzle_space",
+      "gated": false,
+      "gate_condition": "contract_2_active",
+      "canon_status": "confirmed",
+      "reset_tier": 1
+    },
+    {
+      "id": "restricted_archive",
+      "level": "public_floor_lower",
+      "type": "mission_critical_puzzle_space",
+      "gated": true,
+      "gate_condition": "contract_2_progression",
+      "canon_status": "confirmed",
+      "reset_tier": "2_to_3",
+      "contains": "purge_protocol_7_log"
+    },
+    {
+      "id": "sub_basement_server_node",
+      "level": "sub_basement",
+      "type": "secret_collectible_area",
+      "gated": true,
+      "gate_condition": "echo_shift_unlocked",
+      "canon_status": "confirmed",
+      "npc_refs": ["old_ned"],
+      "notes": "Dormant early-ORACLE-era server node, physical seam into old transit substrate."
+    }
+  ],
+  "reset_mechanic": {
+    "system_name": "archive_maintenance_directive",
+    "justification": "proximity_effect_local_only",
+    "not_a_generalized_weave_power": true,
+    "tiers": [
+      {"tier": 1, "name": "ambient", "location": "records_stacks", "intensity": "low_easily_missed"},
+      {"tier": 2, "name": "active", "location": "restricted_archive", "intensity": "visible_direct_observation"},
+      {"tier": 3, "name": "aggressive", "location": "restricted_archive_deep", "intensity": "environmental_instability_non_lethal"}
+    ]
+  },
+  "weave_coverage": {
+    "is_off_weave": false,
+    "coverage_density": "standard_public_floor_elevated_depth_sub_basement",
+    "note": "Standard Weave coverage on public floor. Sub-basement has unusually deep (not broad) access due to direct physical wiring into the old node — depth of access in one building, not a new citywide capability."
+  },
+  "enforcement_doctrine": {
+    "patrol_type": "none_standing_none_scheduled",
+    "trigger_logic": "automated_environmental_response_archive_maintenance_directive",
+    "contrast_district_undercroft": "rare_scheduled_sweep",
+    "contrast_district_white_zones": "heavy_standing_patrol",
+    "notes": "Third distinct security model. No physical Enforcer response is canon-confirmed for this mission (key encounter listed as environmental only)."
+  },
+  "combat_policy": {
+    "mandatory_combat_encounters": 0,
+    "design_constraint": "hard_no_combat_content_without_explicit_future_canon_justification"
+  },
+  "economic_band": {
+    "licensing_status": "fully_licensed_public_civic_cultural",
+    "commercial_presence": false,
+    "corporate_presence": false,
+    "new_corporation_introduced": false
+  },
+  "npcs": {
+    "canon_confirmed": ["retired_archives_clerk", "historical_society_contact", "old_ned"],
+    "new_background_archetypes": ["the_regular_researcher", "the_junior_archivist"],
+    "new_npcs_carry_state_variables": false
+  },
+  "mission_cross_reference": [
+    {"content_id": "contract_2_memory_hole", "type": "main", "relation": "full_mission_location"},
+    {"content_id": "SQ1_peoples_ledger", "type": "side", "relation": "unlock_and_delivery_location"},
+    {"content_id": "easter_egg_3_old_ned", "type": "secret", "relation": "full_location_sub_basement"}
+  ],
+  "meridian_integration": {
+    "undercroft": {
+      "connection_type": "physical_and_thematic",
+      "detail": "Shared pre-Council transit substrate; contrastive concealment strategies (neglect vs. noise)."
+    },
+    "white_zones": {
+      "connection_type": "contrastive_only",
+      "detail": "No physical connection. Deliberate architectural/functional opposite: bespoke vs. standardized, ignored vs. trafficked."
+    },
+    "sector_0": {
+      "connection_type": "physical_and_narrative_primary",
+      "detail": "Sub-basement node is a smaller dormant cousin of Sector 0's core. Exhibit case subway map is the literal narrative bridge from Contract 2 to Contract 3."
+    },
+    "olympus_spire": {
+      "connection_type": "thematic_only_not_yet_built",
+      "detail": "Same continuity-maintenance infrastructure lineage as VOID's primary server hub; no physical connection. Spire itself not redesigned by this document."
+    }
+  },
+  "out_of_scope_flagged": [
+    {
+      "id": "olympus_spire_full_design",
+      "reason": "Referenced only at the level of thematic/technical lineage per Constraint 7; full Spire design is its own Phase 1 package."
+    }
+  ],
+  "canon_lock_compliance": {
+    "touches_canon_lock": false,
+    "modifies_approved_packages": false,
+    "references_luci": false,
+    "forecloses_voss_fate": false
+  },
+  "technical_notes": {
+    "world_partition_region": "WP_MetroArchives",
+    "template_based": false,
+    "template_notes": "Singular bespoke region, not a reusable template, consistent with the district's 'there is only one' placement logic.",
+    "data_layers": [
+      "DL_MetroArchives_PublicFloor_Base",
+      "DL_MetroArchives_EastWing_ExhibitCase",
+      "DL_MetroArchives_HistoricalSocietyOffice_SQ1",
+      "DL_MetroArchives_RecordsStacks_Tier1Reset",
+      "DL_MetroArchives_RestrictedArchive_Tier2Tier3Reset",
+      "DL_MetroArchives_SubBasement_EchoShiftGated"
+    ],
+    "streaming_priority_notes": "Public Floor highest priority (persistent low-density civilian NPCs); sub-basement lowest (gated, single Easter Egg payload)."
+  }
+}

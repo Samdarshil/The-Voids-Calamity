@@ -1,0 +1,190 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect x="0" y="0" width="1200" height="900" fill="#eef3f6"/>
+
+  <!-- ===================== TITLE BLOCK ===================== -->
+  <rect x="0" y="0" width="1200" height="64" fill="#dce7ee"/>
+  <text x="30" y="28" font-size="20" font-weight="bold" fill="#20303d">VOID: THE UNSEEN HAND — WHITE ZONES</text>
+  <text x="30" y="50" font-size="13" fill="#4a5b68">Flagship Instance Schematic (Mission 5 / SQ4) — Top-Down Design Blueprint — NOT surveyed engineering geometry</text>
+  <text x="1000" y="28" font-size="12" fill="#4a5b68">Location 02 of 5</text>
+  <text x="1000" y="46" font-size="12" fill="#4a5b68">Phase 1 — Rev. 1.0</text>
+
+  <!-- ===================== MAIN SCHEMATIC FRAME ===================== -->
+  <rect x="30" y="84" width="890" height="770" fill="#ffffff" stroke="#b9c9d3" stroke-width="2" rx="6"/>
+
+  <!-- District catchment boundary -->
+  <rect x="55" y="110" width="840" height="700" fill="none" stroke="#9fb4c1" stroke-width="1.5" stroke-dasharray="10,6" rx="4"/>
+  <text x="65" y="128" font-size="12" fill="#6b7d89" font-style="italic">Flagship catchment boundary (walkable-access radius, not to scale)</text>
+
+  <!-- ===================== RESIDENTIAL BLOCK (Mira's Apartment) ===================== -->
+  <rect x="90" y="470" width="170" height="150" fill="#f2ece1" stroke="#c9b89a" stroke-width="2" rx="4"/>
+  <text x="105" y="495" font-size="13" font-weight="bold" fill="#5c4a2e">Residential Block</text>
+  <text x="105" y="513" font-size="11" fill="#5c4a2e">Mira's Apartment</text>
+  <text x="105" y="529" font-size="10" fill="#7a6a4d">(approx. location —</text>
+  <text x="105" y="543" font-size="10" fill="#7a6a4d">Phase 2 full detail)</text>
+  <text x="105" y="600" font-size="10" fill="#9c8c6d">Mission 5</text>
+  <text x="105" y="614" font-size="10" fill="#9c8c6d">extraction origin</text>
+
+  <!-- ===================== ENFORCER STAGING ALCOVE ===================== -->
+  <rect x="300" y="170" width="110" height="90" fill="#e4e0e6" stroke="#8b7f96" stroke-width="2" rx="4"/>
+  <text x="313" y="200" font-size="12" font-weight="bold" fill="#3d3448">Enforcer</text>
+  <text x="313" y="216" font-size="12" font-weight="bold" fill="#3d3448">Staging</text>
+  <text x="313" y="232" font-size="12" font-weight="bold" fill="#3d3448">Alcove</text>
+  <text x="313" y="250" font-size="9" fill="#6b6178">Enforcement-only</text>
+
+  <!-- ===================== ADMINISTRATIVE BACK OFFICES ===================== -->
+  <rect x="420" y="170" width="220" height="90" fill="#dfe6ec" stroke="#7d97a8" stroke-width="2" rx="4"/>
+  <text x="435" y="200" font-size="13" font-weight="bold" fill="#233846">Administrative Back Offices</text>
+  <text x="435" y="218" font-size="11" fill="#3f5866">Talis Bren — SQ4</text>
+  <text x="435" y="236" font-size="9" fill="#5c7180">Restricted — badge / cover-story gated</text>
+
+  <!-- ===================== RECORDS / AUDIT CLOSET (VESSEL-9) ===================== -->
+  <rect x="650" y="170" width="140" height="90" fill="#f5e9d6" stroke="#c9963f" stroke-width="3" stroke-dasharray="6,4" rx="4"/>
+  <text x="662" y="196" font-size="12" font-weight="bold" fill="#7a4e10">Records /</text>
+  <text x="662" y="212" font-size="12" font-weight="bold" fill="#7a4e10">Audit Closet</text>
+  <text x="662" y="230" font-size="10" fill="#8a5c14">VESSEL-9 (hidden boss)</text>
+  <text x="662" y="245" font-size="9" fill="#8a5c14">Highly restricted</text>
+  <!-- warning icon -->
+  <circle cx="775" cy="185" r="10" fill="#c9963f"/>
+  <text x="775" y="190" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">!</text>
+
+  <!-- ===================== CLINIC WING ===================== -->
+  <rect x="300" y="280" width="150" height="180" fill="#dfeaf0" stroke="#6f95a8" stroke-width="2" rx="4"/>
+  <text x="315" y="310" font-size="13" font-weight="bold" fill="#1f3d4a">Clinic Wing</text>
+  <text x="315" y="328" font-size="10" fill="#3f6270">Public — logged</text>
+
+  <!-- ===================== RECEPTION ATRIUM ===================== -->
+  <rect x="460" y="280" width="180" height="180" fill="#e6f1f5" stroke="#5c8ba0" stroke-width="2.5" rx="4"/>
+  <text x="480" y="330" font-size="14" font-weight="bold" fill="#1c4152">Reception</text>
+  <text x="480" y="348" font-size="14" font-weight="bold" fill="#1c4152">Atrium</text>
+  <text x="480" y="368" font-size="10" fill="#3f6270">Fully public — social stealth</text>
+  <text x="480" y="382" font-size="10" fill="#3f6270">SQ4 cover-story entry point</text>
+
+  <!-- ===================== RATION DISTRIBUTION HALL ===================== -->
+  <rect x="660" y="280" width="150" height="180" fill="#dfeaf0" stroke="#6f95a8" stroke-width="2" rx="4"/>
+  <text x="672" y="310" font-size="13" font-weight="bold" fill="#1f3d4a">Ration Distribution</text>
+  <text x="672" y="326" font-size="13" font-weight="bold" fill="#1f3d4a">Hall</text>
+  <text x="672" y="346" font-size="10" fill="#3f6270">Public — logged</text>
+  <!-- roof access marker -->
+  <circle cx="790" cy="290" r="7" fill="#7ab0c7"/>
+  <text x="800" y="294" font-size="9" fill="#3f6270">Roof hatch ↑</text>
+
+  <!-- ===================== REGISTRATION OFFICE ===================== -->
+  <rect x="500" y="470" width="100" height="60" fill="#dfeaf0" stroke="#6f95a8" stroke-width="2" rx="4"/>
+  <text x="512" y="495" font-size="11" font-weight="bold" fill="#1f3d4a">Registration</text>
+  <text x="512" y="510" font-size="11" font-weight="bold" fill="#1f3d4a">Office</text>
+
+  <!-- ===================== ENTRY PLAZA ===================== -->
+  <rect x="300" y="550" width="440" height="150" fill="#f4f8fa" stroke="#a9c2cf" stroke-width="2" rx="4"/>
+  <text x="315" y="580" font-size="14" font-weight="bold" fill="#2c4756">Entry Plaza</text>
+  <text x="315" y="598" font-size="10" fill="#527180">Open civic approach — Mission 5 escalation zone</text>
+  <text x="315" y="614" font-size="10" fill="#527180">Heavy standing Enforcer patrol baseline</text>
+
+  <!-- civilian queue dots -->
+  <circle cx="380" cy="650" r="5" fill="#8fa8b5"/>
+  <circle cx="410" cy="655" r="5" fill="#8fa8b5"/>
+  <circle cx="440" cy="648" r="5" fill="#8fa8b5"/>
+  <circle cx="470" cy="653" r="5" fill="#8fa8b5"/>
+  <text x="380" y="675" font-size="9" fill="#7a8f9c">civilian queue (typ.)</text>
+
+  <!-- ===================== PRIMARY APPROACH ROAD ===================== -->
+  <rect x="55" y="720" width="840" height="60" fill="#c9d2d8"/>
+  <text x="70" y="745" font-size="12" font-weight="bold" fill="#3a4750">Primary Approach Road</text>
+  <text x="70" y="762" font-size="9" fill="#5a6870">Pedestrian flow + Enforcer rapid-deployment lane</text>
+
+  <!-- Metro / grav-rail stop -->
+  <rect x="760" y="725" width="90" height="50" fill="#b8cdd9" stroke="#5c8ba0" stroke-width="2" rx="3"/>
+  <text x="770" y="745" font-size="10" font-weight="bold" fill="#1c4152">Grav-Rail</text>
+  <text x="770" y="760" font-size="10" font-weight="bold" fill="#1c4152">Stop</text>
+
+  <!-- ===================== EXTRACTION / ESCORT ROUTE ===================== -->
+  <path d="M 260 555 C 340 620, 380 640, 460 610 C 500 590, 480 500, 500 470"
+        fill="none" stroke="#c0473f" stroke-width="3" stroke-dasharray="9,6" marker-end="url(#arrowRed)"/>
+  <text x="555" y="685" font-size="11" font-weight="bold" fill="#a8382f">Mission 5 Extraction Route</text>
+  <text x="555" y="699" font-size="9" fill="#a8382f">(residential → plaza → atrium)</text>
+
+  <!-- ===================== ECHO SHIFT SECONDARY ROUTE ===================== -->
+  <path d="M 790 290 C 850 340, 850 430, 790 470 C 760 500, 700 500, 660 490"
+        fill="none" stroke="#4e8f5c" stroke-width="3" stroke-dasharray="4,5" marker-end="url(#arrowGreen)"/>
+  <text x="820" y="360" font-size="10" font-weight="bold" fill="#356b40" transform="rotate(90 820 360)">Echo Shift route (optional)</text>
+
+  <!-- ===================== ARROW MARKERS ===================== -->
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c0473f"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4e8f5c"/>
+    </marker>
+  </defs>
+
+  <!-- ===================== COMPASS / RADIAL ORIENTATION ===================== -->
+  <g transform="translate(175,675)">
+    <circle cx="0" cy="0" r="38" fill="#ffffff" stroke="#9fb4c1" stroke-width="1.5"/>
+    <line x1="0" y1="-30" x2="0" y2="30" stroke="#9fb4c1" stroke-width="1"/>
+    <path d="M0,-30 L-6,-18 L6,-18 Z" fill="#2c4756"/>
+    <text x="0" y="-42" font-size="8" font-weight="bold" fill="#2c4756" text-anchor="middle">TOWARD SPIRE</text>
+    <text x="0" y="48" font-size="8" font-weight="bold" fill="#6b5230" text-anchor="middle">TOWARD UNDERCROFT</text>
+    <text x="0" y="58" font-size="8" font-weight="bold" fill="#6b5230" text-anchor="middle">/ OUTER RINGS</text>
+  </g>
+
+  <!-- ===================== LEGEND PANEL ===================== -->
+  <rect x="940" y="84" width="230" height="700" fill="#ffffff" stroke="#b9c9d3" stroke-width="2" rx="6"/>
+  <text x="958" y="112" font-size="14" font-weight="bold" fill="#20303d">LEGEND</text>
+
+  <rect x="958" y="128" width="18" height="14" fill="#dfeaf0" stroke="#6f95a8" stroke-width="1.5"/>
+  <text x="984" y="140" font-size="10" fill="#2c3e50">Public / logged wing</text>
+
+  <rect x="958" y="152" width="18" height="14" fill="#dfe6ec" stroke="#7d97a8" stroke-width="1.5"/>
+  <text x="984" y="164" font-size="10" fill="#2c3e50">Restricted (badge / cover)</text>
+
+  <rect x="958" y="176" width="18" height="14" fill="#f5e9d6" stroke="#c9963f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="984" y="188" font-size="10" fill="#2c3e50">Highly restricted / boss</text>
+
+  <rect x="958" y="200" width="18" height="14" fill="#e4e0e6" stroke="#8b7f96" stroke-width="1.5"/>
+  <text x="984" y="212" font-size="10" fill="#2c3e50">Enforcement-only</text>
+
+  <line x1="958" y1="232" x2="976" y2="232" stroke="#c0473f" stroke-width="3" stroke-dasharray="6,4"/>
+  <text x="984" y="236" font-size="10" fill="#2c3e50">Extraction / escort route</text>
+
+  <line x1="958" y1="252" x2="976" y2="252" stroke="#4e8f5c" stroke-width="3" stroke-dasharray="4,4"/>
+  <text x="984" y="256" font-size="10" fill="#2c3e50">Echo Shift secondary route</text>
+
+  <circle cx="967" cy="274" r="7" fill="#c9963f"/>
+  <text x="967" y="279" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">!</text>
+  <text x="984" y="278" font-size="10" fill="#2c3e50">Hidden boss (VESSEL-9)</text>
+
+  <circle cx="967" cy="298" r="6" fill="#7ab0c7"/>
+  <text x="984" y="302" font-size="10" fill="#2c3e50">Roof / Echo Shift access</text>
+
+  <rect x="958" y="316" width="18" height="14" fill="#b8cdd9" stroke="#5c8ba0" stroke-width="1.5"/>
+  <text x="984" y="328" font-size="10" fill="#2c3e50">Grav-rail stop</text>
+
+  <rect x="958" y="340" width="18" height="14" fill="#f2ece1" stroke="#c9b89a" stroke-width="1.5"/>
+  <text x="984" y="352" font-size="10" fill="#2c3e50">Adjacent residential block</text>
+
+  <line x1="958" y1="370" x2="976" y2="370" stroke="#9fb4c1" stroke-width="1" stroke-dasharray="10,6"/>
+  <text x="984" y="374" font-size="10" fill="#2c3e50">Catchment boundary</text>
+
+  <text x="958" y="410" font-size="11" font-weight="bold" fill="#20303d">NOTES</text>
+  <text x="958" y="430" font-size="9" fill="#4a5b68">This is a design schematic for</text>
+  <text x="958" y="444" font-size="9" fill="#4a5b68">greybox reference. No literal</text>
+  <text x="958" y="458" font-size="9" fill="#4a5b68">coordinates, footprint dimensions,</text>
+  <text x="958" y="472" font-size="9" fill="#4a5b68">or engineering geometry are implied.</text>
+  <text x="958" y="486" font-size="9" fill="#4a5b68">Rooftop Mechanical Level is a</text>
+  <text x="958" y="500" font-size="9" fill="#4a5b68">separate upper story, accessed via</text>
+  <text x="958" y="514" font-size="9" fill="#4a5b68">the marked roof hatch (Ration Hall).</text>
+
+  <text x="958" y="546" font-size="11" font-weight="bold" fill="#20303d">TYPOLOGY STATUS</text>
+  <text x="958" y="566" font-size="9" fill="#4a5b68">This diagram is the FLAGSHIP</text>
+  <text x="958" y="580" font-size="9" fill="#4a5b68">instance (Mission 5 / SQ4).</text>
+  <text x="958" y="594" font-size="9" fill="#4a5b68">Non-flagship network nodes reuse</text>
+  <text x="958" y="608" font-size="9" fill="#4a5b68">the same kit-of-parts at reduced</text>
+  <text x="958" y="622" font-size="9" fill="#4a5b68">scale — see White_Zones.md Sec. 8.</text>
+
+  <!-- ===================== FOOTER ===================== -->
+  <text x="30" y="875" font-size="10" fill="#6b7d89">VOID: The Unseen Hand — Design Studio — White Zones Schematic — Companion to White_Zones.md</text>
+  <text x="900" y="875" font-size="10" fill="#6b7d89" text-anchor="end">Rev 1.0</text>
+
+</svg>

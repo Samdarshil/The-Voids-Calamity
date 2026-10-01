@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_data_layers_schema_v1",
+  "title": "VOID: The Unseen Hand — DataLayers.json Schema",
+  "type": "object",
+  "required": ["$schema", "scope_note", "layer_type_categories", "district_gating_layers", "total_district_gating_layers", "cross_district_layers", "layer_interaction_rules"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_data_layers_schema_v1" },
+    "scope_note": { "type": "string" },
+    "layer_type_categories": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "cross_reference"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "cross_reference": { "type": "string" }
+        }
+      }
+    },
+    "district_gating_layers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["district", "layers", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "district": { "type": "string" },
+          "layers": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^DL_" } },
+          "source": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "total_district_gating_layers": { "type": "integer", "minimum": 1 },
+    "cross_district_layers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "scope", "tracks", "canon_status", "description", "adds_new_content", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^DL_" },
+          "scope": { "type": "string" },
+          "tracks": { "type": "string" },
+          "canon_status": { "type": "string" },
+          "description": { "type": "string" },
+          "adds_new_content": { "type": "boolean" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "layer_interaction_rules": {
+      "type": "object",
+      "required": ["type_categories_and_gating_layers_are_independent", "gating_precedence", "cross_district_layer_precedence"],
+      "additionalProperties": false,
+      "properties": {
+        "type_categories_and_gating_layers_are_independent": { "type": "string" },
+        "gating_precedence": { "type": "string" },
+        "cross_district_layer_precedence": { "type": "string" }
+      }
+    }
+  }
+}

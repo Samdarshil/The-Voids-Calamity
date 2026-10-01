@@ -1,0 +1,72 @@
+{
+  "$schema": "void_save_framework_schema_v1",
+  "framework_id": "save_framework",
+  "framework_name": "Save Framework",
+  "framework_prefix": "SAVE",
+  "depends_on": ["character_framework", "player_framework", "progression_framework", "interaction_framework", "ability_framework", "skill_framework"],
+  "dependency_gap_note": "Three of the six formal dependencies (progression_framework, ability_framework, skill_framework) do not exist yet at time of writing, per the requested build order. This is handled architecturally rather than papered over: PersistentStateRegistry below is designed as an OPEN, extensible registration contract — each framework registers its own state slots when it is built, rather than SaveFramework hardcoding their shapes in advance. This is good save-system design regardless of build order, not a workaround. registered_frameworks below will be updated as progression_framework, ability_framework, and skill_framework are each built next.",
+  "scope_compliance_statement": "This file defines the contract for what gets persisted and how, never the specific save file format, compression, or platform storage mechanism. It contains no economy or currency data, consistent with GameplayRules.json Scope Enforcement Rule SR-04.",
+  "extension_points_implemented": ["EP-SAVE-01", "EP-SAVE-02", "EP-SAVE-03"],
+  "persistent_state_registry": {
+    "implements": "EP-SAVE-01",
+    "interface_name": "PersistentStateRegistry",
+    "contract": {
+      "registration_method": "Any framework may register a named state slot here by declaring: slot_id, owning_framework, data_shape_description, persistence_priority.",
+      "registered_frameworks": [
+        {
+          "framework": "character_framework",
+          "registered_slots": [{ "slot_id": "SAVE_char_registry_state", "data_shape_description": "Character registry entity list and non-corporeal flags, per CharacterFramework.json character_registry.", "persistence_priority": "high" }]
+        },
+        {
+          "framework": "player_framework",
+          "registered_slots": [{ "slot_id": "SAVE_player_identity_state", "data_shape_description": "Selected identity slot (PLYR_identity_kaevon or PLYR_identity_veronica), persisted at selection time per PlayerFramework.json identity_selection.contract.", "persistence_priority": "highest_selected_once_never_changes" }]
+        },
+        {
+          "framework": "interaction_framework",
+          "registered_slots": [{ "slot_id": "SAVE_interaction_completion_state", "data_shape_description": "Which interactable_ids have been resolved, to prevent re-triggering one-time interactions across a save/load cycle.", "persistence_priority": "high" }]
+        }
+      ],
+      "pending_registration": ["progression_framework", "ability_framework", "skill_framework"],
+      "upstream_tracked_state": {
+        "note": "The six tracked state variables already exist upstream in the locked Meridian_Master package. This registry references them by name; it does not redefine or duplicate their shape.",
+        "variables": ["nyx_status", "mira_saved", "memory_fragment_count", "compassion_flags", "riggs_redemption_complete", "talis_extracted"],
+        "source": "GameplayGraph.json (Meridian_Master, locked)",
+        "persistence_priority": "highest — these gate ending-state logic in the locked campaign"
+      }
+    }
+  },
+  "save_slot_contract": {
+    "implements": "EP-SAVE-02",
+    "interface_name": "SaveSlotContract",
+    "contract": {
+      "slot_metadata_fields": ["save_id", "creation_timestamp", "last_written_timestamp", "schema_version"],
+      "versioning_policy": "schema_version must match the current package_version of this Gameplay_Master package at write time. A load-time version mismatch triggers a migration hook, not a silent data reinterpretation.",
+      "content_policy": "This contract defines slot structure only — no specific save file format (binary, JSON, etc.) is mandated here."
+    }
+  },
+  "checkpoint_trigger_interface": {
+    "implements": "EP-SAVE-03",
+    "interface_name": "CheckpointTriggerInterface",
+    "contract": {
+      "trigger_method": "request_autosave(reason: string)",
+      "reason_examples_non_exhaustive": ["district_transition", "session_pause"],
+      "content_policy": "This is a fire-and-forget request contract. It does not define which specific gameplay moments call it — a future Missions package decides checkpoint placement, this framework only guarantees the hook exists."
+    }
+  },
+  "canon_references": [
+    { "fact": "tracked_state_variables", "source": "Gameplay_Master.json canon_references.tracked_state_variables" }
+  ],
+  "state_category_mapping": {
+    "added_during": "Phase 2 audit — the new brief names these categories explicitly by name; mapping them prevents ambiguity about ownership.",
+    "player_state": { "owner": "player_framework", "persistence": "PERSISTENT", "registered_slot": "SAVE_player_identity_state" },
+    "progression_state": { "owner": "progression_framework", "persistence": "PERSISTENT", "registered_slot": "pending_registration (see persistent_state_registry above)" },
+    "ability_state": { "owner": "ability_framework", "persistence": "PERSISTENT", "registered_slot": "pending_registration (see persistent_state_registry above)" },
+    "mission_state": { "owner": "UNDEFINED — no Missions package exists yet", "persistence": "PROPOSED as PERSISTENT, not confirmed", "registered_slot": "not registered — out of scope for this package" },
+    "narrative_state": { "owner": "the six tracked state variables, upstream in locked Meridian_Master", "persistence": "PERSISTENT", "registered_slot": "upstream_tracked_state (see persistent_state_registry above)" },
+    "npc_state": { "owner": "UNDEFINED — no AI package exists yet", "persistence": "UNDEFINED per Gameplay_Design_Master.md Section 14", "registered_slot": "not registered — out of scope for this package" },
+    "world_state": { "owner": "locked Meridian_Master package (districts, streaming) — read-only from this package's perspective", "persistence": "not this package's concern", "registered_slot": "not applicable" },
+    "persistent_consequences": { "owner": "expressed through the six tracked state variables", "persistence": "PERSISTENT", "registered_slot": "upstream_tracked_state" },
+    "unlocks": { "owner": "ability_framework and progression_framework jointly", "persistence": "PERSISTENT", "registered_slot": "pending_registration" },
+    "important_relationships": { "owner": "expressed through nyx_status and Undercroft reputation (Gameplay_Design_Master.md Section 9)", "persistence": "PERSISTENT", "registered_slot": "upstream_tracked_state for nyx_status; reputation mechanism itself is UNDEFINED" }
+  }
+}

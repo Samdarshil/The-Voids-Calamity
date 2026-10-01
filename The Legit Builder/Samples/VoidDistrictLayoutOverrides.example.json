@@ -1,0 +1,12 @@
+{
+  "_readme": "Optional. Meridian data has no coordinates by policy, so real boundaries / landmark positions are authored here, never in the locked Meridian files. Point Project Settings > VOID World Builder District Generation > Layout Overrides File at a copy of this. Unknown keys such as this one are ignored. A boundary override replaces the generated boundary polygon and clears that district's sub-regions; the validator then checks generated content against the new shape.",
+  "districts": [
+    {
+      "id": "metro_archives",
+      "boundary": [[210000, -20000], [240000, -20000], [240000, 20000], [210000, 20000]],
+      "landmarks": [
+        { "id": "metro_archives_building", "position": [225000, 0, 0], "yawDegrees": 0 }
+      ]
+    }
+  ]
+}

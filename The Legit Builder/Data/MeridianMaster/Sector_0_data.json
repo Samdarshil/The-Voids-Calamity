@@ -1,0 +1,154 @@
+{
+  "$schema": "void_world_location_schema_v1",
+  "location_id": "sector_0",
+  "display_name": "Sector 0",
+  "phase": 1,
+  "build_order_index": 4,
+  "canon_source": ["Vol I Ch. 4.5", "Vol I Ch. 5.4", "Vol I Ch. 7.5", "Vol II Contract 3", "Vol II Hub Upgrade", "Vol II Act 3 Hub", "Vol II Connective Descent", "Vol III SQ2", "Vol III Easter Egg 5", "Vol IV 5.1", "Vol IV 5.2", "Vol IV 8.2", "Vol IV 8.3"],
+  "location_model": "singular_narrative_hub",
+  "location_model_notes": "Explicitly scoped to entrance tunnel + relay stations + safehouse hub only, per Vol IV 8.2. The Core Gate and White Void are separate out-of-scope locations. Riggs' old laboratory (Mission 6) is also explicitly not this location.",
+  "structural_position": {
+    "vertical_stratum": "absolute_bottom_dead_foundation",
+    "vertical_notes": "Beneath even the Undercroft's living foundation. Dead, not derelict — a deliberate distinction.",
+    "radial_model": "narrative_nowhere_vs_production_placement",
+    "radial_notes": "In-fiction: no coordinates, unmappable, by design. For production purposes only: deepest terminus of the old pre-Council transit network, beyond the Undercroft's outer-ring foundation belt and deeper than Metro Archives' sub-basement seam."
+  },
+  "sub_locations": [
+    {
+      "id": "entrance_tunnel_threshold",
+      "type": "narrative_transition_space",
+      "gated": true,
+      "gate_condition": "contract_3_ending",
+      "canon_status": "confirmed",
+      "notes": "Begins at the crackling energy field. Everything before this point is Undercroft/transit substrate scope, not this district."
+    },
+    {
+      "id": "dead_relay_stations",
+      "type": "npc_hub_narrative_core",
+      "gated": false,
+      "gate_condition": "hub_upgrade_complete",
+      "canon_status": "confirmed",
+      "npc_refs": ["echo"],
+      "quest_refs": ["SQ2_vignette_playback_site"],
+      "lighting_state_dependent": true
+    },
+    {
+      "id": "safehouse_hub",
+      "type": "loadout_functional_space",
+      "gated": false,
+      "gate_condition": "hub_upgrade_complete",
+      "canon_status": "confirmed_but_minimally_detailed_by_design",
+      "notes": "Intentionally under-furnished. A safehouse, not a home."
+    },
+    {
+      "id": "archivist_reading_room",
+      "type": "post_game_permanent_structure",
+      "gated": true,
+      "gate_condition": "any_ending_credits_complete",
+      "canon_status": "confirmed",
+      "npc_refs": ["the_archivist", "sable", "kade"],
+      "notes": "Same physical space as dead_relay_stations, final evolutionary state, not a new separate location."
+    }
+  ],
+  "lighting_progression": {
+    "is_dynamic_across_story": true,
+    "unique_to_this_district": true,
+    "states": [
+      {"state": "first_contact", "trigger": "end_of_contract_3", "character": "near_total_darkness_isolated_flicker"},
+      {"state": "act2_hub", "trigger": "hub_upgrade_complete", "character": "dim_echo_light_dominant"},
+      {"state": "act3_hub", "trigger": "act3_hub_scene", "character": "warmer_steadier_glow_canon_confirmed"},
+      {"state": "post_game", "trigger": "any_ending_credits_complete", "character": "soft_warm_fully_lit"}
+    ]
+  },
+  "weave_coverage": {
+    "is_off_weave": true,
+    "note": "The sole confirmed exception to universal Weave coverage among all locations documented so far. Absolute, not partial."
+  },
+  "enforcement_doctrine": {
+    "patrol_type": "not_applicable",
+    "trigger_logic": "not_applicable_void_cannot_perceive_this_location",
+    "notes": "Security model does not apply here. Safety is physical secrecy (single known access point), not technological invulnerability. This risk is deliberately left unresolved, per canon's own restraint."
+  },
+  "combat_policy": {
+    "mandatory_combat_encounters": 0,
+    "optional_combat_encounters": 0,
+    "design_constraint": "hard_no_combat_ever_without_direct_narrative_override"
+  },
+  "economic_band": {
+    "licensing_status": "not_applicable",
+    "commercial_presence": false,
+    "corporate_presence": false,
+    "new_corporation_introduced": false
+  },
+  "npcs": {
+    "canon_confirmed": ["echo", "riggs_comms_only", "nyx_conditional_act3_if_spared", "the_archivist_post_game"],
+    "new_background_archetypes": [],
+    "new_npcs_carry_state_variables": false,
+    "notes": "No background population of any kind. Population scarcity is a deliberate identity constraint, see Sec. 14 of Sector_0.md."
+  },
+  "mission_cross_reference": [
+    {"content_id": "contract_3_ghost_data", "type": "main", "relation": "ending_threshold_only"},
+    {"content_id": "hub_upgrade_sector0_safehouse", "type": "main", "relation": "full_location_unlock"},
+    {"content_id": "connective_voice_in_the_dark", "type": "main_connective", "relation": "full_scene_location"},
+    {"content_id": "act3_hub_hum_of_power", "type": "main", "relation": "full_location_state_change"},
+    {"content_id": "connective_guest_list", "type": "main_connective", "relation": "full_scene_location"},
+    {"content_id": "connective_weight_of_the_truth", "type": "main_connective", "relation": "full_scene_location"},
+    {"content_id": "connective_descent", "type": "main_connective", "relation": "adjacent_leads_out_of_scope_to_core_gate"},
+    {"content_id": "SQ2_absolution", "type": "side", "relation": "full_vignette_playback_location"},
+    {"content_id": "easter_egg_5_the_archivist", "type": "secret", "relation": "full_location_post_game"}
+  ],
+  "collectible_systems": {
+    "relay_fragment_lighting": {
+      "canon_status": "new_canon_silence_addition",
+      "description": "Individual dead relay stations visibly reactivate as memory_fragment_count increases. No new collectible category. No change to TRANSCEND threshold math (KB Sec 5.2 untouched).",
+      "risk_level": "low_extensible_without_further_signoff"
+    }
+  },
+  "meridian_integration": {
+    "undercroft": {
+      "connection_type": "physical_and_thematic_primary",
+      "detail": "Shared old transit substrate. Sector 0 is what the Undercroft would be if it had died instead of survived."
+    },
+    "white_zones": {
+      "connection_type": "none_total_contrast_only",
+      "detail": "Most monitored space vs. only unmonitored space; no meaningful connection beyond opposition."
+    },
+    "metro_archives": {
+      "connection_type": "technical_lineage_primary",
+      "detail": "Metro Archives' sub-basement node is an early regional node; Sector 0 is the original core it was a smaller cousin of."
+    },
+    "olympus_spire": {
+      "connection_type": "thematic_lineage_only_not_yet_built",
+      "detail": "Sector 0 is what the Spire's primary server hub used to be before superseding it. Spire not redesigned by this document."
+    },
+    "core_gate_and_white_void": {
+      "connection_type": "explicitly_out_of_scope",
+      "detail": "Separate locations per Vol IV asset list. Adjacent narratively via the Descent connective scene. Require their own design pass."
+    }
+  },
+  "out_of_scope_flagged": [
+    {"id": "the_core_gate", "reason": "Mission 8 location, distinct per Vol IV 8.2. Requires own design pass."},
+    {"id": "the_white_void", "reason": "Final Boss arena, distinct per Vol IV 8.2. Requires own design pass."},
+    {"id": "riggs_old_laboratory", "reason": "Explicitly NOT Sector 0 — an active VOID stronghold, opposite in character. Already flagged in Undercroft package."}
+  ],
+  "canon_lock_compliance": {
+    "touches_canon_lock": false,
+    "modifies_approved_packages": false,
+    "references_luci": false,
+    "forecloses_voss_fate": false
+  },
+  "technical_notes": {
+    "world_partition_region": "WP_Sector0",
+    "template_based": false,
+    "data_layers": [
+      "DL_Sector0_EntranceTunnel_Base",
+      "DL_Sector0_RelayStations_Act2State",
+      "DL_Sector0_RelayStations_Act3State",
+      "DL_Sector0_SafehouseHub_Base",
+      "DL_Sector0_SQ2_VignetteAlcove",
+      "DL_Sector0_ArchivistReadingRoom_PostGame",
+      "DL_Sector0_RelayFragmentLighting_Progressive"
+    ],
+    "streaming_priority_notes": "Low NPC/combat density makes this cheap to stream. Priority QA should focus on the four lighting-state transitions rather than performance optimization."
+  }
+}

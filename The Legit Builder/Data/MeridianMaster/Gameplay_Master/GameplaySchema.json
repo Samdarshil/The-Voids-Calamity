@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_gameplay_schema_v1",
+  "title": "VOID: The Unseen Hand — Gameplay Package Consolidated Schema",
+  "schema_status_note": "This document is honest about two different confidence levels. gameplay_master, gameplay_manifest, and gameplay_rules already exist and are schema-validated below against their real files. player_framework, character_framework, interaction_framework, save_framework, progression_framework, skill_framework, ability_framework, and gameplay_validation do not exist yet — their schemas below are forward-defined (contract-first design) and will be validated the moment each file is actually created, exactly like every other file in this project. If a not-yet-built file needs a shape adjustment once real content is drafted, that adjustment happens transparently, the same way MetroNetwork.schema.json and BuilderRules.schema.json were corrected in the Meridian_Master package rather than silently forced to match.",
+  "$defs": {
+    "gameplay_master": {
+      "type": "object",
+      "required": ["$schema", "project_metadata", "upstream_dependency", "architectural_scope", "registry_references", "consumption_model", "canon_references", "intended_ue5_systems", "generation_pipeline", "future_expansion_hooks", "design_authority", "gameplay_state_model", "player_capability_model", "interaction_model", "persistence_model", "progression_model", "source_traceability"],
+      "additionalProperties": false,
+      "properties": {
+        "$schema": { "type": "string", "const": "void_gameplay_master_schema_v1" },
+        "project_metadata": { "type": "object" },
+        "upstream_dependency": { "type": "object" },
+        "architectural_scope": { "type": "object" },
+        "registry_references": { "type": "object" },
+        "consumption_model": { "type": "object" },
+        "canon_references": { "type": "object" },
+        "intended_ue5_systems": { "type": "object" },
+        "generation_pipeline": { "type": "object" },
+        "future_expansion_hooks": { "type": "object" },
+        "design_authority": { "type": "object" },
+        "gameplay_state_model": { "type": "object" },
+        "player_capability_model": { "type": "object" },
+        "interaction_model": { "type": "object" },
+        "persistence_model": { "type": "object" },
+        "progression_model": { "type": "object" },
+        "source_traceability": { "type": "object" }
+      },
+      "validation_status": "VALIDATED — file exists (Gameplay_Master.json), schema updated in Phase 2 audit to cover 7 fields added during the Design-Master-alignment pass"
+    },
+    "gameplay_manifest": {
+      "type": "object",
+      "required": ["$schema", "manifest_type", "distinction_from_gameplay_master", "id_namespacing_rules", "extension_points", "package_registration_protocol", "compatibility_contract"],
+      "additionalProperties": false,
+      "properties": {
+        "$schema": { "type": "string", "const": "void_gameplay_manifest_schema_v1" },
+        "manifest_type": { "type": "string" },
+        "distinction_from_gameplay_master": { "type": "string" },
+        "id_namespacing_rules": { "type": "object" },
+        "extension_points": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "exposed_by_framework", "interface_name", "description", "consumer_packages", "contract_summary", "stability"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^EP-" },
+              "exposed_by_framework": { "type": "string" },
+              "interface_name": { "type": "string" },
+              "description": { "type": "string" },
+              "consumer_packages": { "type": "array", "items": { "type": "string" } },
+              "contract_summary": { "type": "string" },
+              "stability": { "type": "string", "enum": ["stable", "provisional"] }
+            }
+          }
+        },
+        "package_registration_protocol": { "type": "object" },
+        "compatibility_contract": { "type": "object" }
+      },
+      "validation_status": "VALIDATED — file exists (GameplayManifest.json)"
+    },
+    "gameplay_rules": {
+      "type": "object",
+      "required": ["$schema", "purpose", "framework_dependency_graph", "scope_enforcement_rules", "id_namespacing_rules", "cross_framework_reference_rules", "canon_reference_rules", "consumer_package_governance", "non_negotiable_constraints"],
+      "additionalProperties": false,
+      "properties": {
+        "$schema": { "type": "string", "const": "void_gameplay_rules_schema_v1" },
+        "purpose": { "type": "string" },
+        "framework_dependency_graph": {
+          "type": "object",
+          "required": ["verification_note", "edges", "verified_topological_order", "rationale"],
+          "additionalProperties": false,
+          "properties": {
+            "verification_note": { "type": "string" },
+            "edges": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string" } } },
+            "verified_topological_order": { "type": "array", "items": { "type": "string" } },
+            "rationale": { "type": "string" }
+          }
+        },
+        "scope_enforcement_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "rule", "watch_for"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "rule": { "type": "string" },
+              "watch_for": { "type": "string" }
+            }
+          }
+        },
+        "id_namespacing_rules": { "type": "object" },
+        "cross_framework_reference_rules": { "type": "array" },
+        "canon_reference_rules": { "type": "object" },
+        "consumer_package_governance": { "type": "array", "items": { "type": "string" } },
+        "non_negotiable_constraints": { "type": "array", "items": { "type": "string" } }
+      },
+      "validation_status": "VALIDATED — file exists (GameplayRules.json)"
+    },
+    "framework_file_base": {
+      "type": "object",
+      "description": "Shared skeleton every one of the seven framework files (and gameplay_validation) must satisfy at minimum. Framework-specific $defs below extend this with their own required contract content.",
+      "required": ["$schema", "framework_id", "framework_name", "framework_prefix", "depends_on", "scope_compliance_statement", "extension_points_implemented"],
+      "properties": {
+        "$schema": { "type": "string" },
+        "framework_id": { "type": "string" },
+        "framework_name": { "type": "string" },
+        "framework_prefix": { "type": "string" },
+        "depends_on": { "type": "array", "items": { "type": "string" } },
+        "scope_compliance_statement": { "type": "string" },
+        "extension_points_implemented": { "type": "array", "items": { "type": "string", "pattern": "^EP-" } }
+      },
+      "validation_status": "STRUCTURAL BASE ONLY — enforced once each framework file exists"
+    },
+    "character_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["character_entity_interface", "character_registry", "non_corporeal_support", "companion_attachment"],
+      "properties": {
+        "character_entity_interface": { "type": "object" },
+        "character_registry": { "type": "object" },
+        "non_corporeal_support": { "type": "object" },
+        "companion_attachment": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "player_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["identity_selection", "input_action_mapping", "camera_control_mode", "player_lifecycle_hooks"],
+      "properties": {
+        "identity_selection": { "type": "object" },
+        "input_action_mapping": { "type": "object" },
+        "camera_control_mode": { "type": "object" },
+        "player_lifecycle_hooks": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "interaction_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["interactable_object_contract", "interaction_prompt_system", "dialogue_trigger_stub", "minigame_interaction_stub"],
+      "properties": {
+        "interactable_object_contract": { "type": "object" },
+        "interaction_prompt_system": { "type": "object" },
+        "dialogue_trigger_stub": { "type": "object" },
+        "minigame_interaction_stub": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "progression_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["progression_resource_registry", "progression_grant_interface", "threshold_unlock_contract"],
+      "properties": {
+        "progression_resource_registry": { "type": "object" },
+        "progression_grant_interface": { "type": "object" },
+        "threshold_unlock_contract": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "ability_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["ability_contract", "ability_activation_lifecycle", "ability_slot_system", "echo_shift_reference_instance"],
+      "properties": {
+        "ability_contract": { "type": "object" },
+        "ability_activation_lifecycle": { "type": "object" },
+        "ability_slot_system": { "type": "object" },
+        "echo_shift_reference_instance": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "skill_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["skill_node_contract", "skill_tree_registry", "prerequisite_graph_rules"],
+      "properties": {
+        "skill_node_contract": { "type": "object" },
+        "skill_tree_registry": { "type": "object" },
+        "prerequisite_graph_rules": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "save_framework": {
+      "allOf": [{ "$ref": "#/$defs/framework_file_base" }],
+      "required": ["persistent_state_registry", "save_slot_contract", "checkpoint_trigger_interface"],
+      "properties": {
+        "persistent_state_registry": { "type": "object" },
+        "save_slot_contract": { "type": "object" },
+        "checkpoint_trigger_interface": { "type": "object" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    },
+    "gameplay_validation": {
+      "type": "object",
+      "required": ["$schema", "validation_rule_categories", "rules"],
+      "properties": {
+        "$schema": { "type": "string" },
+        "validation_rule_categories": { "type": "array", "items": { "type": "string" } },
+        "rules": { "type": "array" }
+      },
+      "validation_status": "PLANNED — file does not exist yet"
+    }
+  }
+}

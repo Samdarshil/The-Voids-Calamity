@@ -1,0 +1,373 @@
+{
+  "schema": "void_lighting_presets_v1",
+  "presets": [
+    {
+      "id": "Day",
+      "displayName": "Day",
+      "description": "Clear urban daylight. Sun high and slightly off-axis, neutral sky, no volumetric fog, all emissive/real lights off.",
+      "intendedUse": "Baseline readability pass: checking geometry, road hierarchy, district massing and skyline silhouettes. Cheapest preset.",
+      "sun": {
+        "pitch": -58,
+        "yaw": 135,
+        "intensityLux": 10,
+        "temperatureK": 6500,
+        "sourceAngleDeg": 0.5357,
+        "volumetricScattering": 1
+      },
+      "moon": {
+        "bEnabled": false
+      },
+      "sky": {
+        "skyLightIntensity": 1.0,
+        "skyLightColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        },
+        "lowerHemisphereColor": {
+          "r": 0.09,
+          "g": 0.09,
+          "b": 0.1,
+          "a": 1.0
+        },
+        "skyLightVolumetricScattering": 1,
+        "atmosphereLuminanceFactor": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        },
+        "mieScatteringScale": 1,
+        "heightFogContribution": 1
+      },
+      "fog": {
+        "density": 0.0025,
+        "heightFalloff": 0.25,
+        "startDistance": 0,
+        "maxOpacity": 1,
+        "inscatteringColor": {
+          "r": 0.447,
+          "g": 0.638,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "bVolumetric": false,
+        "scatteringDistribution": 0.2,
+        "extinctionScale": 1,
+        "albedo": {
+          "r": 0.9,
+          "g": 0.9,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "viewDistance": 12000
+      },
+      "post": {
+        "exposureBias": 0.0,
+        "bloomIntensity": 0.15,
+        "vignetteIntensity": 0.1,
+        "saturation": 1.0,
+        "contrast": 1.0,
+        "gainTint": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        }
+      },
+      "local": {
+        "nightWeight": 0.0,
+        "streetLightMul": 0,
+        "streetLampEmissive": 0,
+        "streetLampOnFraction": 0,
+        "windowEmissive": 0,
+        "windowLitFraction": 0,
+        "neonEmissive": 0,
+        "neonOnFraction": 0,
+        "trafficEmissive": 3,
+        "emergencyEmissive": 3,
+        "landmarkLightMul": 0,
+        "landmarkHaloMul": 0,
+        "landmarkBeaconEmissive": 0
+      }
+    },
+    {
+      "id": "GoldenHour",
+      "displayName": "Golden Hour",
+      "description": "Warm low directional light with long shadows, warm-tinted sky, thin fog for depth. Lamps and windows just starting to come on.",
+      "intendedUse": "Hero establishing shots and skyline reads: low-angle sun rakes across facades and gives the longest shadow shapes for massing.",
+      "sun": {
+        "pitch": -9,
+        "yaw": 250,
+        "intensityLux": 7,
+        "temperatureK": 3400,
+        "sourceAngleDeg": 0.7,
+        "volumetricScattering": 1.5
+      },
+      "moon": {
+        "bEnabled": false
+      },
+      "sky": {
+        "skyLightIntensity": 0.85,
+        "skyLightColor": {
+          "r": 1.0,
+          "g": 0.85,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "lowerHemisphereColor": {
+          "r": 0.12,
+          "g": 0.09,
+          "b": 0.07,
+          "a": 1.0
+        },
+        "skyLightVolumetricScattering": 1,
+        "atmosphereLuminanceFactor": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        },
+        "mieScatteringScale": 1.6,
+        "heightFogContribution": 1
+      },
+      "fog": {
+        "density": 0.006,
+        "heightFalloff": 0.18,
+        "startDistance": 500,
+        "maxOpacity": 0.9,
+        "inscatteringColor": {
+          "r": 1.0,
+          "g": 0.72,
+          "b": 0.45,
+          "a": 1.0
+        },
+        "bVolumetric": false,
+        "scatteringDistribution": 0.35,
+        "extinctionScale": 1,
+        "albedo": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "viewDistance": 15000
+      },
+      "post": {
+        "exposureBias": -0.2,
+        "bloomIntensity": 0.3,
+        "vignetteIntensity": 0.2,
+        "saturation": 1.08,
+        "contrast": 1.05,
+        "gainTint": {
+          "r": 1.0,
+          "g": 0.96,
+          "b": 0.9,
+          "a": 1.0
+        }
+      },
+      "local": {
+        "nightWeight": 0.2,
+        "streetLightMul": 0.0,
+        "streetLampEmissive": 1.5,
+        "streetLampOnFraction": 0.15,
+        "windowEmissive": 1.5,
+        "windowLitFraction": 0.12,
+        "neonEmissive": 0.8,
+        "neonOnFraction": 0.15,
+        "trafficEmissive": 4,
+        "emergencyEmissive": 3,
+        "landmarkLightMul": 0.25,
+        "landmarkHaloMul": 0.3,
+        "landmarkBeaconEmissive": 1.5
+      }
+    },
+    {
+      "id": "Night",
+      "displayName": "Night",
+      "description": "Dark environment: faint cool moon, street lamps on, lit windows, neon on, volumetric fog for atmospheric depth, landmark uplights, back-lights and beacons at full presentation strength.",
+      "intendedUse": "Night cinematic and neon look. Most expensive preset (volumetric fog + budgeted real street lights + landmark lights).",
+      "sun": {
+        "pitch": -30,
+        "yaw": 135,
+        "intensityLux": 0.0,
+        "temperatureK": 6500,
+        "sourceAngleDeg": 0.5357,
+        "volumetricScattering": 1
+      },
+      "moon": {
+        "bEnabled": true,
+        "pitch": -38,
+        "yaw": 210,
+        "intensityLux": 0.3,
+        "temperatureK": 9500
+      },
+      "sky": {
+        "skyLightIntensity": 0.35,
+        "skyLightColor": {
+          "r": 0.55,
+          "g": 0.65,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "lowerHemisphereColor": {
+          "r": 0.02,
+          "g": 0.02,
+          "b": 0.03,
+          "a": 1.0
+        },
+        "skyLightVolumetricScattering": 1,
+        "atmosphereLuminanceFactor": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        },
+        "mieScatteringScale": 1.0,
+        "heightFogContribution": 1
+      },
+      "fog": {
+        "density": 0.012,
+        "heightFalloff": 0.15,
+        "startDistance": 0,
+        "maxOpacity": 1,
+        "inscatteringColor": {
+          "r": 0.1,
+          "g": 0.15,
+          "b": 0.3,
+          "a": 1.0
+        },
+        "bVolumetric": true,
+        "scatteringDistribution": 0.3,
+        "extinctionScale": 1.0,
+        "albedo": {
+          "r": 0.8,
+          "g": 0.85,
+          "b": 0.95,
+          "a": 1.0
+        },
+        "viewDistance": 14000
+      },
+      "post": {
+        "exposureBias": 0.6,
+        "bloomIntensity": 0.6,
+        "vignetteIntensity": 0.3,
+        "saturation": 1.05,
+        "contrast": 1.1,
+        "gainTint": {
+          "r": 0.95,
+          "g": 0.97,
+          "b": 1.0,
+          "a": 1.0
+        }
+      },
+      "local": {
+        "nightWeight": 1.0,
+        "streetLightMul": 1.0,
+        "streetLampEmissive": 9,
+        "streetLampOnFraction": 0.97,
+        "windowEmissive": 4,
+        "windowLitFraction": 0.35,
+        "neonEmissive": 5,
+        "neonOnFraction": 0.85,
+        "trafficEmissive": 8,
+        "emergencyEmissive": 6,
+        "landmarkLightMul": 1.0,
+        "landmarkHaloMul": 1.0,
+        "landmarkBeaconEmissive": 8
+      }
+    },
+    {
+      "id": "Overcast",
+      "displayName": "Overcast",
+      "description": "Soft, shadow-poor daylight: dim wide-angle sun, strong sky fill, light haze. Maximises environmental readability, minimal contrast.",
+      "intendedUse": "Layout/readability reviews and QA captures where hard shadows would hide detail; also a low-cost fallback when the sun is not wanted.",
+      "sun": {
+        "pitch": -50,
+        "yaw": 135,
+        "intensityLux": 2.5,
+        "temperatureK": 7200,
+        "sourceAngleDeg": 6.0,
+        "volumetricScattering": 1
+      },
+      "moon": {
+        "bEnabled": false
+      },
+      "sky": {
+        "skyLightIntensity": 1.7,
+        "skyLightColor": {
+          "r": 0.85,
+          "g": 0.9,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "lowerHemisphereColor": {
+          "r": 0.12,
+          "g": 0.12,
+          "b": 0.13,
+          "a": 1.0
+        },
+        "skyLightVolumetricScattering": 1,
+        "atmosphereLuminanceFactor": {
+          "r": 0.75,
+          "g": 0.8,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "mieScatteringScale": 2.2,
+        "heightFogContribution": 1
+      },
+      "fog": {
+        "density": 0.008,
+        "heightFalloff": 0.12,
+        "startDistance": 800,
+        "maxOpacity": 0.85,
+        "inscatteringColor": {
+          "r": 0.6,
+          "g": 0.66,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "bVolumetric": false,
+        "scatteringDistribution": 0.1,
+        "extinctionScale": 1,
+        "albedo": {
+          "r": 0.9,
+          "g": 0.9,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "viewDistance": 12000
+      },
+      "post": {
+        "exposureBias": 0.15,
+        "bloomIntensity": 0.1,
+        "vignetteIntensity": 0.08,
+        "saturation": 0.9,
+        "contrast": 0.95,
+        "gainTint": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1.0
+        }
+      },
+      "local": {
+        "nightWeight": 0.05,
+        "streetLightMul": 0,
+        "streetLampEmissive": 0.8,
+        "streetLampOnFraction": 0.05,
+        "windowEmissive": 0.8,
+        "windowLitFraction": 0.05,
+        "neonEmissive": 0.8,
+        "neonOnFraction": 0.2,
+        "trafficEmissive": 3,
+        "emergencyEmissive": 3,
+        "landmarkLightMul": 0.05,
+        "landmarkHaloMul": 0.05,
+        "landmarkBeaconEmissive": 0.8
+      }
+    }
+  ]
+}

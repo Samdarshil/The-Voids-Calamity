@@ -1,0 +1,379 @@
+{
+  "schema": "void_lighting_profiles_v1",
+  "districts": [
+    {
+      "id": "default",
+      "matchIds": [],
+      "character": "Neutral fallback used when a package district has no profile.",
+      "sourceNote": "No design source; generic values.",
+      "streetLampTempA": 3200,
+      "streetLampTempB": 4200,
+      "neonDensity": 0.0
+    },
+    {
+      "id": "olympus_spire",
+      "matchIds": [
+        "olympus_spire"
+      ],
+      "character": "Filtered gold: the warmest, most curated light in Meridian. Narrow warm colour range, bright, even.",
+      "sourceNote": "Meridian_Master_Plan.md Sec. 21; Vol I (Olympus Spire 'filtered golden light'). Kelvin values are this agent's interpretation.",
+      "streetLampTempA": 2700,
+      "streetLampTempB": 3200,
+      "windowResidentialTempA": 2600,
+      "windowResidentialTempB": 3200,
+      "windowCommercialTempA": 2800,
+      "windowCommercialTempB": 3400,
+      "windowCivicTempA": 2700,
+      "windowCivicTempB": 3300,
+      "streetLampIntensityMul": 1.25,
+      "windowIntensityMul": 1.3,
+      "windowLitMul": 1.2,
+      "windowDensityMul": 1.0,
+      "neonDensity": 0.0
+    },
+    {
+      "id": "white_zones",
+      "matchIds": [
+        "white_zones"
+      ],
+      "character": "Clean institutional calm: uniform, neutral-cool, evenly lit, no neon.",
+      "sourceNote": "Meridian_Master_Plan.md Sec. 21; landmark tier 4 is 'deliberately uniform'. Kelvin values are this agent's interpretation.",
+      "streetLampTempA": 4200,
+      "streetLampTempB": 4600,
+      "windowResidentialTempA": 4200,
+      "windowResidentialTempB": 4600,
+      "windowCommercialTempA": 4400,
+      "windowCommercialTempB": 4800,
+      "windowCivicTempA": 4400,
+      "windowCivicTempB": 4800,
+      "streetLampIntensityMul": 1.0,
+      "windowIntensityMul": 1.0,
+      "windowLitMul": 1.0,
+      "neonDensity": 0.0
+    },
+    {
+      "id": "metro_archives",
+      "matchIds": [
+        "metro_archives"
+      ],
+      "character": "Warm but tired: old incandescent-style fixtures mixed unevenly with colder retrofit lighting; neglected, not dangerous.",
+      "sourceNote": "Metro_Archives.md Sec. 18 (lighting philosophy). The below-grade sub-basement is not modelled here.",
+      "streetLampTempA": 2500,
+      "streetLampTempB": 5600,
+      "windowResidentialTempA": 2500,
+      "windowResidentialTempB": 5600,
+      "windowCommercialTempA": 2600,
+      "windowCommercialTempB": 5600,
+      "windowCivicTempA": 2600,
+      "windowCivicTempB": 5600,
+      "streetLampIntensityMul": 0.75,
+      "streetLampSpacingMul": 1.3,
+      "windowIntensityMul": 0.75,
+      "windowLitMul": 0.6,
+      "windowDensityMul": 0.85,
+      "neonDensity": 0.0
+    },
+    {
+      "id": "undercroft",
+      "matchIds": [
+        "undercroft"
+      ],
+      "character": "Honest imperfection: below grade, mismatched fixtures over a very wide colour range, neon-lit market. Ignores time-of-day presets.",
+      "sourceNote": "Meridian_Master_Plan.md Sec. 21; Vol I ('neon-lit market'). Below grade per DistrictRegistry.json vertical_tier.",
+      "bBelowGrade": true,
+      "belowGradeStreetEmissive": 14,
+      "belowGradeWindowEmissive": 6,
+      "belowGradeStreetLitFraction": 0.8,
+      "belowGradeWindowLitFraction": 0.55,
+      "streetLampTempA": 2200,
+      "streetLampTempB": 6500,
+      "windowResidentialTempA": 2200,
+      "windowResidentialTempB": 6500,
+      "windowCommercialTempA": 2500,
+      "windowCommercialTempB": 7000,
+      "windowCivicTempA": 2500,
+      "windowCivicTempB": 6500,
+      "streetLampIntensityMul": 0.9,
+      "streetLampSpacingMul": 1.0,
+      "windowIntensityMul": 1.0,
+      "windowLitMul": 1.0,
+      "neonDensity": 1.4,
+      "neonIntensityMul": 1.2
+    },
+    {
+      "id": "sector_0",
+      "matchIds": [
+        "sector_0"
+      ],
+      "character": "Off-gradient and dead; the only district with a story-driven cold-to-warm arc. Below grade.",
+      "sourceNote": "BuilderRules.json step 11 / Meridian_Master_Plan.md Sec. 21 state a four-state dynamic system, but Sector_0.md Sec. 18/27 (the state definitions) was NOT in the supplied package. States below are PROVISIONAL placeholders; index 0 is coldest, 3 is warmest. Replace when the approved states are available.",
+      "bBelowGrade": true,
+      "belowGradeStreetEmissive": 4,
+      "belowGradeWindowEmissive": 2,
+      "belowGradeStreetLitFraction": 0.3,
+      "belowGradeWindowLitFraction": 0.15,
+      "streetLampTempA": 6500,
+      "streetLampTempB": 8000,
+      "windowResidentialTempA": 6500,
+      "windowResidentialTempB": 8000,
+      "windowCommercialTempA": 6500,
+      "windowCommercialTempB": 8000,
+      "windowCivicTempA": 6500,
+      "windowCivicTempB": 8000,
+      "streetLampIntensityMul": 0.8,
+      "windowIntensityMul": 0.8,
+      "windowLitMul": 0.7,
+      "neonDensity": 0.0,
+      "states": [
+        {
+          "name": "State0_Provisional",
+          "bProvisional": true,
+          "temperatureShiftK": 0,
+          "intensityMul": 0.6,
+          "litFractionMul": 0.6
+        },
+        {
+          "name": "State1_Provisional",
+          "bProvisional": true,
+          "temperatureShiftK": -1200,
+          "intensityMul": 0.8,
+          "litFractionMul": 0.8
+        },
+        {
+          "name": "State2_Provisional",
+          "bProvisional": true,
+          "temperatureShiftK": -2800,
+          "intensityMul": 1.0,
+          "litFractionMul": 1.0
+        },
+        {
+          "name": "State3_Provisional",
+          "bProvisional": true,
+          "temperatureShiftK": -4200,
+          "intensityMul": 1.3,
+          "litFractionMul": 1.3
+        }
+      ]
+    }
+  ],
+  "usageRules": [
+    {
+      "usage": "Civic",
+      "keywords": [
+        "civic",
+        "government",
+        "council",
+        "court",
+        "admin",
+        "trust",
+        "archive",
+        "library",
+        "municipal",
+        "spire"
+      ],
+      "baySpacingUnits": 500,
+      "floorHeightUnits": 420,
+      "litMul": 0.9,
+      "intensityMul": 1.1
+    },
+    {
+      "usage": "Residential",
+      "keywords": [
+        "resid",
+        "apartment",
+        "housing",
+        "dwelling",
+        "flat",
+        "tenement"
+      ],
+      "baySpacingUnits": 350,
+      "floorHeightUnits": 330,
+      "litMul": 1.0,
+      "intensityMul": 0.9
+    },
+    {
+      "usage": "Commercial",
+      "keywords": [
+        "commercial",
+        "retail",
+        "shop",
+        "market",
+        "office",
+        "mall",
+        "store",
+        "hotel",
+        "tower"
+      ],
+      "baySpacingUnits": 400,
+      "floorHeightUnits": 400,
+      "litMul": 1.2,
+      "intensityMul": 1.2
+    },
+    {
+      "usage": "Industrial",
+      "keywords": [
+        "industrial",
+        "factory",
+        "warehouse",
+        "mechanical",
+        "utility",
+        "plant",
+        "depot"
+      ],
+      "baySpacingUnits": 900,
+      "floorHeightUnits": 600,
+      "litMul": 0.5,
+      "intensityMul": 1.0
+    },
+    {
+      "usage": "Landmark",
+      "keywords": [],
+      "baySpacingUnits": 450,
+      "floorHeightUnits": 420,
+      "litMul": 1.0,
+      "intensityMul": 1.2
+    },
+    {
+      "usage": "Unknown",
+      "keywords": [],
+      "baySpacingUnits": 400,
+      "floorHeightUnits": 400,
+      "litMul": 0.8,
+      "intensityMul": 1.0
+    }
+  ],
+  "roadRules": [
+    {
+      "roadType": "Highway",
+      "bEnabled": true,
+      "spacingUnits": 3000,
+      "poleHeightUnits": 1000,
+      "armLengthUnits": 400,
+      "bBothSides": true,
+      "realLightEveryN": 3,
+      "realLightLumens": 9000,
+      "realLightRadiusUnits": 2200,
+      "priority": 5,
+      "bTrafficLights": false,
+      "bPedestrianSignals": false
+    },
+    {
+      "roadType": "Primary",
+      "bEnabled": true,
+      "spacingUnits": 2400,
+      "poleHeightUnits": 800,
+      "armLengthUnits": 300,
+      "bBothSides": true,
+      "realLightEveryN": 3,
+      "realLightLumens": 7000,
+      "realLightRadiusUnits": 1700,
+      "priority": 4,
+      "bTrafficLights": true,
+      "bPedestrianSignals": true
+    },
+    {
+      "roadType": "Secondary",
+      "bEnabled": true,
+      "spacingUnits": 2800,
+      "poleHeightUnits": 700,
+      "armLengthUnits": 250,
+      "bBothSides": false,
+      "realLightEveryN": 3,
+      "realLightLumens": 5000,
+      "realLightRadiusUnits": 1400,
+      "priority": 3,
+      "bTrafficLights": true,
+      "bPedestrianSignals": true
+    },
+    {
+      "roadType": "Local",
+      "bEnabled": true,
+      "spacingUnits": 3200,
+      "poleHeightUnits": 600,
+      "armLengthUnits": 200,
+      "bBothSides": false,
+      "realLightEveryN": 4,
+      "realLightLumens": 3500,
+      "realLightRadiusUnits": 1100,
+      "priority": 2,
+      "bTrafficLights": false,
+      "bPedestrianSignals": true
+    },
+    {
+      "roadType": "Service",
+      "bEnabled": true,
+      "spacingUnits": 4000,
+      "poleHeightUnits": 550,
+      "armLengthUnits": 150,
+      "bBothSides": false,
+      "realLightEveryN": 0,
+      "realLightLumens": 0,
+      "realLightRadiusUnits": 0,
+      "priority": 1,
+      "bTrafficLights": false,
+      "bPedestrianSignals": false
+    },
+    {
+      "roadType": "Alley",
+      "bEnabled": true,
+      "spacingUnits": 5000,
+      "poleHeightUnits": 450,
+      "armLengthUnits": 100,
+      "bBothSides": false,
+      "realLightEveryN": 0,
+      "realLightLumens": 0,
+      "realLightRadiusUnits": 0,
+      "priority": 0,
+      "bTrafficLights": false,
+      "bPedestrianSignals": false
+    },
+    {
+      "roadType": "Roundabout",
+      "bEnabled": true,
+      "spacingUnits": 2000,
+      "poleHeightUnits": 750,
+      "armLengthUnits": 250,
+      "bBothSides": false,
+      "realLightEveryN": 3,
+      "realLightLumens": 5000,
+      "realLightRadiusUnits": 1400,
+      "priority": 3,
+      "bTrafficLights": false,
+      "bPedestrianSignals": true
+    }
+  ],
+  "landmarkTiers": [
+    {
+      "tier": 1,
+      "lightMul": 2.0,
+      "haloMul": 2.0,
+      "bBeacon": true,
+      "windowLitBoost": 3.0,
+      "uplightCount": 4
+    },
+    {
+      "tier": 2,
+      "lightMul": 1.2,
+      "haloMul": 1.0,
+      "bBeacon": false,
+      "windowLitBoost": 2.0,
+      "uplightCount": 3
+    },
+    {
+      "tier": 3,
+      "lightMul": 0.8,
+      "haloMul": 0.6,
+      "bBeacon": false,
+      "windowLitBoost": 1.5,
+      "uplightCount": 2
+    },
+    {
+      "tier": 4,
+      "lightMul": 0.3,
+      "haloMul": 0.2,
+      "bBeacon": false,
+      "windowLitBoost": 1.0,
+      "uplightCount": 1
+    }
+  ]
+}

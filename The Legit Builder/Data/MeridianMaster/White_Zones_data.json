@@ -1,0 +1,142 @@
+{
+  "$schema": "void_world_location_schema_v1",
+  "location_id": "white_zones",
+  "display_name": "The White Zones (Community Trust Centers)",
+  "phase": 1,
+  "build_order_index": 2,
+  "canon_source": ["Vol I Ch. 4.2", "Vol I Ch. 3.7", "Vol II Mission 5", "Vol III SQ4", "Vol III Signals of the City", "Vol IV 3.1 3.2 8.2"],
+  "location_model": "distributed_node_network",
+  "location_model_notes": "Unlike the Undercroft (single continuous substrate), the White Zones are a repeated typology stamped across the mid-tier residential rings. This schema therefore separates the reusable typology definition from the one fully detailed flagship instance.",
+  "structural_position": {
+    "vertical_stratum": "ground_level_low_rise",
+    "vertical_notes": "2-4 stories, hard design ceiling. Must never read as monumental; contrast to Spire verticality and Undercroft irregularity.",
+    "radial_model": "distributed_node_mid_tier",
+    "radial_notes": "Present as repeated discrete nodes across the mid-tier residential ring band, not a single ring or a continuous stratum."
+  },
+  "typology_kit": {
+    "kit_id": "community_trust_center_standard",
+    "reusable": true,
+    "components": [
+      {"id": "entry_plaza", "access_tier": "public", "always_present": true},
+      {"id": "reception_atrium", "access_tier": "public", "always_present": true},
+      {"id": "clinic_wing", "access_tier": "public_logged", "always_present": false, "scales_with_catchment": true},
+      {"id": "ration_distribution_hall", "access_tier": "public_logged", "always_present": false, "scales_with_catchment": true},
+      {"id": "registration_office", "access_tier": "public_logged", "always_present": true},
+      {"id": "administrative_back_offices", "access_tier": "restricted_badge_gated", "always_present": true},
+      {"id": "records_audit_closet", "access_tier": "highly_restricted", "always_present": true},
+      {"id": "enforcer_staging_alcove", "access_tier": "enforcement_only", "always_present": true},
+      {"id": "rooftop_mechanical_level", "access_tier": "maintenance_only", "always_present": true}
+    ],
+    "distribution_rule": "one_instance_per_residential_population_catchment_walkable_access"
+  },
+  "flagship_instance": {
+    "id": "white_zone_flagship_mission5_sq4",
+    "scale": "upper_mid_catchment",
+    "canon_status": "confirmed",
+    "sub_locations": [
+      {
+        "id": "entry_plaza_flagship",
+        "type": "public_civic_space",
+        "gated": false,
+        "gate_condition": null,
+        "notes": "Escalation zone during Mission 5 extraction sequence."
+      },
+      {
+        "id": "reception_atrium_flagship",
+        "type": "npc_hub_social_stealth",
+        "gated": false,
+        "gate_condition": null,
+        "notes": "SQ4 cover-story entry point."
+      },
+      {
+        "id": "administrative_back_offices_flagship",
+        "type": "npc_hub_mission_critical",
+        "gated": true,
+        "gate_condition": "SQ4_cover_story_active",
+        "npc_refs": ["talis_bren"]
+      },
+      {
+        "id": "records_audit_closet_flagship",
+        "type": "hidden_boss_arena",
+        "gated": true,
+        "gate_condition": "SQ4_audit_extraction_triggered",
+        "npc_refs": ["vessel_9"]
+      },
+      {
+        "id": "rooftop_mechanical_level_flagship",
+        "type": "secret_collectible_area_traversal",
+        "gated": true,
+        "gate_condition": "echo_shift_unlocked",
+        "collectible_category": "memory_fragment",
+        "collectible_count": 1,
+        "canon_status": "new_canon_silence_addition"
+      },
+      {
+        "id": "mira_apartment_approach_route",
+        "type": "escort_mission_start",
+        "gated": false,
+        "gate_condition": "mission_5_active",
+        "npc_refs": ["mira"],
+        "notes": "Residential block within flagship catchment, not inside the Trust Center building itself."
+      }
+    ]
+  },
+  "weave_coverage": {
+    "is_off_weave": false,
+    "coverage_density": "maximal_curated",
+    "note": "Highest-density, fully officially-curated Weave presence outside the Spire. Direct visual/technical contrast to the Undercroft's hijacked/degraded Weave signal."
+  },
+  "enforcement_doctrine": {
+    "patrol_type": "heavy_standing",
+    "trigger_logic": "elevated_baseline_predictive_score_high_legibility_target",
+    "escalation_state": "mission_5_extraction_sequence",
+    "contrast_district": "undercroft_rare_scheduled_sweep"
+  },
+  "economic_band": {
+    "licensing_status": "fully_licensed_civic_public",
+    "commercial_presence": false,
+    "corporate_presence": false,
+    "new_corporation_introduced": false
+  },
+  "npcs": {
+    "canon_confirmed": ["talis_bren", "mira", "vessel_9", "enforcer_patrol_units"],
+    "new_background_archetypes": ["the_registration_clerk", "the_regular"],
+    "new_npcs_carry_state_variables": false
+  },
+  "mission_cross_reference": [
+    {"content_id": "mission_5_the_witness", "type": "main", "relation": "full_mission_location_flagship"},
+    {"content_id": "SQ4_administrators_gambit", "type": "side", "relation": "full_quest_location_flagship"}
+  ],
+  "out_of_scope_flagged": [
+    {
+      "id": "mira_apartment_interior_full_detail",
+      "reason": "Referenced as escort-mission start point; full secondary-location interior design deferred, candidate for pass alongside Riggs' old laboratory."
+    },
+    {
+      "id": "additional_network_instances_beyond_flagship",
+      "reason": "Canon confirms the network exists citywide but details only one instance. Additional instances are Phase 2/3 scope, to be stamped from typology_kit."
+    },
+    {
+      "id": "residential_ring_pedestrian_grid_beyond_catchment",
+      "reason": "Phase 2 connective-tissue scope."
+    }
+  ],
+  "canon_lock_compliance": {
+    "touches_canon_lock": false,
+    "references_luci": false,
+    "forecloses_voss_fate": false
+  },
+  "technical_notes": {
+    "world_partition_region_flagship": "WP_WhiteZones_Flagship",
+    "world_partition_region_template": "WP_WhiteZones_NetworkNode_Template",
+    "template_reuse_intended": true,
+    "data_layers": [
+      "DL_WhiteZone_PublicWings_Base",
+      "DL_WhiteZone_AdminBackOffice_SQ4Gated",
+      "DL_WhiteZone_RecordsCloset_VESSEL9",
+      "DL_WhiteZone_RooftopMechanical_EchoShiftGated",
+      "DL_WhiteZone_Mission5_EscalationState"
+    ],
+    "streaming_priority_notes": "Reception Atrium and Entry Plaza highest priority (constant civilian density); Records Closet and Rooftop Mechanical lowest (restricted/gated)."
+  }
+}

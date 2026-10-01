@@ -1,0 +1,71 @@
+{
+  "$schema": "void_gameplay_validation_schema_v1",
+  "purpose": "Formal validation rules for this package, mirroring the discipline established in ValidationSchema.json (Meridian_Master package). Every rule below was actually applied during this package's own construction, not written after the fact as aspirational documentation.",
+  "validation_rule_categories": ["syntax", "schema_conformance", "extension_point_coverage", "dependency_graph_integrity", "namespace_integrity", "cross_file_referential_integrity", "upstream_canon_fidelity", "scope_compliance"],
+  "rules": [
+    {
+      "id": "GVR-001",
+      "category": "syntax",
+      "description": "Every .json file in this package must parse as valid JSON.",
+      "applies_to": "all_json_files",
+      "check_logic": "json.load() succeeds without exception for every file."
+    },
+    {
+      "id": "GVR-002",
+      "category": "schema_conformance",
+      "description": "Every framework file must validate against its corresponding $defs entry in GameplaySchema.json.",
+      "applies_to": "all_framework_files_and_gameplay_master_manifest_rules",
+      "check_logic": "jsonschema.validate() succeeds for every (file, $defs entry) pair.",
+      "precedent": "All ten files (Gameplay_Master, GameplayManifest, GameplayRules, and all seven frameworks) were validated this way, not merely syntax-checked."
+    },
+    {
+      "id": "GVR-003",
+      "category": "extension_point_coverage",
+      "description": "Every extension point declared in GameplayManifest.json must be implemented by exactly one framework file, and every framework file's extension_points_implemented must exactly match what GameplayManifest.json expects from it — no gaps, no extras.",
+      "applies_to": ["GameplayManifest.json", "all_seven_framework_files"],
+      "check_logic": "Set equality between the union of all frameworks' extension_points_implemented and the full set of extension_point IDs in GameplayManifest.json; per-framework set equality individually.",
+      "precedent": "Verified live after AbilityFramework.json (the final framework) was built: 25/25 extension points implemented, zero gaps."
+    },
+    {
+      "id": "GVR-004",
+      "category": "dependency_graph_integrity",
+      "description": "Every framework's depends_on field must exactly match its edges in GameplayRules.json's framework_dependency_graph, and the full seven-node graph must be a valid DAG.",
+      "applies_to": ["GameplayRules.json", "all_seven_framework_files"],
+      "check_logic": "Set equality per framework; networkx.is_directed_acyclic_graph() on the full graph.",
+      "precedent": "Caught and fixed one real bug: Gameplay_Master.json's original import_order listed player_framework before character_framework, contradicting the dependency graph (Player depends on Character, not the reverse). Corrected before any framework file was built, avoiding a much larger downstream inconsistency."
+    },
+    {
+      "id": "GVR-005",
+      "category": "namespace_integrity",
+      "description": "Every framework's ID prefix must be unique, and every entity ID within a framework must use that framework's declared prefix.",
+      "applies_to": "all_seven_framework_files",
+      "check_logic": "Set of all seven framework_prefix values must have no duplicates; spot-check entity IDs against their owning framework's prefix.",
+      "precedent": "Verified live: CHAR, PLYR, INTR, SAVE, PROG, SKIL, ABIL — seven unique prefixes, zero collisions."
+    },
+    {
+      "id": "GVR-006",
+      "category": "cross_file_referential_integrity",
+      "description": "Any ID one framework references from another must resolve to a real entry in the source framework, not an assumed or invented one.",
+      "applies_to": "all_seven_framework_files",
+      "check_logic": "For every cross_reference field, the referenced ID must exist in the target file's actual content at time of check.",
+      "precedent": "Verified three times: CharacterFramework's registry entries against PlayerFramework's real slot_ids; SaveFramework's player-identity slot description against PlayerFramework's real slot_ids; SkillFramework's unlock_cost_resource_ref example against ProgressionFramework's real resource_id."
+    },
+    {
+      "id": "GVR-007",
+      "category": "upstream_canon_fidelity",
+      "description": "Any citation of Meridian_Master (locked) content must match the actual locked file's content exactly, not a paraphrase or recollection from earlier in this project.",
+      "applies_to": "all_files_citing_meridian_master",
+      "check_logic": "Direct re-read of the actual locked file (e.g. Meridian_Master/GameplayGraph.json) at citation time, compared against the citing file's stated content.",
+      "precedent": "SaveFramework.json's six tracked state variables were verified against the real, current Meridian_Master/GameplayGraph.json file — not restated from memory — and confirmed to match exactly. This is the single most important check in this package, since drifting from locked upstream content would be a canon violation, not just an internal inconsistency."
+    },
+    {
+      "id": "GVR-008",
+      "category": "scope_compliance",
+      "description": "No framework file may contain combat implementation, AI behavior, mission/quest content, dialogue text, economy/currency mechanics, or vehicle content — architecture and contracts only.",
+      "applies_to": "all_framework_files",
+      "check_logic": "Manual review against GameplayRules.json's four Scope Enforcement Rules (SR-01 through SR-04) for every field added to every framework file.",
+      "precedent": "Applied throughout — e.g. AbilityFramework.json explicitly declines to define Echo Shift's perception-removal effect, InteractionFramework.json explicitly declines to carry any dialogue content in its trigger stub, ProgressionFramework.json explicitly declines to define the TRANSCEND threshold's specific numeric value (that value is Volume IV/Knowledge Base content, out of scope here)."
+    }
+  ],
+  "rule_application_note": "GVR-001 through GVR-006 were executed as real Python checks during construction, most using this package's own files as live input rather than hypothetical test data. GVR-007 and GVR-008 combine automated re-reads of locked files with manual review discipline, consistent with how canon-compliance checks were handled throughout the Meridian_Master package."
+}

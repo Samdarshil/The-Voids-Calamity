@@ -1,0 +1,73 @@
+{
+  "$schema": "void_character_framework_schema_v1",
+  "framework_id": "character_framework",
+  "framework_name": "Character Framework",
+  "framework_prefix": "CHAR",
+  "depends_on": [],
+  "scope_compliance_statement": "This file defines the base entity interface every character (player-controlled or not) must implement. It contains no behavior trees, no dialogue, no stats, and no companion AI logic — those belong to future AI and Dialogue packages implementing against the contracts below.",
+  "extension_points_implemented": ["EP-CHAR-01", "EP-CHAR-02", "EP-CHAR-03", "EP-CHAR-04"],
+  "character_entity_interface": {
+    "implements": "EP-CHAR-01",
+    "interface_name": "BaseCharacterEntityInterface",
+    "contract": {
+      "required_fields": ["character_id", "registry_namespace", "is_player_controlled", "non_corporeal_flag"],
+      "behavior_content_policy": "This interface carries no behavior, dialogue, or stats — those attach via future packages (AI, Dialogue, Combat) referencing this entity's character_id, never by extending this interface's shape."
+    }
+  },
+  "non_corporeal_support": {
+    "implements": "EP-CHAR-02",
+    "interface_name": "NonCorporealCharacterSupport",
+    "contract": {
+      "flag_name": "non_corporeal_flag",
+      "effect_when_true": "Entity has no fixed physical transform or mesh requirement; rendering is delegated to a projection/effect system rather than a skeletal mesh pipeline.",
+      "canon_source": "Vol II — Echo, 'a shifting geometry of light that never quite resolves into a shape.'",
+      "confirmed_example": "CHAR_echo, registered below."
+    }
+  },
+  "character_registry": {
+    "implements": "EP-CHAR-03",
+    "interface_name": "CharacterRegistry",
+    "namespace_rule": "All character IDs use the CHAR_ prefix, per GameplayRules.json id_namespacing_rules.",
+    "registered_entities": [
+      { "character_id": "CHAR_player_kaevon", "is_player_controlled": true, "non_corporeal_flag": false, "cross_reference": "PlayerFramework.json identity_selection.contract.slot_ids -> PLYR_identity_kaevon" },
+      { "character_id": "CHAR_player_veronica", "is_player_controlled": true, "non_corporeal_flag": false, "cross_reference": "PlayerFramework.json identity_selection.contract.slot_ids -> PLYR_identity_veronica" },
+      { "character_id": "CHAR_echo", "is_player_controlled": false, "non_corporeal_flag": true, "cross_reference": "AbilityFramework.json echo_shift_reference_instance (planned, not yet built)" }
+    ],
+    "registration_policy": "Future packages register new characters here by ID only. This framework never defines their behavior, dialogue, or stats — it only reserves and tracks the ID."
+  },
+  "companion_attachment": {
+    "implements": "EP-CHAR-04",
+    "interface_name": "CompanionAttachmentInterface",
+    "contract": {
+      "attach_event": "companion_attached",
+      "detach_event": "companion_detached",
+      "confirmed_example": "CHAR_echo becomes a permanent companion at the Act 2 hub upgrade (Sector 0, locked Meridian_Master package) — this framework provides only the generic attach/detach lifecycle, not that specific narrative trigger.",
+      "behavior_content_policy": "No companion AI behavior is defined here — that belongs to a future AI package."
+    }
+  },
+  "attributes": {
+    "added_during": "Phase 2 audit — the new brief names this field explicitly; it did not previously exist in this file.",
+    "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED.",
+    "rationale": "No canon source describes character stats, attributes, or numeric values of any kind for any character. Gameplay_Design_Master.md Section 9 explicitly confirms no XP, levels, or numeric balancing exist in any source material. This field exists to record that absence explicitly rather than leaving character 'attributes' undocumented and ambiguous, per the CRITICAL RULE against inventing values where none are defined."
+  },
+  "gameplay_states": {
+    "added_during": "Phase 2 audit.",
+    "status": "DEFINED ELSEWHERE, INFERRED overall",
+    "pointer": "Gameplay_Master.json's gameplay_state_model is the authoritative reference for the eight states (exploration, interaction, stealth, combat, pursuit_escape, dialogue, mission_active, failure_recovery). Not duplicated here — CharacterFramework's role is only to confirm that character entities are the things gameplay states apply to, not to redefine the state list."
+  },
+  "future_integration_points": {
+    "added_during": "Phase 2 audit — makes explicit what was previously only implicit in scope_compliance_statement.",
+    "future_combat_integration_point": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED, blocked additionally by UDD-01 (Spire/Nyx discrepancy) for any Server Hub-specific combat.",
+      "contract_surface": "A future Combat package will attach combat state to a character_id registered here. This framework does not define what that state looks like."
+    },
+    "future_ai_integration_point": {
+      "status": "UNDEFINED — IMPLEMENTATION DECISION REQUIRED.",
+      "contract_surface": "A future AI package will attach behavior to a character_id registered here, reading VOID's predictive-flagging score per Gameplay_Design_Master.md Section 12 rather than simulating independent perception. This framework does not define that behavior."
+    }
+  },
+  "canon_references": [
+    { "fact": "dual_player_identity", "source": "Gameplay_Master.json canon_references.dual_player_identity" },
+    { "fact": "non_corporeal_companion", "source": "Gameplay_Master.json canon_references.non_corporeal_companion" }
+  ]
+}

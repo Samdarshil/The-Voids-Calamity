@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_world_partition_schema_v1",
+  "title": "VOID: The Unseen Hand — WorldPartition.json Schema",
+  "type": "object",
+  "required": ["$schema", "scope_note", "loading_priority_scale", "regions", "runtime_grid_organization", "streaming_relationships"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_world_partition_schema_v1" },
+    "scope_note": { "type": "string" },
+    "loading_priority_scale": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "regions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "district", "instancing", "template_based", "streaming_cells"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "pattern": "^WP_" },
+          "district": { "type": "string" },
+          "instancing": { "type": "string" },
+          "template_based": { "type": "boolean" },
+          "streaming_cells": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "loading_priority"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string" },
+                "contains": { "type": "array", "items": { "type": "string" } },
+                "loading_priority": { "type": "string" },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+          "cell_dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["cell", "streams_after", "reason"],
+              "additionalProperties": false,
+              "properties": {
+                "cell": { "type": "string" },
+                "streams_after": { "type": "string" },
+                "reason": { "type": "string" }
+              }
+            }
+          },
+          "cell_dependency_note": { "type": "string" },
+          "reusable_typology_reference": { "type": "object" },
+          "important_note": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "runtime_grid_organization": {
+      "type": "object",
+      "required": ["five_districts", "connective_tissue", "cross_reference"],
+      "additionalProperties": false,
+      "properties": {
+        "five_districts": { "type": "string" },
+        "connective_tissue": { "type": "string" },
+        "cross_reference": { "type": "string" }
+      }
+    },
+    "streaming_relationships": {
+      "type": "object",
+      "required": ["adjacent_regions", "isolated_regions", "cross_reference"],
+      "additionalProperties": false,
+      "properties": {
+        "adjacent_regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["region_a", "region_b", "relationship"],
+            "additionalProperties": false,
+            "properties": {
+              "region_a": { "type": "string" },
+              "region_b": { "type": "string" },
+              "relationship": { "type": "string" }
+            }
+          }
+        },
+        "isolated_regions": { "type": "array", "items": { "type": "string" } },
+        "cross_reference": { "type": "string" }
+      }
+    }
+  }
+}

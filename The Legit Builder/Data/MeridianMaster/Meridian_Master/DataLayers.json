@@ -1,0 +1,94 @@
+{
+  "$schema": "void_data_layers_schema_v1",
+  "scope_note": "Two distinct concepts organized in one file: (1) eight world-wide LAYER TYPE CATEGORIES, a standard World Partition organizational axis for toggling whole content categories; (2) the compiled DISTRICT GATING LAYER inventory, the union of all story/ability-gated layers already declared in the five approved packages. These are complementary axes, not duplicates of each other.",
+  "layer_type_categories": [
+    { "id": "road_layer", "description": "All road-hierarchy geometry: radial arterials, ring roads, service/maintenance routes.", "cross_reference": "RoadNetwork.json" },
+    { "id": "building_layer", "description": "All district and sub-location structural geometry across all five approved districts.", "cross_reference": "DistrictRegistry.json, WorldPartition.json" },
+    { "id": "metro_layer", "description": "Live Network and Dead Network lines, stations, and interchanges.", "cross_reference": "MetroNetwork.json" },
+    { "id": "gameplay_layer", "description": "Mission-critical content, boss encounters, and state-gated sub-locations across all districts.", "cross_reference": "GameplayGraph.json" },
+    { "id": "lighting_layer", "description": "The five-district lighting spectrum, including Sector 0's uniquely dynamic story-tied lighting states.", "cross_reference": "Meridian_Master_Plan.md Sec. 21" },
+    { "id": "environment_layer", "description": "Materials, color language, and environmental storytelling assets per district.", "cross_reference": "Each district's own Materials / Color Language / Environmental Storytelling sections." },
+    { "id": "utility_layer", "description": "Power, water/climate control, and maintenance systems per district.", "cross_reference": "InfrastructureGraph.json" },
+    { "id": "navigation_layer", "description": "Pedestrian, vehicle, metro, underground, and rooftop traversal rules per district.", "cross_reference": "NavigationGraph.json" }
+  ],
+  "district_gating_layers": [
+    {
+      "district": "olympus_spire",
+      "layers": [
+        "DL_Spire_BasePlaza_Public",
+        "DL_Spire_PartyLevel_Mission7",
+        "DL_Spire_CouncilChambers_DirectorOffice",
+        "DL_Spire_PortraitGallery_Optional",
+        "DL_Spire_AtriumOfPerfectMemory_BossState",
+        "DL_Spire_ServerHub_Flagged"
+      ],
+      "source": "Olympus_Spire_data.json technical_notes.data_layers"
+    },
+    {
+      "district": "undercroft",
+      "layers": [
+        "DL_Undercroft_Market_Base",
+        "DL_RiggsSafehouse_Hidden",
+        "DL_YarasCellar_SQ1Gated",
+        "DL_DrownedConcourse_EchoShiftGated",
+        "DL_CartographerTunnels_Collectible",
+        "DL_PennyAlcove_Collectible"
+      ],
+      "source": "VOID_Location_01_Undercroft_data.json technical_notes.data_layers"
+    },
+    {
+      "district": "white_zones",
+      "layers": [
+        "DL_WhiteZone_PublicWings_Base",
+        "DL_WhiteZone_AdminBackOffice_SQ4Gated",
+        "DL_WhiteZone_RecordsCloset_VESSEL9",
+        "DL_WhiteZone_RooftopMechanical_EchoShiftGated",
+        "DL_WhiteZone_Mission5_EscalationState"
+      ],
+      "source": "White_Zones_data.json technical_notes.data_layers"
+    },
+    {
+      "district": "metro_archives",
+      "layers": [
+        "DL_MetroArchives_PublicFloor_Base",
+        "DL_MetroArchives_EastWing_ExhibitCase",
+        "DL_MetroArchives_HistoricalSocietyOffice_SQ1",
+        "DL_MetroArchives_RecordsStacks_Tier1Reset",
+        "DL_MetroArchives_RestrictedArchive_Tier2Tier3Reset",
+        "DL_MetroArchives_SubBasement_EchoShiftGated"
+      ],
+      "source": "Metro_Archives_data.json technical_notes.data_layers"
+    },
+    {
+      "district": "sector_0",
+      "layers": [
+        "DL_Sector0_EntranceTunnel_Base",
+        "DL_Sector0_RelayStations_Act2State",
+        "DL_Sector0_RelayStations_Act3State",
+        "DL_Sector0_SafehouseHub_Base",
+        "DL_Sector0_SQ2_VignetteAlcove",
+        "DL_Sector0_ArchivistReadingRoom_PostGame",
+        "DL_Sector0_RelayFragmentLighting_Progressive"
+      ],
+      "source": "Sector_0_data.json technical_notes.data_layers",
+      "notes": "DL_Sector0_ArchivistReadingRoom_PostGame is precisely the content-state gating WorldPartition.json's cell_relay_stations flagged as belonging here rather than to a separate cell — confirmed consistent."
+    }
+  ],
+  "total_district_gating_layers": 30,
+  "cross_district_layers": [
+    {
+      "id": "DL_Global_MemoryFragmentProgress",
+      "scope": "cross_district",
+      "tracks": "memory_fragment_count",
+      "canon_status": "new_addition_introduced_in_meridian_master_plan_sec_28",
+      "description": "Fragments are collected across every district but visualized specifically via Sector 0's relay-lighting system (DL_Sector0_RelayFragmentLighting_Progressive). This layer is the shared counter both systems depend on.",
+      "adds_new_content": false,
+      "source": "Meridian_Master_Plan.md Sec. 28"
+    }
+  ],
+  "layer_interaction_rules": {
+    "type_categories_and_gating_layers_are_independent": "A district-gating layer (e.g. DL_WhiteZone_RooftopMechanical_EchoShiftGated) belongs to multiple type categories simultaneously (building_layer, gameplay_layer, navigation_layer) — the two axes are not mutually exclusive and the Builder should not treat them as a single hierarchy.",
+    "gating_precedence": "Story/ability gate conditions (district_gating_layers) always take precedence over type-category visibility toggles (layer_type_categories) — a type category being 'on' never bypasses a narrative gate.",
+    "cross_district_layer_precedence": "DL_Global_MemoryFragmentProgress reads from, but never writes to, any individual district's own gating layers — it is a downstream aggregator only."
+  }
+}

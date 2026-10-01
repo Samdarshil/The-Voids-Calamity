@@ -1,0 +1,77 @@
+{
+  "$schema": "void_gameplay_rules_schema_v1",
+  "purpose": "Governance rules for how this package's seven frameworks relate to each other and how future packages must extend them. Distinct from GameplayManifest.json (what extension points exist) and GameplayValidation.json (how to check correctness) — this file is the rulebook both of those operate under.",
+  "framework_dependency_graph": {
+    "verification_note": "Computationally verified as a directed acyclic graph (networkx) before this file was written, not asserted by hand.",
+    "edges": {
+      "character_framework": [],
+      "player_framework": ["character_framework"],
+      "progression_framework": ["character_framework"],
+      "interaction_framework": ["character_framework", "player_framework"],
+      "ability_framework": ["character_framework", "player_framework"],
+      "skill_framework": ["ability_framework", "progression_framework"],
+      "save_framework": ["character_framework", "player_framework", "progression_framework", "interaction_framework", "ability_framework", "skill_framework"]
+    },
+    "verified_topological_order": ["character_framework", "player_framework", "progression_framework", "interaction_framework", "ability_framework", "skill_framework", "save_framework"],
+    "rationale": "character_framework is the dependency root — a player is a specialized character entity, not the reverse. save_framework is deliberately cross-cutting and positioned last, since it must know what state every other framework exposes before it can define what gets persisted."
+  },
+  "scope_enforcement_rules": [
+    {
+      "id": "SR-01",
+      "rule": "No framework file may define a specific named ability, skill, weapon, item, or NPC. Only the contract/interface for such things may be defined.",
+      "watch_for": "A skill node with a specific damage number, cooldown implying a specific weapon type, or narrative flavor text describing a specific character."
+    },
+    {
+      "id": "SR-02",
+      "rule": "No framework file may define dialogue text, mission objectives, or quest state machines. Trigger contracts for these are permitted; their content is not.",
+      "watch_for": "Any string field that reads as a line of dialogue or a mission instruction rather than a system label."
+    },
+    {
+      "id": "SR-03",
+      "rule": "No framework file may define combat resolution logic (damage formulas, hit detection, AI targeting). Ability activation contracts may exist; what an ability *does* in combat may not.",
+      "watch_for": "Numeric damage values, armor/resistance formulas, or targeting priority logic."
+    },
+    {
+      "id": "SR-04",
+      "rule": "No framework file may define currency values, prices, or trade mechanics. Progression *resources* (like Memory Fragments) are permitted since they're canon-confirmed collection mechanics, not economy.",
+      "watch_for": "Any field resembling a price, exchange rate, or vendor inventory."
+    }
+  ],
+  "id_namespacing_rules": {
+    "format": "{FRAMEWORK_PREFIX}_{entity_type}_{stable_name}",
+    "framework_prefixes": {
+      "character_framework": "CHAR",
+      "player_framework": "PLYR",
+      "interaction_framework": "INTR",
+      "save_framework": "SAVE",
+      "progression_framework": "PROG",
+      "skill_framework": "SKIL",
+      "ability_framework": "ABIL"
+    },
+    "collision_policy": "No two frameworks may define an ID with the same prefix. Future consumer packages must request a new prefix before registering IDs, per GameplayManifest.json's package_registration_protocol.",
+    "stability_inheritance": "An ID's stability (stable/provisional) is inherited from the extension point that exposes it, not set independently per ID."
+  },
+  "cross_framework_reference_rules": [
+    { "rule": "A framework may only reference IDs from frameworks earlier in framework_dependency_graph's topological order — never later, and never itself in a way that creates a cycle.", "enforcement": "Checked by GameplayValidation.json." },
+    { "rule": "A framework referencing another framework's ID must cite it by exact ID string, never by re-describing its content.", "enforcement": "Manual review; consistent with the citation-not-restatement pattern used throughout this project's world-building packages." }
+  ],
+  "canon_reference_rules": {
+    "rule": "Any framework file citing a Meridian_Master or Volumes I-IV fact must cite the exact source (file, section, or chapter) and must not restate, paraphrase into new narrative prose, or extend that fact's content.",
+    "example_compliant": "Gameplay_Master.json's canon_references field cites 'Vol IV Ch. 7 Canon Lock' for the dual-identity requirement without inventing new dialogue or backstory.",
+    "example_violation": "A framework file describing what Kaevon or Veronica would say in a specific gameplay moment — this is dialogue content and belongs to a future Dialogue package, not this foundation."
+  },
+  "consumer_package_governance": [
+    "A future package (Combat, AI, Missions, Dialogue, Economy, Vehicles) may only consume extension points listed in GameplayManifest.json — it may not reach into a framework file's internal structure directly.",
+    "A future package must not modify any file in this Gameplay_Master package. Extension is strictly additive, mirroring the same immutability discipline already established for the locked Meridian_Master package.",
+    "A future package introducing a new stable framework dependency must be reviewed against framework_dependency_graph to confirm it doesn't introduce a cycle."
+  ],
+  "non_negotiable_constraints": [
+    "1. This package never generates story, mission, dialogue, combat, AI, economy, or vehicle content — architecture only.",
+    "2. This package never modifies the locked Meridian_Master package.",
+    "3. Every canon reference is cited, never restated or extended.",
+    "4. Every framework's dependencies form a DAG — verified computationally, not asserted.",
+    "5. Every ID follows the namespacing format and collision policy above.",
+    "6. Stable-tagged interfaces do not change shape without a major version bump across this entire package.",
+    "7. Future packages extend additively; they never modify this package's files."
+  ]
+}

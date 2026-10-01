@@ -1,0 +1,72 @@
+{
+  "$schema": "void_interaction_framework_schema_v1",
+  "framework_id": "interaction_framework",
+  "framework_name": "Interaction Framework",
+  "framework_prefix": "INTR",
+  "depends_on": ["character_framework", "player_framework"],
+  "scope_compliance_statement": "This file defines the contract for how the player interacts with world objects and characters. It contains no mission triggers, no dialogue text, no minigame implementation, and no lockpick/hacking mechanics — only the stub interfaces future packages implement against.",
+  "extension_points_implemented": ["EP-INTERACT-01", "EP-INTERACT-02", "EP-INTERACT-03", "EP-INTERACT-04"],
+  "interactable_object_contract": {
+    "implements": "EP-INTERACT-01",
+    "interface_name": "InteractableObjectContract",
+    "contract": {
+      "required_fields": ["interactable_id", "interaction_range", "prompt_trigger_ref", "result_callback_ref"],
+      "namespace_rule": "interactable_id uses the INTR_ prefix.",
+      "target_actor_reference": "An interactable may optionally reference a character_id from CharacterFramework's CharacterRegistry (CHAR_ prefix) if the interactable is a character rather than a static object — e.g. approaching CHAR_echo for a conversation trigger.",
+      "content_policy": "This contract defines that an object CAN be interacted with. It does not define what happens narratively when it is — that belongs to a future Missions or Dialogue package."
+    }
+  },
+  "interaction_prompt_system": {
+    "implements": "EP-INTERACT-02",
+    "interface_name": "InteractionPromptSystem",
+    "contract": {
+      "trigger_condition": "player_within_interaction_range",
+      "player_dependency": "Reads the active player's InputActionMappingContract (PlayerFramework, EP-PLAYER-02) 'interaction_trigger' abstract action category to know which input fires the prompt.",
+      "ui_policy": "UI-agnostic — this contract fires an event; it does not define prompt visuals, text, or placement."
+    }
+  },
+  "dialogue_trigger_stub": {
+    "implements": "EP-INTERACT-03",
+    "interface_name": "DialogueTriggerStub",
+    "contract": {
+      "fires_on": "successful interactable_object_contract resolution where the target is a character_id",
+      "payload": "character_id and interactable_id only — no dialogue content, no line of text, no conversation state.",
+      "consumer": "A future Dialogue package subscribes to this event; this framework has no knowledge of what that package does with it.",
+      "example_non_content": "This stub could fire for an interaction with CHAR_echo. It does not know or care that Echo's first words are 'Hello? Is someone there? I remember...' — that content lives entirely in the locked Meridian_Master package and any future Dialogue package, never here."
+    }
+  },
+  "minigame_interaction_stub": {
+    "implements": "EP-INTERACT-04",
+    "interface_name": "MinigameInteractionStub",
+    "contract": {
+      "fires_on": "interactable_object_contract resolution flagged as minigame_required",
+      "payload": "success/failure boolean callback only.",
+      "confirmed_world_examples_referenced_not_implemented": [
+        "Metro Archives' sealed exhibit case lockpick minigame (Metro_Archives.md Sec. 8.2, locked Meridian_Master package)",
+        "Undercroft/Metro Archives hacking-deck interactions (Vol I, 7.2, locked canon)"
+      ],
+      "content_policy": "This framework does not implement lockpicking or hacking mechanics. It only guarantees a stub interface exists for a future package to attach that implementation to."
+    }
+  },
+  "canon_references": [
+    { "fact": "non_corporeal_companion", "source": "CharacterFramework.json non_corporeal_support", "usage": "Justifies that dialogue_trigger_stub must support targeting a non-corporeal character_id (CHAR_echo) the same way it supports a physical one." }
+  ],
+  "interaction_execution_model": {
+    "added_during": "Phase 2 audit — the new brief requires this explicit flow, which was previously only implicit across the four contracts above.",
+    "flow": "PLAYER -> INTERACTION_REQUEST -> TARGET -> VALIDATION -> ACTION -> RESULT -> WORLD_OR_GAMEPLAY_STATE_CHANGE",
+    "validation_step": "Checks interaction_range and any interactable-specific preconditions (e.g. minigame_required flag) before ACTION executes. Not previously named as a distinct step in this file.",
+    "failure_states": {
+      "status": "PARTIALLY DEFINED",
+      "confirmed": "minigame_interaction_stub's success/failure callback is the one explicit failure-capable interaction type.",
+      "undefined_remainder": "General interaction failure (e.g. a failed dialogue check, a failed environmental exploit) has no confirmed consequence model — UNDEFINED — IMPLEMENTATION DECISION REQUIRED."
+    },
+    "system_events": {
+      "emitted_by_this_framework": ["interaction_prompt_shown", "interaction_resolved", "dialogue_trigger_fired", "minigame_result_returned"],
+      "consumed_by": "Future AI package (for NPC awareness) and future Missions package (for objective tracking) — this framework only emits; it does not define consumers' reactions."
+    },
+    "persistence_implications": {
+      "status": "DEFINED ELSEWHERE",
+      "pointer": "SaveFramework.json's PersistentStateRegistry already registers SAVE_interaction_completion_state for exactly this purpose."
+    }
+  }
+}

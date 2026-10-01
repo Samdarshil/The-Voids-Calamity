@@ -1,0 +1,181 @@
+{
+  "$schema": "void_landmark_registry_schema_v1",
+  "registry_note": "This file re-indexes landmarks already established in the five approved packages under a consistent cross-district schema. It reclassifies existing sub-locations as 'landmarks' for registry purposes where a district's own document did not use that exact word (e.g. Undercroft has no dedicated Landmarks section) — this is a new lens over existing content, not new content.",
+  "recognition_priority_scale": ["highest_in_meridian", "highest_narrative_weight", "high", "moderate", "low"],
+  "visibility_hierarchy": [
+    { "tier": 1, "landmark_id": "olympus_spire_silhouette", "character": "soaring_center_unmistakable" },
+    { "tier": 2, "landmark_id": "elite_residential_towers", "character": "spire_adjacent_secondary_cluster" },
+    { "tier": 3, "landmark_id": "metro_archives_building", "character": "bespoke_individually_designed_mid_rise" },
+    { "tier": 4, "landmark_id": "white_zones_weave_display_column", "character": "low_rise_repeated_uniform" },
+    { "tier": "no_skyline_presence", "landmark_id": null, "character": "undercroft_and_sector_0_both_entirely_below_grade", "source": "Meridian_Master_Plan.md Sec. 18" }
+  ],
+  "landmarks": [
+    {
+      "id": "olympus_spire_silhouette",
+      "district": "olympus_spire",
+      "type": "mega_landmark_whole_district",
+      "canon_status": "confirmed",
+      "visibility_tier": 1,
+      "sightline_rule": {
+        "status": "flagged_optional_non_blocking_suggestion",
+        "visible_from": ["undercroft_rare_upward_shafts", "white_zones_open_plazas", "metro_archives_public_floor_windows"],
+        "excluded": ["sector_0_enclosed_by_design"],
+        "source": "Olympus_Spire.md Sec. 8, 43; Meridian_Master_Plan.md Sec. 17"
+      },
+      "recognition_priority": "highest_in_meridian",
+      "gameplay_importance": "radial_and_vertical_origin_anchor",
+      "navigation_importance": "primary_citywide_orientation_landmark"
+    },
+    {
+      "id": "continuity_monument",
+      "district": "olympus_spire",
+      "sub_location_ref": "base_plaza_monument",
+      "type": "public_sculpture",
+      "canon_status": "new_canon_silence_addition",
+      "visibility_tier": 2,
+      "recognition_priority": "high",
+      "gameplay_importance": "environmental_storytelling_only",
+      "navigation_importance": "local_orientation_within_base_plaza",
+      "source": "Olympus_Spire.md Sec. 23"
+    },
+    {
+      "id": "elite_residential_towers",
+      "district": "olympus_spire",
+      "sub_location_ref": "elite_residential_towers",
+      "type": "secondary_tower_cluster",
+      "canon_status": "confirmed",
+      "visibility_tier": 2,
+      "recognition_priority": "high",
+      "gameplay_importance": "background_atmosphere_not_mission_critical",
+      "navigation_importance": "skyline_secondary_landmark",
+      "source": "Olympus_Spire.md Sec. 11.8, 19"
+    },
+    {
+      "id": "atrium_of_perfect_memory",
+      "district": "olympus_spire",
+      "sub_location_ref": "atrium_of_perfect_memory",
+      "type": "landmark_interior_boss_arena",
+      "canon_status": "confirmed",
+      "visibility_tier": "interior_not_applicable_to_skyline",
+      "recognition_priority": "highest_narrative_weight",
+      "gameplay_importance": "mission_7_climax_boss_encounter",
+      "navigation_importance": "trust_gradient_technical_symbolic_heart"
+    },
+    {
+      "id": "olympus_spire_server_hub",
+      "district": "olympus_spire",
+      "sub_location_ref": "olympus_spire_server_hub",
+      "type": "landmark_interior_flagged",
+      "canon_status": "confirmed_location_disputed_encounter",
+      "visibility_tier": "interior_not_applicable_to_skyline",
+      "recognition_priority": "highest_narrative_weight",
+      "gameplay_importance": "flagged_pending_spire_sec_0_1_resolution",
+      "navigation_importance": "trust_gradient_technical_symbolic_heart"
+    },
+    {
+      "id": "white_zones_weave_display_column",
+      "district": "white_zones",
+      "type": "standardized_branded_civic_fixture",
+      "canon_status": "confirmed",
+      "visibility_tier": 4,
+      "instancing_policy": "generated_per_network_node_identical_citywide",
+      "recognition_priority": "high_but_deliberately_uniform",
+      "gameplay_importance": "civic_messaging_ambient",
+      "navigation_importance": "local_orientation_per_white_zone_node",
+      "source": "White_Zones.md Sec. 12"
+    },
+    {
+      "id": "metro_archives_building",
+      "district": "metro_archives",
+      "type": "bespoke_singular_building",
+      "canon_status": "confirmed",
+      "visibility_tier": 3,
+      "recognition_priority": "moderate_individually_distinctive",
+      "gameplay_importance": "mission_critical_contract_2",
+      "navigation_importance": "seam_zone_orientation_landmark",
+      "source": "Metro_Archives.md Sec. 12"
+    },
+    {
+      "id": "metro_archives_reading_room",
+      "district": "metro_archives",
+      "type": "landmark_interior",
+      "canon_status": "confirmed",
+      "visibility_tier": "interior_not_applicable_to_skyline",
+      "recognition_priority": "moderate",
+      "gameplay_importance": "environmental_storytelling",
+      "navigation_importance": "public_floor_orientation"
+    },
+    {
+      "id": "metro_archives_sealed_exhibit_case",
+      "district": "metro_archives",
+      "type": "landmark_interior_narrative_critical",
+      "canon_status": "confirmed",
+      "visibility_tier": "interior_not_applicable_to_skyline",
+      "recognition_priority": "highest_narrative_weight",
+      "gameplay_importance": "bridges_contract_2_to_contract_3",
+      "navigation_importance": "east_wing_orientation"
+    },
+    {
+      "id": "sector_0_entrance_threshold",
+      "district": "sector_0",
+      "type": "landmark_narrative_transition",
+      "canon_status": "confirmed",
+      "visibility_tier": "not_applicable_below_grade_enclosed",
+      "recognition_priority": "highest_narrative_weight",
+      "gameplay_importance": "mission_critical_contract_3_ending",
+      "navigation_importance": "sole_confirmed_access_point",
+      "source": "Sector_0.md Sec. 9, one of only two landmarks in the district by deliberate design"
+    },
+    {
+      "id": "sector_0_echo_relay_station",
+      "district": "sector_0",
+      "type": "landmark_narrative_critical",
+      "canon_status": "confirmed",
+      "visibility_tier": "not_applicable_below_grade_enclosed",
+      "recognition_priority": "highest_narrative_weight",
+      "gameplay_importance": "echo_first_words_permanent_hub_core",
+      "navigation_importance": "hub_orientation_anchor",
+      "source": "Sector_0.md Sec. 9, the second of only two landmarks in the district by deliberate design"
+    },
+    {
+      "id": "undercroft_riggs_safehouse",
+      "district": "undercroft",
+      "type": "landmark_npc_hub_reclassified",
+      "canon_status": "confirmed_sub_location_reclassified_for_registry",
+      "visibility_tier": "not_applicable_below_grade",
+      "recognition_priority": "high",
+      "gameplay_importance": "mentor_hub_contract_board",
+      "navigation_importance": "far_stacks_orientation_anchor",
+      "source": "Undercroft Sec. 7.5"
+    },
+    {
+      "id": "undercroft_yaras_stall",
+      "district": "undercroft",
+      "type": "landmark_npc_hub_reclassified",
+      "canon_status": "confirmed_sub_location_reclassified_for_registry",
+      "visibility_tier": "not_applicable_below_grade",
+      "recognition_priority": "moderate",
+      "gameplay_importance": "sq1_full_quest_location",
+      "navigation_importance": "market_belt_orientation_anchor",
+      "source": "Undercroft Sec. 7.2"
+    },
+    {
+      "id": "undercroft_coens_atrium",
+      "district": "undercroft",
+      "type": "landmark_npc_hub_reclassified",
+      "canon_status": "confirmed_sub_location_reclassified_for_registry",
+      "visibility_tier": "not_applicable_below_grade",
+      "recognition_priority": "moderate",
+      "gameplay_importance": "sq3_full_quest_location",
+      "navigation_importance": "market_belt_orientation_anchor",
+      "source": "Undercroft Sec. 7.3"
+    }
+  ],
+  "district_ownership_summary": [
+    { "district": "olympus_spire", "landmark_ids": ["olympus_spire_silhouette", "continuity_monument", "elite_residential_towers", "atrium_of_perfect_memory", "olympus_spire_server_hub"] },
+    { "district": "white_zones", "landmark_ids": ["white_zones_weave_display_column"] },
+    { "district": "metro_archives", "landmark_ids": ["metro_archives_building", "metro_archives_reading_room", "metro_archives_sealed_exhibit_case"] },
+    { "district": "sector_0", "landmark_ids": ["sector_0_entrance_threshold", "sector_0_echo_relay_station"] },
+    { "district": "undercroft", "landmark_ids": ["undercroft_riggs_safehouse", "undercroft_yaras_stall", "undercroft_coens_atrium"] }
+  ]
+}

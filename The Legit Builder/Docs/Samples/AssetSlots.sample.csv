@@ -1,0 +1,5 @@
+Name,Category,Mesh,Materials,LocalOffset,LocalRotation,ScaleMultiplier,Weight,bUseHISM,CullStartUnits,CullEndUnits,bCastShadow,ReplacementTag
+Tree_A,Tree,,,"(X=0,Y=0,Z=0)","(Pitch=0,Yaw=0,Roll=0)","(X=1,Y=1,Z=1)",1.0,True,0,40000,True,AAA.Tree
+Tree_B,Tree,,,"(X=0,Y=0,Z=0)","(Pitch=0,Yaw=0,Roll=0)","(X=1,Y=1,Z=1)",0.5,True,0,40000,True,AAA.Tree
+Streetlight_Std,Streetlight,,,"(X=0,Y=0,Z=0)","(Pitch=0,Yaw=0,Roll=0)","(X=1,Y=1,Z=1)",1.0,True,0,25000,True,AAA.Streetlight
+Vehicle_Sedan,Vehicle,,,"(X=0,Y=0,Z=0)","(Pitch=0,Yaw=0,Roll=0)","(X=1,Y=1,Z=1)",1.0,True,0,20000,True,AAA.Vehicle

@@ -1,0 +1,99 @@
+{
+  "$schema": "void_validation_schema_v1",
+  "purpose": "Defines the validation RULES a checking tool should apply across this package. This is a rule definition document, not an implementation — it specifies WHAT to check, not the executable code that checks it, consistent with this project's design-vs-implementation boundary throughout.",
+  "validation_rule_categories": ["syntax", "schema_conformance", "referential_integrity", "arithmetic_consistency", "canon_compliance", "structural_integrity", "checksum_integrity"],
+  "rules": [
+    {
+      "id": "VR-001",
+      "category": "syntax",
+      "description": "Every .json file in the package must parse as valid JSON.",
+      "applies_to": "all_json_files",
+      "check_logic": "json.load() succeeds without exception for every file."
+    },
+    {
+      "id": "VR-002",
+      "category": "schema_conformance",
+      "description": "Every data JSON file must actually validate against its corresponding .schema.json file — not merely be syntactically valid JSON.",
+      "applies_to": "all_json_files_with_a_corresponding_schema",
+      "check_logic": "jsonschema.validate(instance=data, schema=schema) succeeds for every (file, schema) pair.",
+      "precedent": "Caught real mismatches during this project's own construction: MetroNetwork.json's white_zones_node_station lacked a 'type' field the draft schema required; BuilderRules.json's terminal pipeline step lacked a 'cross_reference' field the draft schema required. Both were schema bugs, not data bugs, and were fixed in the schema rather than retroactively editing delivered data."
+    },
+    {
+      "id": "VR-003",
+      "category": "referential_integrity",
+      "description": "Every ID referenced across files (route IDs, station IDs, tunnel IDs, sub-location IDs, layer IDs, landmark IDs) must resolve to an actual entry in its source-of-truth file.",
+      "applies_to": "all_cross_referencing_json_files",
+      "check_logic": "For every reference field, the referenced ID must exist in the set of IDs defined in its authoritative source file.",
+      "precedent": "Verified repeatedly during construction: RoadNetwork.json tunnel IDs against DistrictRegistry.json adjacency edges; MetroNetwork.json station/tunnel refs against RoadNetwork.json; NavigationGraph.json route/station refs against RoadNetwork.json and MetroNetwork.json; WorldPartition.json cell contents against each district's own sub_locations — the last of which caught a real gap (engineered_gardens_typology was omitted from any cell's contains list until corrected)."
+    },
+    {
+      "id": "VR-004",
+      "category": "referential_integrity",
+      "description": "Every sub-location confirmed in a district's own _data.json must be accounted for exactly once across the package's streaming cell definitions — no sub-location may be missing, and no sub-location may be double-counted as two separate physical spaces.",
+      "applies_to": ["WorldPartition.json"],
+      "check_logic": "For each district, the union of all streaming_cells[].contains must equal that district's sub_locations set (excluding explicitly-noted content-state exceptions).",
+      "precedent": "Sector 0's archivist_reading_room was deliberately excluded from streaming_cells as a content-state of dead_relay_stations, not a fourth physical cell — this rule must allow explicitly-documented exceptions like this one without flagging them as errors."
+    },
+    {
+      "id": "VR-005",
+      "category": "arithmetic_consistency",
+      "description": "Any declared total, count, or sum field must equal the actual computed value from the data it summarizes.",
+      "applies_to": "all_json_files_with_declared_totals",
+      "check_logic": "declared_total == sum(actual_items) for every such field.",
+      "precedent": "DataLayers.json originally declared total_district_gating_layers as 29 when the actual sum of all five districts' layer arrays was 30 — a miscount on the Spire's six-layer list. Caught and corrected before delivery."
+    },
+    {
+      "id": "VR-006",
+      "category": "canon_compliance",
+      "description": "No file in this package may modify, rename, or contradict any of the five approved district packages or Meridian_Master_Plan.md.",
+      "applies_to": "all_files_in_meridian_master_package",
+      "check_logic": "No write operation targets any locked_inputs path (per PackageManifest.json); checksums of locked inputs remain unchanged across the package's construction."
+    },
+    {
+      "id": "VR-007",
+      "category": "canon_compliance",
+      "description": "No file may introduce a sixth named district with its own identity, history, or six-ownership-questions treatment.",
+      "applies_to": "all_files",
+      "check_logic": "District enumeration fields across all files contain exactly the five approved IDs: olympus_spire, white_zones, metro_archives, undercroft, sector_0. Any 'Inner Rings' or connective-tissue reference must be tagged as infrastructure/unbuilt scaffolding, never as a district."
+    },
+    {
+      "id": "VR-008",
+      "category": "canon_compliance",
+      "description": "No file may resolve an unresolved story question, including the three flagged Open Items (Luci, Director Voss's fate, the Spire/Nyx Server Hub discrepancy).",
+      "applies_to": "all_files",
+      "check_logic": "No file contains new narrative content answering these items. Flagged items may be referenced and their status tracked, but never closed without recorded writing-team sign-off."
+    },
+    {
+      "id": "VR-009",
+      "category": "structural_integrity",
+      "description": "The dependency graph across both the file-level and district-level tiers must be a valid DAG — no circular dependencies.",
+      "applies_to": ["DependencyGraph.json", "DistrictRegistry.json", "BuilderRules.json"],
+      "check_logic": "networkx.is_directed_acyclic_graph() (or equivalent) returns true for both tiers.",
+      "precedent": "Computationally verified for DependencyGraph.json's 29-node file-level graph at time of its own construction — confirmed DAG, not merely asserted."
+    },
+    {
+      "id": "VR-010",
+      "category": "structural_integrity",
+      "description": "Every district-pair relationship must be documented exactly once, covering all C(5,2)=10 unique pairs with no gaps or duplicates.",
+      "applies_to": ["DistrictRegistry.json"],
+      "check_logic": "The set of unordered district pairs in relationships must equal the full combinatorial set of all 5 districts taken 2 at a time."
+    },
+    {
+      "id": "VR-011",
+      "category": "checksum_integrity",
+      "description": "Recorded checksums for locked inputs must match their actual file content at any time the Builder is invoked with --strict-canon-lock.",
+      "applies_to": ["PackageManifest.json"],
+      "check_logic": "sha256(file) == recorded_sha256 for every entry in locked_inputs.",
+      "precedent": "All checksums in PackageManifest.json were computed from real file content and independently spot-checked, not fabricated."
+    },
+    {
+      "id": "VR-012",
+      "category": "canon_compliance",
+      "description": "No numeric value anywhere in this package may represent fabricated engineering precision — literal world coordinates, Unreal transforms, mesh IDs, or invented memory/performance budgets.",
+      "applies_to": "all_json_files",
+      "check_logic": "Manual/automated scan for coordinate-shaped or transform-shaped numeric patterns; any found value must trace to a canon-confirmed source (e.g. the ~30 million population figure) or be flagged as a violation.",
+      "precedent": "Verified explicitly for StreamingStrategy.json's memory_strategy section — confirmed zero fabricated MB/GB/KB values present."
+    }
+  ],
+  "rule_application_note": "Rules VR-001 through VR-005 and VR-009 through VR-011 were, in practice, executed as real Python validation scripts during this package's own construction, not written after the fact as documentation of intent. VR-006 through VR-008 and VR-012 were applied as manual review discipline throughout, consistent with this project's standing practice since the first district package."
+}

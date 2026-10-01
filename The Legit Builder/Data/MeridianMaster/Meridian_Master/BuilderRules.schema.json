@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "void_builder_rules_schema_v1",
+  "title": "VOID: The Unseen Hand — BuilderRules.json Schema",
+  "type": "object",
+  "required": ["$schema", "pipeline_reconciliation_note", "macro_generation_order", "micro_layer_pipeline", "module_dependencies", "execution_order", "error_handling", "recovery_rules", "validation_rules", "future_expansion_rules"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "const": "void_builder_rules_schema_v1" },
+    "pipeline_reconciliation_note": {
+      "type": "object",
+      "required": ["issue", "resolution"],
+      "additionalProperties": false,
+      "properties": {
+        "issue": { "type": "string" },
+        "resolution": { "type": "string" }
+      }
+    },
+    "macro_generation_order": {
+      "type": "object",
+      "required": ["authority", "summary", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "authority": { "type": "string" },
+        "summary": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "micro_layer_pipeline": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["step", "phase", "action"],
+        "additionalProperties": false,
+        "properties": {
+          "step": { "type": "integer", "minimum": 1, "maximum": 15 },
+          "phase": { "type": "string" },
+          "action": { "type": "string" },
+          "cross_reference": { "type": "string" },
+          "hard_constraint": { "type": "string" }
+        }
+      }
+    },
+    "module_dependencies": {
+      "type": "object",
+      "required": ["authority", "reconciliation_status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "authority": { "type": "string" },
+        "reconciliation_status": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "execution_order": {
+      "type": "object",
+      "required": ["sequencing_model", "description", "parallelism"],
+      "additionalProperties": false,
+      "properties": {
+        "sequencing_model": { "type": "string" },
+        "description": { "type": "string" },
+        "parallelism": { "type": "string" }
+      }
+    },
+    "error_handling": {
+      "type": "object",
+      "required": ["highest_priority_flag", "moderate_priority_flag", "low_priority_flags", "missing_reference_error", "cross_file_inconsistency_error"],
+      "additionalProperties": false,
+      "properties": {
+        "highest_priority_flag": {
+          "type": "object",
+          "required": ["id", "rule", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "rule": { "type": "string" },
+            "source": { "type": "string" }
+          }
+        },
+        "moderate_priority_flag": {
+          "type": "object",
+          "required": ["id", "rule", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "rule": { "type": "string" },
+            "source": { "type": "string" }
+          }
+        },
+        "low_priority_flags": {
+          "type": "object",
+          "required": ["ids", "rule"],
+          "additionalProperties": false,
+          "properties": {
+            "ids": { "type": "array", "items": { "type": "string" } },
+            "rule": { "type": "string" }
+          }
+        },
+        "missing_reference_error": {
+          "type": "object",
+          "required": ["rule"],
+          "additionalProperties": false,
+          "properties": { "rule": { "type": "string" } }
+        },
+        "cross_file_inconsistency_error": {
+          "type": "object",
+          "required": ["rule"],
+          "additionalProperties": false,
+          "properties": { "rule": { "type": "string" } }
+        }
+      }
+    },
+    "recovery_rules": {
+      "type": "object",
+      "required": ["regeneration_policy", "partial_failure_recovery", "manual_override"],
+      "additionalProperties": false,
+      "properties": {
+        "regeneration_policy": { "type": "string" },
+        "partial_failure_recovery": { "type": "string" },
+        "manual_override": { "type": "string" }
+      }
+    },
+    "validation_rules": {
+      "type": "object",
+      "required": ["pre_generation_checks", "post_generation_checks", "authority"],
+      "additionalProperties": false,
+      "properties": {
+        "pre_generation_checks": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "post_generation_checks": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "authority": { "type": "string" }
+      }
+    },
+    "future_expansion_rules": {
+      "type": "object",
+      "required": ["authority", "additional_note"],
+      "additionalProperties": false,
+      "properties": {
+        "authority": { "type": "string" },
+        "additional_note": { "type": "string" }
+      }
+    }
+  }
+}
